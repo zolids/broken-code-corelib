@@ -11,8 +11,10 @@ namespace AMSCore.Lib.FastraxCore.Strategies
 
             string where = string.Empty;
 
-            if(!string.IsNullOrEmpty(users.username))
-                where = " WHERE username = " + users.username;
+            if (!string.IsNullOrEmpty(users.username) 
+                && !string.IsNullOrEmpty(users.password))
+
+                where = " WHERE username = " + users.username + " AND password = " + users.password;
 
             string sql = "SELECT * FROM [dbo].[gsa_users]" + where;
 

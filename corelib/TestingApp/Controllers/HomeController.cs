@@ -14,7 +14,7 @@ namespace TestingApp.Controllers
 
             login loginClient = new login();
 
-            var users = loginClient.getAllUsers();
+            var users = loginClient.getUsers();
 
             return View(users);
         }

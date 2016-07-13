@@ -35,7 +35,7 @@ namespace AMSCore
             this._strategy = users;
         }
 
-        public DataTable getAllUsers()
+        public DataTable getUsers()
         {
             return this._strategy.getAllUser(this);
         }

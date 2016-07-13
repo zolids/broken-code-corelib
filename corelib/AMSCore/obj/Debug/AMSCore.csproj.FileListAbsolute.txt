@@ -17,3 +17,13 @@ C:\Users\JCABRITO\Documents\SVN\AMSCore\trunk\AMSCore\bin\Debug\TarsierEyes.dll
 C:\Users\JCABRITO\Documents\SVN\AMSCore\trunk\AMSCore\obj\Debug\AMSCore.dll
 C:\Users\JCABRITO\Documents\SVN\AMSCore\trunk\AMSCore\obj\Debug\AMSCore.pdb
 C:\Users\JCABRITO\Documents\SVN\AMSCore\trunk\AMSCore\obj\Debug\AMSCore.csprojResolveAssemblyReference.cache
+C:\Users\JCABRITO\Documents\GIT\broken-code-corelib\corelib\AMSCore\bin\Debug\AMSCore.dll
+C:\Users\JCABRITO\Documents\GIT\broken-code-corelib\corelib\AMSCore\bin\Debug\AMSCore.pdb
+C:\Users\JCABRITO\Documents\GIT\broken-code-corelib\corelib\AMSCore\bin\Debug\AutoMapper.dll
+C:\Users\JCABRITO\Documents\GIT\broken-code-corelib\corelib\AMSCore\bin\Debug\MySql.Data.dll
+C:\Users\JCABRITO\Documents\GIT\broken-code-corelib\corelib\AMSCore\bin\Debug\Newtonsoft.Json.dll
+C:\Users\JCABRITO\Documents\GIT\broken-code-corelib\corelib\AMSCore\bin\Debug\RestSharp.dll
+C:\Users\JCABRITO\Documents\GIT\broken-code-corelib\corelib\AMSCore\bin\Debug\TarsierEyes.dll
+C:\Users\JCABRITO\Documents\GIT\broken-code-corelib\corelib\AMSCore\obj\Debug\AMSCore.csprojResolveAssemblyReference.cache
+C:\Users\JCABRITO\Documents\GIT\broken-code-corelib\corelib\AMSCore\obj\Debug\AMSCore.dll
+C:\Users\JCABRITO\Documents\GIT\broken-code-corelib\corelib\AMSCore\obj\Debug\AMSCore.pdb

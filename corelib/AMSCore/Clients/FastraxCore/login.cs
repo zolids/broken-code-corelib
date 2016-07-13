@@ -23,16 +23,19 @@ namespace AMSCore.Clients.FastraxCore
         }
 
         /// <summary>
-        /// return all currect system users
+        /// Get all or specific system users
         /// </summary>
-        /// <param name="username">Query param to get specific user</param>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
         /// <returns>gsa_user datatable</returns>
-        public DataTable getAllUsers(string username = null){
+        public DataTable getUsers(string username = null, string password = null){
 
             _storage.username = username;
+            _storage.password = password;
+
             _storage.setStrategy(new usersStrategy());
 
-            return _storage.getAllUsers(); ;
+            return _storage.getUsers(); ;
         }
     }
 }
