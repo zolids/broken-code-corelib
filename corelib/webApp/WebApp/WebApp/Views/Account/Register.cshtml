@@ -1,0 +1,109 @@
+﻿@model WebApp.Models.Users
+
+@{
+    ViewBag.Title = "Register";
+}
+
+<h2>Register</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Users</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.username)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.username)
+            @Html.ValidationMessageFor(model => model.username)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.password)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.password)
+            @Html.ValidationMessageFor(model => model.password)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.name)
+            @Html.ValidationMessageFor(model => model.name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.position)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.position)
+            @Html.ValidationMessageFor(model => model.position)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.usertypedisp)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.usertypedisp)
+            @Html.ValidationMessageFor(model => model.usertypedisp)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.rfqApprover)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.rfqApprover)
+            @Html.ValidationMessageFor(model => model.rfqApprover)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.rfqAmount)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.rfqAmount)
+            @Html.ValidationMessageFor(model => model.rfqAmount)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.email)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.email)
+            @Html.ValidationMessageFor(model => model.email)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Status)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Status)
+            @Html.ValidationMessageFor(model => model.Status)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.rfqApproverBool)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.rfqApproverBool)
+            @Html.ValidationMessageFor(model => model.rfqApproverBool)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+
+    @Html.ActionLink("Back to home", "Index", "Home")
+    </div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

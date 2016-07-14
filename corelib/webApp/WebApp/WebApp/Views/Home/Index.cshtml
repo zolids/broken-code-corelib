@@ -6,6 +6,11 @@
 
 <ul>
     
-    @Html.ActionLink("Logout","Logout","Account")
+    @{
+        if(Request.IsAuthenticated){
+            @Html.ActionLink("Logout","Logout","Account") <br/>
+            @Html.ActionLink("Register Account","Register","Account")
+        }        
+    }
 
 </ul>

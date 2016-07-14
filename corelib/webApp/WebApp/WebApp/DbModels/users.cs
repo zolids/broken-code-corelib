@@ -44,6 +44,8 @@ namespace WebApp.Models
         [Display(Name = "RFQ Approver")]
         public string rfqApproveryn { get; set; }
 
+        [Display(Name = "RFQ Amount")]
+        [Required(ErrorMessage = "RFQ Approver Required")]
         public int rfqAmount { get; set; }
 
         [Display(Name = "E-Mail")]
