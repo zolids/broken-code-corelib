@@ -31,5 +31,12 @@ namespace AMSCore.Lib.FastraxCore.Strategies
         {
             throw new NotImplementedException();
         }
+
+        public void forgotPassword(Users users)
+        {
+            throw new NotImplementedException();
+        }
+    
     }
+
 }

@@ -9,5 +9,7 @@ namespace AMSCore.Lib.FastraxCore.Interface
         void registerUser(Users users);
 
         void editUser(Users users);
+
+        void forgotPassword(Users users);
     }
 }
