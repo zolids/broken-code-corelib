@@ -1,0 +1,33 @@
+﻿.loading-screen {
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+html|* > svg {
+    transform-origin: 50% 50% 0px;
+}
+user agent stylesheet
+svg:not(:root), symbol, image, marker, pattern, foreignObject {
+    overflow: hidden;
+}
+user agent stylesheet
+* {
+    transform-origin: 0px 0px 0px;
+}
+
+.loading-screen circle {
+    fill: transparent;
+    stroke: #a24689;
+    stroke-width: 1;
+    stroke-linecap: round;
+    stroke-dasharray: 51.83627878;
+    animation: stroke-dash 2500ms linear infinite;
+}
+
+circle[Attributes Style] {
+    cx: 100;
+    cy: 100;
+    r: 50;
+}

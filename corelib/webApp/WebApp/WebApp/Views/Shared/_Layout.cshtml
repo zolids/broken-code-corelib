@@ -9,11 +9,38 @@
 </head>
 <body>
 
+    <div class="loading-screen">
+        <div class="content">
+            <svg class="svg">
+                <circle cx="100" cy="100" r="50"></circle>
+            </svg>
+            <h3 class="text-alpha">Sit tight! We're processing your request</h3>
+            <p class="text-muted mb32">You will be redirected in a few seconds.</p>
+        </div>
 
+        <div id="error" class="alert fade in" role="alert" style="display: none;">
+            <h2>Sorry !</h2>
+            <h3>A problem has occurred during the processing of your request</h3>
+            <p>
+                If the problem persist, you can contact <a href="mailto:jcabrito@a-m-s.ae">jcabrito@a-m-s.ae</a> to get help with this issue.
+            </p>
+            <p>
+                <span class="text-muted" id="error_detail"></span>
+            </p>
+        </div>
+    </div>
 
     @RenderBody()
 
     @Scripts.Render("~/bundles/jquery")
     @RenderSection("scripts", required: false)
+
+    <script>
+        $(window).bind("load", function () {
+            // Remove splash screen after load
+            //$('.loading-screen').css('display', 'none');
+        });
+    </script>
 </body>
+
 </html>
