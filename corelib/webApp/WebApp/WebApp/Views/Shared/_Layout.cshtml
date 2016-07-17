@@ -1,46 +1,322 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="Fleet Management">
+    <meta name="author" content="Automotive Management Services">
+
     <title>@ViewBag.Title</title>
+
+    <link rel="shortcut icon" href="~/Content/theme/images/favicon.ico" type="image/x-icon">
+    
+    <link href="~/Content/theme/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/theme/css/core.css" rel="stylesheet" />
+    <link href="~/Content/theme/css/components.css" rel="stylesheet" />
+    <link href="~/Content/theme/css/icons.css" rel="stylesheet" />
+    <link href="~/Content/theme/css/pages.css" rel="stylesheet" />
+    <link href="~/Content/theme/css/menu.css" rel="stylesheet" />
+    <link href="~/Content/theme/css/responsive.css" rel="stylesheet" />
+
+    @*@Styles.Render("~/Content/theme")*@
+
+   
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+
+
 </head>
-<body>
 
-    <div class="loading-screen">
-        <div class="content">
-            <svg class="svg">
-                <circle cx="100" cy="100" r="50"></circle>
-            </svg>
-            <h3 class="text-alpha">Sit tight! We're processing your request</h3>
-            <p class="text-muted mb32">You will be redirected in a few seconds.</p>
+<body class="">
+
+    <!-- Navigation Bar-->
+    <header id="topnav">
+        <div class="topbar-main">
+            <div class="container">
+
+                <!-- Logo container-->
+                <div class="logo">
+                    <a href="./" class="logo"><i class="md md-equalizer"></i> <span>Company Vehicle</span> </a>
+                </div>
+                <!-- End Logo container-->
+
+                <div class="menu-extras">
+
+                    <ul class="nav navbar-nav navbar-right pull-right">
+                        <li>
+                            <form role="search" class="navbar-left app-search pull-left hidden-xs">
+                                <input type="text" placeholder="Search..." class="form-control">
+                                <a href="#"><i class="fa fa-search"></i></a>
+                            </form>
+                        </li>
+                        <li class="dropdown hidden-xs">
+                            <a href="http://coderthemes.com/minton_1.6/blue_hori/pages-blank.html#" data-target="#" class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" aria-expanded="true">
+                                <i class="md md-notifications"></i> <span class="badge badge-xs badge-pink">3</span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-lg">
+                                <li class="text-center notifi-title">Notification</li>
+                                <li class="list-group nicescroll notification-list" style="overflow: hidden; outline: none;" tabindex="5000">
+                                    <!-- list item-->
+                                    <a href="javascript:void(0);" class="list-group-item">
+                                        <div class="media">
+                                            <div class="pull-left p-r-10">
+                                                <em class="fa fa-diamond noti-primary"></em>
+                                            </div>
+                                            <div class="media-body">
+                                                <h5 class="media-heading">
+                                                    A new order has been placed A new
+                                                    order has been placed
+                                                </h5>
+                                                <p class="m-0">
+                                                    <small>There are new settings available</small>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <!-- list item-->
+                                    <a href="javascript:void(0);" class="list-group-item">
+                                        <div class="media">
+                                            <div class="pull-left p-r-10">
+                                                <em class="fa fa-cog noti-warning"></em>
+                                            </div>
+                                            <div class="media-body">
+                                                <h5 class="media-heading">New settings</h5>
+                                                <p class="m-0">
+                                                    <small>There are new settings available</small>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <!-- list item-->
+                                    <a href="javascript:void(0);" class="list-group-item">
+                                        <div class="media">
+                                            <div class="pull-left p-r-10">
+                                                <em class="fa fa-bell-o noti-success"></em>
+                                            </div>
+                                            <div class="media-body">
+                                                <h5 class="media-heading">Updates</h5>
+                                                <p class="m-0">
+                                                    <small>
+                                                        There are <span class="text-primary">2</span> new
+                                                        updates available
+                                                    </small>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                </li>
+
+                                <li>
+                                    <a href="javascript:void(0);" class=" text-right">
+                                        <small><b>See all notifications</b></small>
+                                    </a>
+                                </li>
+
+                                <div id="ascrail2000" class="nicescroll-rails" style="width: 8px; z-index: 1000; cursor: default; position: absolute; top: 0px; left: -8px; height: 0px; display: none;"><div style="position: relative; top: 0px; float: right; width: 6px; height: 0px; border: 1px solid rgb(255, 255, 255); border-radius: 5px; background-color: rgb(152, 166, 173); background-clip: padding-box;"></div></div>
+                                <div id="ascrail2000-hr" class="nicescroll-rails" style="height: 8px; z-index: 1000; top: -8px; left: 0px; position: absolute; cursor: default; display: none;"><div style="position: relative; top: 0px; height: 6px; width: 0px; border: 1px solid rgb(255, 255, 255); border-radius: 5px; background-color: rgb(152, 166, 173); background-clip: padding-box;"></div></div>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle waves-effect waves-light profile" data-toggle="dropdown" aria-expanded="true"><img src="~/Content/theme/images/avatar.jpg" alt="user-img" class="img-circle"> </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="javascript:void(0)"><i class="ti-user m-r-5"></i> Profile</a></li>
+                                <li><a href="javascript:void(0)"><i class="ti-settings m-r-5"></i> Settings</a></li>
+                                <li><a href="javascript:void(0)"><i class="ti-lock m-r-5"></i> Lock screen</a></li>
+                                <li><a href="/Account/Logout"><i class="ti-power-off m-r-5"></i> Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <div class="menu-item">
+                        <!-- Mobile menu toggle-->
+                        <a class="navbar-toggle">
+                            <div class="lines">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </a>
+                        <!-- End mobile menu toggle-->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- End topbar -->
+        <!-- Navbar Start -->
+        <div class="navbar-custom">
+            <div class="container">
+                <div id="navigation">
+                    <!-- Navigation Menu-->
+                    <ul class="navigation-menu">
+                        <li class="has-submenu active">
+                            <a href="/Home"><i class="md md-dashboard"></i>Dashboard</a>
+                        </li>
+
+                        <li class="has-submenu">
+                            <a href="http://coderthemes.com/minton_1.6/blue_hori/pages-blank.html#"><i class="md md-color-lens"></i>Equipment</a>
+                            <ul class="submenu">
+                                <li><a href="http://coderthemes.com/minton_1.6/blue_hori/ui-buttons.html">Buttons</a></li>
+                                <li><a href="http://coderthemes.com/minton_1.6/blue_hori/ui-panels.html">Panels</a></li>
+                                <li><a href="http://coderthemes.com/minton_1.6/blue_hori/ui-portlets.html">Portlets</a></li>
+                                <li><a href="http://coderthemes.com/minton_1.6/blue_hori/ui-checkbox-radio.html">Checkboxs-Radios</a></li>
+                                <li><a href="http://coderthemes.com/minton_1.6/blue_hori/ui-tabs.html">Tabs &amp; Accordions</a></li>
+                                <li><a href="http://coderthemes.com/minton_1.6/blue_hori/ui-modals.html">Modals</a></li>
+                                <li><a href="http://coderthemes.com/minton_1.6/blue_hori/ui-progressbars.html">Progress Bars</a></li>
+                                <li><a href="http://coderthemes.com/minton_1.6/blue_hori/ui-notification.html">Notification</a></li>
+                                <li><a href="http://coderthemes.com/minton_1.6/blue_hori/ui-bootstrap.html">BS Elements</a></li>
+                                <li><a href="http://coderthemes.com/minton_1.6/blue_hori/ui-typography.html">Typography</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="has-submenu">
+                            <a href="http://coderthemes.com/minton_1.6/blue_hori/pages-blank.html#"><i class="md md-invert-colors-on"></i>Maintenance</a>
+                            <ul class="submenu">
+                                <li><a href="http://coderthemes.com/minton_1.6/blue_hori/components-grid.html">Grid</a></li>
+                                <li><a href="http://coderthemes.com/minton_1.6/blue_hori/components-carousel.html">Carousel</a></li>
+                                <li><a href="http://coderthemes.com/minton_1.6/blue_hori/components-widgets.html">Widgets</a></li>
+                                <li><a href="http://coderthemes.com/minton_1.6/blue_hori/components-nestable-list.html">Nesteble</a></li>
+                                <li><a href="http://coderthemes.com/minton_1.6/blue_hori/components-range-sliders.html">Range Sliders </a></li>
+                                <li><a href="http://coderthemes.com/minton_1.6/blue_hori/components-sweet-alert.html">Sweet Alerts </a></li>
+                            </ul>
+                        </li>
+
+                        <li class="has-submenu">
+                            <a href="http://coderthemes.com/minton_1.6/blue_hori/pages-blank.html#"><i class="md md-class"></i>Parts</a>
+                            <ul class="submenu">
+                                <li class="has-submenu">
+                                    <a href="http://coderthemes.com/minton_1.6/blue_hori/pages-blank.html#">Icons</a>
+                                    <ul class="submenu">
+                                        <li><a href="http://coderthemes.com/minton_1.6/blue_hori/icons-glyphicons.html">Glyphicons</a></li>
+                                        <li><a href="http://coderthemes.com/minton_1.6/blue_hori/icons-materialdesign.html">Material Design</a></li>
+                                        <li><a href="http://coderthemes.com/minton_1.6/blue_hori/icons-themifyicon.html">Themify Icons</a></li>
+                                        <li><a href="http://coderthemes.com/minton_1.6/blue_hori/icons-ionicons.html">Ion Icons</a></li>
+                                        <li><a href="http://coderthemes.com/minton_1.6/blue_hori/icons-fontawesome.html">Font awesome</a></li>
+                                        <li><a href="http://coderthemes.com/minton_1.6/blue_hori/icons-weather.html">Weather Icons</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="has-submenu">
+                            <a href="#"><i class="md md-class"></i>Settings</a>
+                            <ul class="submenu">
+                                <li class="has-submenu">
+                                    <a href="#">General Settings</a>
+                                    <ul class="submenu">
+                                        <li><a href="#">Page Access</a></li>
+                                        <li><a href="#">Report Access</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="has-submenu">
+                                    <a href="">User Management</a>
+                                    <ul class="submenu">
+                                        <li><a href="#">Create</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="has-submenu  last-elements">
+                            <a href="#"><i class="md md-folder-special"></i>Dealers</a>
+                            <ul class="submenu megamenu">
+                                <li>
+                                    <ul>
+                                        <li><a href="#">General Settings</a></li>
+                                        <li><a href="#">Invoice</a></li>
+                                        <li><a href="#"> Calendar</a></li>
+                                        <li><a href="#">Email template</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>  
+
+                    </ul>
+                    <!-- End navigation menu -->
+                </div>
+            </div>
         </div>
 
-        <div id="error" class="alert fade in" role="alert" style="display: none;">
-            <h2>Sorry !</h2>
-            <h3>A problem has occurred during the processing of your request</h3>
-            <p>
-                If the problem persist, you can contact <a href="mailto:jcabrito@a-m-s.ae">jcabrito@a-m-s.ae</a> to get help with this issue.
-            </p>
-            <p>
-                <span class="text-muted" id="error_detail"></span>
-            </p>
-        </div>
+
+        @*<div class="row" id="breadcrumb-holder">
+            <div class="breadcrumb-container col-md-12">
+                <ol class="breadcrumb breadcrumb-arrow">
+                    <li><a href="#"><i class="md md-home"></i> Home</a></li>
+                    <li><a href="#"><i class="md md-settings"></i> Settings</a></li>
+                    <li class="active"><span><i class="md md-people"></i> Registration</span></li>
+                </ol>
+            </div>
+        </div>*@
+
+    </header>
+    <!-- End Navigation Bar-->
+
+    <div class="wrapper">
+        <div class="container">
+
+            <!-- Page-Title -->
+            <div class="row">
+                <div class="col-sm-12">
+
+                    <!-- =======================
+                         ===== START PAGE ======
+                         ======================= -->
+
+                             @RenderBody()
+
+                    <!-- =======================
+                     ===== END PAGE ======
+                     ======================= -->
+
+                </div>
+            </div>
+            <!-- Page-Title -->
+            <!-- Footer -->
+            <footer class="footer text-right">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            2016 © AMS.
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- End Footer -->
+
+        </div> <!-- end container -->
     </div>
+    <!-- End wrapper -->
 
-    @RenderBody()
+    @*@Scripts.Render("~/bundles/jquery")*@
+    @*@Scripts.Render("~/Content/js")*@
 
-    @Scripts.Render("~/bundles/jquery")
+    <script src="~/Content/theme/js/jquery.min.js"></script>
+    <script src="~/Content/theme/js/bootstrap.min.js"></script>
+    <script src="~/Content/theme/js/detect.js"></script>
+    <script src="~/Content/theme/js/fastclick.js"></script>
+    <script src="~/Content/theme/js/jquery.blockUI.js"></script>
+    <script src="~/Content/theme/js/waves.js"></script>
+    <script src="~/Content/theme/js/wow.min.js"></script>
+
+    <script src="~/Content/theme/js/jquery.nicescroll.js"></script>
+    <script src="~/Content/theme/js/jquery.scrollTo.min.js"></script>
+
+    @* parsley form validation *@
+    <script src="~/Content/theme/js/parsley.min.js"></script>
+
+    <script src="~/Content/theme/js/jquery.core.js"></script>
+    <script src="~/Content/theme/js/jquery.app.js"></script>
+
     @RenderSection("scripts", required: false)
 
-    <script>
-        $(window).bind("load", function () {
-            // Remove splash screen after load
-            //$('.loading-screen').css('display', 'none');
-        });
-    </script>
 </body>
 
 </html>

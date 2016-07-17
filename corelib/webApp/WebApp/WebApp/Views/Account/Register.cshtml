@@ -3,107 +3,148 @@
 @{
     ViewBag.Title = "Register";
 }
+<div class="breadcrumb-container row">
+    <ol class="breadcrumb">
+        <li><a href="./">Home</a></li>
+        <li><a href="#">Settings</a></li>
+        <li class="active">Registration</li>
+        <li class="breadcrumb-action"><button type="button" class="btn btn-success waves-effect w-md waves-light m-b-5">Create</button></li>
+    </ol>
+</div>
 
-<h2>Register</h2>
+<div class="row">
 
-@using (Html.BeginForm()) {
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true)
+    <div class="col-sm-12">
+        <div class="card-box">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h5><b>User Registration</b></h5>
+                    <p class="text-muted font-13 m-b-30">
+                        Add new system user and access right
+                    </p>
+                    <form action="/Account/Register" data-parsley-validate="" method="post" novalidate="novalidate" class="form-horizontal group-border-dashed">
 
-    <fieldset>
-        <legend>Users</legend>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Full Name *</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" required="" placeholder="Full name" data-parsley-id="44" name="name">
+                            </div>
+                        </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.username)
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Username *</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" required="" placeholder="Username" data-parsley-id="34" name="username">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Password *</label>
+                            <div class="col-sm-5">
+                                <input type="password" id="pass2" class="form-control" required="" placeholder="Password" data-parsley-id="36" name="password">
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="password" class="form-control" required="" data-parsley-equalto="#pass2" placeholder="Re-Type Password" data-parsley-id="38" name="password">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Position</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" required="" placeholder="Position" data-parsley-id="42" name="position">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">E-Mail</label>
+                            <div class="col-sm-8">
+                                <input type="email" class="form-control" required="" parsley-type="email" placeholder="Enter a valid e-mail" data-parsley-id="40" name="email">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">User Type *</label>
+                            <div class="col-sm-8">
+                                <select class="form-control" id="usertype" name="usertype" required>
+                                    <option value="2" selected="">AMS Administrator</option>
+                                    <option value="4">Super Administrator</option>
+                                    <option value="3">GSA</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Account Status</label>
+                            <div class="col-sm-8">
+                                <select class="form-control" id="Status" name="Status" required>
+                                    <option value="Active" selected="">Active</option>
+                                    <option value="Inactive">Inactive</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">RFQ Approver</label>
+                            <div class="col-sm-8">
+                                <div class="checkbox checkbox-primary">
+                                    <input id="rfqApprover" name="rfqApprover" type="checkbox" value="1">
+                                    <label for="rfqApprover">
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
         </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.username)
-            @Html.ValidationMessageFor(model => model.username)
+        @* access rights *@
+        <div class="row" style=" margin-left: 0px !important; margin-right: 0px !important;">
+            <ul class="nav nav-tabs tabs" style="width: 100%;">
+                <li class="tab active" style="width: 25%;">
+                    <a href="#home-12" data-toggle="tab" aria-expanded="true" class="active">
+                        <span class="visible-xs"><i class="fa fa-home"></i></span>
+                        <span class="hidden-xs">Pages</span>
+                    </a>
+                </li>
+                <li class="tab" style="width: 25%;">
+                    <a href="#profile-12" data-toggle="tab" aria-expanded="false" class="">
+                        <span class="visible-xs"><i class="fa fa-user"></i></span>
+                        <span class="hidden-xs">Reports</span>
+                    </a>
+                </li>
+               
+                <div class="indicator" style="right: 659px; left: 0px;"></div>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="home-12" style="display: block;">
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
+                    <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</p>
+                </div>
+                <div class="tab-pane" id="profile-12" style="display: none;">
+                    <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
+                </div>
+                
+            </div>
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.password)
+        <div class="row">
+            <div class="form-group text-center m-b-0">
+                <button class="btn btn-primary waves-effect waves-light" type="submit" id="submit-registration">
+                    Save Changes
+                </button>
+                <button type="reset" class="btn btn-default waves-effect waves-light m-l-5">
+                    Cancel
+                </button>
+            </div>
         </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.password)
-            @Html.ValidationMessageFor(model => model.password)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.name)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.name)
-            @Html.ValidationMessageFor(model => model.name)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.position)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.position)
-            @Html.ValidationMessageFor(model => model.position)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.usertypedisp)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.usertypedisp)
-            @Html.ValidationMessageFor(model => model.usertypedisp)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.rfqApprover)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.rfqApprover)
-            @Html.ValidationMessageFor(model => model.rfqApprover)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.rfqAmount)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.rfqAmount)
-            @Html.ValidationMessageFor(model => model.rfqAmount)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.email)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.email)
-            @Html.ValidationMessageFor(model => model.email)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Status)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Status)
-            @Html.ValidationMessageFor(model => model.Status)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.rfqApproverBool)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.rfqApproverBool)
-            @Html.ValidationMessageFor(model => model.rfqApproverBool)
-        </div>
-
-        <p>
-            <input type="submit" value="Create" />
-        </p>
-    </fieldset>
-}
-
-<div>
-
-    @Html.ActionLink("Back to home", "Index", "Home")
     </div>
 
+</div>
+
 @section Scripts {
+
     @Scripts.Render("~/bundles/jqueryval")
+
 }
