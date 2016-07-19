@@ -15,7 +15,19 @@ namespace WebApp.Controllers
         [Authorize]
         public ActionResult Index()
         {
-            ViewBag.title = Constant.DASHBOARD;
+            ViewBag.Title = Constant.DASHBOARD;
+
+            // if role or porject not selected stay @ default page
+            //return RedirectToAction("DefaultViewport", "Home");
+
+            return View();
+        }
+
+        [Authorize]
+        public ActionResult DefaultViewport()
+        {
+            ViewBag.Title = Constant.DEFAULT_PAGE;
+
             return View();
         }
 

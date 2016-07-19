@@ -12,7 +12,14 @@
     <title>@ViewBag.Title</title>
 
     <link rel="shortcut icon" href="~/Content/theme/images/favicon.ico" type="image/x-icon">
-    
+
+    <link href="~/Content/theme/css/select2.css" rel="stylesheet" />
+    <link href="~/Content/theme/datatables/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="~/Content/theme/datatables/buttons.bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/theme/datatables/fixedHeader.bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/theme/datatables/responsive.bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/theme/datatables/scroller.bootstrap.min.css" rel="stylesheet" />
+
     <link href="~/Content/theme/css/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Content/theme/css/core.css" rel="stylesheet" />
     <link href="~/Content/theme/css/components.css" rel="stylesheet" />
@@ -39,7 +46,7 @@
 
                 <!-- Logo container-->
                 <div class="logo">
-                    <a href="./" class="logo"><i class="md md-equalizer"></i> <span>Company Vehicle</span> </a>
+                    <a href="./" class="logo"><i class="md md-equalizer"></i> <span>Online FASTrax</span> </a>
                 </div>
                 <!-- End Logo container-->
 
@@ -53,7 +60,7 @@
                             </form>
                         </li>
                         <li class="dropdown hidden-xs">
-                            <a href="http://coderthemes.com/minton_1.6/blue_hori/pages-blank.html#" data-target="#" class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" aria-expanded="true">
+                            <a href="#" data-target="#" class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" aria-expanded="true">
                                 <i class="md md-notifications"></i> <span class="badge badge-xs badge-pink">3</span>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-lg">
@@ -156,70 +163,41 @@
                 <div id="navigation">
                     <!-- Navigation Menu-->
                     <ul class="navigation-menu">
+
                         <li class="has-submenu active">
                             <a href="/Home"><i class="md md-dashboard"></i>Dashboard</a>
                         </li>
 
                         <li class="has-submenu">
-                            <a href="http://coderthemes.com/minton_1.6/blue_hori/pages-blank.html#"><i class="md md-color-lens"></i>Equipment</a>
+                            <a href="#"><i class="md md-color-lens"></i>Equipment</a>
                             <ul class="submenu">
-                                <li><a href="http://coderthemes.com/minton_1.6/blue_hori/ui-buttons.html">Buttons</a></li>
-                                <li><a href="http://coderthemes.com/minton_1.6/blue_hori/ui-panels.html">Panels</a></li>
-                                <li><a href="http://coderthemes.com/minton_1.6/blue_hori/ui-portlets.html">Portlets</a></li>
-                                <li><a href="http://coderthemes.com/minton_1.6/blue_hori/ui-checkbox-radio.html">Checkboxs-Radios</a></li>
-                                <li><a href="http://coderthemes.com/minton_1.6/blue_hori/ui-tabs.html">Tabs &amp; Accordions</a></li>
-                                <li><a href="http://coderthemes.com/minton_1.6/blue_hori/ui-modals.html">Modals</a></li>
-                                <li><a href="http://coderthemes.com/minton_1.6/blue_hori/ui-progressbars.html">Progress Bars</a></li>
-                                <li><a href="http://coderthemes.com/minton_1.6/blue_hori/ui-notification.html">Notification</a></li>
-                                <li><a href="http://coderthemes.com/minton_1.6/blue_hori/ui-bootstrap.html">BS Elements</a></li>
-                                <li><a href="http://coderthemes.com/minton_1.6/blue_hori/ui-typography.html">Typography</a></li>
+                                <li><a href="#">General Equipment Pool</a></li>
+                                <li><a href="#">Create New</a></li>
                             </ul>
                         </li>
 
                         <li class="has-submenu">
-                            <a href="http://coderthemes.com/minton_1.6/blue_hori/pages-blank.html#"><i class="md md-invert-colors-on"></i>Maintenance</a>
+                            <a href="#"><i class="md md-list"></i>Acquisition</a>
                             <ul class="submenu">
-                                <li><a href="http://coderthemes.com/minton_1.6/blue_hori/components-grid.html">Grid</a></li>
-                                <li><a href="http://coderthemes.com/minton_1.6/blue_hori/components-carousel.html">Carousel</a></li>
-                                <li><a href="http://coderthemes.com/minton_1.6/blue_hori/components-widgets.html">Widgets</a></li>
-                                <li><a href="http://coderthemes.com/minton_1.6/blue_hori/components-nestable-list.html">Nesteble</a></li>
-                                <li><a href="http://coderthemes.com/minton_1.6/blue_hori/components-range-sliders.html">Range Sliders </a></li>
-                                <li><a href="http://coderthemes.com/minton_1.6/blue_hori/components-sweet-alert.html">Sweet Alerts </a></li>
+                                <li><a href="#">Sumbit Request</a></li>
+                                <li><a href="#">Transactions</a></li>
                             </ul>
                         </li>
 
                         <li class="has-submenu">
-                            <a href="http://coderthemes.com/minton_1.6/blue_hori/pages-blank.html#"><i class="md md-class"></i>Parts</a>
+                            <a href="#"><i class="md md-invert-colors-on"></i>Maintenance</a>
                             <ul class="submenu">
-                                <li class="has-submenu">
-                                    <a href="http://coderthemes.com/minton_1.6/blue_hori/pages-blank.html#">Icons</a>
-                                    <ul class="submenu">
-                                        <li><a href="http://coderthemes.com/minton_1.6/blue_hori/icons-glyphicons.html">Glyphicons</a></li>
-                                        <li><a href="http://coderthemes.com/minton_1.6/blue_hori/icons-materialdesign.html">Material Design</a></li>
-                                        <li><a href="http://coderthemes.com/minton_1.6/blue_hori/icons-themifyicon.html">Themify Icons</a></li>
-                                        <li><a href="http://coderthemes.com/minton_1.6/blue_hori/icons-ionicons.html">Ion Icons</a></li>
-                                        <li><a href="http://coderthemes.com/minton_1.6/blue_hori/icons-fontawesome.html">Font awesome</a></li>
-                                        <li><a href="http://coderthemes.com/minton_1.6/blue_hori/icons-weather.html">Weather Icons</a></li>
-                                    </ul>
-                                </li>
+                                <li><a href="#">Grid</a></li>
                             </ul>
                         </li>
 
                         <li class="has-submenu">
-                            <a href="#"><i class="md md-class"></i>Settings</a>
+                            <a href=""><i class="md md-class"></i>Parts</a>
                             <ul class="submenu">
                                 <li class="has-submenu">
-                                    <a href="#">General Settings</a>
+                                    <a href="">Icons</a>
                                     <ul class="submenu">
-                                        <li><a href="#">Page Access</a></li>
-                                        <li><a href="#">Report Access</a></li>
-                                    </ul>
-                                </li>
-
-                                <li class="has-submenu">
-                                    <a href="">User Management</a>
-                                    <ul class="submenu">
-                                        <li><a href="#">Create</a></li>
+                                        <li><a href="#">Glyphicons</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -230,7 +208,6 @@
                             <ul class="submenu megamenu">
                                 <li>
                                     <ul>
-                                        <li><a href="#">General Settings</a></li>
                                         <li><a href="#">Invoice</a></li>
                                         <li><a href="#"> Calendar</a></li>
                                         <li><a href="#">Email template</a></li>
@@ -238,6 +215,18 @@
                                 </li>
                             </ul>
                         </li>  
+
+                        <li class="has-submenu">
+                            <a href="#"><i class="md md-settings"></i>Settings</a>
+                            <ul class="submenu">
+                                <li class="">
+                                    <a href="/Account/Settings">General Settings</a>
+                                </li>
+                                <li class="">
+                                    <a href="/Account/SystemUsers">User Management</a>
+                                </li>
+                            </ul>
+                        </li>
 
                     </ul>
                     <!-- End navigation menu -->
@@ -309,9 +298,37 @@
     <script src="~/Content/theme/js/jquery.nicescroll.js"></script>
     <script src="~/Content/theme/js/jquery.scrollTo.min.js"></script>
 
+    @* DataTables Plugins *@
+
+    <script src="~/Scripts/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/datatables/dataTables.bootstrap.js"></script>
+    <script src="~/Scripts/datatables/dataTables.buttons.min.js"></script>
+    <script src="~/Scripts/datatables/buttons.bootstrap.min.js"></script>
+    <script src="~/Scripts/datatables/jszip.min.js"></script>
+    <script src="~/Scripts/datatables/pdfmake.min.js"></script>
+    <script src="~/Scripts/datatables/vfs_fonts.js"></script>
+    <script src="~/Scripts/datatables/buttons.html5.min.js"></script>
+    <script src="~/Scripts/datatables/buttons.print.min.js"></script>
+    <script src="~/Scripts/datatables/dataTables.responsive.min.js"></script>
+
+    @* end *@
+
+    <script src="~/Scripts/datatables/responsive.bootstrap.min.js"></script>
+    <script src="~/Scripts/plugins/bootstrap-tagsinput.min.js"></script>
+
+    @* Dashboard Plugins *@
+
+    <script src="~/Scripts/plugins/jquery.waypoints.js"></script>
+    <script src="~/Scripts/plugins/jquery.counterup.min.js"></script>
+    <script src="~/Scripts/plugins/jquery.circliful.min.js"></script>
+    <script src="~/Scripts/plugins/select2.min.js"></script>
+
+    @* end *@
+
     @* parsley form validation *@
     <script src="~/Content/theme/js/parsley.min.js"></script>
 
+    @* custom js *@
     <script src="~/Content/theme/js/jquery.core.js"></script>
     <script src="~/Content/theme/js/jquery.app.js"></script>
 

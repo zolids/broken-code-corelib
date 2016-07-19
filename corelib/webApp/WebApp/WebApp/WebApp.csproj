@@ -132,12 +132,14 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="DbModels\Projects.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="DbContext\dbContext.cs" />
     <Compile Include="DbModels\Users.cs" />
     <Compile Include="helpers\Constant.cs" />
+    <Compile Include="helpers\Helper.cs" />
     <Compile Include="Models\UserModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -210,9 +212,17 @@
     <Content Include="Content\theme\css\menu.css" />
     <Content Include="Content\theme\css\pages.css" />
     <Content Include="Content\theme\css\responsive.css" />
+    <Content Include="Content\theme\css\select2.css" />
+    <Content Include="Content\theme\datatables\buttons.bootstrap.min.css" />
+    <Content Include="Content\theme\datatables\fixedHeader.bootstrap.min.css" />
+    <Content Include="Content\theme\datatables\jquery.dataTables.min.css" />
+    <Content Include="Content\theme\datatables\responsive.bootstrap.min.css" />
+    <Content Include="Content\theme\datatables\scroller.bootstrap.min.css" />
     <Content Include="Content\theme\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\theme\images\avatar.jpg" />
     <Content Include="Content\theme\images\favicon.ico" />
+    <Content Include="Content\theme\images\select2-spinner.gif" />
+    <Content Include="Content\theme\images\select2.png" />
     <Content Include="Content\theme\js\bootstrap.min.js" />
     <Content Include="Content\theme\js\detect.js" />
     <Content Include="Content\theme\js\fastclick.js" />
@@ -270,6 +280,21 @@
     <Content Include="Content\theme\fonts\themify.ttf" />
     <Content Include="Content\theme\fonts\themify.woff" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Scripts\datatables\buttons.bootstrap.min.js" />
+    <Content Include="Scripts\datatables\buttons.html5.min.js" />
+    <Content Include="Scripts\datatables\buttons.print.min.js" />
+    <Content Include="Scripts\datatables\dataTables.bootstrap.js" />
+    <Content Include="Scripts\datatables\dataTables.buttons.min.js" />
+    <Content Include="Scripts\datatables\dataTables.fixedHeader.min.js" />
+    <Content Include="Scripts\datatables\datatables.init.js" />
+    <Content Include="Scripts\datatables\dataTables.keyTable.min.js" />
+    <Content Include="Scripts\datatables\dataTables.responsive.min.js" />
+    <Content Include="Scripts\datatables\dataTables.scroller.min.js" />
+    <Content Include="Scripts\datatables\jquery.dataTables.min.js" />
+    <Content Include="Scripts\datatables\jszip.min.js" />
+    <Content Include="Scripts\datatables\pdfmake.min.js" />
+    <Content Include="Scripts\datatables\responsive.bootstrap.min.js" />
+    <Content Include="Scripts\datatables\vfs_fonts.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -284,6 +309,12 @@
     <Content Include="Scripts\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\plugins\bootstrap-tagsinput.min.js" />
+    <Content Include="Scripts\plugins\jquery.circliful.min.js" />
+    <Content Include="Scripts\plugins\jquery.counterup.min.js" />
+    <Content Include="Scripts\plugins\jquery.waypoints.js" />
+    <Content Include="Scripts\plugins\notify.min.js" />
+    <Content Include="Scripts\plugins\select2.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -300,6 +331,13 @@
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\_loginLayout.cshtml" />
+    <Content Include="Views\Account\SystemUsers.cshtml" />
+    <Content Include="Views\Account\PageAccess.cshtml" />
+    <Content Include="Views\Account\PageAccessEdit.cshtml" />
+    <Content Include="Views\Account\Settings.cshtml" />
+    <Content Include="Views\Account\Timezone.cshtml" />
+    <Content Include="Views\Home\DefaultViewport.cshtml" />
+    <Content Include="Views\Shared\_Default.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

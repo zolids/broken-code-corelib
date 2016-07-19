@@ -8,7 +8,11 @@ namespace WebApp.helpers
     public class Constant
     {
         // Page Titles
-        public const string DASHBOARD = "AMS Company vehicle - Dashboard";
+        public const string DASHBOARD        = "Dashboard";
+        public const string DEFAULT_PAGE     = "Access FASTrax";
+        public const string SYSTEM_USERS     = "System Users";
+        public const string GENERAL_SETTINGS = "General System Settings";
 
     }
+
 }

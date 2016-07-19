@@ -1,7 +1,25 @@
 ﻿
+.stick {
+    position: fixed;
+    top: 120px;
+    width: 100%;
+    background: #e8e7e7;
+    z-index: 1;
+    padding: 5px;
+}
+
 .breadcrumb-container{
     /*background-color: rgb(224, 224, 224);*/
 }
+
+.breadcrumb-action {
+    float: right;
+}
+
+.breadcrumb-action:before {
+    content: none !important;
+}
+
 
 .breadcrumb {
     padding: 8px 15px;
@@ -145,11 +163,4 @@
 
 .breadcrumb-arrow li span {
     color: #434a54
-}
-
-.breadcrumb-action {
-    float: right;
-}
-.breadcrumb-action:before {
-    content: none !important;
 }

@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="Fleet Management">
+    <meta name="author" content="Automotive Management Services">
+
+    <title>@ViewBag.Title</title>
+
+    <link rel="shortcut icon" href="~/Content/theme/images/favicon.ico" type="image/x-icon">
+
+    <link href="~/Content/theme/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/theme/css/core.css" rel="stylesheet" />
+    <link href="~/Content/theme/css/components.css" rel="stylesheet" />
+    <link href="~/Content/theme/css/icons.css" rel="stylesheet" />
+    <link href="~/Content/theme/css/pages.css" rel="stylesheet" />
+    <link href="~/Content/theme/css/menu.css" rel="stylesheet" />
+    <link href="~/Content/theme/css/responsive.css" rel="stylesheet" />
+
+    @*@Styles.Render("~/Content/theme")*@
+
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+
+</head>
+
+<body class="">
+
+    <!-- Navigation Bar-->
+    <header id="topnav">
+        <div class="topbar-main">
+            <div class="container">
+
+                <!-- Logo container-->
+                <div class="logo">
+                    <a href="./" class="logo"><i class="md md-equalizer"></i> <span>Online FASTrax</span> </a>
+                </div>
+                <!-- End Logo container-->
+
+                <div class="menu-extras">
+
+                    <ul class="nav navbar-nav navbar-right pull-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle waves-effect waves-light profile" data-toggle="dropdown" aria-expanded="true"><img src="~/Content/theme/images/avatar.jpg" alt="user-img" class="img-circle"> </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="javascript:void(0)"><i class="ti-user m-r-5"></i> Profile</a></li>
+                                <li><a href="javascript:void(0)"><i class="ti-settings m-r-5"></i> Settings</a></li>
+                                <li><a href="/Account/Logout"><i class="ti-power-off m-r-5"></i> Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <!-- End topbar -->
+        <!-- Navbar Start -->
+
+    </header>
+    <!-- End Navigation Bar-->
+
+    <div class="wrapper">
+        <div class="container">
+
+            <!-- Page-Title -->
+            <div class="row">
+                <div class="col-sm-12">
+
+                    <!-- =======================
+                         ===== START PAGE ======
+                         ======================= -->
+
+                    @RenderBody()
+
+                    <!-- =======================
+                     ===== END PAGE ======
+                     ======================= -->
+
+                </div>
+            </div>
+            <!-- Page-Title -->
+            <!-- Footer -->
+            <footer class="footer text-right">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            2016 © AMS.
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- End Footer -->
+
+        </div> <!-- end container -->
+        <div class="notifyjs-corner" style="bottom: 0px; left: 0px;"></div>
+    </div>
+    <!-- End wrapper -->
+
+
+    <script src="~/Content/theme/js/jquery.min.js"></script>
+    <script src="~/Content/theme/js/bootstrap.min.js"></script>
+    <script src="~/Content/theme/js/detect.js"></script>
+    <script src="~/Content/theme/js/fastclick.js"></script>
+    <script src="~/Content/theme/js/jquery.blockUI.js"></script>
+    <script src="~/Content/theme/js/waves.js"></script>
+    <script src="~/Content/theme/js/wow.min.js"></script>
+
+    <script src="~/Content/theme/js/jquery.nicescroll.js"></script>
+    <script src="~/Content/theme/js/jquery.scrollTo.min.js"></script>
+
+    <script src="~/Scripts/plugins/notify.min.js"></script>
+
+    @* custom js *@
+    <script src="~/Content/theme/js/jquery.core.js"></script>
+    <script src="~/Content/theme/js/jquery.app.js"></script>
+    
+    @RenderSection("scripts", required: false)
+
+    <script>
+        $.notify.addStyle("metro", {
+            html:
+                "<div>" +
+                    "<div class='image' data-notify-html='image'/>" +
+                    "<div class='text-wrapper'>" +
+                        "<div class='title' data-notify-html='title'/>" +
+                        "<div class='text' data-notify-html='text'/>" +
+                    "</div>" +
+                "</div>",
+            classes: {
+                default: {
+                    "color": "#fafafa !important",
+                    "background-color": "#3bafda",
+                    "border": "1px solid #3bafda"
+                },
+                white: {
+                    "background-color": "#e6eaed",
+                    "border": "1px solid #ddd"
+                }
+            }
+        });
+        $.Notification.notify('white', 'bottom right', 'Welcome to Online FASTrax', 'Select specific project to start working with online FASTrax');
+
+    </script>
+</body>
+
+</html>

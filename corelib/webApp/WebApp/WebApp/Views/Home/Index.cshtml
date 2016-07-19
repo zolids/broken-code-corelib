@@ -1,21 +1,63 @@
-﻿
-<h2>Fleet Management Web Application</h2>
+﻿<div class="breadcrumb-container row">
+    <ol class="breadcrumb">
+        <li><a href="./">Home</a></li>
+        <li class="active">Dashboard</li>
+    </ol>
+</div>
 
-<ul>
-    
-    @{
-        if(Request.IsAuthenticated){
-            @Html.ActionLink("Logout","Logout","Account") <br/>
-            @Html.ActionLink("Register Account","Register","Account")
-        }        
-    }
+<div class="row">
+    <div class="col-sm-12">
+        <h4 class="page-title">Welcome !</h4>
+    </div>
+</div>
 
-</ul>
+<div class="row">
+
+    <div class="col-sm-6 col-lg-3">
+        <div class="widget-simple-chart text-right card-box">
+            <div class="circliful-chart circliful" data-dimension="90" data-text="35%" data-width="5" data-fontsize="14" data-percent="35" data-fgcolor="#5fbeaa" data-bgcolor="#ebeff2" style="width: 90px;"><span class="circle-text" style="line-height: 90px; font-size: 14px;">35%</span></div>
+            <h3 class="text-success counter">9</h3>
+            <p class="text-muted text-nowrap">Total Fleet</p>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-lg-3">
+        <div class="widget-simple-chart text-right card-box">
+            <div class="circliful-chart circliful" data-dimension="90" data-text="75%" data-width="5" data-fontsize="14" data-percent="75" data-fgcolor="#3bafda" data-bgcolor="#ebeff2" style="width: 90px;"><span class="circle-text" style="line-height: 90px; font-size: 14px;">75%</span></div>
+            <h3 class="text-primary counter">3</h3>
+            <p class="text-muted text-nowrap">Completed Repair</p>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-lg-3">
+        <div class="widget-simple-chart text-right card-box">
+            <div class="circliful-chart circliful" data-dimension="90" data-text="58%" data-width="5" data-fontsize="14" data-percent="58" data-fgcolor="#f76397" data-bgcolor="#ebeff2" style="width: 90px;"><span class="circle-text" style="line-height: 90px; font-size: 14px;">58%</span></div>
+            <h3 class="text-pink"><span class="counter">3</span></h3>
+            <p class="text-muted text-nowrap">For Release</p>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-lg-3">
+        <div class="widget-simple-chart text-right card-box">
+            <div class="circliful-chart circliful" data-dimension="90" data-text="49%" data-width="5" data-fontsize="14" data-percent="49" data-fgcolor="#98a6ad" data-bgcolor="#ebeff2" style="width: 90px;"><span class="circle-text" style="line-height: 90px; font-size: 14px;">49%</span></div>
+            <h3 class="text-inverse counter">3</h3>
+            <p class="text-muted text-nowrap">For Inspections</p>
+        </div>
+    </div>
+
+</div>
 
 @section scripts{
     <script>
         $(window).on('load', function () {
-            
+
+            $('.counter').counterUp({
+                delay: 100,
+                time: 1200
+            });
+
+            $('.circliful-chart').circliful();
+
         })
     </script>
 }

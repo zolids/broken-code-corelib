@@ -1,0 +1,71 @@
+﻿@model IEnumerable<WebApp.Models.Users>
+
+<div class="breadcrumb-container row">
+    <ol class="breadcrumb">
+        <li><a href="./">Home</a></li>
+        <li><a href="#">Settings</a></li>
+        <li class="active">User Management</li>
+        <li class="breadcrumb-action"><a href="/Account/Register?newuser=true" class="btn btn-success waves-effect w-md waves-light m-b-5">Create</a></li>
+    </ol>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card-box table-responsive">
+            <h4 class="m-t-0 header-title"><b>System Users</b></h4>
+            <p class="text-muted font-13 m-b-30">
+                List of system user and their access rights
+            </p>
+            <div class="row">
+                <div class="col-sm-12">
+                    <table id="users-table" class="datatable-custom table table-hover  dataTable no-footer" role="grid" aria-describedby="datatable_info">
+                        <thead>
+                            <tr role="row">
+                                <th>Full Name</th>
+                                <th>Username</th>
+                                <th>Postion</th>
+                                <th>Email</th>
+                                <th>User Type</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                foreach (var item in @Model)
+                                {
+                                    <tr>
+                                        <td id="@item.user_id">@item.name</td>
+                                        <td>@item.username</td>
+                                        <td>@item.position</td>
+                                        <td>@item.email</td>
+                                        <td>@item.usertypedisp</td>
+                                        <td>@item.Status</td>
+                                        <td class="actions">
+                                            <a href="/Account/Register?newuser=false&user_id=@item.user_id" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
+                                            <a href="#" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+
+    <script src="~/Scripts/datatables/datatables.init.js"></script>
+
+    <script>
+
+        $(document).ready(function () {
+           TableManageButtons.init("system_users");
+        });
+
+    </script>
+
+}

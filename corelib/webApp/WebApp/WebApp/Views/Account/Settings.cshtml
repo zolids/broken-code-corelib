@@ -1,0 +1,263 @@
+﻿<div class="breadcrumb-container row">
+    <ol class="breadcrumb">
+        <li><a href="./">Home</a></li>
+        <li><a href="#">Settings</a></li>
+        <li class="active">General Settings</li>
+        <li class="breadcrumb-action"><a href="#" class="btn btn-success waves-effect w-md waves-light m-b-5">Apply Changes</a></li>
+    </ol>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card-box">
+            <div class="row">
+                <form class="form-horizontal group-border-dashed" action="#" novalidate="">
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <ul class="nav nav-tabs tabs" style="width: 100%;">
+                                <li class="active tab" style="width: 25%;">
+                                    <a href="#general" data-toggle="tab" aria-expanded="false" class="active">
+                                        <span class="visible-xs"><i class="fa fa-home"></i></span>
+                                        <span class="hidden-xs">General</span>
+                                    </a>
+                                </li>
+                                <li class="tab" style="width: 25%;">
+                                    <a href="#security" data-toggle="tab" aria-expanded="false">
+                                        <span class="visible-xs"><i class="fa fa-cog"></i></span>
+                                        <span class="hidden-xs">Security</span>
+                                    </a>
+                                </li>
+                                <li class="tab" style="width: 25%;">
+                                    <a href="#email" data-toggle="tab" aria-expanded="true">
+                                        <span class="visible-xs"><i class="fa fa-envelope-o"></i></span>
+                                        <span class="hidden-xs">Email Settings</span>
+                                    </a>
+                                </li>
+                                <div class="indicator" style="right: 680px; left: 0px;"></div>
+                            </ul>
+                            <div class="tab-content">
+
+                                <div class="tab-pane active" id="general">
+                                    <h4><b>System Options</b></h4>
+                                    <p class="text-muted font-13 m-b-30">
+                                        Basic information to be shown around the site. The time format and zones values affect how the clients see the dates on their files lists.
+                                    </p>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">Show Picklist</label>
+                                        <div class="col-sm-6">
+                                            <div class="checkbox checkbox-primary">
+                                                <input id="allow_editing_picklist" name="allow_editing_picklist" type="checkbox" value="1">
+                                                <label for="allow_editing_picklist">
+                                                </label>
+                                            </div>
+                                            <span class="help-block"><small>Allow system user to ADD and UPDATE picklist from portal</small></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">Timezone</label>
+                                        <div class="col-sm-3">
+                                            @Html.Partial("Timezone")
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">Time format</label>
+                                        <div class="col-sm-3">
+                                            <input type="text" class="form-control" required="" placeholder="d/m/Y" data-parsley-id="34" name="timeformat">
+                                            <span class="help-block"><small>For example, d/m/Y h:i:s will result in something like 19/07/2016 10:17:50. For the full list of available values, visit <a href="#">this page.</a></small></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane" id="security" style="display: none;">
+                                    
+                                    <h5><b>Security Option</b></h5>
+                                    <p class="text-muted font-13 m-b-30">
+                                        Be careful when changing this options. They could affect not only the system but the whole server it is installed on.
+                                        Important: Separate allowed file types with a comma. You can navigate the box with the left/right arrows, backspace and delete keys.
+                                    </p>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">Limit file types uploading to</label>
+                                        <div class="col-sm-3">
+                                            <select class="form-control" name="file_types_limit_to">
+                                                <option>No one</option>
+                                                <option>Everyone</option>
+                                                <option>User account only</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label"></label>
+                                        <div class="col-sm-3">
+                                            <div class="tags-default">
+                                                <input type="text" value="pdf,.xlt,.xls,.xml,.xml,docx,.docm,.dotx,.dotm,.docb,jpeg,png,gif" data-role="tagsinput" placeholder="add tags" style="display: none;" name="allowed_file_types">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr />
+                                    <h5><b>Password</b></h5>
+                                    <p class="text-muted font-13 m-b-30">
+                                        When setting up a password for an account, requiere at least:
+                                    </p>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">1 uppercase character</label>
+                                        <div class="col-sm-3">
+                                            <div class="checkbox checkbox-primary">
+
+                                                <input id="pass_require_upper" name="pass_require_upper" type="checkbox" value="1">
+                                                <label for="pass_require_upper">
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">1 lowercase character</label>
+                                        <div class="col-sm-3">
+                                            <div class="checkbox checkbox-primary">
+                                                <input id="pass_require_lower" name="pass_require_lower" type="checkbox" value="1">
+                                                <label for="pass_require_lower">
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">1 number</label>
+                                        <div class="col-sm-3">
+                                            <div class="checkbox checkbox-primary">
+
+                                                <input id="pass_require_number" name="pass_require_number" type="checkbox" value="1">
+                                                <label for="pass_require_number">
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">1 special character</label>
+                                        <div class="col-sm-3">
+                                            <div class="checkbox checkbox-primary">
+
+                                                <input id="pass_require_special" name="pass_require_special" type="checkbox" value="1">
+                                                <label for="pass_require_special">
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="tab-pane" id="email" style="display: none;">
+                                    
+                                    <h5><b>Email Configuration</b></h5>
+                                    <p class="text-muted font-13 m-b-30">
+                                        Configure Setup
+                                    </p>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">Enable Email Notification</label>
+                                        <div class="col-sm-3">
+                                            <div class="checkbox checkbox-primary">
+                                                <input id="allow_sending_email" name="allow_sending_email" type="checkbox" value="1">
+                                                <label for="allow_sending_email">
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr/>
+                                    <h5><b>Send Copies</b></h5>
+                                    <p class="text-muted font-13 m-b-30">
+                                        Define here who will receive copies of this emails. These are sent as BCC so neither recipient will see the other addresses.
+                                    </p>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">Also to this addresses</label>
+                                        <div class="col-sm-3">
+                                            <div class="tags-default">
+                                                <input type="text" value="" data-role="tagsinput" placeholder="add tags" style="display: none;" name="allowed_file_types">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr />
+                                    <h5><b>E-mail sending options</b></h5>
+                                    <p class="text-muted font-13 m-b-30">
+                                        Here you can select which mail system will be used when sending the notifications. If you have a valid e-mail account, SMTP is the recommended option.
+                                    </p>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">Mailer</label>
+                                        <div class="col-sm-3">
+                                            <select class="form-control" name="mail_system_use">
+                                                <option value=""></option>
+                                                <option value="SMTP">SMTP</option>
+                                                <option value="GMAIL">GMAIL</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <hr />
+                                    <h5><b>SMTP & Gmail shared options</b></h5>
+                                    <p class="text-muted font-13 m-b-30">
+                                        You need to include your username (usually your e-mail address) and password if you have selected either SMTP or Gmail as your mailer.
+                                    </p>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">Username</label>
+                                        <div class="col-sm-3">
+                                            <input type="text" class="form-control" placeholder="" name="mail_smtp_user" value="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">Password</label>
+                                        <div class="col-sm-3">
+                                            <input type="text" class="form-control" placeholder="" name="mail_smtp_pass" value="">
+                                        </div>
+                                    </div>
+
+                                    <hr />
+                                    <h5><b>SMTP options</b></h5>
+                                    <p class="text-muted font-13 m-b-30">
+                                        If you selected SMTP as your mailer, please complete these options.
+                                    </p>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">Host</label>
+                                        <div class="col-sm-3">
+                                            <input type="text" class="form-control" placeholder="" name="mail_smtp_host" value="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">Port</label>
+                                        <div class="col-sm-3">
+                                            <input type="text" class="form-control" placeholder="" name="mail_smtp_port" value="">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">Auth</label>
+                                        <div class="col-sm-3">
+                                            <select class="form-control" name="mail_smtp_auth">
+                                                <option value="None">None</option>
+                                                <option value="SSL">SSL</option>
+                                                <option value="TLS">TLS</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

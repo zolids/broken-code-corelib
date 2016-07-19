@@ -1,150 +1,259 @@
-﻿@model WebApp.Models.Users
+﻿@model WebApp.Models.user_models
 
 @{
-    ViewBag.Title = "Register";
+    var user = ((@Model.users != null) ? @Model.users.SingleOrDefault() : null);
 }
+
 <div class="breadcrumb-container row">
     <ol class="breadcrumb">
         <li><a href="./">Home</a></li>
-        <li><a href="#">Settings</a></li>
-        <li class="active">Registration</li>
-        <li class="breadcrumb-action"><button type="button" class="btn btn-success waves-effect w-md waves-light m-b-5">Create</button></li>
+        <li><a href="/Account/SystemUsers">User Management</a></li>
+        <li class="active">@(Model.user_type == true ? "Creating new system user" : "Edit user")</li>
+        <li class="breadcrumb-action"><a href="#" class="btn btn-default waves-effect waves-light m-b-5">Discard</a></li>
+        <li class="breadcrumb-action"><a href="#" class="btn btn-success waves-effect waves-light m-b-5">Apply Changes</a></li>
     </ol>
 </div>
 
 <div class="row">
 
-    <div class="col-sm-12">
-        <div class="card-box">
-            <div class="row">
-                <div class="col-lg-6">
-                    <h5><b>User Registration</b></h5>
-                    <p class="text-muted font-13 m-b-30">
-                        Add new system user and access right
-                    </p>
-                    <form action="/Account/Register" data-parsley-validate="" method="post" novalidate="novalidate" class="form-horizontal group-border-dashed">
+        <div class="col-sm-12">
+            <form action="/Account/Register" data-parsley-validate="" method="post" novalidate="novalidate" class="form-horizontal group-border-dashed">
 
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">Full Name *</label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" required="" placeholder="Full name" data-parsley-id="44" name="name">
-                            </div>
-                        </div>
+                <div class="card-box">
+                    <div class="row">
+                        <div class="col-lg-6">
 
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">Username *</label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" required="" placeholder="Username" data-parsley-id="34" name="username">
-                            </div>
-                        </div>
+                            <h4><b>User Registration</b></h4>
+                            <p class="text-muted font-13 m-b-30">
+                                System user and access right
+                            </p>
 
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">Password *</label>
-                            <div class="col-sm-5">
-                                <input type="password" id="pass2" class="form-control" required="" placeholder="Password" data-parsley-id="36" name="password">
-                            </div>
-                            <div class="col-sm-3">
-                                <input type="password" class="form-control" required="" data-parsley-equalto="#pass2" placeholder="Re-Type Password" data-parsley-id="38" name="password">
-                            </div>
-                        </div>
+                            @{
+                                var name = ((user != null) ? user.name : string.Empty);
+                                var username = ((user != null) ? user.username : string.Empty);
+                                var password = ((user != null) ? user.password : string.Empty);
+                                var position = ((user != null) ? user.position : string.Empty);
+                                var email = ((user != null) ? user.email : string.Empty);
+                                var usertype = ((user != null) ? user.usertype : 0);
+                                var Status = ((user != null) ? user.Status : string.Empty);
+                                var rfqApprover = ((user != null) ? user.rfqApprover : 0);
+                                var email_recipient = ((user != null) ? user.email_recipient : 0);
+                            }
 
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">Position</label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" required="" placeholder="Position" data-parsley-id="42" name="position">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">E-Mail</label>
-                            <div class="col-sm-8">
-                                <input type="email" class="form-control" required="" parsley-type="email" placeholder="Enter a valid e-mail" data-parsley-id="40" name="email">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">User Type *</label>
-                            <div class="col-sm-8">
-                                <select class="form-control" id="usertype" name="usertype" required>
-                                    <option value="2" selected="">AMS Administrator</option>
-                                    <option value="4">Super Administrator</option>
-                                    <option value="3">GSA</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">Account Status</label>
-                            <div class="col-sm-8">
-                                <select class="form-control" id="Status" name="Status" required>
-                                    <option value="Active" selected="">Active</option>
-                                    <option value="Inactive">Inactive</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">RFQ Approver</label>
-                            <div class="col-sm-8">
-                                <div class="checkbox checkbox-primary">
-                                    <input id="rfqApprover" name="rfqApprover" type="checkbox" value="1">
-                                    <label for="rfqApprover">
-                                    </label>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Full Name *</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" required="" placeholder="Full name" data-parsley-id="44" name="name" value="@name">
                                 </div>
                             </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Username *</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" required="" placeholder="Username" data-parsley-id="34" name="username">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Password *</label>
+                                <div class="col-sm-5">
+                                    <input type="password" id="pass2" class="form-control" required="" placeholder="Password" data-parsley-id="36" name="password" value="@password">
+                                </div>
+                                <div class="col-sm-3">
+                                    <input type="password" class="form-control" required="" data-parsley-equalto="#pass2" placeholder="Re-Type Password" data-parsley-id="38" name="password" value="@password">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Position</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" required="" placeholder="Position" data-parsley-id="42" name="position" value="@position">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">E-Mail</label>
+                                <div class="col-sm-8">
+                                    <input type="email" class="form-control" required="" parsley-type="email" placeholder="Enter a valid e-mail" data-parsley-id="40" name="email" value="@email">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">User Type *</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control" id="usertype" name="usertype" required>
+                                        <option value="2" @(usertype == 2 ? "selected" : "")>Administrator</option>
+                                        <option value="4" @(usertype == 4 ? "selected" : "")>Super User</option>
+                                        <option value="3" @(usertype == 3 ? "selected" : "")>Local User</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Projects Involve</label>
+                                <div class="col-sm-8">
+                                    <select id="project_involved" class="select2 select2-multiple" multiple="multiple" data-placeholder="Choose ..." required="">
+                                        <optgroup label="Projects">
+                                            @{
+                                                var projects = ((@Model.project_involve != null) ? @Model.project_involve : null);
+                                                foreach (var item in projects)
+                                                {
+                                                    var selected = string.Empty;
+                                                    foreach (var prj in ViewBag.Projects)
+                                                    {
+                                                        selected = ((@item.name.ToString().Trim() == prj.ToString().Trim()) ? "selected" : "");
+                                                        if (!string.IsNullOrEmpty(selected))
+                                                        {
+                                                            break;
+                                                        }
+                                                    }
+                                                    <option id="@item.id" value="@item.name" @selected>@item.name</option>
+                                                }
+                                            }
+                                        </optgroup>
+                                    </select>
+                                    <span class="help-block"><small>Selected project will be accessible by this user</small></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Account Status</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control" id="Status" name="Status" required>
+                                        <option value="Active" selected="">Active</option>
+                                        <option value="Inactive">Inactive</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">RFQ Approver</label>
+                                <div class="col-sm-8">
+                                    <div class="checkbox checkbox-primary">
+                                        @{ var isChecked = ""; if (rfqApprover == 1) { isChecked = "checked"; } }
+                                        <input id="rfqApprover" name="rfqApprover" type="checkbox" value="1" @isChecked>
+                                        <label for="rfqApprover">
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Email Recipient</label>
+                                <div class="col-sm-8">
+                                    <div class="checkbox checkbox-primary">
+                                        @{ var isChecked2 = ""; if (email_recipient == 1) { isChecked2 = "checked"; } }
+                                        <input id="email_recipient" name="email_recipient" type="checkbox" value="1" @isChecked2>
+                                        <label for="email_recipient">
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
+                    </div>
+                </div>
+                @* access rights *@
 
-                    </form>
-                </div>
-            </div>
-        </div>
-        @* access rights *@
-        <div class="row" style=" margin-left: 0px !important; margin-right: 0px !important;">
-            <ul class="nav nav-tabs tabs" style="width: 100%;">
-                <li class="tab active" style="width: 25%;">
-                    <a href="#home-12" data-toggle="tab" aria-expanded="true" class="active">
-                        <span class="visible-xs"><i class="fa fa-home"></i></span>
-                        <span class="hidden-xs">Pages</span>
-                    </a>
-                </li>
-                <li class="tab" style="width: 25%;">
-                    <a href="#profile-12" data-toggle="tab" aria-expanded="false" class="">
-                        <span class="visible-xs"><i class="fa fa-user"></i></span>
-                        <span class="hidden-xs">Reports</span>
-                    </a>
-                </li>
-               
-                <div class="indicator" style="right: 659px; left: 0px;"></div>
-            </ul>
-            <div class="tab-content">
-                <div class="tab-pane active" id="home-12" style="display: block;">
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
-                    <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</p>
-                </div>
-                <div class="tab-pane" id="profile-12" style="display: none;">
-                    <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
-                </div>
-                
-            </div>
-        </div>
+                @{
+                    if (Model.user_type) // new user
+                    {
+                        @Html.Partial("PageAccess", Model)
+                    }
+                    else
+                    {
 
-        <div class="row">
-            <div class="form-group text-center m-b-0">
-                <button class="btn btn-primary waves-effect waves-light" type="submit" id="submit-registration">
-                    Save Changes
-                </button>
-                <button type="reset" class="btn btn-default waves-effect waves-light m-l-5">
-                    Cancel
-                </button>
-            </div>
-        </div>
+                        // loading user page data when edit mode
+                        @Html.Partial("PageAccessEdit", Model)
+
+                    }
+                }
+        </form>
     </div>
-
 </div>
 
 @section Scripts {
 
     @Scripts.Render("~/bundles/jqueryval")
+
+    <script>
+
+        $(document).ready(function () {
+            $(".select2").select2();
+
+            // get select2 comma sept values
+            var selMulti = $.map($("#project_involved option:selected"), function (el, i) {
+                return $(el).text();
+            });
+
+            selMulti.join(", ");
+
+        })
+
+        $('#allow_view_page').on('click',function (e) {
+            $(this).closest('table').find('.access-view-page').prop('checked', this.checked);
+        });
+
+        $('#allow_download_page').on('click', function (e) {
+            $(this).closest('table').find('.access-download-page').prop('checked', this.checked);
+        });
+
+        $('#allow_upload_page').on('click', function (e) {
+            $(this).closest('table').find('.access-upload-page').prop('checked', this.checked);
+        });
+
+        $('#allow_view_report').on('click', function (e) {
+            $(this).closest('table').find('.access-view-report').prop('checked', this.checked);
+        });
+
+        $('#allow_download_report').on('click', function (e) {
+            $(this).closest('table').find('.access-download-report').prop('checked', this.checked);
+        });
+
+        $('#allow_upload_report').on('click', function (e) {
+            $(this).closest('table').find('.access-upload-report').prop('checked', this.checked);
+        });
+
+        $('.access-view-page').on('click', function () {
+            if (!$(this).prop('checked')) {
+                $('#allow_view_page').prop('checked', false);
+            }
+        })
+        $('.access-download-page').on('click', function () {
+            if (!$(this).prop('checked')) {
+                $('#allow_download_page').prop('checked', false);
+            }
+        })
+        $('.access-upload-page').on('click', function () {
+            if (!$(this).prop('checked')) {
+                $('#allow_upload_page').prop('checked', false);
+            }
+        })
+
+        $('.access-view-report').on('click', function () {
+            if (!$(this).prop('checked')) {
+                $('#allow_view_report').prop('checked', false);
+            } else
+                this.checkallCheckboxes($(this));
+        })
+        $('.access-download-report').on('click', function () {
+            if (!$(this).prop('checked')) {
+                $('#allow_download_report').prop('checked', false);
+            }
+        })
+        $('.access-upload-report').on('click', function () {
+            if (!$(this).prop('checked')) {
+                $('#allow_upload_report').prop('checked', false);
+            }
+        })
+
+        var checkallCheckboxes = function (element, parentEl) {
+            var allchecked = true;
+            $.each(element, function (e, l) {
+                console.log($(l).prop('checked'));
+            })
+        }
+
+    </script>
 
 }

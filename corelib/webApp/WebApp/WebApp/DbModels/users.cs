@@ -54,6 +54,9 @@ namespace WebApp.Models
         [Display(Name = "Status")]
         public string Status { get; set; }
 
+        [Display(Name = "Email Recipient")]
+        public int? email_recipient { get; set; }
+
         [NotMapped]
         public bool rfqApproverBool
         {
@@ -66,6 +69,8 @@ namespace WebApp.Models
                 rfqApprover = value ? 1 : 0;
             }
         }
+
+        public string accessible_page { get; set; }
 
     }
 
@@ -80,4 +85,59 @@ namespace WebApp.Models
         [Column(Order = 0)]
         public long gus_site_id { get; set; }
     }
+
+    [Table("wp_pages")]
+    public class wp_pages
+    {
+        [Key]
+        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
+        public long PageID { get; set; }
+        public string Page { get; set; }
+        public string SubPage { get; set; }
+        public byte? View { get; set; }
+        public byte? Download { get; set; }
+        public byte? Upload { get; set; }
+        public int? page_type { get; set; }
+    }
+
+    [Table("gsa_user_pages")]
+    public class gsa_user_pages
+    {
+        [Key]
+        [Column(Order = 0)]
+        public long user_id { get; set; }
+
+        [Key]
+        [Column(Order = 1)]
+        public long? PageID { get; set; }
+
+        public byte? View { get; set; }
+
+        public byte? Download { get; set; }
+
+        public byte Upload { get; set; }
+
+    }
+
+    public class user_pages_available
+    {
+      
+        public long user_id { get; set; }
+        
+        public long? PageID { get; set; }
+
+        public byte? View { get; set; }
+
+        public byte? Download { get; set; }
+
+        public byte Upload { get; set; }
+
+        public string Page { get; set; }
+
+        public string SubPage { get; set; }
+
+        public int page_type { get; set; }
+
+    }
+
 }

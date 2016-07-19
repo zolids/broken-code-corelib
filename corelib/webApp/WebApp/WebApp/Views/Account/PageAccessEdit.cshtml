@@ -1,0 +1,212 @@
+﻿@model WebApp.Models.user_models
+@{
+    var pages = ((@Model.user_pages != null) ? @Model.user_pages : null);
+}
+
+<div class="row" style=" margin-left: 0px !important; margin-right: 0px !important;">
+
+    <ul class="nav nav-tabs tabs" style="width: 100%;">
+
+        <li class="tab active" style="width: 25%;">
+            <a href="#home-12" data-toggle="tab" aria-expanded="true" class="active">
+                <span class="visible-xs"><i class="fa fa-home"></i></span>
+                <span class="hidden-xs">Pages</span>
+            </a>
+        </li>
+        <li class="tab" style="width: 25%;">
+            <a href="#profile-12" data-toggle="tab" aria-expanded="false" class="">
+                <span class="visible-xs"><i class="fa fa-user"></i></span>
+                <span class="hidden-xs">Reports</span>
+            </a>
+        </li>
+
+        <div class="indicator" style="right: 659px; left: 0px;"></div>
+
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane active" id="home-12" style="display: block;">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card-box table-responsive">
+                        <h4 class="m-t-0 header-title"><b>Access Rights</b></h4>
+                        <p class="text-muted font-13 m-b-30">
+                            Allow viewing of pages
+                        </p>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <table id="access-table" class="datatable-custom table table-hover  dataTable no-footer" role="grid" aria-describedby="datatable_info">
+                                    <thead>
+                                        <tr role="row">
+                                            <th>Page</th>
+                                            <th>Sub Page</th>
+                                            <th>
+                                                <div class="checkbox checkbox-primary">
+                                                    <input id="allow_view_page" name="" type="checkbox" value="1">
+                                                    <label for="allow_view_page"><b>Allow Access</b></label>
+                                                </div>
+                                            </th>
+                                            <th>
+                                                <div class="checkbox checkbox-primary">
+                                                    <input id="allow_download_page" name="" type="checkbox" value="1">
+                                                    <label for="allow_download_page"><b>Allow Download</b></label>
+                                                </div>
+                                            </th>
+                                            <th>
+                                                <div class="checkbox checkbox-primary">
+                                                    <input id="allow_upload_page" name="" type="checkbox" value="1">
+                                                    <label for="allow_upload_page"><b>Allow Upload</b></label>
+                                                </div>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @{
+
+                                            foreach (var item in pages)
+                                            {
+                                                if (item.page_type == 1)
+                                                {
+                                                    <tr>
+                                                        <td id="@item.PageID">@item.Page</td>
+                                                        <td id="@item.PageID">@item.SubPage</td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <div class="checkbox checkbox-primary">
+                                                                    @{
+                                                                        var isChecked = ""; if (@item.View == 1) { isChecked = "checked"; }
+                                                                        <input id="" name="checkbox-@item.PageID-1" type="checkbox" value="1" @isChecked class="access-view-page">
+                                                                        <label for=""></label>
+                                                                    }
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <div class="checkbox checkbox-primary">
+                                                                    @{
+                                                                        var isChecked2 = ""; if (@item.Download == 1) { isChecked2 = "checked"; }
+                                                                        <input id="" name="checkbox-@item.PageID-2" type="checkbox" value="1" @isChecked2 class="access-download-page">
+                                                                        <label for=""></label>
+                                                                    }
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <div class="checkbox checkbox-primary">
+                                                                    @{
+                                                                        var isChecked3 = ""; if (@item.Upload == 1) { isChecked3 = "checked"; }
+                                                                        <input id="" name="checkbox-@item.PageID-3" type="checkbox" value="1" @isChecked3 class="access-upload-page">
+                                                                        <label for=""></label>
+                                                                    }
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            }
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane" id="profile-12" style="display: none;">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card-box table-responsive">
+                        <h4 class="m-t-0 header-title"><b>Access Rights</b></h4>
+                        <p class="text-muted font-13 m-b-30">
+                            Allow viewing of reports
+                        </p>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <table id="access-table" class="datatable-custom table table-hover  dataTable no-footer" role="grid" aria-describedby="datatable_info">
+                                    <thead>
+                                        <tr role="row">
+                                            <th>Page</th>
+                                            <th>Sub Page</th>
+                                            <th>
+                                                <div class="checkbox checkbox-primary">
+                                                    <input id="allow_view_report" name="" type="checkbox" value="1">
+                                                    <label for="allow_view_report"><b>Allow Access</b></label>
+                                                </div>
+                                            </th>
+                                            <th>
+                                                <div class="checkbox checkbox-primary">
+                                                    <input id="allow_download_report" name="" type="checkbox" value="1">
+                                                    <label for="allow_download_report"><b>Allow Download</b></label>
+                                                </div>
+                                            </th>
+                                            <th>
+                                                <div class="checkbox checkbox-primary">
+                                                    <input id="allow_upload_report" name="" type="checkbox" value="1">
+                                                    <label for="allow_upload_report"><b>Allow Upload</b></label>
+                                                </div>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @{
+
+                                            foreach (var item in pages)
+                                            {
+                                                if (item.page_type == 2)
+                                                {
+                                                    <tr>
+                                                        <td id="@item.PageID">@item.Page</td>
+                                                        <td id="@item.PageID">@item.SubPage</td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <div class="checkbox checkbox-primary">
+                                                                    @{
+                                                                        var isChecked = ""; if (@item.View == 1) { isChecked = "checked"; }
+                                                                        <input id="" name="checkbox-@item.PageID-1" type="checkbox" value="1" @isChecked class="access-view-report">
+                                                                        <label for=""></label>
+                                                                    }
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <div class="checkbox checkbox-primary">
+                                                                    @{
+                                                                        var isChecked2 = ""; if (@item.Download == 1) { isChecked2 = "checked"; }
+                                                                        <input id="" name="checkbox-@item.PageID-2" type="checkbox" value="1" @isChecked2 class="access-download-report">
+                                                                        <label for=""></label>
+                                                                    }
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <div class="checkbox checkbox-primary">
+                                                                    @{
+                                                                        var isChecked3 = ""; if (@item.Upload == 1) { isChecked3 = "checked"; }
+                                                                        <input id="" name="checkbox-@item.PageID-3" type="checkbox" value="1" @isChecked3 class="access-upload-report">
+                                                                        <label for=""></label>
+                                                                    }
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            }
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

@@ -971,23 +971,23 @@ table.focus-on tbody tr.focused td {
   text-align: left;
 }
 /* Data table */
-#datatable-editable .actions a {
+.datatable-custom .actions a {
   padding: 5px;
 }
-#datatable-editable .form-control {
+.datatable-custom .form-control {
   background-color: #ffffff;
   width: 100%;
 }
-#datatable-editable .fa-trash-o {
+.datatable-custom .fa-trash-o {
   color: #ef5350;
 }
-#datatable-editable .fa-times {
+.datatable-custom .fa-times {
   color: #ef5350;
 }
-#datatable-editable .fa-pencil {
+.datatable-custom .fa-pencil {
   color: #29b6f6;
 }
-#datatable-editable .fa-save {
+.datatable-custom .fa-save {
   color: #33b86c;
 }
 #datatable td {

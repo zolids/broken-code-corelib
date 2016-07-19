@@ -16,5 +16,12 @@ namespace WebApp.Models
         }
 
         public DbSet<Users> Users { get; set; }
+
+        public DbSet<wp_pages> WPPages { get; set; }
+
+        public DbSet<gsa_user_pages> gsa_user_pages { get; set; }
+
+        public DbSet<tbl_projects> projects { get; set; }
+
     }
 }
