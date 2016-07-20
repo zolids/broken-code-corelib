@@ -338,6 +338,8 @@
     <Content Include="Views\Account\Timezone.cshtml" />
     <Content Include="Views\Home\DefaultViewport.cshtml" />
     <Content Include="Views\Shared\_Default.cshtml" />
+    <Content Include="Views\Shared\404Page.cshtml" />
+    <Content Include="Views\Home\ErrorPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

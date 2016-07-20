@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using System.Web.Security;
 using WebApp.Models;
 using WebApp.helpers;
+using Newtonsoft.Json;
 
 namespace WebApp.Controllers
 {
@@ -14,6 +15,9 @@ namespace WebApp.Controllers
 
         private UserModule _userAccount;
         private user_models _userModels;
+        private Helper _helpers;
+
+        char[] delimiterChars = { ',' };
 
         [HttpGet]
         public ActionResult Login(string returnUrl)
@@ -25,48 +29,99 @@ namespace WebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Login(Users user, string ReturnUrl = "")
         {
+            using (_userModels = new user_models())
             using (_userAccount = new UserModule())
             {
+                var _users = _userAccount.ValidateUser(user.username, user.password);
 
-                if (ModelState.IsValid && _userAccount.ValidateUser(user.username, user.password))
+                if (_users != null)
                 {
-                    FormsAuthentication.SetAuthCookie(user.username, user.RememberMe);
-
-                    if (user.RememberMe)
+                    if (ModelState.IsValid && _users != null)
                     {
-                        Response.Cookies["username"].Expires = DateTime.Now.AddDays(30);
-                        Response.Cookies["password"].Expires = DateTime.Now.AddDays(30);
-                        Response.Cookies["RememberMe"].Expires = DateTime.Now.AddDays(30);
+                        FormsAuthentication.SetAuthCookie(user.username, user.RememberMe);
 
-                        Response.Cookies["username"].Value = user.username;
-                        Response.Cookies["password"].Value = user.password;
-                        Response.Cookies["RememberMe"].Value = "true";
+                        this.setSystemCookies(_users, user.RememberMe);
+
                     }
-                    else
-                    {
-                        Response.Cookies["username"].Expires = DateTime.Now.AddDays(-1);
-                        Response.Cookies["password"].Expires = DateTime.Now.AddDays(-1);
-                        Response.Cookies["RememberMe"].Expires = DateTime.Now.AddDays(-1);
-
-                        Response.Cookies["username"].Value = null;
-                        Response.Cookies["password"].Value = null;
-                        Response.Cookies["RememberMe"].Value = null;
-                    }
-
-                    return RedirectToAction("DefaultViewport", "Home");
-
                 }
-
+                else ModelState.AddModelError("", "Invalid Username or Password");
             }
 
             return View();
         }
 
+        public void setSystemCookies(Users _users, bool rememberLogin = false)
+        {
+            using (_helpers = new Helper())
+            {
+                if (_users != null)
+                {
+
+                    _users.RememberMe = rememberLogin;
+                    _users.password = _helpers.DecryptString(_users.password);
+
+                    _userModels.users           = _users;
+                    _userModels.ip              = Server.HtmlEncode(Request.UserHostAddress);
+                    _userModels.host            = Server.HtmlEncode(Request.UserHostName);
+                    _userModels.system_config   = _userAccount.SystemConfig();
+
+                    if (!string.IsNullOrEmpty(_users.accessible_page))
+                        _userModels.module = _users.accessible_page.Split(delimiterChars);
+
+                    try
+                    {
+                        _userModels.host = System.Net.Dns.GetHostEntry(Request.UserHostAddress).HostName;
+                    }
+                    catch (Exception) { }
+
+                    string userIfo = JsonConvert.SerializeObject(_userModels, Formatting.None, new JsonSerializerSettings()
+                    {
+                        ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+                    });
+
+                    _userModels.user_pages = _userAccount.getUserPages(Convert.ToInt32(_users.user_id));
+
+                    Response.Cookies["userInfo"].Expires = DateTime.Now.AddDays(30);
+                    Response.Cookies["userInfo"].Value = _helpers.EncryptString(userIfo);
+
+                    Response.Redirect("/Home/DefaultViewport");
+
+                }
+            }
+            
+        }
+
         [Authorize]
         public ActionResult Logout()
         {
-            FormsAuthentication.SignOut();
-            return RedirectToAction("Login", "Account");
+            using (_helpers = new Helper())
+            {
+                string session = _helpers.DecryptString(Request.Cookies["userInfo"].Value);
+                var uInfo = _helpers.UserData(session).users;
+
+                if (uInfo.RememberMe)
+                {
+                    Response.Cookies["username"].Value   = uInfo.username;
+                    Response.Cookies["password"].Value   = uInfo.password;
+                    Response.Cookies["RememberMe"].Value = uInfo.RememberMe.ToString();
+                }
+                else
+                {
+                    Response.Cookies["username"].Expires = DateTime.Now.AddDays(-1);
+                    Response.Cookies["password"].Expires = DateTime.Now.AddDays(-1);
+                    Response.Cookies["RememberMe"].Expires = DateTime.Now.AddDays(-1);
+
+                    Response.Cookies["username"].Value = null;
+                    Response.Cookies["password"].Value = null;
+                    Response.Cookies["RememberMe"].Value = null;
+                }
+
+                Response.Cookies["userInfo"].Expires = DateTime.Now.AddDays(-1);
+                
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+
         }
 
         [HttpGet]
@@ -74,13 +129,13 @@ namespace WebApp.Controllers
         public ActionResult Register(Users user, bool newuser = true, int user_id = 0)
         {
 
-            char[] delimiterChars = {','};
-
             using (_userModels = new user_models())
             using (_userAccount = new UserModule())
             {
-                
-                _userModels.user_type = newuser;
+
+                ViewBag.Projects = new string[0];
+
+                _userModels.new_user = newuser;
                 _userModels.project_involve = _userAccount.getProjectList();
 
                 if (newuser){
@@ -91,11 +146,11 @@ namespace WebApp.Controllers
                 }
                 else
                 {
-                    _userModels.users = _userAccount.getUser(user_id);
+                    _userModels.users = _userAccount.getUser(user_id).SingleOrDefault();
 
-                    if (!string.IsNullOrEmpty(_userModels.users.SingleOrDefault().accessible_page))
+                    if (!string.IsNullOrEmpty(_userModels.users.accessible_page))
                     {
-                        string st = _userModels.users.SingleOrDefault().accessible_page.ToString();
+                        string st = _userModels.users.accessible_page.ToString();
                         ViewBag.Projects = st.Split(delimiterChars);
                     }
                     

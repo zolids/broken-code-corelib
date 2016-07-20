@@ -1,14 +1,14 @@
 ﻿@model WebApp.Models.user_models
 
 @{
-    var user = ((@Model.users != null) ? @Model.users.SingleOrDefault() : null);
+    var user = ((@Model.users != null) ? @Model.users : null);
 }
 
 <div class="breadcrumb-container row">
     <ol class="breadcrumb">
         <li><a href="./">Home</a></li>
         <li><a href="/Account/SystemUsers">User Management</a></li>
-        <li class="active">@(Model.user_type == true ? "Creating new system user" : "Edit user")</li>
+        <li class="active">@(Model.new_user == true ? "Creating new system user" : "Edit user")</li>
         <li class="breadcrumb-action"><a href="#" class="btn btn-default waves-effect waves-light m-b-5">Discard</a></li>
         <li class="breadcrumb-action"><a href="#" class="btn btn-success waves-effect waves-light m-b-5">Apply Changes</a></li>
     </ol>
@@ -156,7 +156,7 @@
                 @* access rights *@
 
                 @{
-                    if (Model.user_type) // new user
+                    if (Model.new_user) // new user
                     {
                         @Html.Partial("PageAccess", Model)
                     }

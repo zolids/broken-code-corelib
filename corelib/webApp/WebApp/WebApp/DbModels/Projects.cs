@@ -15,4 +15,18 @@ namespace WebApp.Models
         public int id { get; set; }
         public string name { get; set; }
     }
+
+    [Table("tbl_options")]
+
+    public class tbl_config
+    {
+        [Key]
+        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
+        public int id { get; set; }
+
+        public string name { get; set; }
+
+        public string value { get; set; }
+    }
+
 }

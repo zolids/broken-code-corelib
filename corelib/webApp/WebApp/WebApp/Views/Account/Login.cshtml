@@ -16,8 +16,16 @@
         <a href="index.html" class="logo logo-lg"><i class="fa fa-bars"></i> <span>Online FASTrax</span> </a>
     </div>
 
-    <form class="form-horizontal m-t-20" action="/Account/Login?" method="post" novalidate="novalidate">
-        @Html.AntiForgeryToken() @Html.ValidationSummary(true)
+    @if (ViewData.ModelState[""] != null && ViewData.ModelState[""].Errors.Count() > 0)
+    { 
+        <div class="alert alert-danger alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            @Html.ValidationSummary(true)
+        </div>
+    }
+ 
+    <form class="form-horizontal m-t-20" action="/Account/Login?" method="post" novalidate data-parsley-validate>
+        @Html.AntiForgeryToken()
         <div class="form-group">
             <div class="col-xs-12">
                 <input type="text" data-val="true" data-val-required="Username Required" id="usernameInput" name="username" class="form-control" placeholder="Username" required autofocus value="@username">

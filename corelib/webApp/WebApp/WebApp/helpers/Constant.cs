@@ -7,6 +7,8 @@ namespace WebApp.helpers
 {
     public class Constant
     {
+        public const string HASHKEY          = "ams-tmp-web";
+        
         // Page Titles
         public const string DASHBOARD        = "Dashboard";
         public const string DEFAULT_PAGE     = "Access FASTrax";

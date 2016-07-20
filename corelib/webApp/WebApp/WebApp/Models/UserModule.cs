@@ -9,7 +9,7 @@ namespace WebApp.Models
 {
     public class user_models : Helper, IDisposable{
 
-        public IEnumerable<Users> users { get; set; }
+        public Users users { get; set; }
 
         public IEnumerable<wp_pages> pages { get; set; }
 
@@ -17,26 +17,54 @@ namespace WebApp.Models
 
         public IEnumerable<tbl_projects> project_involve { get; set; }
 
-        public bool user_type { get; set; }
+        public Dictionary<string, string> system_config { get; set; }
+
+        public string[] module { get; set; }
+
+        public string ip { get; set; }
+
+        public string host { get; set; }
+
+        public bool new_user { get; set; }
 
     }
 
     public class UserModule : Helper, IDisposable
     {
 
-        private const string key = "ams-tmp-web";
-        private dbContext _user = new dbContext();
+        private dbContext _user  = new dbContext();
 
-        public bool ValidateUser(string username, string password)
+        public Users ValidateUser(string username, string password)
         {
             
-            string newPassword = Cryptography.Encryption.Encrypt(password, key);
+            string newPassword = Cryptography.Encryption.Encrypt(password, Constant.HASHKEY);
 
             var user = _user.Users.Where(u => u.username == username && u.password == newPassword);
 
-            if (user.Any()) return true;
+            if (user.Any()) return user.SingleOrDefault();
 
-            return false;
+            return null;
+
+        }
+
+        public Dictionary<string, string> SystemConfig()
+        {
+
+            Dictionary<string, string> configList = new Dictionary<string, string>();
+
+            string sql = "SELECT * FROM [extras].[tbl_options];";
+
+            var config = _user.Database.SqlQuery<tbl_config>(sql);
+
+            if (config.Any())
+            {
+                
+                foreach (var item in config)
+                {
+                    configList.Add(item.name, item.value);
+                }
+            }
+            return configList;
         }
 
         public IEnumerable<Users> getUser(int user_id = 0){

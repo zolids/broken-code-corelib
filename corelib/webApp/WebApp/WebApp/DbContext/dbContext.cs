@@ -23,5 +23,7 @@ namespace WebApp.Models
 
         public DbSet<tbl_projects> projects { get; set; }
 
+        public DbSet<tbl_config> config { get; set; }
+
     }
 }
