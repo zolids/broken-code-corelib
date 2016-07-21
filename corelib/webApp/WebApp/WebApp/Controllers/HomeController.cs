@@ -20,11 +20,17 @@ namespace WebApp.Controllers
         public ActionResult Index(string active_project)
         {
 
+            Response.Cookies["activeProject"].Value = active_project;
+
             ViewBag.Title = Constant.DASHBOARD;
+            ViewBag.active_project = active_project;
+
+            ViewBag.isActive = "true";
 
             // if user or porject not selected stay @ default page
             if (string.IsNullOrEmpty(active_project))
                 return RedirectToAction("DefaultViewport", "Home");
+
 
             return View();
 
@@ -39,6 +45,8 @@ namespace WebApp.Controllers
             using (_helpers = new Helper())
             {
                 var modules = new string[0];
+
+                Response.Cookies["activeProject"].Expires = DateTime.Now.AddDays(-1);
 
                 string session = _helpers.DecryptString(Request.Cookies["userInfo"].Value);
                 modules = _helpers.UserData(session).module;

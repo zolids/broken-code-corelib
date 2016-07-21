@@ -131,7 +131,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AcquisitionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="DbModels\Acquisition.cs" />
     <Compile Include="DbModels\Projects.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -213,6 +215,9 @@
     <Content Include="Content\theme\css\pages.css" />
     <Content Include="Content\theme\css\responsive.css" />
     <Content Include="Content\theme\css\select2.css" />
+    <Content Include="Content\theme\css\summernote.css" />
+    <Content Include="Content\theme\css\sweet-alert.css" />
+    <Content Include="Content\theme\css\sweetalert.css" />
     <Content Include="Content\theme\datatables\buttons.bootstrap.min.css" />
     <Content Include="Content\theme\datatables\fixedHeader.bootstrap.min.css" />
     <Content Include="Content\theme\datatables\jquery.dataTables.min.css" />
@@ -279,7 +284,13 @@
     <Content Include="Content\theme\fonts\Material-Design-Iconic-Font.woff" />
     <Content Include="Content\theme\fonts\themify.ttf" />
     <Content Include="Content\theme\fonts\themify.woff" />
+    <Content Include="Content\theme\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\theme\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\theme\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Scripts\app\Acquisition.js" />
+    <Content Include="Scripts\app\notify-metro.js" />
+    <Content Include="Scripts\app\users.js" />
     <Content Include="Scripts\datatables\buttons.bootstrap.min.js" />
     <Content Include="Scripts\datatables\buttons.html5.min.js" />
     <Content Include="Scripts\datatables\buttons.print.min.js" />
@@ -315,6 +326,8 @@
     <Content Include="Scripts\plugins\jquery.waypoints.js" />
     <Content Include="Scripts\plugins\notify.min.js" />
     <Content Include="Scripts\plugins\select2.min.js" />
+    <Content Include="Scripts\plugins\summernote.min.js" />
+    <Content Include="Scripts\plugins\sweetalert.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -340,6 +353,8 @@
     <Content Include="Views\Shared\_Default.cshtml" />
     <Content Include="Views\Shared\404Page.cshtml" />
     <Content Include="Views\Home\ErrorPage.cshtml" />
+    <Content Include="Views\Acquisition\Index.cshtml" />
+    <Content Include="Views\Acquisition\createEditAcquisition.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

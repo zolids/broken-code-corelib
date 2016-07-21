@@ -1,9 +1,11 @@
 ﻿@model IEnumerable<WebApp.Models.Users>
 
+@{
+    var activeProject = ((Request.Cookies["activeProject"] != null) ? Request.Cookies["activeProject"].Value : null);
+}
 <div class="breadcrumb-container row">
     <ol class="breadcrumb">
-        <li><a href="./">Home</a></li>
-        <li><a href="#">Settings</a></li>
+        <li><a href="/Home/Index?active_project=@activeProject">Home</a></li>
         <li class="active">User Management</li>
         <li class="breadcrumb-action"><a href="/Account/Register?newuser=true" class="btn btn-success waves-effect w-md waves-light m-b-5">Create</a></li>
     </ol>
@@ -63,7 +65,10 @@
     <script>
 
         $(document).ready(function () {
-           TableManageButtons.init("system_users");
+
+            TableManageButtons.init("system_users");
+            $.Notification.notify('white', 'bottom right', 'Manage System users', 'Here you can view, create and update system users and thier access rights.');
+
         });
 
     </script>

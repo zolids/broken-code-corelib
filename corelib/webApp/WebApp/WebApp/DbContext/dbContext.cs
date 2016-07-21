@@ -25,5 +25,7 @@ namespace WebApp.Models
 
         public DbSet<tbl_config> config { get; set; }
 
+        public DbSet<tbl_requests> requests { get; set; }
+
     }
 }

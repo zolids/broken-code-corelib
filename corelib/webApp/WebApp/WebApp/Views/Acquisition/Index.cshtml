@@ -1,0 +1,10 @@
+﻿@{
+    var activeProject = ((Request.Cookies["activeProject"] != null) ? Request.Cookies["activeProject"].Value : null);
+}
+<div class="breadcrumb-container row">
+    <ol class="breadcrumb">
+        <li><a href="/Home/Index?active_project=@activeProject">Home</a></li>
+        <li class="active">Transaction list</li>
+        <li class="breadcrumb-action"><a href="/Acquisition/createEditAcquisition" class="btn btn-success waves-effect w-md waves-light m-b-5" id="submit-acquisition">Submit Request</a></li>
+    </ol>
+</div>

@@ -10,7 +10,7 @@
         <li><a href="/Account/SystemUsers">User Management</a></li>
         <li class="active">@(Model.new_user == true ? "Creating new system user" : "Edit user")</li>
         <li class="breadcrumb-action"><a href="#" class="btn btn-default waves-effect waves-light m-b-5">Discard</a></li>
-        <li class="breadcrumb-action"><a href="#" class="btn btn-success waves-effect waves-light m-b-5">Apply Changes</a></li>
+        <li class="breadcrumb-action"><a href="#" id="update-users" class="btn btn-success waves-effect waves-light m-b-5">Apply Changes</a></li>
     </ol>
 </div>
 
@@ -174,85 +174,15 @@
 
 @section Scripts {
 
-    @Scripts.Render("~/bundles/jqueryval")
-
+    <script src="~/Scripts/app/users.js"></script>
     <script>
 
         $(document).ready(function () {
-            $(".select2").select2();
 
-            // get select2 comma sept values
-            var selMulti = $.map($("#project_involved option:selected"), function (el, i) {
-                return $(el).text();
-            });
-
-            selMulti.join(", ");
+            initiateUserFunctions.init();
 
         })
 
-        $('#allow_view_page').on('click',function (e) {
-            $(this).closest('table').find('.access-view-page').prop('checked', this.checked);
-        });
-
-        $('#allow_download_page').on('click', function (e) {
-            $(this).closest('table').find('.access-download-page').prop('checked', this.checked);
-        });
-
-        $('#allow_upload_page').on('click', function (e) {
-            $(this).closest('table').find('.access-upload-page').prop('checked', this.checked);
-        });
-
-        $('#allow_view_report').on('click', function (e) {
-            $(this).closest('table').find('.access-view-report').prop('checked', this.checked);
-        });
-
-        $('#allow_download_report').on('click', function (e) {
-            $(this).closest('table').find('.access-download-report').prop('checked', this.checked);
-        });
-
-        $('#allow_upload_report').on('click', function (e) {
-            $(this).closest('table').find('.access-upload-report').prop('checked', this.checked);
-        });
-
-        $('.access-view-page').on('click', function () {
-            if (!$(this).prop('checked')) {
-                $('#allow_view_page').prop('checked', false);
-            }
-        })
-        $('.access-download-page').on('click', function () {
-            if (!$(this).prop('checked')) {
-                $('#allow_download_page').prop('checked', false);
-            }
-        })
-        $('.access-upload-page').on('click', function () {
-            if (!$(this).prop('checked')) {
-                $('#allow_upload_page').prop('checked', false);
-            }
-        })
-
-        $('.access-view-report').on('click', function () {
-            if (!$(this).prop('checked')) {
-                $('#allow_view_report').prop('checked', false);
-            } else
-                this.checkallCheckboxes($(this));
-        })
-        $('.access-download-report').on('click', function () {
-            if (!$(this).prop('checked')) {
-                $('#allow_download_report').prop('checked', false);
-            }
-        })
-        $('.access-upload-report').on('click', function () {
-            if (!$(this).prop('checked')) {
-                $('#allow_upload_report').prop('checked', false);
-            }
-        })
-
-        var checkallCheckboxes = function (element, parentEl) {
-            var allchecked = true;
-            $.each(element, function (e, l) {
-                console.log($(l).prop('checked'));
-            })
-        }
 
     </script>
 

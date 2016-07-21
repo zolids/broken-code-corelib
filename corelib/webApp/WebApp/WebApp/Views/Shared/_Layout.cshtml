@@ -1,6 +1,9 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+    @{
+        var activeProject = ((Request.Cookies["activeProject"] != null) ? Request.Cookies["activeProject"].Value : ViewBag.active_project);    
+    }
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,6 +15,9 @@
     <title>@ViewBag.Title</title>
 
     <link rel="shortcut icon" href="~/Content/theme/images/favicon.ico" type="image/x-icon">
+    <link href="~/Content/theme/css/sweet-alert.css" rel="stylesheet" />
+
+    @RenderSection("css", required: false)
 
     <link href="~/Content/theme/css/select2.css" rel="stylesheet" />
     <link href="~/Content/theme/datatables/jquery.dataTables.min.css" rel="stylesheet" />
@@ -29,7 +35,6 @@
     <link href="~/Content/theme/css/responsive.css" rel="stylesheet" />
 
     @*@Styles.Render("~/Content/theme")*@
-
    
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
@@ -166,11 +171,11 @@
                     <ul class="navigation-menu">
 
                         <li class="has-submenu">
-                            <a href="/Home/DefaultViewport"><i class="md md-home"></i></a>
+                            <a href="/Home/DefaultViewport" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Main"><i class="md md-dashboard"></i></a>
                         </li>
 
                         <li class="has-submenu active">
-                            <a href="/Home"><i class="md md-dashboard"></i>Dashboard</a>
+                            <a href="/Home/Index?active_project=@activeProject" ><i class="md md-home"></i>@activeProject</a>
                         </li>
 
                         <li class="has-submenu">
@@ -182,17 +187,22 @@
                         </li>
 
                         <li class="has-submenu">
-                            <a href="#"><i class="md md-list"></i>Acquisition</a>
+                            <a href="#"><i class="md md-invert-colors-on"></i>Maintenance</a>
                             <ul class="submenu">
-                                <li><a href="#">Sumbit Request</a></li>
-                                <li><a href="#">Transactions</a></li>
+                                <li><a href="#">Overdue for Inspection</a></li>
+                                <li><a href="#">Overdue for Preventive Maintenance</a></li>
+                                <li><a href="#">Outstanding Equipments for Maintenance and Repair</a></li>
+                                <li><a href="#">Outstanding Work Orders</a></li>
+                                <li><a href="#">Completed Work Orders</a></li>
+                                <li><a href="#">Written-Off Equipment</a></li>
                             </ul>
                         </li>
 
                         <li class="has-submenu">
-                            <a href="#"><i class="md md-invert-colors-on"></i>Maintenance</a>
+                            <a href="#"><i class="md md-folder-open"></i>Acquisition</a>
                             <ul class="submenu">
-                                <li><a href="#">Grid</a></li>
+                                <li><a href="/Acquisition/createEditAcquisition?">Sumbit Request</a></li>
+                                <li><a href="/Acquisition/Index?">Transactions</a></li>
                             </ul>
                         </li>
 
@@ -200,9 +210,9 @@
                             <a href=""><i class="md md-class"></i>Parts</a>
                             <ul class="submenu">
                                 <li class="has-submenu">
-                                    <a href="">Icons</a>
+                                    <a href="">Inventory</a>
                                     <ul class="submenu">
-                                        <li><a href="#">Glyphicons</a></li>
+                                        <li><a href="#">Link</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -214,8 +224,7 @@
                                 <li>
                                     <ul>
                                         <li><a href="#">Invoice</a></li>
-                                        <li><a href="#"> Calendar</a></li>
-                                        <li><a href="#">Email template</a></li>
+                                        <li><a href="#">Calendar</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -225,10 +234,14 @@
                             <a href="#"><i class="md md-settings"></i>Settings</a>
                             <ul class="submenu">
                                 <li class="">
-                                    <a href="/Account/Settings">General Settings</a>
+                                    <a href="">Pick List</a>
                                 </li>
                                 <li class="">
                                     <a href="/Account/SystemUsers">User Management</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li class="">
+                                    <a href="/Account/Settings">General Settings</a>
                                 </li>
                             </ul>
                         </li>
@@ -302,6 +315,10 @@
 
     <script src="~/Content/theme/js/jquery.nicescroll.js"></script>
     <script src="~/Content/theme/js/jquery.scrollTo.min.js"></script>
+    
+    <script src="~/Scripts/plugins/sweetalert.min.js"></script>
+    <script src="~/Scripts/plugins/notify.min.js"></script>
+    <script src="~/Scripts/app/notify-metro.js"></script>
 
     @* DataTables Plugins *@
 

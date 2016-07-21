@@ -1,6 +1,10 @@
-﻿<div class="breadcrumb-container row">
+﻿@{
+    var activeProject = ((Request.Cookies["activeProject"] != null) ? Request.Cookies["activeProject"].Value : ViewBag.active_project);
+}
+
+<div class="breadcrumb-container row">
     <ol class="breadcrumb">
-        <li><a href="./">Home</a></li>
+        <li><a href="/Home/Index?active_project=@activeProject">Home</a></li>
         <li class="active">Dashboard</li>
     </ol>
 </div>
@@ -57,6 +61,8 @@
             });
 
             $('.circliful-chart').circliful();
+
+            $.Notification.notify('white', 'bottom right', 'Welcome to @activeProject Dashboard', 'Aggregate inforation display');
 
         })
     </script>

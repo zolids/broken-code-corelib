@@ -120,29 +120,10 @@
     <script src="~/Content/theme/js/jquery.app.js"></script>
     
     @RenderSection("scripts", required: false)
+    <script src="~/Scripts/app/notify-metro.js"></script>
 
     <script>
-        $.notify.addStyle("metro", {
-            html:
-                "<div>" +
-                    "<div class='image' data-notify-html='image'/>" +
-                    "<div class='text-wrapper'>" +
-                        "<div class='title' data-notify-html='title'/>" +
-                        "<div class='text' data-notify-html='text'/>" +
-                    "</div>" +
-                "</div>",
-            classes: {
-                default: {
-                    "color": "#fafafa !important",
-                    "background-color": "#3bafda",
-                    "border": "1px solid #3bafda"
-                },
-                white: {
-                    "background-color": "#e6eaed",
-                    "border": "1px solid #ddd"
-                }
-            }
-        });
+        
         $.Notification.notify('white', 'bottom right', 'Welcome to Online FASTrax', 'Select specific project to start working with online FASTrax');
 
     </script>

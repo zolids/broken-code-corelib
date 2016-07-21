@@ -117,6 +117,7 @@ namespace WebApp.Controllers
                 }
 
                 Response.Cookies["userInfo"].Expires = DateTime.Now.AddDays(-1);
+                Response.Cookies["activeProject"].Expires = DateTime.Now.AddDays(-1);
                 
                 FormsAuthentication.SignOut();
                 return RedirectToAction("Login", "Account");

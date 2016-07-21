@@ -14,7 +14,7 @@ namespace WebApp.helpers
         public const string DEFAULT_PAGE     = "Access FASTrax";
         public const string SYSTEM_USERS     = "System Users";
         public const string GENERAL_SETTINGS = "General System Settings";
-
+        public const string ACQUISITION      = "Acquisition";
     }
 
 }

@@ -1,7 +1,9 @@
-﻿<div class="breadcrumb-container row">
+﻿@{
+    var activeProject = ((Request.Cookies["activeProject"] != null) ? Request.Cookies["activeProject"].Value : null);
+}
+<div class="breadcrumb-container row">
     <ol class="breadcrumb">
-        <li><a href="./">Home</a></li>
-        <li><a href="#">Settings</a></li>
+        <li><a href="/Home/Index?active_project=@activeProject">Home</a></li>
         <li class="active">General Settings</li>
         <li class="breadcrumb-action"><a href="#" class="btn btn-success waves-effect w-md waves-light m-b-5">Apply Changes</a></li>
     </ol>
@@ -261,3 +263,10 @@
     </div>
 </div>
 
+@section scripts{
+<script>
+    $(document).ready(function () {
+        $.Notification.notify('custom', 'bottom right', 'Administrator', 'General system configuration.');
+    })
+</script>    
+}

@@ -1,6 +1,4 @@
 /**
-* Theme: Minton Admin Template
-* Author: Coderthemes
 * Component: Datatable
 * 
 */

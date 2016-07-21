@@ -1,8 +1,3 @@
-/**
-* Theme: Ubold Admin Template
-* Author: Coderthemes
-* Module/App: Main Js
-*/
 
 
 (function($){
@@ -27,7 +22,9 @@
   }
 
   function init () {
-    initNavbar();
+      initNavbar();
+
+      //$.blockUI({ fadeIn: 500, timeout: 2000 });
   }
 
   init();
