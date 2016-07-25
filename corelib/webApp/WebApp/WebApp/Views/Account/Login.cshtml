@@ -24,7 +24,7 @@
         </div>
     }
  
-    <form class="form-horizontal m-t-20" action="/Account/Login?" method="post" novalidate data-parsley-validate>
+    <form class="form-horizontal m-t-20" action="/Account/Login?" method="post" novalidate data-parsley-validate id="login-form">
         @Html.AntiForgeryToken()
         <div class="form-group">
             <div class="col-xs-12">
@@ -60,6 +60,9 @@
             </div>
         </div>
 
+        <input type="hidden" name="ReturnUrl" id="activeURL" class="form-control">
+
+
         <div class="form-group m-t-30">
             <div class="col-sm-7">
                 <a href="pages-recoverpw.html" class="text-muted">
@@ -73,6 +76,3 @@
         </div>
     </form>
 </div>
-
-<!-- /container -->
-@section Scripts { @Scripts.Render("~/bundles/jqueryval") }

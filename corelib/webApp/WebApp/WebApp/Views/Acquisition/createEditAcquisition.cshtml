@@ -1,11 +1,46 @@
-﻿@{
+﻿@model WebApp.Models.tbl_requests
+
+@{
+    var request = ((@Model != null) ? @Model : null);
+    var id = ((request != null) ? request.id : 0);
+
+    var request_status = ((request != null) ? request.request_status : null);
+
+    var isDisabled = (request_status == "Approved" || request_status == "Declined") ? "disabled" : "";
+    var isVisible = (request_status == "Approved" || request_status == "Declined") ? "style=display:block;" : "style=display:none;";
+                            
     var activeProject = ((Request.Cookies["activeProject"] != null) ? Request.Cookies["activeProject"].Value : null);
 }
 <div class="breadcrumb-container row">
     <ol class="breadcrumb">
         <li><a href="/Home/Index?active_project=@activeProject">Home</a></li>
-        <li class="active">Transaction list</li>
-        <li class="breadcrumb-action"><a href="#" class="btn btn-primary waves-effect w-md waves-light m-b-5" id="submit-acquisition">Submit</a></li>
+        <li><a href="/Acquisition/Index">Transactions</a></li>
+        <li class="active">Sumbit request</li>
+        <li class="breadcrumb-action">
+            <div class="btn-group dropdown">
+                <button type="button" class="btn btn-success waves-effect w-md waves-light m-b-5">Action</button>
+                <button type="button" class="btn btn-success waves-light dropdown-toggle waves-effect" data-toggle="dropdown" aria-expanded="false"><i class="caret"></i></button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#" id="submit-acquisition">Apply Changes</a></li>
+                    <li><a href="#" id="discard-changes">Discard</a></li>
+                </ul>
+            </div>
+        </li>
+        @{
+            if (id > 0)
+            {
+                <li class="breadcrumb-action">
+                    <div class="btn-group dropdown">
+                        <button type="button" class="btn btn-default waves-effect waves-light">Download</button>
+                        <button type="button" class="btn btn-default waves-light dropdown-toggle waves-effect" data-toggle="dropdown" aria-expanded="false"><i class="caret"></i></button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Pdf</a></li>
+                            <li><a href="#">Word</a></li>
+                        </ul>
+                    </div>
+                </li>
+            }
+        }
     </ol>
 </div>
 
@@ -16,116 +51,244 @@
 
                 <div class="row">
 
+                    @{
+                        var request_date = ((request != null) ? Convert.ToDateTime(request.request_date).ToString("MM/dd/yy") : null);
+                        var department = ((request != null) ? request.department : null);
+                        var vehicle_type = ((request != null) ? request.vehicle_type : null);
+                        var vehicle_model = ((request != null) ? request.vehicle_model : null);
+                        var justifications = ((request != null) ? request.justifications : null);
+                        var additional_notes = ((request != null) ? request.additional_notes : null);
+
+                        var isFund_source = (((request != null) ? request.fund_source : 0) == 1 ? "checked=checked" : "");
+                        var isUnder_agreement = (((request != null) ? request.under_agreement : 0) == 1 ? "checked=checked" : "");
+                        var isAdd_to_fleet = (((request != null) ? request.add_to_fleet : 0) == 1 ? "checked=checked" : "");
+                        var isMod_require = (((request != null) ? request.mod_require : 0) == 1 ? "checked=checked" : "");
+                        var isAlternative_fuel = (((request != null) ? request.alternative_fuel : 0) == 1 ? "checked=checked" : "");
+                        
+                    }
+
                     <div class="col-lg-12">
+                        
+                        @if (request_status == null || request_status != "Pending")
+                        {
+
+                            var status = (request_status == "Pending" ? request_status : ((request_status != null) ? request_status : "New"));
+                            var color = (request_status == "Pending" ? "radio-warning" : ((request_status != null) ? (request_status == "Approved" ? "radio-success" : "radio-danger") : "radio-warning"));
+                            var value = (request_status == "Pending" || request_status == null ? "Pending" : request_status);
+                            
+                            <div class="pull-right request-status">
+                                <p class="text-muted font-13 m-b-15 m-t-20">Request Status</p>
+                                <div class="radio radio-inline @color">
+                                    <input type="radio" id="approve-request" value="@value" name="request_status" checked disabled>
+                                    <label for="approve-request"> @status </label>
+                                </div>
+                            </div>
+                        }
+
+                        @if (request_status == "Pending")
+                        {
+                            <div class="pull-right request-status">
+                                <p class="text-muted font-13 m-b-15 m-t-20">Request Status</p>
+                                <div class="radio radio-success radio-inline">
+                                    <input type="radio" id="approve-request" value="Approved" name="request_status" @(request_status == "Approved" ? "checked" : "")>
+                                    <label for="approve-request"> Approve </label>
+                                </div>
+                                <div class="radio radio-danger radio-inline">
+                                    <input type="radio" id="decline-request" value="Declined" name="request_status" @(request_status == "Declined" ? "checked" : "")>
+                                    <label for="decline-request"> Decline </label>
+                                </div>
+                            </div>
+                        }
+
                         <h4><b>Vehicle Acquisition Request Form</b></h4>
                         <p class="text-muted font-13 m-b-30">
                             Individual Departments are responsible for purchasing any accessories or after-market
                             modifications for the vehicle.
                         </p>
 
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="userName">Date: </label>
-                                <input type="text" name="request_date" required="" placeholder="" class="form-control" id="request_date" data-parsley-id="request_date">
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="userName">Department: </label>
-                                <input type="text" name="department" required="" placeholder="" class="form-control" id="department" data-parsley-id="department">
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="userName">Vehicle Type: </label>
-                                <input type="text" name="vehicle_type" required="" placeholder="" class="form-control" id="vehicle_type" data-parsley-id="vehicle_type">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="userName">Vehicle Model: </label>
-                                <input type="text" name="vehicle_model" required="" placeholder="" class="form-control" id="vehicle_model" data-parsley-id="vehicle_model">
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <div class="checkbox checkbox-primary">
-                                    <input id="fund_source" type="checkbox" name="fund_source">
-                                    <label for="fund_source">Is this acquisition replacement of another CNM Vehicle?</label>
+                        @* additional notes when updating request *@
+                        <div id="notes" @isVisible class="clearfix">
+                            <div class="col-sm-12">
+                                <div class="card-box">
+                                    <h4 class="m-b-30 m-t-0 header-title"><b>Approver Comment</b></h4>
+                                    <div class="summernote" id="additional_notes"></div>
                                 </div>
                             </div>
+                            <hr />
                         </div>
 
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <div class="checkbox checkbox-primary">
-                                    <input id="under_agreement" type="checkbox" name="under_agreement">
-                                    <label for="under_agreement">Is this acquisition under General Pricing Agreement?</label>
+                        @*  end *@
+                        <div id="form-data-request" class="clearfix">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="userName">Date: </label>
+                                    <input type="text" class="form-control" placeholder="mm/dd/yyyy" id="request_date" name="request_date" data-parsley-id="request_date" required="" value="@request_date">
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <div class="checkbox checkbox-primary">
-                                    <input id="add_to_fleet" type="checkbox" name="add_to_fleet">
-                                    <label for="add_to_fleet">This acquisition will add to fleet?</label>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="userName">Department: </label>
+                                    <input type="text" name="department" required="" placeholder="" class="form-control" id="department" data-parsley-id="department" value="@department">
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <div class="checkbox checkbox-primary">
-                                    <input id="mod_require" type="checkbox" name="mod_require">
-                                    <label for="mod_require">Does the intended vehicle require any modifications, specialized equipment or accessories, describe? </label>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="userName">Vehicle Type: </label>
+                                    <input type="text" name="vehicle_type" required="" placeholder="" class="form-control" id="vehicle_type" data-parsley-id="vehicle_type" value="@vehicle_type">
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <div class="checkbox checkbox-primary">
-                                    <input id="alternative_fuel" type="checkbox" name="alternative_fuel">
-                                    <label for="alternative_fuel">Does this vehicle use alternative fuels?</label>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="userName">Vehicle Model: </label>
+                                    <input type="text" name="vehicle_model" required="" placeholder="" class="form-control" id="vehicle_model" data-parsley-id="vehicle_model" value="@vehicle_model">
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="col-md-12">
-                            <div class="card-box">
-                                <h4 class="m-b-30 m-t-0 header-title"><b>Justification of vehicle </b></h4>
-                                <div class="summernote"></div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <div class="checkbox checkbox-primary">
+                                        <input id="fund_source" type="checkbox" name="fund_source" value="1" @isFund_source>
+                                        <label for="fund_source">Is this acquisition replacement of another vehicle?</label>
+                                    </div>
+                                </div>
                             </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <div class="checkbox checkbox-primary">
+                                        <input id="under_agreement" type="checkbox" name="under_agreement" value="1" @isUnder_agreement>
+                                        <label for="under_agreement">Is this acquisition under General Pricing Agreement?</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <div class="checkbox checkbox-primary">
+                                        <input id="add_to_fleet" type="checkbox" name="add_to_fleet" value="1" @isAdd_to_fleet>
+                                        <label for="add_to_fleet">This acquisition will add to fleet?</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <div class="checkbox checkbox-primary">
+                                        <input id="mod_require" type="checkbox" name="mod_require" value="1" @isMod_require>
+                                        <label for="mod_require">Does the intended vehicle require any modifications, specialized equipment or accessories, describe? </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <div class="checkbox checkbox-primary">
+                                        <input id="alternative_fuel" type="checkbox" name="alternative_fuel" value="1" @isAlternative_fuel>
+                                        <label for="alternative_fuel">Does this vehicle use alternative fuels?</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="card-box">
+                                    <h4 class="m-b-30 m-t-0 header-title"><b>Justification of vehicle </b></h4>
+                                    <div class="summernote" id="justifications"></div>
+                                </div>
+                            </div>
+
                         </div>
 
                     </div>
                 </div>
             </form>
-
         </div>
     </div>
 </div>
 
 @section css {
+    <link href="~/Content/theme/css/bootstrap-datepicker.min.css" rel="stylesheet" />
     <link href="~/Content/theme/css/summernote.css" rel="stylesheet" />
 }
 
 @section scripts{
 
+    <script src="~/Scripts/plugins/bootstrap-datepicker.min.js"></script>
     <script src="~/Scripts/plugins/summernote.min.js"></script>
     <script src="~/Scripts/app/Acquisition.js"></script>
 
     <script>
 
-        $(document).ready(function () {
+    $(document).ready(function () {
 
-            acquisition.init();
+        acquisition.init();
 
+
+        $.summernote.addPlugin({
+            name: 'myenter',
+            events: {
+                // redefine insertParagraph 
+                'insertParagraph': function (event, editor, layoutInfo) {
+
+                    // custom enter key
+                    var newLine = '<br />';
+                    pasteHtmlAtCaret(newLine);
+
+                    // to stop default event
+                    event.preventDefault();
+                }
+            }
         });
+
+        $('#justifications').code("");
+        $('#additional_notes').code("");
+
+        //var code = $('#justifications').code(),
+        //    code2 = $('#additional_notes').code(),
+        //filteredContent = $(code).text().replace(/\s+/g, ''),
+        //filteredContent2 = $(code2).text().replace(/\s+/g, '');
+
+        $('#justifications').summernote('editor.pasteHTML', $.parseHTML("@justifications")[0].data);
+        $('#additional_notes').summernote('editor.pasteHTML', $.parseHTML("@additional_notes")[0].data);
+
+    });
+
+    function pasteHtmlAtCaret(html) {
+        var sel, range;
+        if (window.getSelection) {
+            // IE9 and non-IE
+            sel = window.getSelection();
+            if (sel.getRangeAt && sel.rangeCount) {
+                range = sel.getRangeAt(0);
+                range.deleteContents();
+
+                // Range.createContextualFragment() would be useful here but is
+                // only relatively recently standardized and is not supported in
+                // some browsers (IE9, for one)
+                var el = document.createElement("div");
+                el.innerHTML = html;
+                var frag = document.createDocumentFragment(), node, lastNode;
+                while ((node = el.firstChild)) {
+                    lastNode = frag.appendChild(node);
+                }
+                range.insertNode(frag);
+
+                // Preserve the selection
+                if (lastNode) {
+                    range = range.cloneRange();
+                    range.setStartAfter(lastNode);
+                    range.collapse(true);
+                    sel.removeAllRanges();
+                    sel.addRange(range);
+                }
+            }
+        } else if (document.selection && document.selection.type != "Control") {
+            // IE < 9
+            document.selection.createRange().pasteHTML(html);
+        }
+    }
 
     </script>
 }

@@ -1,10 +1,114 @@
-﻿@{
+﻿@model IEnumerable<WebApp.Models.tbl_requests>
+
+@{
     var activeProject = ((Request.Cookies["activeProject"] != null) ? Request.Cookies["activeProject"].Value : null);
 }
 <div class="breadcrumb-container row">
     <ol class="breadcrumb">
         <li><a href="/Home/Index?active_project=@activeProject">Home</a></li>
         <li class="active">Transaction list</li>
-        <li class="breadcrumb-action"><a href="/Acquisition/createEditAcquisition" class="btn btn-success waves-effect w-md waves-light m-b-5" id="submit-acquisition">Submit Request</a></li>
+        <li class="breadcrumb-action"><a title="Submit new request" href="/Acquisition/createEditAcquisition?isNew=true" class="btn btn-success waves-effect w-md waves-light m-b-5" id="submit-acquisition">Submit Request</a></li>
     </ol>
 </div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card-box table-responsive">
+            <h4 class="m-t-0 header-title"><b>Requests Table</b></h4>
+            <p class="text-muted font-13 m-b-30">
+                List of system user and their access rights
+            </p>
+            <div class="row">
+                <div class="col-sm-12">
+                    <table id="request-table" class="datatable-custom table table-hover  dataTable no-footer" role="grid" aria-describedby="datatable_info">
+                        <thead>
+                            <tr role="row">
+                                <th>Request Type</th>
+                                <th>Requestor</th>
+                                <th>Department</th>
+                                <th>Vehicle Type</th>
+                                <th>Vehicle Model</th>
+                                <th>Site Location</th>
+                                <th>Request Status</th>
+                                <th>Request Date</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                foreach (var item in @Model)
+                                {
+                                    <tr>
+                                        <td id="@item.id">@item.request_type</td>
+                                        <td id="@item.requestor_id">@item.requestor_name</td>
+
+                                        <td>@item.department</td>
+                                        <td>@item.vehicle_type</td>
+                                        <td>@item.vehicle_model</td>
+                                        <td>@item.project_site_id</td>
+                                        @{
+                                            if (@item.request_status == "Pending") { 
+                                                <td><span class="label label-warning">@item.request_status</span></td>
+                                            }
+                                            else if (@item.request_status == "Approved")
+                                            {
+                                                <td><span class="label label-success">@item.request_status</span></td>
+                                            }else{
+                                                <td><span class="label label-danger">@item.request_status</span></td>
+                                            }
+                                        }
+                                        <td>@item.request_date</td>
+                                        <td class="actions">
+                                            <a data-toggle="tooltip" data-placement="top" title="" data-original-title="View request" href="/Acquisition/createEditAcquisition?isNew=false&request_id=@item.id" class="btn btn-icon waves-effect waves-light btn-primary m-b-0"><i class="fa fa-search"></i></a>
+                                            <div class="btn-group dropdown" data-toggle="tooltip" data-placement="top" title="" data-original-title="Download request">
+                                                <button type="button" class="btn btn-default waves-effect waves-light"><i class="fa fa-download"></i></button>
+                                                <button type="button" class="btn btn-default waves-light dropdown-toggle waves-effect" data-toggle="dropdown" aria-expanded="false"><i class="caret"></i></button>
+                                                <ul class="dropdown-menu" role="menu">
+                                                    <li><a href="#">Pdf</a></li>
+                                                    <li><a href="#">Word</a></li>
+                                                </ul>
+                                            </div>
+                                            @*<a data-toggle="tooltip" data-placement="top" title="" data-original-title="Download request" href="#" class="on-default waves-effect waves-light download-row" id="@item.id"><i class="fa fa-download"></i></a>*@
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+
+    <script src="~/Scripts/datatables/datatables.init.js"></script>
+
+    <script>
+
+        getUrlVars = function () {
+            var vars = [], hash;
+            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for (var i = 0; i < hashes.length; i++) {
+                hash = hashes[i].split('=');
+                vars.push(hash[0]);
+                vars[hash[0]] = hash[1];
+            }
+            return vars;
+        }
+
+        $(document).ready(function () {
+
+            TableManageButtons.init("acquisition_request");
+
+            if (getUrlVars()["emailSent"] == "true")
+                $.Notification.notify('success', 'bottom right', 'An e-mail notification has been sent to you and to related people. Please check your inbox to proceed.')
+            else
+                $.Notification.notify('white', 'bottom right', 'System Vehicle Requests', 'Here you can view, submit and update vehicle requests/acquisition forms');
+
+        });
+
+    </script>
+
+}

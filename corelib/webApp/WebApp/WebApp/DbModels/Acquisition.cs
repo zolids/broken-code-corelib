@@ -4,10 +4,11 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace WebApp.Models
 {
-    [Table("tbl_requests")]
+    [Table("tbl_requests", Schema = "extras")]
     public class tbl_requests
     {
         [Key]
@@ -18,7 +19,10 @@ namespace WebApp.Models
 
         public int requestor_id { get; set; }
 
-        public int request_status { get; set; }
+        [NotMapped]
+        public string requestor_name { get; set; }
+
+        public string request_status { get; set; }
 
         public string department { get; set; }
 
@@ -36,12 +40,17 @@ namespace WebApp.Models
 
         public int alternative_fuel { get; set; }
 
+        [AllowHtml]
         public string justifications { get; set; }
+
+        public int project_site_id { get; set; }
 
         public DateTime? request_date { get; set; }
 
-        [NotMapped]
-        public bool isNew { get; set; }
+        [AllowHtml]
+        public string additional_notes { get; set; }
+
+        public DateTime? modified_date { get; set; }
 
     }
 }

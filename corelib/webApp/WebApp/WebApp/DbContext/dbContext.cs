@@ -27,5 +27,7 @@ namespace WebApp.Models
 
         public DbSet<tbl_requests> requests { get; set; }
 
+        public DbSet<tbl_emails> email_logs { get; set; }
+
     }
 }

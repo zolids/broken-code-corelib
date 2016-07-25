@@ -15,7 +15,8 @@
     <title>@ViewBag.Title</title>
 
     <link rel="shortcut icon" href="~/Content/theme/images/favicon.ico" type="image/x-icon">
-    <link href="~/Content/theme/css/sweet-alert.css" rel="stylesheet" />
+
+    <link href="~/Content/theme/css/sweetalert.css" rel="stylesheet" />
 
     @RenderSection("css", required: false)
 
@@ -201,7 +202,7 @@
                         <li class="has-submenu">
                             <a href="#"><i class="md md-folder-open"></i>Acquisition</a>
                             <ul class="submenu">
-                                <li><a href="/Acquisition/createEditAcquisition?">Sumbit Request</a></li>
+                                <li><a href="/Acquisition/createEditAcquisition?isNew=true">Sumbit Request</a></li>
                                 <li><a href="/Acquisition/Index?">Transactions</a></li>
                             </ul>
                         </li>

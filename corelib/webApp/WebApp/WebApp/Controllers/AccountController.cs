@@ -22,7 +22,14 @@ namespace WebApp.Controllers
         [HttpGet]
         public ActionResult Login(string returnUrl)
         {
+            if (returnUrl != "/")
+            {
+                Response.Cookies["returnURL"].Expires = DateTime.Now.AddHours(24);
+                Response.Cookies["returnURL"].Value   = returnUrl;
+            }
+                
             return View();
+
         }
 
         [HttpPost]
@@ -84,8 +91,18 @@ namespace WebApp.Controllers
                     Response.Cookies["userInfo"].Expires = DateTime.Now.AddDays(30);
                     Response.Cookies["userInfo"].Value = _helpers.EncryptString(userIfo);
 
-                    Response.Redirect("/Home/DefaultViewport");
+                    if (Request.Cookies["returnURL"] != null) {
+                        
+                        string URL = Request.Cookies["returnURL"].Value;
 
+                        Response.Cookies["returnURL"].Expires = DateTime.Now.AddDays(-1);
+                        Response.Redirect(URL);
+                    }
+                    else
+                    {
+                        Response.Cookies["returnURL"].Expires = DateTime.Now.AddDays(-1);
+                        Response.Redirect("/Home/DefaultViewport");
+                    }
                 }
             }
             
