@@ -29,5 +29,11 @@ namespace WebApp.Models
 
         public DbSet<tbl_emails> email_logs { get; set; }
 
+        public DbSet<Dealers> Dealers { get; set; }
+
+        public DbSet<Dealer_attachment> dealer_attachment { get; set; }
+
+        public DbSet<Fleet> Fleet { get; set; }
+
     }
 }

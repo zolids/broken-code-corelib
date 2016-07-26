@@ -1,0 +1,50 @@
+﻿@{
+    var activeProject = ((Request.Cookies["activeProject"] != null) ? Request.Cookies["activeProject"].Value : null);
+}
+<div class="breadcrumb-container row">
+    <ol class="breadcrumb">
+        <li><a href="/Home/Index?active_project=@activeProject">Home</a></li>
+        <li><a href="/Dealers">Dealers</a></li>
+        <li class="">List</li>
+        <li class="breadcrumb-action">
+            <a data-toggle="tooltip" data-placement="left" data-original-title="Create new supplier" href="#" class="btn btn-success waves-effect w-md waves-light m-b-5" id="add-new-dealer">Add</a>
+            <a style="display:none;" data-toggle="tooltip" data-placement="left" data-original-title="Update new supplier" href="#" class="btn btn-success waves-effect w-md waves-light m-b-5" id="update-dealer">Apply Changes</a>
+        </li>
+    </ol>
+</div>
+
+<div class="row">
+    <div class="col-sm-12" id="dealerTableCont">
+        
+        <div class="card-box table-responsive">
+            <h4 class="m-t-0 header-title"><b>Dealer's Table</b></h4>
+            <p class="text-muted font-13 m-b-30">
+                List of equipment suppliers
+            </p>
+            <div class="row">
+                <div class="col-sm-12">
+                    @Html.Partial("dealersTable")
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="dealerInfoContainer"></div>
+</div>
+
+@section scripts{
+    <script src="~/Scripts/datatables/datatables.init.js"></script>
+    <script src="~/Scripts/app/dealers.js"></script>
+
+    <script>
+
+        $(function () {
+            
+            TableManageButtons.init("to_datatable");
+
+        })
+
+    </script>
+
+}

@@ -103,6 +103,7 @@ namespace WebApp.Controllers
                         Response.Cookies["returnURL"].Expires = DateTime.Now.AddDays(-1);
                         Response.Redirect("/Home/DefaultViewport");
                     }
+                    Response.End();
                 }
             }
             

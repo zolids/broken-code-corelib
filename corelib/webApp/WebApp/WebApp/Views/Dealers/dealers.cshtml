@@ -1,0 +1,260 @@
+﻿@model WebApp.Controllers.DealersInformation
+
+@{
+
+    var dealers = ((Model.dealers == null) ? null : Model.dealers.SingleOrDefault());
+
+    var referencedFleet = ((Model.referencedFleet != null) ? Model.referencedFleet : null);
+
+    var attachment = Model.getDealerAttachment;
+
+}
+<form action="#" data-parsley-validate="" novalidate="" id="add-edit-dealers">
+    <div class="col-lg-4 card-box table-responsive">
+        <h4 class="m-t-0 header-title"><b>Dealer's Info</b></h4>
+        <p class="text-muted font-13 m-b-30">
+            Create / Edit Dealer's Info
+        </p>
+        <div class="col-md-12">
+
+            <div class="form-group">
+
+                @{ var dealerRefCode = ((@dealers != null) ? @dealers.DealerRefCode : string.Empty); }
+                @{ var id = ((@dealers != null) ? @dealers.id : 0); }
+
+                <input type="hidden" class="form-control" name="DealerRefCode" value="@dealerRefCode">
+                <input type="hidden" class="form-control" name="id" value="@id">
+                <input type="hidden" class="form-control" name="deleted_files" id="dealer_deleted_files" value="" />
+
+                @{ var DealerNo = ((@dealers != null) ? @dealers.DealerNo : string.Empty); }
+
+                <label class="control-label">Dealer No : <span class="required">*</span></label>
+                <input type="text" class="form-control" placeholder="" name="DealerNo" value="@DealerNo">
+
+            </div>
+            <div class="form-group">
+                @{ var Name = ((@dealers != null) ? @dealers.Name : string.Empty); }
+                <label class="control-label">Dealer Name : <span class="required">*</span></label>
+                <input type="text" class="form-control" name="Name" value="@Name">
+            </div>
+            <div class="form-group">
+                @{ var Address = ((@dealers != null) ? @dealers.Address : string.Empty); }
+                <label class="control-label">Mailing Address : <span class="required">*</span></label>
+                <textarea class="form-control" name="Address" rows="4">@Address</textarea>
+            </div>
+            <div class="form-group">
+                @{ var PostalCode = ((@dealers != null) ? @dealers.PostalCode : string.Empty); }
+                <label class="control-label">Postal Code : <span class="required">*</span></label>
+                <input type="text" class="form-control" name="PostalCode" value="@PostalCode">
+            </div>
+            <div class="form-group">
+                @{ var Phone = ((@dealers != null) ? @dealers.Phone : string.Empty); }
+                <label class="control-label">Phone No : <span class="required">*</span></label>
+                <input type="text" class="form-control" name="Phone" value="@Phone">
+            </div>
+            <div class="form-group">
+                @{ var Email = ((@dealers != null) ? @dealers.Email : string.Empty); }
+                <label class="control-label">Email: <span class="required">*</span></label>
+                <input type="text" class="form-control" name="Email" value="@Email">
+            </div>
+            <div class="form-group">
+                @{ var Fax = ((@dealers != null) ? @dealers.Fax : string.Empty); }
+                <label class="control-label">Fax : <span class="required">*</span></label>
+                <input type="text" class="form-control" name="Fax" value="@Fax">
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-8">
+        <div class="clearfix">
+
+            <ul class="nav nav-tabs tabs" style="width: 100%;" id="dealers-tabs">
+                <li class="active tab" style="width: 25%;">
+                    <a href="#data_tab" data-toggle="tab" aria-expanded="false" class="active">
+                        <span class="visible-xs" data-toggle="tooltip" data-placement="top" data-original-title="Data"><i class="fa fa-info"></i></span>
+                        <span class="hidden-xs">Data</span>
+                    </a>
+                </li>
+                <li class="tab" style="width: 25%;">
+                    <a href="#provided_vehicle_tab" data-toggle="tab" aria-expanded="false">
+                        <span class="visible-xs" data-toggle="tooltip" data-placement="top" data-original-title="Provided Vehicle"><i class="fa fa-car"></i></span>
+                        <span class="hidden-xs">Provided Vehicle</span>
+                    </a>
+                </li>
+                <li class="tab" style="width: 25%;">
+                    <a href="#attachement_tab" data-toggle="tab" aria-expanded="false">
+                        <span class="visible-xs" data-toggle="tooltip" data-placement="top" data-original-title="Attachments"><i class="fa fa-folder-open"></i></span>
+                        <span class="hidden-xs">Attachments</span>
+                    </a>
+                </li>
+                <li class="tab" style="width: 25%;">
+                    <a href="#others_tab" data-toggle="tab" aria-expanded="false">
+                        <span class="visible-xs" data-toggle="tooltip" data-placement="top" data-original-title="Others"><i class="md md-apps"></i></span>
+                        <span class="hidden-xs">Others</span>
+                    </a>
+                </li>
+                <div class="indicator" style="right: 637px; left: 0px;"></div>
+            </ul>
+            <div class="tab-content clearfix">
+                <div class="row tab-pane active" id="data_tab">
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="panel panel-color panel-primary">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Operational Point of Contact</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="form-group">
+                                        @{ var OPCName = ((@dealers != null) ? @dealers.OPCName : string.Empty); }
+                                        <label class="control-label">Name : <span class="required">*</span></label>
+                                        <input type="text" class="form-control" name="OPCName" value="@OPCName">
+                                    </div>
+                                    <div class="form-group">
+                                        @{ var OPCPhone = ((@dealers != null) ? @dealers.OPCPhone : string.Empty); }
+                                        <label class="control-label">Phone No. : <span class="required">*</span></label>
+                                        <input type="text" class="form-control" name="OPCPhone" value="@OPCPhone">
+                                    </div>
+                                    <div class="form-group">
+                                        @{ var OPCEmail = ((@dealers != null) ? @dealers.OPCEmail : string.Empty); }
+                                        <label class="control-label">Email Add : <span class="required">*</span></label>
+                                        <input type="text" class="form-control" name="OPCEmail" value="@OPCEmail">
+                                    </div>
+                                    <div class="form-group">
+                                        @{ var OPCFax = ((@dealers != null) ? @dealers.OPCFax : string.Empty); }
+                                        <label class="control-label">Fax : </label>
+                                        <input type="text" class="form-control" name="OPCFax" value="@OPCFax">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="panel panel-color panel-primary">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Authorized Personnel</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="form-group">
+                                        @{ var Person1 = ((@dealers != null) ? @dealers.Person1 : string.Empty); }
+                                        <label class="control-label">Person 1 : <span class="required">*</span></label>
+                                        <input type="text" class="form-control" name="Person1" value="@Person1">
+                                    </div>
+                                    <div class="form-group">
+                                        @{ var Person2 = ((@dealers != null) ? @dealers.Person2 : string.Empty); }
+                                        <label class="control-label">Person 2 : </label>
+                                        <input type="text" class="form-control" name="Person2" value="@Person2">
+                                    </div>
+                                    <div class="form-group">
+                                        @{ var Person3 = ((@dealers != null) ? @dealers.Person3 : string.Empty); }
+                                        <label class="control-label">Person 3 : </label>
+                                        <input type="text" class="form-control" name="Person3" value="@Person3">
+                                    </div>
+                                    <div class="form-group">
+                                        @{ var Person4 = ((@dealers != null) ? @dealers.Person4 : string.Empty); }
+                                        <label class="control-label">Person 4 : </label>
+                                        <input type="text" class="form-control" name="Person4" value="@Person4">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div class="panel panel-color panel-primary">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Financial Point of Contact</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @{ var FPCName = ((@dealers != null) ? @dealers.FPCName : string.Empty); }
+                                            <label class="control-label">Name : <span class="required">*</span></label>
+                                            <input type="text" class="form-control" name="FPCName" value="@FPCName">
+                                        </div>
+                                        <div class="form-group">
+                                            @{ var FPCEmail = ((@dealers != null) ? @dealers.FPCEmail : string.Empty); }
+                                            <label class="control-label">E-mail : </label>
+                                            <input type="text" class="form-control" name="FPCEmail" value="@FPCEmail">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @{ var FPCPhone = ((@dealers != null) ? @dealers.FPCPhone : string.Empty); }
+                                            <label class="control-label">Phone No. : </label>
+                                            <input type="text" class="form-control" name="FPCPhone" value="@FPCPhone">
+                                        </div>
+                                        <div class="form-group">
+                                            @{ var FPCFax = ((@dealers != null) ? @dealers.FPCFax : string.Empty); }
+                                            <label class="control-label">Fax : </label>
+                                            <input type="text" class="form-control" name="FPCFax" value="@FPCFax">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="tab-pane" id="provided_vehicle_tab">
+                    <table class="table table-striped table-hover" cellpadding="0" cellspacing="0">
+                        <thead>
+                            <tr class="table-header">
+                                <th>
+                                    Equipment ID
+                                </th>
+                                <th align="center">
+                                    VIN
+                                </th>
+                                <th align="center">
+                                    Ownership Type
+                                </th>
+                                <th align="center">
+                                    Engine No.
+                                </th>
+                                <th align="center">
+                                    Plate No.
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @{
+                                if (@referencedFleet.Count() > 0)
+                                {
+                                    foreach (var item in referencedFleet)
+                                    {
+                                        <tr>
+                                            <td><a href="#" id="@item.FleetID" style="color:#3498db">@item.NLID</a></td>
+                                            <td>@item.VIN</td>
+                                            <td>@item.OwnershipType</td>
+                                            <td>@item.EngineNo</td>
+                                            <td>@item.PlateNo</td>
+                                        </tr>
+                                    }
+                                }
+                                else
+                                {
+                                    <tr class="">
+                                        <td colspan="10" style="color:#c0392b" align="center" valign="middle"> No Records Found!</td>
+                                    </tr>
+                                }
+                            }
+
+                        </tbody>
+                    </table>
+
+                </div>
+                <div class="tab-pane" id="attachement_tab">
+
+                </div>
+                <div class="tab-pane" id="others_tab">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+    <script>
+        $(document).ready(function () {
+            $('ul.tabs').tabs();
+        });
+    </script>

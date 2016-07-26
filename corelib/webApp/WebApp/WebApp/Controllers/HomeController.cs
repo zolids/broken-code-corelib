@@ -11,9 +11,6 @@ namespace WebApp.Controllers
     public class HomeController : Controller
     {
 
-        private UserModule _userAccount;
-        private user_models _userModels;
-
         private Helper _helpers;
 
         [Authorize]
@@ -59,6 +56,7 @@ namespace WebApp.Controllers
             return View();
         }
 
+        [Authorize]
         public ActionResult ErrorPage()
         {
             return View();

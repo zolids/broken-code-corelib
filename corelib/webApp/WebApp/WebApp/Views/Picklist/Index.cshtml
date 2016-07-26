@@ -1,0 +1,98 @@
+﻿@{
+    var activeProject = ((Request.Cookies["activeProject"] != null) ? Request.Cookies["activeProject"].Value : null);
+}
+<div class="breadcrumb-container row">
+    <ol class="breadcrumb">
+        <li><a href="/Home/Index?active_project=@activeProject">Home</a></li>
+        <li>Settings</li>
+        <li class="active">System Pick list</li>
+    </ol>
+</div>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div>
+            <div class="pull-right">
+                <form role="search" class="text-search  pull-left hidden-xs">
+                    <input type="text" placeholder="Search string..." class="form-control" id="str-to-find">
+                    <a href="#" id="search-string"><i class="fa fa-search"></i></a>
+                </form>
+            </div>
+            <div class="card-box">
+                <!-- Icon sets -->
+                <section>
+                    <h4 class="m-t-0 header-title"><i class="md md-settings"></i><b>Fleet</b></h4>
+                    <p class="text-muted m-b-15 font-13">
+                        Vehicle Information
+                    </p>
+                    <div class="clearfix icon-list-demo">
+                        <div class="col-sm-6 col-md-4 col-lg-3 view-assign-location"><p><i class=" md-pin-drop"></i>Assigned Location</p></div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 fleet-equipment-types"><p><i class="fa fa-car"></i>Vehicle Types</p></div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 view-colors"><p><i class="md md-color-lens"></i>Colors</p></div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 fleet-equipment-makes"><p><i class="md md-layers"></i>Vehicle Makes</p></div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 fleet-equipment-model"><p><i class="md md-beenhere"></i>Vehicle Models</p></div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 fleet-equipment-series"><p><i class="md md-keyboard-control"></i>Vehicle Series</p></div>
+                    </div>
+                </section>
+
+                <section class="icon-set">
+                    <h4 class="page-header header-title"><i class="md md-dashboard"></i><b>Parts</b></h4>
+                    <div class="clearfix icon-list-demo">
+                        <div class="col-sm-6 col-md-4 col-lg-3 view-part-category"><p><i class="md md-group-work"></i>Parts Category</p></div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 view-part-veh-type"><p><i class="md md-info"></i>Parts Type</p></div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 view-part-unit-measure"><p><i class="md md-assessment"></i>Measurements</p></div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 view-part-location"><p><i class="md md-place"></i>Parts Location</p></div>
+                    </div>
+                </section>
+
+                <section class="icon-set">
+                    <h4 class="page-header header-title"><i class="md md-group"></i><b>Employee</b></h4>
+                    <div class="clearfix icon-list-demo">
+                        <div class="col-sm-6 col-md-4 col-lg-3 view-manager"><p><i class="md md-people-outline"></i>Manager</p></div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 view-local"><p><i class="md md-people"></i>Local</p></div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 view-department"><p><i class="md md-group-work"></i>Department</p></div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 view-category"><p><i class="md md-view-array"></i>Categories</p></div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 view-position"><p><i class="fa fa-certificate"></i>Positions</p></div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 view-skills"><p><i class="md md-star-outline"></i>Skill Levels</p></div>
+                    </div>
+                </section>
+
+                <section class="icon-set">
+                    <h4 class="page-header header-title"><i class="md md-settings"></i><b>Services</b></h4>
+                    <div class="clearfix icon-list-demo">
+                        <div class="col-sm-6 col-md-4 col-lg-3 view-all-services"><p><i class="md md-work"></i>View Services</p></div>
+                    </div>
+                </section>
+
+                <section class="icon-set">
+                    <h4 class="page-header header-title"><i class="fa fa-wrench"></i><b>Repairs</b></h4>
+                    <div class="clearfix icon-list-demo">
+                        <div class="col-sm-6 col-md-4 col-lg-3 view-repair-types"><p><i class="md md-apps"></i>Repair Type</p></div>
+                    </div>
+                </section>
+
+                <section class="icon-set">
+                    <h4 class="page-header header-title"><i class="fa fa-folder-open"></i><b>Other</b></h4>
+                    <div class="clearfix icon-list-demo">
+                        <div class="col-sm-6 col-md-4 col-lg-3 view-currency"><p><i class="md md-attach-money"></i>Currency</p></div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 view-exchange-rates"><p><i class="fa fa-money"></i>Exchange Rates</p></div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 view-dept-loc"><p><i class="md md-business"></i>Department & Location</p></div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts{
+
+    <script>
+        $(document).ready(function () {
+
+        })
+    </script>
+
+}

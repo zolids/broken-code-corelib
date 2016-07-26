@@ -15,7 +15,8 @@ namespace WebApp.helpers
         public const string SYSTEM_USERS     = "System Users";
         public const string GENERAL_SETTINGS = "General System Settings";
         public const string ACQUISITION      = "Acquisition";
-
+        public const string PICKLIST         = "Picklist";
+        public const string DEALER_PAGE      = "Dealers";
 
         // Message Notif
         public const string ERROR_404        = "Server not found!";

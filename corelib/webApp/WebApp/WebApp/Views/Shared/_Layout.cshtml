@@ -16,6 +16,8 @@
 
     <link rel="shortcut icon" href="~/Content/theme/images/favicon.ico" type="image/x-icon">
 
+    <link href="~/Content/theme/css/custombox.min.css" rel="stylesheet" />
+    }
     <link href="~/Content/theme/css/sweetalert.css" rel="stylesheet" />
 
     @RenderSection("css", required: false)
@@ -207,6 +209,18 @@
                             </ul>
                         </li>
 
+                        <li class="has-submenu  last-elements">
+                            <a href="#"><i class="md md-folder-special"></i>Dealers</a>
+                            <ul class="submenu megamenu">
+                                <li>
+                                    <ul>
+                                        <li><a href="#" class="get-one-dealer">Create New</a></li>
+                                        <li><a href="/Dealers" class="dealers">Dealer's Table</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        
                         <li class="has-submenu">
                             <a href=""><i class="md md-class"></i>Parts</a>
                             <ul class="submenu">
@@ -217,25 +231,13 @@
                                     </ul>
                                 </li>
                             </ul>
-                        </li>
-
-                        <li class="has-submenu  last-elements">
-                            <a href="#"><i class="md md-folder-special"></i>Dealers</a>
-                            <ul class="submenu megamenu">
-                                <li>
-                                    <ul>
-                                        <li><a href="#">Invoice</a></li>
-                                        <li><a href="#">Calendar</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
                         </li>  
 
                         <li class="has-submenu">
                             <a href="#"><i class="md md-settings"></i>Settings</a>
                             <ul class="submenu">
                                 <li class="">
-                                    <a href="">Pick List</a>
+                                    <a href="/Picklist/">Pick List</a>
                                 </li>
                                 <li class="">
                                     <a href="/Account/SystemUsers">User Management</a>
@@ -316,6 +318,11 @@
 
     <script src="~/Content/theme/js/jquery.nicescroll.js"></script>
     <script src="~/Content/theme/js/jquery.scrollTo.min.js"></script>
+
+    @* global js functions *@
+    <script src="~/Scripts/app/generic.js"></script>
+
+    <script src="~/Scripts/plugins/custombox.min.js"></script>
     
     <script src="~/Scripts/plugins/sweetalert.min.js"></script>
     <script src="~/Scripts/plugins/notify.min.js"></script>

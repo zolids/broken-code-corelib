@@ -132,8 +132,13 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AcquisitionController.cs" />
+    <Compile Include="Controllers\DealersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PicklistController.cs" />
     <Compile Include="DbModels\Acquisition.cs" />
+    <Compile Include="DbModels\Dealers.cs" />
+    <Compile Include="DbModels\Fleet.cs" />
+    <Compile Include="Models\DealerModule.cs" />
     <Compile Include="DbModels\Projects.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -142,6 +147,7 @@
     <Compile Include="DbModels\Users.cs" />
     <Compile Include="helpers\Constant.cs" />
     <Compile Include="helpers\Helper.cs" />
+    <Compile Include="Models\FleetModule.cs" />
     <Compile Include="Models\RequestsModule.cs" />
     <Compile Include="Models\UserModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -212,6 +218,7 @@
     <Content Include="Content\theme\css\bootstrap.min.css" />
     <Content Include="Content\theme\css\components.css" />
     <Content Include="Content\theme\css\core.css" />
+    <Content Include="Content\theme\css\custombox.min.css" />
     <Content Include="Content\theme\css\icons.css" />
     <Content Include="Content\theme\css\menu.css" />
     <Content Include="Content\theme\css\pages.css" />
@@ -291,6 +298,8 @@
     <Content Include="Content\theme\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\app\Acquisition.js" />
+    <Content Include="Scripts\app\dealers.js" />
+    <Content Include="Scripts\app\generic.js" />
     <Content Include="Scripts\app\notify-metro.js" />
     <Content Include="Scripts\app\users.js" />
     <Content Include="Scripts\datatables\buttons.bootstrap.min.js" />
@@ -324,6 +333,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\plugins\bootstrap-datepicker.min.js" />
     <Content Include="Scripts\plugins\bootstrap-tagsinput.min.js" />
+    <Content Include="Scripts\plugins\custombox.min.js" />
     <Content Include="Scripts\plugins\jquery.circliful.min.js" />
     <Content Include="Scripts\plugins\jquery.counterup.min.js" />
     <Content Include="Scripts\plugins\jquery.waypoints.js" />
@@ -358,6 +368,10 @@
     <Content Include="Views\Home\ErrorPage.cshtml" />
     <Content Include="Views\Acquisition\Index.cshtml" />
     <Content Include="Views\Acquisition\createEditAcquisition.cshtml" />
+    <Content Include="Views\Picklist\Index.cshtml" />
+    <Content Include="Views\Dealers\Index.cshtml" />
+    <Content Include="Views\Dealers\dealersTable.cshtml" />
+    <Content Include="Views\Dealers\dealers.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

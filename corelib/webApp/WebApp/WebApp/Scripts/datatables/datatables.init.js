@@ -33,7 +33,7 @@ TableManageButtons = function() {
         init: function (tableName) {
             switch (tableName) {
                 case "system_users":
-                case "acquisition_request":
+                case "to_datatable":
                     handleDataTableButtons()
                     break;
                 default:

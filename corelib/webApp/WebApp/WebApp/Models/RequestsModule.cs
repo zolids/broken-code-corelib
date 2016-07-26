@@ -19,7 +19,7 @@ namespace WebApp.Models
 
             if (request_id > 0) where = "WHERE id = " + request_id;
 
-            string sql = "SELECT * FROM [extras].[tbl_requests] " + where + " ORDER BY request_date;";
+            string sql = "SELECT * FROM [extras].[tbl_requests] " + where + " ORDER BY request_date DESC;";
 
             var users = _request.Database.SqlQuery<tbl_requests>(sql);
 

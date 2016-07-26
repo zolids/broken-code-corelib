@@ -79,7 +79,7 @@ namespace WebApp.Controllers
                 }else {
                     
                     acquisition.request_status = "Pending";
-
+                    acquisition.request_date   = DateTime.Now;
                     db.requests.Add(acquisition);
 
                 }
@@ -109,6 +109,7 @@ namespace WebApp.Controllers
 
         }
 
+        [Authorize]
         public string emailHtml(int request_id = 0, string status = null)
         {
             string Url = "http://" + Request.Url.Authority.ToString() + "/Acquisition/createEditAcquisition?isNew=false&request_id=" + request_id;
