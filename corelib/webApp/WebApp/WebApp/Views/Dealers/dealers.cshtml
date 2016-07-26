@@ -218,7 +218,7 @@
                         <tbody>
 
                             @{
-                                if (@referencedFleet.Count() > 0)
+                                if (@referencedFleet != null && @referencedFleet.Count() > 0)
                                 {
                                     foreach (var item in referencedFleet)
                                     {
