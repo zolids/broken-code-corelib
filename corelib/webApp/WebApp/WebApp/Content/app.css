@@ -113,3 +113,32 @@
     font-size: 12px !important;
     padding-left: 2px !important;
 }
+
+#uploadBtn {
+    opacity: 0;
+    top: 0;
+    position: absolute;
+    cursor: pointer;
+}
+
+/* custombox */
+
+.custom-modal-text {
+    text-align: left !important;
+    padding: 1px !important;
+    padding-top: 20px !important;
+}
+
+.custombox-modal-container {
+    margin-top: 8% !important;
+}
+
+/* sweetalert */
+
+.sweet-overlay {
+    z-index: 100000 !important;
+}
+
+.sweet-alert {
+    z-index: 9999999 !important;
+}

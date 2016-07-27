@@ -89,7 +89,7 @@
 
         $(document).ready(function () {
 
-            TableManageButtons.init("to_datatable");
+            TableManageButtons.init("with_export_btn");
 
             if ($getUrlVars()["emailSent"] == "true")
                 $.Notification.notify('success', 'bottom right', 'An e-mail notification has been sent to you and to related people. Please check your inbox to proceed.')

@@ -337,6 +337,7 @@
     <Content Include="Scripts\plugins\jquery.circliful.min.js" />
     <Content Include="Scripts\plugins\jquery.counterup.min.js" />
     <Content Include="Scripts\plugins\jquery.waypoints.js" />
+    <Content Include="Scripts\plugins\legacy.min.js" />
     <Content Include="Scripts\plugins\notify.min.js" />
     <Content Include="Scripts\plugins\select2.min.js" />
     <Content Include="Scripts\plugins\summernote.min.js" />
@@ -372,9 +373,11 @@
     <Content Include="Views\Dealers\Index.cshtml" />
     <Content Include="Views\Dealers\dealersTable.cshtml" />
     <Content Include="Views\Dealers\dealers.cshtml" />
+    <Content Include="Views\Dealers\attachment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\files\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

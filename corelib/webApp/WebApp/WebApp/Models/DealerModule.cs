@@ -48,7 +48,7 @@ namespace WebApp.Models
 
                 where = "WHERE DealerRefCode = '" + refCode + "' ";
 
-            string sql = "SELECT * FROM [dbo].[dealers_attachment] " + where + " ORDER BY DateCreated DESC;";
+            string sql = "SELECT * FROM [dbo].[dealers_attachment] " + where + " ORDER BY DateUpload DESC;";
 
             var attachment = _db.Database.SqlQuery<Dealer_attachment>(sql);
 

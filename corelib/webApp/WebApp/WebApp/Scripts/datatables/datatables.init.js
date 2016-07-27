@@ -3,7 +3,7 @@
 * 
 */
 
-var handleDataTableButtons = function() {
+var $handleDataTableButtons = function() {
         "use strict";
         0 !== $(".datatable-custom").length && $(".datatable-custom").DataTable({
             dom: "Bfrtip",
@@ -27,14 +27,27 @@ var handleDataTableButtons = function() {
         })
 },
 
+$responsiveTable = function () {
+    $('.datatable-responsive').dataTable()
+},
+
+$keyTable = function () {
+    $('.datatable-keytable').DataTable({ keys: true });
+}
+
 TableManageButtons = function() {
     "use strict";
     return {
         init: function (tableName) {
             switch (tableName) {
-                case "system_users":
-                case "to_datatable":
-                    handleDataTableButtons()
+                case "with_export_btn":
+                    $handleDataTableButtons()
+                    break;
+                case "responsive_table":
+                    $responsiveTable();
+                    break;
+                case "key_table":
+                    $keyTable();
                     break;
                 default:
             }
