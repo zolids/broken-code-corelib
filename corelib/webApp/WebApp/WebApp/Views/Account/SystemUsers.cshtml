@@ -45,8 +45,7 @@
                                         <td>@item.usertypedisp</td>
                                         <td>@item.Status</td>
                                         <td class="actions">
-                                            <a href="/Account/Register?newuser=false&user_id=@item.user_id" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
-                                            <a href="#" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
+                                            <a data-toggle="tooltip" data-placement="top" data-original-title="View User's Info" href="/Account/Register?newuser=false&user_id=@item.user_id" class="get-one-dealer btn btn-icon waves-effect waves-light btn-primary m-b-0"><i class="fa fa-search"></i></a>
                                         </td>
                                     </tr>
                                 }

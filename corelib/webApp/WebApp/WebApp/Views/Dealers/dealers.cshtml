@@ -8,7 +8,9 @@
 
     var attachment = Model.getDealerAttachment;
 
+    ViewBag.Module = "DEALERS";
 }
+
 
 <form action="#" data-parsley-validate="" novalidate="" id="add-edit-dealers">
 
@@ -298,6 +300,28 @@
                 </div>
                 <div class="tab-pane" id="others_tab">
 
+                    @Html.Partial("CustomValues")
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card-box">
+                                <h4 class="m-t-0 header-title"><b>Additional Remarks</b></h4>
+                                <p class="text-muted font-13 m-b-25">
+                                    Add additional note as reference
+                                </p>
+                                <div class="row">
+                                    <div class="form-group">
+                                        @{ var Notes = ((@dealers != null) ? @dealers.Notes : string.Empty); }
+                                        <label class="control-label">Remarks : </label>
+                                        <textarea class="form-control" name="Notes" rows="7">@Notes</textarea>
+
+                                        <input type="hidden" name="console_value" id="console_values" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -347,6 +371,7 @@
             placement: 'top',
             content: function () { return '<img class="img-responsive" src="' + $(this).data('img') + '" />'; }
         });
+
 
     });
 

@@ -10,6 +10,11 @@ namespace WebApp.Controllers
 {
     public class PicklistController : Controller
     {
+
+        dbContext _db;
+        Helper _helpers;
+        PicklistModule _picklist;
+
         [Authorize]
         public ActionResult Index()
         {
@@ -18,5 +23,19 @@ namespace WebApp.Controllers
             return View();
         }
 
+        [Authorize]
+        public PartialViewResult getAssignedLocation()
+        {
+
+            using (_picklist = new PicklistModule())
+            {
+                var province = _picklist.getFleetProvinces();
+
+                return PartialView("ProvincesView", province);
+            }
+
+        }
+    
     }
+
 }

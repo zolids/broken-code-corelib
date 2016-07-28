@@ -138,6 +138,7 @@
     <Compile Include="DbModels\Acquisition.cs" />
     <Compile Include="DbModels\Dealers.cs" />
     <Compile Include="DbModels\Fleet.cs" />
+    <Compile Include="DbModels\Picklist.cs" />
     <Compile Include="Models\DealerModule.cs" />
     <Compile Include="DbModels\Projects.cs" />
     <Compile Include="Global.asax.cs">
@@ -148,6 +149,7 @@
     <Compile Include="helpers\Constant.cs" />
     <Compile Include="helpers\Helper.cs" />
     <Compile Include="Models\FleetModule.cs" />
+    <Compile Include="Models\PicklistModule.cs" />
     <Compile Include="Models\RequestsModule.cs" />
     <Compile Include="Models\UserModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -374,6 +376,8 @@
     <Content Include="Views\Dealers\dealersTable.cshtml" />
     <Content Include="Views\Dealers\dealers.cshtml" />
     <Content Include="Views\Dealers\attachment.cshtml" />
+    <Content Include="Views\Dealers\CustomValues.cshtml" />
+    <Content Include="Views\Account\PasswordReset.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -27,6 +27,8 @@ namespace WebApp.Models
 
         public DbSet<tbl_requests> requests { get; set; }
 
+        public DbSet<tbl_tokens> tokens { get; set; }
+
         public DbSet<tbl_emails> email_logs { get; set; }
 
         public DbSet<Dealers> Dealers { get; set; }
@@ -35,5 +37,6 @@ namespace WebApp.Models
 
         public DbSet<Fleet> Fleet { get; set; }
 
+        public DbSet<fleet_provinces> province { get; set; }
     }
 }

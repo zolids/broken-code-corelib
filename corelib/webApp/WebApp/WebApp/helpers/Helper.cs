@@ -73,7 +73,7 @@ namespace WebApp.helpers
             user_models userInfo = this.UserData(this.DecryptString(session));
         }
 
-        public void sendAnEmail(string session = null, string subject = null, string emailHTML = null)
+        public bool sendAnEmail(string session = null, string subject = null, string emailHTML = null)
         {
             SmtpClient client;
             user_models userInfo = this.UserData(this.DecryptString(session));
@@ -106,12 +106,14 @@ namespace WebApp.helpers
                     mm.DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure;
 
                     client.Send(mm);    
+
+                    return true;
                 }
 
             }
             catch (Exception e)
             {
-                ;
+                return false;
             }
         }
     }

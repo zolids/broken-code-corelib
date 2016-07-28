@@ -45,7 +45,7 @@ $('#add-new-dealer').on('click', function (e) {
 
 })
 
-$('.get-one-dealer').on('click', function (e) {
+$(document).on('click','.get-one-dealer', function (e) {
 
     e.preventDefault();
     e.stopImmediatePropagation();
@@ -138,6 +138,8 @@ $('#update-dealer').on('click', function (e) {
     e.stopImmediatePropagation();
 
     var $dealersForm = $('#add-edit-dealers');
+
+    $dealersForm.parsley({ excluded: '#custom-value-form input' });
     $dealersForm.parsley().validate();
 
     if ($dealersForm.parsley().isValid()) {

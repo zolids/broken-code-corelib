@@ -1,0 +1,90 @@
+﻿<div class="">
+    <div class="card-box">
+        <h4 class="m-t-0 header-title"><b>Custom fields</b></h4>
+        <p class="text-muted font-13 m-b-25">
+            Add new custom value pairs
+        </p>
+
+        <div class="row clearfix">
+            <div class="form-group custom-fields">
+                <label class="col-xs-2 control-label">Custom Fields</label>
+                <div class="col-xs-4">
+                    <input type="text" class="form-control" name="custom_fields[0].label_name" placeholder="Define label name" required="" />
+                </div>
+                <div class="col-xs-5">
+                    <input type="text" class="form-control" name="custom_fields[0].field_value" placeholder="Enter field value" required="" />
+                </div>
+                <div class="">
+                    <input type="hidden" class="form-control" name="custom_fields[0].module" placeholder="Module to which the value pair belong" value="@ViewBag.Module" />
+                </div>
+                <div class="col-xs-1">
+                    <button type="button" class="btn btn-primary waves-effect waves-light m-b-15 addButton"><i class="fa fa-plus"></i></button>
+                </div>
+                <input type="hidden" class="" name="custom_fields[0].sort_index" value="0" />
+            </div>
+
+            <!-- The template for adding new field -->
+            <div class="form-group hide custom-fields" id="customTemplate">
+                <div class="col-xs-4 col-xs-offset-2">
+                    <input type="text" class="form-control" name="label_name" placeholder="Define label name" required="" />
+                </div>
+                <div class="col-xs-5">
+                    <input type="text" class="form-control" name="field_value" placeholder="Enter field value" required="" />
+                </div>
+                <div class="">
+                    <input type="hidden" class="form-control" name="module" placeholder="Module to which the value pair belong" value="@ViewBag.Module" />
+                </div>
+                <div class="col-xs-1">
+                    <button type="button" class="btn btn-default waves-effect waves-light m-b-15 removeButton"><i class="fa fa-minus"></i></button>
+                </div>
+                <input type="hidden" class="" name="sort_index" />
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+<script>
+    
+    $(document).ready(function () {
+
+        rowIndex = 0;
+
+        $(document)
+        // Add button click handler
+        .on('click', '.addButton', function () {
+
+            rowIndex++;
+            var $template = $('#customTemplate'),
+                $clone = $template
+                                .clone()
+                                .removeClass('hide')
+                                .removeAttr('id')
+                                .attr('data-field-index', rowIndex)
+                                .insertBefore($template);
+
+            // Update the name attributes
+            $clone
+                .find('[name="label_name"]').attr('name', 'custom_fields[' + rowIndex + '].label_name').end()
+                .find('[name="field_value"]').attr('name', 'custom_fields[' + rowIndex + '].field_value').end()
+                .find('[name="module"]').attr('name', 'custom_fields[' + rowIndex + '].module').end();
+
+        })
+        // Remove button click handler
+        .on('click', '.removeButton', function () {
+
+            var $row = $(this).parents('.form-group'),
+                    index = $row.attr('data-field-index');
+
+            // Remove element containing the fields
+            $row.remove();
+
+        })
+
+
+    })
+    
+</script>

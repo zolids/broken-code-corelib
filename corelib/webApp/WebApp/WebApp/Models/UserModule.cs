@@ -32,14 +32,14 @@ namespace WebApp.Models
     public class UserModule : Helper, IDisposable
     {
 
-        private dbContext _user  = new dbContext();
+        private dbContext _db  = new dbContext();
 
         public Users ValidateUser(string username, string password)
         {
             
             string newPassword = Cryptography.Encryption.Encrypt(password, Constant.HASHKEY);
 
-            var user = _user.Users.Where(u => u.username == username && u.password == newPassword);
+            var user = _db.Users.Where(u => u.username == username && u.password == newPassword);
 
             if (user.Any()) return user.SingleOrDefault();
 
@@ -54,7 +54,7 @@ namespace WebApp.Models
 
             string sql = "SELECT * FROM [extras].[tbl_options];";
 
-            var config = _user.Database.SqlQuery<tbl_config>(sql);
+            var config = _db.Database.SqlQuery<tbl_config>(sql);
 
             if (config.Any())
             {
@@ -67,15 +67,16 @@ namespace WebApp.Models
             return configList;
         }
 
-        public IEnumerable<Users> getUser(int user_id = 0){
+        public IEnumerable<Users> getUser(int user_id = 0, string email = null){
 
             string where = string.Empty;
 
             if (user_id > 0) where = "WHERE user_id = " + user_id;
+            if (!string.IsNullOrEmpty(email)) where = "WHERE email = '" + email + "'";
 
             string sql = "SELECT * FROM [dbo].[gsa_users] " + where;
 
-            var users = _user.Database.SqlQuery<Users>(sql);
+            var users = _db.Database.SqlQuery<Users>(sql);
 
             return users;
 
@@ -89,7 +90,7 @@ namespace WebApp.Models
 
             string sql = "SELECT * FROM [dbo].[wp_pages] " + where;
 
-            var pages = _user.Database.SqlQuery<wp_pages>(sql);
+            var pages = _db.Database.SqlQuery<wp_pages>(sql);
 
             return pages;
         }
@@ -102,7 +103,7 @@ namespace WebApp.Models
 
             string sql = "SELECT t1.user_id, t2.PageID, t2.Page, t2.SubPage, t1.[View], t1.Download, t1.Upload, t2.page_type FROM [dbo].[gsa_user_pages] t1 INNER JOIN [dbo].[wp_pages] t2 ON (t1.PageID = t2.PageID) " + where;
 
-            var user_pages = _user.Database.SqlQuery<user_pages_available>(sql);
+            var user_pages = _db.Database.SqlQuery<user_pages_available>(sql);
 
             return user_pages;
         }
@@ -116,9 +117,57 @@ namespace WebApp.Models
 
             string sql = "SELECT * FROM [extras].[tbl_projects] " + where;
 
-            var projects = _user.Database.SqlQuery<tbl_projects>(sql);
+            var projects = _db.Database.SqlQuery<tbl_projects>(sql);
 
             return projects;
+
+        }
+
+        public IEnumerable<tbl_tokens> validateToken(string token = null)
+        {
+
+            string where = string.Empty;
+
+            if (!string.IsNullOrEmpty(token)) where = "WHERE token = '" + token + "'";
+
+            string sql = "SELECT * FROM [extras].[tbl_tokens] " + where;
+
+            var tokens = _db.Database.SqlQuery<tbl_tokens>(sql);
+
+            return tokens;
+
+        }
+
+        public bool changePassword(string npassword, int user_id) {
+
+            bool success = true;
+
+            if (string.IsNullOrEmpty(npassword))
+                return false;
+
+            string sql = "UPDATE [dbo].[gsa_users] SET password = '" + this.EncryptString(npassword) + "' WHERE user_id = " + user_id;
+
+            if (_db.Database.ExecuteSqlCommand(sql) <= 0)
+                success = false;
+
+            return success;
+
+        }
+
+        public bool updateToken(string token)
+        {
+
+            bool success = true;
+
+            if (string.IsNullOrEmpty(token))
+                return false;
+
+            string sql = "UPDATE [extras].[tbl_tokens] SET used = 1 WHERE token ='" + token + "'";
+
+            if (_db.Database.ExecuteSqlCommand(sql) <= 0)
+                success = false;
+
+            return success;
 
         }
 
