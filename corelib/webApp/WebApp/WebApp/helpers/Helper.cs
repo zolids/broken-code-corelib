@@ -43,6 +43,24 @@ namespace WebApp.helpers
             return m;
         }
 
+        public string LogException(Exception e)
+        {
+            string errMessage = string.Empty;
+
+            Exception realerror = e;
+            while (realerror.InnerException != null)
+                realerror = realerror.InnerException;
+
+            if (realerror.ToString().ToString().IndexOf("duplicate key") > 0)
+                
+                errMessage = "System Error: Duplicate value found!";
+
+            else
+                errMessage = (e.InnerException.ToString() == null) ? e.Message.ToString() : e.InnerException.ToString();
+
+            return errMessage.ToString();
+        }
+
         public bool logEmail(string session = null, string emailBody = null, string reference_code = null, string reference_table = null, string subject = null)
         {
 

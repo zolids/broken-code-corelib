@@ -298,11 +298,11 @@
     <Content Include="Content\theme\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\theme\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\theme\fonts\glyphicons-halflings-regular.woff2" />
-    <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\app\Acquisition.js" />
     <Content Include="Scripts\app\dealers.js" />
     <Content Include="Scripts\app\generic.js" />
     <Content Include="Scripts\app\notify-metro.js" />
+    <Content Include="Scripts\app\picklist.js" />
     <Content Include="Scripts\app\users.js" />
     <Content Include="Scripts\datatables\buttons.bootstrap.min.js" />
     <Content Include="Scripts\datatables\buttons.html5.min.js" />
@@ -319,19 +319,6 @@
     <Content Include="Scripts\datatables\pdfmake.min.js" />
     <Content Include="Scripts\datatables\responsive.bootstrap.min.js" />
     <Content Include="Scripts\datatables\vfs_fonts.js" />
-    <Content Include="Scripts\jquery-1.8.2.js" />
-    <Content Include="Scripts\jquery-1.8.2.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery-ui-1.8.24.js" />
-    <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
-    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
-    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\knockout-2.2.0.debug.js" />
-    <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\plugins\bootstrap-datepicker.min.js" />
     <Content Include="Scripts\plugins\bootstrap-tagsinput.min.js" />
@@ -344,7 +331,6 @@
     <Content Include="Scripts\plugins\select2.min.js" />
     <Content Include="Scripts\plugins\summernote.min.js" />
     <Content Include="Scripts\plugins\sweetalert.min.js" />
-    <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -378,6 +364,7 @@
     <Content Include="Views\Dealers\attachment.cshtml" />
     <Content Include="Views\Dealers\CustomValues.cshtml" />
     <Content Include="Views\Account\PasswordReset.cshtml" />
+    <Content Include="Views\Picklist\ProvincesView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -385,6 +372,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Picklist\VehicleTypeView.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Picklist\AddEditVehicleType.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

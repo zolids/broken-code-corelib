@@ -81,7 +81,7 @@
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
 
-/* */
+/*  */
 
 .text-search {
     position: relative;
@@ -121,16 +121,22 @@
     cursor: pointer;
 }
 
+.p-lr-5 {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+}
+
+
 /* custombox */
 
 .custom-modal-text {
     text-align: left !important;
     padding: 1px !important;
-    padding-top: 20px !important;
+    padding-top: 10px !important;
 }
 
 .custombox-modal-container {
-    margin-top: 8% !important;
+    margin-top: 5% !important;
 }
 
 /* sweetalert */
@@ -141,4 +147,56 @@
 
 .sweet-alert {
     z-index: 9999999 !important;
+}
+
+/* datatable css hack */
+.dataTables_paginate.paging_simple_numbers {
+    font-size: 8px !important;
+}
+
+/* table hack*/
+
+.collapse {
+    cursor: pointer;
+}
+
+#vehicle-model-table table td {
+    border: 1px solid #eee;
+}
+
+.level0 {
+    background-color: #f5f5f5;
+}
+
+.level1 td:first-child {
+    padding-left: 40px !important;
+    padding-top: 17px !important;
+}
+
+.level2 td:first-child {
+    padding-left: 60px !important;
+}
+
+.collapse_table .toggle {
+    background: url('./theme/images/collapse.gif');
+    padding-left: 9px;
+}
+
+.expand_table .toggle {
+    background: url('./theme/images/expand.gif');
+    padding-left: 9px;
+}
+
+.toggle {
+    height: 9px;
+    width: 9px;
+    display: inline-block;   
+}
+
+.alertBox
+{
+    border:none !important;
+    background-color: #437DD4 !important;
+    color: #fff !important;
+    cursor: default !important; 
 }

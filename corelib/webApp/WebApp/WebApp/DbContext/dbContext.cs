@@ -38,5 +38,16 @@ namespace WebApp.Models
         public DbSet<Fleet> Fleet { get; set; }
 
         public DbSet<fleet_provinces> province { get; set; }
+
+        public DbSet<fleet_vehicle_models> fleetVehicleModel { get; set; }
+
+        public DbSet<fleet_vehicle_type> fleet_vehicle_types { get; set; }
+
+        public DbSet<fleet_vehicle_make> fleetVehicleMake { get; set; }
+
+        public DbSet<fleet_vehicle_series> fleetVehicleSeries { get; set; }
+
+        public DbSet<fleet_vehicle_type_mapping> fleetVehicleMappings { get; set; }
+
     }
 }

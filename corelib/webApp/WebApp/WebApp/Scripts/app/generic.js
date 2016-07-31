@@ -17,6 +17,9 @@ var $loadJsonResult = function params(url, params, callback) {
         traditional: true,
         success: callback,
         error: function (XHR, errStatus, errorThrown) {
+
+            $('#custom-modal .custom-modal-text').unblock();
+
             var err = JSON.parse(XHR.responseText);
             errorMessage = err.Message;
             alert(errorMessage);
@@ -41,7 +44,7 @@ $loadPartialView = function params(url, callback, params) {
             console.log(XHR);
         }
     }).done(function (data) {
-
+        $('#custom-modal .custom-modal-text').unblock();
     });
 
 },
@@ -91,13 +94,28 @@ $pasteHtmlAtCaret = function (html) {
         // IE < 9
         document.selection.createRange().pasteHTML(html);
     }
+},
+
+$addFilterAddBUttom = function (classname) {
+    $('<button type="button" data-toggle="tooltip" data-placement="left" data-original-title="Add new record" id="add-new-item" class="' + classname + ' btn btn-success waves-effect waves-light btn-sm"><i class="fa fa-plus"></i></button>')
+                    .appendTo('.dataTables_filter')
+},
+
+$blockContent = function (container) {
+
+    $modalContent = $(container)
+    $modalContent.block({
+        blockMsgClass: 'alertBox',
+        fadeIn: 300, message: 'Please wait...'
+    });
+
 }
 
 $generic = function () {
     "use strict";
     return {
         init: function () {
-            
+            $('[data-toggle="tooltip"]').tooltip();
         }
     }
 }();

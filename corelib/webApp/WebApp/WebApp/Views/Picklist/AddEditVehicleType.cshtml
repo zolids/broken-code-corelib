@@ -1,0 +1,163 @@
+﻿@model WebApp.Controllers.vehicleTypeAddEditDetails
+
+@{
+    
+    var vModels = Model.fleetModels;
+    var tModels = ((Model.fleetTypes != null) ? Model.fleetTypes.SingleOrDefault() : null);
+
+    var typeMappings = Model.fleetVechileMappings;
+
+}
+
+
+<div class="col-lg-12">
+    <div class="card-box">
+
+        <div class="row clerfix">
+            <form action="#" class="horizontal-form" id="add-edit-vehicle-types">
+
+                <div class="col-lg-5">
+                    <div class="form-group">
+
+                        @{ var VehTypeID = ((@tModels != null) ? @tModels.VehTypeID : 0); }
+                        @{ var Description = ((@tModels != null) ? @tModels.Description : string.Empty); }
+
+                        <label class="control-label"> Type Name : <span class="required">*</span></label>
+                        <input type="text" class="form-control" placeholder="Enter Type Name" name="Description" value="@Description">
+                        <input type="hidden" class="form-control" name="VehTypeID" value="@VehTypeID">
+
+                        <input type="hidden" class="form-control" name="actions" value="add" id="formAction">
+
+                    </div>
+                    <div class="form-group">
+                        @{ var ssKM = ((@tModels != null) ? @tModels.ssKM : 0); }
+                        <label class="control-label">ssKM : <span class="required">*</span></label>
+                        <input type="text" class="form-control" placeholder="Enter ssKM" name="ssKM" value="@ssKM">
+                    </div>
+                    <div class="form-group">
+                        @{ var ssWeek = ((@tModels != null) ? @tModels.ssWeek : 0); }
+                        <label class="control-label">ssWeek : <span class="required">*</span></label>
+                        <input type="text" class="form-control" placeholder="Enter ssWeek" name="ssWeek" value="@ssWeek">
+                    </div>
+                    <div class="form-group">
+                        @{ var SiteCode = ((@tModels != null) ? @tModels.SiteCode : string.Empty); }
+                        <label class="control-label">SiteCode : <span class="required">*</span></label>
+                        <input type="text" class="form-control" placeholder="Enter SiteCode" name="SiteCode" value="@SiteCode">
+                    </div>
+                    <div class="form-group">
+                        @{ var LicenseCat = ((@tModels != null) ? @tModels.LicenseCat : 0); }
+                        <label class="control-label">LicenseCat : <span class="required">*</span></label>
+                        <input type="text" class="form-control" placeholder="Enter LicenseCat" name="LicenseCat" value="@LicenseCat">
+                    </div>
+                    <div class="form-group">
+                        @{ var ssKMUNIT = ((@tModels != null) ? @tModels.ssKMUNIT : 0); }
+                        <label class="control-label">ssKMUNIT: <span class="required">*</span></label>
+                        <input type="text" class="form-control" placeholder="Enter ssKMUNIT" name="ssKMUNIT" value="@ssKMUNIT">
+                    </div>
+                    <div class="form-group">
+                        @{ var ssWeekUNIT = ((@tModels != null) ? @tModels.ssWeekUNIT : 0); }
+                        <label class="control-label">ssWeekUNIT : <span class="required">*</span></label>
+                        <input type="text" class="form-control" placeholder="Enter ssWeekUNIT" name="ssWeekUNIT" value="@ssWeekUNIT">
+                    </div>
+                </div>
+
+                <div class="col-lg-7">
+                    <div class="row card-box" style="height: 510px;overflow: auto;">
+                        <h4 class="m-t-0 header-title"><b>Vehicle Model</b></h4>
+                        <p class="text-muted font-13 m-b-30">
+                            List of vehicle model mappings
+                        </p>
+                        <table class="table table-hover collapsable-table" cellpadding="0" cellspacing="0" id="vehicle-model-table">
+                            <thead>
+                            </thead>
+                            <tbody>
+                                @{
+                                    if (@vModels.Count() > 0)
+                                    {
+                                        var tmpMake = string.Empty;
+
+                                        foreach (var m in vModels)
+                                        {
+
+                                            if (@m.Make != tmpMake)
+                                            {
+
+                                                <tr data-depth="0" class="collapse_table level0">
+                                                    <td colspan="2"><span class="toggle collapse"></span><b style="padding-left:10px;">@m.Make.ToUpper()</b></td>
+                                                </tr>
+                                            }
+
+                                            var checkedModel = string.Empty;
+                                            var checkBoxValue = m.ModelID.ToString();
+
+                                            if (@typeMappings != null && @typeMappings.Count() > 0)
+                                            {
+
+                                                foreach (var mapped in typeMappings)
+                                                {
+                                                    if (mapped.VTModelID == m.ModelID)
+                                                    {
+
+                                                        checkedModel = "checked=true";
+                                                        checkBoxValue = m.ModelID + "-" + mapped.VehTypeID;
+
+                                                        break;
+                                                    }
+                                                    else
+                                                    {
+                                                        checkedModel = string.Empty;
+                                                    }
+                                                }
+
+                                            }
+
+                                            <tr data-depth="1" class="collapse_table level1">
+
+                                                <td id="@m.Model">@m.Model</td>
+
+                                                <td id="@m.Model">
+
+                                                    <div class="checkbox checkbox-primary">
+                                                        <input type="checkbox" id="checkbox_@m.ModelID" name="vehicle_type_selected" value="@checkBoxValue" @checkedModel />
+                                                        <label for="checkbox_@m.ModelID">&nbsp;</label>
+                                                    </div>
+
+                                                </td>
+
+                                            </tr>
+
+                                            tmpMake = m.Make;
+
+                                        }
+
+                                    }
+                                    else
+                                    {
+                                        <tr>
+                                            <td colspan="2" class="noResult">
+                                                No Available Vehicle Model(s)
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+
+                <div class="form-group text-right m-b-0">
+                    <a class="btn btn-primary waves-effect waves-light fleet-equipment-types" module="refresh">
+                        <i class="md md-arrow-back"></i>Back
+                    </a>
+                    <a class="btn btn-primary waves-effect waves-light" id="btnUpdateVehicleTypeMapping">
+                        Apply Changes
+                    </a>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+</div>

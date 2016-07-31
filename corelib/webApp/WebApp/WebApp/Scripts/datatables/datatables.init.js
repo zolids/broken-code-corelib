@@ -33,7 +33,7 @@ $responsiveTable = function () {
 
 $keyTable = function () {
     $('.datatable-keytable').DataTable({ keys: true });
-}
+},
 
 TableManageButtons = function() {
     "use strict";
@@ -51,6 +51,9 @@ TableManageButtons = function() {
                     break;
                 default:
             }
+
+            $('.dataTables_filter :input').attr('size', 18);
+            
         }
     }
 }();
