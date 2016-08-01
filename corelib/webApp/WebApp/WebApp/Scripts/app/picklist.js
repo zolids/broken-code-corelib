@@ -79,6 +79,30 @@ functionList.fleet_vehicle_series = function (isOpen) {
     }, {})
 },
 
+functionList.parts_category = function (isOpen) {
+    $loadPartialView("/Picklist/getPartsCategory", function (data) {
+
+        openModal(data, 'Parts Category', 'editPartsCategory', isOpen);
+
+    }, {})
+},
+
+functionList.unit_measures = function (isOpen) {
+    $loadPartialView("/Picklist/getUnitMeasures", function (data) {
+
+        openModal(data, 'Parts Category', 'editUnitMeasure', isOpen);
+
+    }, {})
+},
+
+functionList.parts_stype = function (isOpen) {
+    $loadPartialView("/Picklist/getPartsType", function (data) {
+
+        openModal(data, 'Parts Types', 'editPartsTypes', isOpen);
+
+    }, {})
+},
+
 $picklistFunctions = function () {
     
     $(document).on('click', '.view-assign-location', function (e) {
@@ -477,8 +501,185 @@ $picklistFunctions = function () {
     })
 
     .on('click', '.view-part-category', function () {
-
+        functionList.parts_category(false);
     })
+    .on('click', '.editPartsCategory', function (e) {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+
+        var id = $(this).attr('id');
+
+        var message = "Edit Parts Category?";
+        var text = "Please Enter Parts Category";
+        var placeHolder = "Part Category Name";
+        var defaultValue = "";
+
+        if (id == "add-new-item") {
+            message = "Add New Parts Category";
+            placeHolder = "Parts Category Name";
+        }
+        else {
+            defaultValue = $(this).closest('tr').find('td').eq(0).text();
+            text = "Update Fleet Parts Category Name";
+        }
+
+        swal({
+            title: message, text: text, type: "input", confirmButtonColor: "#3bafda", confirmButtonText: "Apply Changes",
+            showCancelButton: true, closeOnConfirm: false, inputPlaceholder: placeHolder
+        }, function (inputValue) {
+
+            if (inputValue === false) return false;
+
+            if (inputValue === "") {
+                swal.showInputError("Please Provide Valid Parts Category Name");
+                return false
+            }
+
+            var fd = new FormData();
+
+            fd.append('id', id);
+            fd.append('category_name', inputValue);
+
+            $loadJsonResult("/Picklist/updatePartsCategory", fd, function (json) {
+
+                if (json.isSuccess) {
+                    swal("Success!", "Parts Category has successfully been updated!", "success");
+                    functionList.parts_category(true);
+                }
+                else {
+                    swal("Error Proccessing Request!", json.message, "error");
+                }
+
+            })
+
+        });
+
+        setTimeout(function () {
+            $('.sweet-alert.show-input').find('input').val(defaultValue);
+            $('.sweet-alert input').css('text-align', 'center')
+        }, 1);
+    })
+
+    .on('click', '.view-part-veh-type', function () {
+        functionList.parts_stype(false);
+    })
+    .on('click', '.editPartsTypes', function (e) {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+
+        var id = $(this).attr('id');
+
+        var message = "Edit Parts Type?";
+        var text = "Please Enter Parts Type";
+        var placeHolder = "Parts Type";
+        var defaultValue = "";
+
+        if (id == "add-new-item") {
+            message = "Add New Parts Type";
+            placeHolder = "Parts Location";
+        }
+        else {
+            defaultValue = $(this).closest('tr').find('td').eq(0).text();
+            text = "Update Parts Type";
+        }
+
+        swal({
+            title: message, text: text, type: "input", confirmButtonColor: "#3bafda", confirmButtonText: "Save Changes",
+            showCancelButton: true, closeOnConfirm: false, inputPlaceholder: placeHolder
+        }, function (inputValue) {
+
+            if (inputValue === false) return false;
+
+            if (inputValue === "") {
+                swal.showInputError("Please Provide Valid Parts Type");
+                return false
+            }
+
+            var fd = new FormData();
+
+            fd.append('id', id);
+            fd.append('type', inputValue);
+
+            $loadJsonResult("/Picklist/updatePartsTypes", fd, function (json) {
+
+                if (json.isSuccess) {
+                    swal("Success!", "Parts Type has successfully been updated!", "success");
+                    functionList.parts_stype(true);
+                }
+                else {
+                    swal("Error Proccessing Request!", json.message, "error");
+                }
+
+            })
+
+        });
+
+        setTimeout(function () {
+            $('.sweet-alert.show-input').find('input').val(defaultValue);
+            $('.sweet-alert input').css('text-align', 'center')
+        }, 1);
+    })
+
+    .on('click', '.view-part-unit-measure', function () {
+        functionList.unit_measures(false);
+    })
+    .on('click', '.editUnitMeasure', function (e) {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+
+        var id = $(this).attr('id');
+
+        var message = "Edit Unit Measure?";
+        var text = "Please Enter Unit Measure";
+        var placeHolder = "Unit Measure";
+        var defaultValue = "";
+
+        if (id == "add-new-item") {
+            message = "Add New Unit Measure";
+            placeHolder = "Unit Measure";
+        }
+        else {
+            defaultValue = $(this).closest('tr').find('td').eq(0).text();
+            text = "Update Unit Measure Name";
+        }
+
+        swal({
+            title: message, text: text, type: "input", confirmButtonColor: "#3bafda", confirmButtonText: "Save Changes",
+            showCancelButton: true, closeOnConfirm: false, inputPlaceholder: placeHolder
+        }, function (inputValue) {
+
+            if (inputValue === false) return false;
+
+            if (inputValue === "") {
+                swal.showInputError("Please Provide Valid Unit Measure Name");
+                return false
+            }
+
+            var fd = new FormData();
+
+            fd.append('id', id);
+            fd.append('unit', inputValue);
+
+            $loadJsonResult("/Picklist/updateUnitMeasures", fd, function (json) {
+
+                if (json.isSuccess) {
+                    swal("Success!", "Unit Measure has successfully been updated!", "success");
+                    functionList.unit_measures(true);
+                }
+                else {
+                    swal("Error Proccessing Request!", json.message, "error");
+                }
+
+            })
+
+        });
+
+        setTimeout(function () {
+            $('.sweet-alert.show-input').find('input').val(defaultValue);
+            $('.sweet-alert input').css('text-align', 'center')
+        }, 1);
+    })
+
 },
 
 $pickListRemoveItem = function () {

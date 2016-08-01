@@ -140,6 +140,51 @@ namespace WebApp.Models
 
         }
 
+        public IEnumerable<parts_category> partsCategory(int id = 0)
+        {
+
+            string where = string.Empty;
+
+            if (id > 0) where = "WHERE id = " + id;
+
+            string sql = "SELECT * FROM [dbo].[parts_category] " + where;
+
+            var parts_category = _db.Database.SqlQuery<parts_category>(sql);
+
+            return parts_category;
+
+        }
+
+        public IEnumerable<parts_stype> partsType(int id = 0)
+        {
+
+            string where = string.Empty;
+
+            if (id > 0) where = "WHERE id = " + id;
+
+            string sql = "SELECT * FROM [dbo].[parts_stype] " + where;
+
+            var parts_type = _db.Database.SqlQuery<parts_stype>(sql);
+
+            return parts_type;
+
+        }
+        
+        public IEnumerable<unit_measures> UnitMeasures(int id = 0)
+        {
+
+            string where = string.Empty;
+
+            if (id > 0) where = "WHERE id = " + id;
+
+            string sql = "SELECT * FROM [dbo].[unit_measures] " + where;
+
+            var unit_m = _db.Database.SqlQuery<unit_measures>(sql);
+
+            return unit_m;
+
+        }
+
         public bool deletePicklist(string table_name = null, int reference_id = 0, string filter = null)
         {
 

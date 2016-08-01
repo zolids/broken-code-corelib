@@ -1,0 +1,39 @@
+﻿@model WebApp.Controllers.partCategory
+@{
+    var model = ((Model.PartsCategory) != null ? Model.PartsCategory : null);
+}
+
+<div class="col-lg-12">
+    <div class="card-box">
+        <form action="#" class="form-pick-list">
+            <table class="datatable-responsive table table-hover dataTable no-footer" id="ownership-types-table">
+                <thead>
+                    <tr>
+                        <th>Description</th>
+                        <th style="text-align:center !important">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        if (model.Count() > 0)
+                        {
+                            foreach (var m in model)
+                            {
+                                <tr>
+                                    <td id="@m.id">@m.category_name</td>
+                                    <td align="center" style="padding-right: 25px;">
+                                        <a id="@m.id" data-toggle="tooltip" data-placement="top" data-original-title="Edit Record" href="#" class="editPartsCategory btn btn-icon waves-effect waves-light btn-primary p-lr-5"><i class="md md-border-color"></i></a>
+                                        <a id="@m.id" module="parts_category" data-toggle="tooltip" data-placement="top" data-original-title="Remove Record" href="#" class="remove-item btn btn-icon waves-effect waves-light btn-default p-lr-5"><i class="glyphicon glyphicon-trash"></i></a>
+                                    </td>
+                                </tr>
+                            }
+
+                        }
+
+                    }
+                </tbody>
+            </table>
+
+        </form>
+    </div>
+</div>

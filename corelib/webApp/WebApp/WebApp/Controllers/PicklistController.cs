@@ -28,6 +28,20 @@ namespace WebApp.Controllers
 
     }
 
+    public struct partCategory
+    {
+        public IEnumerable<parts_category> PartsCategory { get; set; }
+
+        public IEnumerable<parts_locations> PartsLocation { get; set; }
+
+        public IEnumerable<parts_stype> PartsType { get; set; }
+
+        public IEnumerable<parts_details> Parts { get; set; }
+
+        public IEnumerable<unit_measures> UnitMeasures { get; set; }
+
+    }
+
     public class PicklistController : Controller
     {
 
@@ -35,6 +49,7 @@ namespace WebApp.Controllers
         Helper _helpers;
         PicklistModule _picklist;
 
+        partCategory _partsCategory;
         vehicleTypeAddEditDetails _vehicleDetails;
 
         [Authorize]
@@ -445,7 +460,174 @@ namespace WebApp.Controllers
 
         }
 
+        [Authorize]
+        public PartialViewResult getPartsCategory()
+        {
 
+            _partsCategory = new partCategory();
+
+            using (_picklist = new PicklistModule())
+            {
+                _partsCategory.PartsCategory = _picklist.partsCategory();
+
+                return PartialView("partsCategoryView", _partsCategory);  
+            }
+
+        }
+
+        [Authorize]
+        [HttpPost]
+        public JsonResult updatePartsCategory(parts_category parts)
+        {
+            bool isSuccess = true;
+            string message = "";
+
+            try
+            {
+                using (_db = new dbContext())
+                {
+                    parts.category_name = parts.category_name.ToUpper();
+
+                    if (parts.id > 0) // edit record
+                    {
+                        _db.Entry(parts).State = EntityState.Modified;
+                    }
+                    else
+                        _db.parts_category.Add(parts);
+
+                    if (_db.SaveChanges() <= 0)
+                    {
+                        isSuccess = false;
+                        message = "Error in updating Fleet Vehicle Ownership information!";
+                    }
+                }
+                
+            }
+            catch (Exception e)
+            {
+                using (_helpers = new Helper())
+                {
+                    isSuccess = false;
+                    message = _helpers.LogException(e);
+                } 
+            }
+
+            return Json(new { isSuccess = isSuccess, message = message }, "text/html");
+
+        }
+
+        [Authorize]
+        public PartialViewResult getPartsType()
+        {
+
+            _partsCategory = new partCategory();
+
+            using (_picklist = new PicklistModule())
+            {
+                _partsCategory.PartsType = _picklist.partsType();
+
+                return PartialView("PartsTypeView", _partsCategory);
+            }
+
+        }
+
+        [Authorize]
+        [HttpPost]
+        public JsonResult updatePartsTypes(parts_stype pTypes)
+        {
+            bool isSuccess = true;
+            string message = "";
+
+            try
+            {
+                using (_db = new dbContext())
+                {
+                    pTypes.type = pTypes.type.ToUpper();
+
+                    if (pTypes.id > 0) // edit record
+                    {
+                        _db.Entry(pTypes).State = EntityState.Modified;
+                    }
+                    else
+                        _db.parts_stype.Add(pTypes);
+
+                    if (_db.SaveChanges() <= 0)
+                    {
+                        isSuccess = false;
+                        message = "Error in updating Parts Types information!";
+                    }
+                }
+               
+            }
+            catch (Exception e)
+            {
+                using (_helpers = new Helper())
+                {
+                    isSuccess = false;
+                    message = _helpers.LogException(e);
+                } 
+            }
+
+            return Json(new { isSuccess = isSuccess, message = message }, "text/html");
+        }
+
+        [Authorize]
+        public PartialViewResult getUnitMeasures()
+        {
+
+            _partsCategory = new partCategory();
+
+            using (_picklist = new PicklistModule())
+            {
+                _partsCategory.UnitMeasures = _picklist.UnitMeasures();
+
+                return PartialView("UnitMeasureView", _partsCategory);
+            }
+
+        }
+
+
+        [Authorize]
+        [HttpPost]
+        public JsonResult updateUnitMeasures(unit_measures units)
+        {
+            bool isSuccess = true;
+            string message = "";
+
+            try
+            {
+                using (_db = new dbContext())
+                {
+                    units.Unit = units.Unit.ToUpper();
+
+                    if (units.id > 0) // edit record
+                    {
+                        _db.Entry(units).State = EntityState.Modified;
+                    }
+                    else
+                        _db.UnitMeasures.Add(units);
+
+                    if (_db.SaveChanges() <= 0)
+                    {
+                        isSuccess = false;
+                        message = "Error in updating Unit Measures information!";
+
+                    }
+                }
+
+            }
+            catch (Exception e)
+            {
+                using (_helpers = new Helper())
+                {
+                    isSuccess = false;
+                    message = _helpers.LogException(e);
+                } 
+            }
+
+            return Json(new { isSuccess = isSuccess, message = message }, "text/html");
+
+        }
         [Authorize]
         public string populateDropDownWithValues(string module = null, string referenceId = null, string referenceId2 = null) {
             

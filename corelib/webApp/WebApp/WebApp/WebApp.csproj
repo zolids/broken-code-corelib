@@ -397,6 +397,15 @@
   <ItemGroup>
     <Content Include="Views\Picklist\AddEditVehicleSeries.cshtml" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Picklist\partsCategoryView.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Picklist\PartsTypeView.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Picklist\UnitMeasureView.cshtml" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

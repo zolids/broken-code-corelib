@@ -247,4 +247,16 @@ namespace WebApp.Models
 
     }
 
+    [Table("unit_measures")]
+    public class unit_measures
+    {
+
+        [Key]
+        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
+        public int id { get; set; }
+
+        public string Unit { get; set; }
+
+    }
+
 }
