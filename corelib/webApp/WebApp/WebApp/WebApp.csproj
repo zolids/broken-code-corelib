@@ -379,6 +379,24 @@
   <ItemGroup>
     <Content Include="Views\Picklist\AddEditVehicleType.cshtml" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Picklist\ColorsView.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Picklist\vehicleMakeView.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Picklist\vehicleModelView.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Picklist\AddEditVehicleModel.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Picklist\vehicleSeriesView.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Picklist\AddEditVehicleSeries.cshtml" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

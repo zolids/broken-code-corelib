@@ -1,0 +1,82 @@
+﻿@model WebApp.Controllers.vehicleTypeAddEditDetails
+@{
+
+    var vModels = (Model.fleetModels != null) ? Model.fleetModels.SingleOrDefault() : null;
+    var mMmodel = Model.fleetVechileMakes;
+
+}
+
+<div class="col-lg-12 animated fadeIn">
+    <div class="card-box">
+        <div class="row clerfix">
+            <form action="#" id="add-edit-vehicle-models" data-parsley-validate="" novalidate="">
+                <div class="form-group">
+
+                    <label class="control-label">Vehicle Make : <span class="required">*</span></label>
+
+                    @{ var Make = ((@vModels != null) ? @vModels.Make : string.Empty); }
+
+                    <select class="form-control" name="Make" required>
+                        @{
+                            if (mMmodel.Count() > 0)
+                            {
+                                var selected = string.Empty;
+                                <option value=""></option>
+                                foreach (var mod in mMmodel)
+                                {
+
+                                    selected = ((Make.ToUpper().ToString() == mod.vehicle_make.ToUpper().ToString() ? "selected" : string.Empty));
+
+                                    <option @selected value="@mod.vehicle_make">@mod.vehicle_make</option>
+
+                                }
+                            }
+                        }
+                    </select>
+
+
+                </div>
+                <div class="form-group">
+
+
+                    @{ var ModelName = ((@vModels != null) ? @vModels.Model : string.Empty); }
+                    @{ var modelId = ((@vModels != null) ? @vModels.ModelID : 0); }
+
+                    <label class="control-label">Vehicle Model : <span class="required">*</span></label>
+                    <input type="text" class="form-control" placeholder="Enter Vehicle Model" name="Model" value="@ModelName" required>
+                    <input type="hidden" class="form-control" name="ModelID" value="@modelId">
+
+
+                </div>
+
+                <div class="form-group">
+
+
+                        @{ var VehicleCode = ((@vModels != null) ? @vModels.VehicleCode : string.Empty); }
+
+                        <label class="control-label">Vehicle Code : <span class="required">*</span></label>
+                        <input type="text" class="form-control" placeholder="Enter Vehicle Code" name="VehicleCode" value="@VehicleCode" maxlength="2" required>
+
+                </div>
+                <div class="col-md-12">
+                    @{ var ForAid = ((@vModels != null) ? @vModels.ForAid : 0); }
+
+                    <div class="checkbox checkbox-primary">
+                        <input type="checkbox" name="ForAid" id="ForAid-check" value="1" @(ForAid == 1 ? "checked=checked" : "")>
+                        <label for="ForAid-check">Foreign Aid</label>
+                    </div>
+                </div>
+
+                <div class="form-group text-right m-b-0">
+                    <a data-toggle="tooltip" data-placement="left" data-original-title="View vehicle model list" class="btn btn-primary waves-effect waves-light fleet-equipment-model" module="refresh">
+                        <i class="md md-arrow-back"></i>Back
+                    </a>
+                    <a class="btn btn-primary waves-effect waves-light" id="btnUpdateVehicleModel">
+                        Apply Changes
+                    </a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

@@ -34,16 +34,53 @@ functionList.fleet_provinces = function (isOpen) {
 
 functionList.fleet_vehicle_type = function (isOpen) {
 
+    $blockContent('#custom-modal .custom-modal-text');
+
     $loadPartialView("/Picklist/getVehicleTypeView", function (data) {
 
         openModal(data, 'Vehicle Types', 'editVehicleType', isOpen);
+        $('#custom-modal .custom-modal-text').unblock();
 
     }, {})
 
 },
 
-$picklistFunctions = function () {
+functionList.fleet_colors = function (isOpen) {
 
+    $loadPartialView("/Picklist/getFleetColors", function (data) {
+
+        openModal(data, 'Fleet Vehicle Colors', 'editColors', isOpen);
+
+    }, {})
+
+},
+
+functionList.fleet_vehicle_make = function (isOpen) {
+    $loadPartialView("/Picklist/getVehicleMakeView", function (data) {
+
+        openModal(data, 'Vehicle Make', 'editVehicleMake', isOpen);
+
+    }, {})
+},
+
+functionList.fleet_vehicle_models = function (isOpen) {
+    $loadPartialView("/Picklist/getVehicleModelView", function (data) {
+
+        openModal(data, 'Vehicle Models', '', isOpen);
+
+    }, {})
+},
+
+functionList.fleet_vehicle_series = function (isOpen) {
+    $loadPartialView("/Picklist/getVehicleSeriesView", function (data) {
+
+        openModal(data, 'Vehicle Series', '', isOpen);
+
+    }, {})
+},
+
+$picklistFunctions = function () {
+    
     $(document).on('click', '.view-assign-location', function (e) {
 
         e.preventDefault();
@@ -89,7 +126,7 @@ $picklistFunctions = function () {
             fd.append('id', id);
             fd.append('name', inputValue);
 
-            $loadJsonResult("/Picklist/addEditProvinces", fd, function (json) {
+            $loadJsonResult("/Picklist/updateProvinces", fd, function (json) {
 
                 if (json.isSuccess) {
                     swal("Success!", "Fleet Locations has successfully been updated!", "success");
@@ -109,14 +146,11 @@ $picklistFunctions = function () {
         }, 1);
 
     })
-    .on('click', '.fleet-equipment-types', function (e) {
 
-        e.preventDefault();
-        e.stopImmediatePropagation();
+    .on('click', '.fleet-equipment-types', function (e) {
 
         isOpen = ($(this).attr('module') == 'refresh' ? true : false);
 
-        $('.custombox-modal-container').css('width', '600px');
         functionList.fleet_vehicle_type(isOpen);
 
     })
@@ -133,14 +167,318 @@ $picklistFunctions = function () {
 
             openModal(data, 'Add / Edit Vehicle Types', '', true);
 
-            $('.custombox-modal-container').css('width', '800px');
-
             $('#custom-modal .custom-modal-text').unblock();
 
         }, { VehTypeID: $(me).attr('id') });
 
     })
+    .on('click', '#btnUpdateVehicleTypeMapping', function (e) {
 
+        e.preventDefault();
+        e.stopImmediatePropagation();
+            
+        var form = $('#add-edit-vehicle-types');
+
+        form.parsley().validate();
+
+        if (form.parsley().isValid()) {
+
+            swal({
+                title: "Updating Vehicle Type Detail?",
+                text: "Would you like to continue saving changes?",
+                type: "info",
+                showCancelButton: true,
+                confirmButtonColor: "#3bafda",
+                confirmButtonText: "Continue saving",
+                showLoaderOnConfirm: true,
+                closeOnConfirm: false
+            }, function (isConfirm) {
+
+                if (isConfirm) {
+
+                    $loadJsonResult("/Picklist/updateVehicleType", new FormData(form[0]), function (json) {
+
+                        if (json.isSuccess) {
+
+                            swal("Success!", "Vehicle Type has successfully been updated!", "success");
+                                
+                            functionList.fleet_vehicle_type(true);
+                        }
+                        else {
+                            swal("Error Proccessing Request!", json.message, "error");
+                        }
+
+                    })
+
+                }
+
+            })
+
+        }
+    })
+
+    .on('click', '.view-colors', function (e) {
+        functionList.fleet_colors(false);
+    })
+    .on('click', '.editColors', function (e) {
+
+        e.preventDefault();
+        e.stopImmediatePropagation();
+
+        var id = $(this).attr('id');
+
+        var message = "Edit Fleet Vehicle Color?";
+        var text = "Please Fleet Vehicle Color";
+        var placeHolder = "Enter Fleet Vehicle Color";
+        var defaultValue = "";
+
+        if (id == "add-new-item") {
+            message = "Add New Fleet Vehicle Color";
+            placeHolder = "Enter Fleet Vehicle Color";
+        }
+        else {
+            defaultValue = $(this).closest('tr').find('td').eq(0).text();
+            text = "Update Fleet Vehicle Color";
+        }
+
+        swal({
+            title: message, text: text, type: "input", confirmButtonColor: "#3bafda", confirmButtonText: "Save Changes",
+            showCancelButton: true, closeOnConfirm: false, inputPlaceholder: placeHolder
+        }, function (inputValue) {
+
+            if (inputValue === false) return false;
+
+            if (inputValue === "") {
+                swal.showInputError("Please Provide Valid Fleet Vehicle Color");
+                return false
+            }
+
+            var fd = new FormData();
+
+            fd.append('id', id);
+            fd.append('color_name', inputValue);
+
+            $loadJsonResult("/Picklist/updateFleetColors", fd, function (json) {
+
+                if (json.isSuccess) {
+                    swal("Success!", "Fleet Vehicle Color has successfully been updated!", "success");
+                    functionList.fleet_colors(true);
+                }
+                else {
+                    swal("Error Proccessing Request!", json.message, "error");
+                }
+
+            })
+
+        });
+
+        setTimeout(function () {
+            $('.sweet-alert.show-input').find('input').val(defaultValue);
+            $('.sweet-alert input').css('text-align', 'center')
+        }, 1);
+
+    })
+
+    .on('click', '.fleet-equipment-makes', function (e) {
+        functionList.fleet_vehicle_make(false);
+    })
+    .on('click', '.editVehicleMake', function (e) {
+
+        e.preventDefault();
+        e.stopImmediatePropagation();
+
+        var id = $(this).attr('id');
+        var message = "Edit Vehicle Make?";
+        var text = "Please Enter Vehicle make Name";
+        var placeHolder = "Enter Vehicle Make";
+        var defaultValue = "";
+
+        if (id == "add-new-item") {
+            message = "Add New Vehicle Make";
+            placeHolder = "Enter Vehicle Make";
+        }
+        else {
+            defaultValue = $(this).closest('tr').find('td').eq(0).text();
+            text = "Update Vehicle Make Name";
+        }
+        swal({
+            title: message, text: text, type: "input", confirmButtonColor: "#3bafda", confirmButtonText: "Save Changes",
+            showCancelButton: true, closeOnConfirm: false, inputPlaceholder: placeHolder
+        }, function (inputValue) {
+
+            if (inputValue === false) return false;
+
+            if (inputValue === "") {
+                swal.showInputError("Please Provide Valid Vehicle Make");
+                return false
+            }
+
+            var fd = new FormData();
+
+            fd.append('id', id);
+            fd.append('vehicle_make', inputValue);
+
+            $loadJsonResult("/Picklist/updateVehicleMake", fd, function (json) {
+
+                if (json.isSuccess) {
+                    swal("Success!", "Vehicle Make has successfully been updated!", "success");
+                    functionList.fleet_vehicle_make(true);
+                }
+                else {
+                    swal("Error Proccessing Request!", json.message, "error");
+                }
+
+            })
+
+        });
+
+        setTimeout(function () {
+            $('.sweet-alert.show-input').find('input').val(defaultValue);
+            $('.sweet-alert input').css('text-align', 'center')
+        }, 1);
+
+    })
+
+    .on('click', '.fleet-equipment-model', function () {
+
+        isOpen = ($(this).attr('module') == 'refresh' ? true : false);
+
+        functionList.fleet_vehicle_models(isOpen);
+
+    })
+    .on('click', '.editVehicleModel', function (e) {
+
+        e.preventDefault();
+        e.stopImmediatePropagation();
+
+        var me = this;
+
+        $blockContent('#custom-modal .custom-modal-text');
+
+        $loadPartialView("/Picklist/getVehicleTypeModelEditForm", function (data) {
+
+            openModal(data, 'Add / Edit Model', '', true);
+
+            $('#custom-modal .custom-modal-text').unblock();
+
+        }, { ModelID: $(me).attr('id') });
+    })
+    .on('click', '#btnUpdateVehicleModel', function (e) {
+
+        e.preventDefault();
+        e.stopImmediatePropagation();
+
+        var form = $('#add-edit-vehicle-models');
+
+        form.parsley().validate();
+
+        if (form.parsley().isValid()) {
+            swal({
+                title: "Updating Vehicle Model?",
+                text: "Would you like to continue saving changes?",
+                type: "info",
+                showCancelButton: true,
+                confirmButtonColor: "#3bafda",
+                confirmButtonText: "Continue saving",
+                showLoaderOnConfirm: true,
+                closeOnConfirm: false
+            }, function (isConfirm) {
+
+                if (isConfirm) {
+
+                    $loadJsonResult("/Picklist/updateVehicleModels", new FormData(form[0]), function (json) {
+
+                        if (json.isSuccess) {
+                            swal("Success!", "Vehicle Model has successfully been updated!", "success");
+                            functionList.fleet_vehicle_models(true);
+                        }
+                        else {
+                            swal("Error Proccessing Request!", json.message, "error");
+                        }
+
+                    })
+
+                }
+            });
+        }
+    })
+
+    .on('click', '.fleet-equipment-series', function () {
+
+        isOpen = ($(this).attr('module') == 'refresh' ? true : false);
+
+        functionList.fleet_vehicle_series(isOpen);
+
+    })
+    .on('click', '.editVehicleSeres', function (e) {
+
+        e.preventDefault();
+        e.stopImmediatePropagation();
+
+        var me = this;
+
+        $blockContent('#custom-modal .custom-modal-text');
+
+        $loadPartialView("/Picklist/getVehicleSeriesViewEdit", function (data) {
+
+            openModal(data, 'Add / Edit Vehicle Series', '', true);
+
+            $('#custom-modal .custom-modal-text').unblock();
+
+            // populate dropdown
+            $('#drp-series-make').trigger('change');
+
+        }, { id : $(me).attr('id') });
+
+    })
+    .on('click', '#btnUpdateVehicleSeries', function (e) {
+
+        e.preventDefault();
+        e.stopImmediatePropagation();
+
+
+        var form = $('#add-edit-vehicle-series');
+
+        form.parsley().validate();
+
+        if (form.parsley().isValid()) {
+
+            swal({
+                title: "Updating Vehicle Series Detail?",
+                text: "Would you like to continue saving changes?",
+                type: "info",
+                showCancelButton: true,
+                confirmButtonColor: "#3bafda",
+                confirmButtonText: "Continue saving",
+                showLoaderOnConfirm: true,
+                closeOnConfirm: false
+            }, function (isConfirm) {
+
+                if (isConfirm) {
+
+                    $loadJsonResult("/Picklist/updateVehicleSeries", new FormData(form[0]), function (json) {
+
+                        if (json.isSuccess) {
+
+                            swal("Success!", "Vehicle Series has successfully been updated!", "success");
+                            functionList.fleet_vehicle_series(true);
+                        }
+                        else {
+                            swal("Error Proccessing Request!", json.message, "error");
+                        }
+
+                    })
+
+                }
+
+            })
+
+        }
+    })
+
+    .on('click', '.view-part-category', function () {
+
+    })
 },
 
 $pickListRemoveItem = function () {
@@ -151,6 +489,7 @@ $pickListRemoveItem = function () {
         e.stopImmediatePropagation();
 
         $integerId = $(this).attr('id');
+        $filterBy = $(this).attr('filterBy');
 
         var me = this
             ,module = $(this).attr('module')
@@ -171,6 +510,7 @@ $pickListRemoveItem = function () {
 
             fd.append('integerId', parseInt($integerId));
             fd.append('module', module);
+            fd.append('filterBy', $filterBy);
 
             $loadJsonResult("/Picklist/deleteRecord", fd, function (json) {
 
@@ -239,6 +579,53 @@ $collapsableTable = function () {
 
 }
 
+$searchItemFromTable = function () {
+
+    $(document).on('keyup','.search-from-table', function () {
+
+        var $rows = $(this).closest('table tr');
+
+        var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+
+        $rows.show().filter(function () {
+            var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+            return !~text.indexOf(val);
+        }).hide();
+
+    });
+}
+
+$pickListDropDown = function () {
+
+    $(document).on('change', '#drp-series-make', function (e) {
+
+        var $form = new FormData()
+        var $defaultModel = $('#default-model-name');
+
+        $form.append('module', 'models');
+        $form.append('referenceId', $(this).val());
+
+        $loadJsonResult("/Picklist/populateDropDownWithValues", $form, function (json) {
+
+            var $el = $("#drp-series-model");
+            $el.empty();
+            $el.append($("<option></option>")
+                    .attr("value", '').text('Please Select'));
+
+            if (json.fleetModels != null) {
+                $.each(json.fleetModels, function (key, value) {
+                    $el.append($("<option " + ((value.Model == $defaultModel.val()) ? "selected":"" ) + " ></option>")
+                                    .attr("value", value.Model).text(value.Model)
+                                    .attr("id", value.ModelID));
+                });
+            }
+
+        })
+
+    })
+
+}
+
 $picklist = function () {
 
     'use strict';
@@ -247,6 +634,8 @@ $picklist = function () {
             $picklistFunctions();
             $pickListRemoveItem();
             $collapsableTable();
+            $searchItemFromTable();
+            $pickListDropDown();
         }
     }
 }();

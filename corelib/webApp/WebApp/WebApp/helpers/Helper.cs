@@ -43,6 +43,11 @@ namespace WebApp.helpers
             return m;
         }
 
+        public Boolean IsNumber(String value)
+        {
+            return value.All(Char.IsDigit);
+        }
+
         public string LogException(Exception e)
         {
             string errMessage = string.Empty;

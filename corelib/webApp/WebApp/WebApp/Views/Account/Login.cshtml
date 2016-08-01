@@ -24,7 +24,7 @@
         </div>
     }
  
-    <form class="form-horizontal m-t-20" method="post" action="/Account/Login?" novalidate data-parsley-validate id="login-form">
+    <form class="form-horizontal m-t-20 animated fadeIn" method="post" action="/Account/Login?" novalidate data-parsley-validate id="login-form">
         @Html.AntiForgeryToken()
 
         <h4 class="text-center">Lost Password</h4>
@@ -34,7 +34,7 @@
             <span>content</span>
         </div>
 
-        <div id="forget-password-form" style="display:none;">
+        <div id="forget-password-form" class="animated flipInX" style="display:none;">
 
             <div class="form-group">
                 <div class="col-xs-12">
@@ -62,7 +62,7 @@
 
         </div>
 
-        <div id="login-user-form">
+        <div id="login-user-form" class="animated flipInX">
             <div class="form-group">
                 <div class="col-xs-12">
                     <input type="text" data-val="true" data-val-required="Username Required" id="usernameInput" name="username" class="form-control" placeholder="Username" required autofocus value="@username">
@@ -122,14 +122,14 @@
         $loginForm[0].reset();
         $loginUser.hide();
         $notifContainer.hide();
-        $resetPassword.fadeIn();
+        $resetPassword.show();
     })
 
     $('#back').on('click', function () {
         $loginForm[0].reset();
         $resetPassword.hide();
         $notifContainer.hide();
-        $loginUser.fadeIn()
+        $loginUser.show()
     })
 
     $(document).on('click', '.submit-form', function (e) {

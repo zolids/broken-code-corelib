@@ -97,16 +97,19 @@ $pasteHtmlAtCaret = function (html) {
 },
 
 $addFilterAddBUttom = function (classname) {
-    $('<button type="button" data-toggle="tooltip" data-placement="left" data-original-title="Add new record" id="add-new-item" class="' + classname + ' btn btn-success waves-effect waves-light btn-sm"><i class="fa fa-plus"></i></button>')
+    if (classname != '' && classname != null) {
+        $('<button type="button" data-toggle="tooltip" data-placement="left" data-original-title="Add new record" id="add-new-item" class="' + classname + ' btn btn-success waves-effect waves-light btn-sm"><i class="fa fa-plus"></i></button>')
                     .appendTo('.dataTables_filter')
+    }
 },
 
-$blockContent = function (container) {
+$blockContent = function (container, msg) {
 
+    message = ((msg == null) ? 'Please wait...' : msg);
     $modalContent = $(container)
     $modalContent.block({
         blockMsgClass: 'alertBox',
-        fadeIn: 300, message: 'Please wait...'
+        fadeIn: 300, message: message
     });
 
 }

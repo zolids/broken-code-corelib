@@ -1,17 +1,17 @@
 /*
 Navicat SQL Server Data Transfer
 
-Source Server         : 192.168.2.198
+Source Server         : SQL_LOCAL
 Source Server Version : 120000
-Source Host           : MYSQL_DB_REP\AMSSQL2014:1433
-Source Database       : fsxcv_test
+Source Host           : ITJCAPC:1433
+Source Database       : fsxcv
 Source Schema         : dbo
 
 Target Server Type    : SQL Server
 Target Server Version : 120000
 File Encoding         : 65001
 
-Date: 2016-07-19 09:45:35
+Date: 2016-08-01 17:16:02
 */
 
 
@@ -377,7 +377,7 @@ CREATE TABLE [dbo].[dealers] (
 
 
 GO
-DBCC CHECKIDENT(N'[dbo].[dealers]', RESEED, 15)
+DBCC CHECKIDENT(N'[dbo].[dealers]', RESEED, 16)
 GO
 
 -- ----------------------------
@@ -385,13 +385,13 @@ GO
 -- ----------------------------
 SET IDENTITY_INSERT [dbo].[dealers] ON
 GO
-INSERT INTO [dbo].[dealers] ([id], [DealerRefCode], [DealerNo], [Name], [Address], [Email], [PostalCode], [Province], [Phone], [Fax], [OPCName], [OPCEmail], [OPCPhone], [OPCFax], [FPCName], [FPCEmail], [FPCPhone], [FPCFax], [Person1], [Person2], [Person3], [Person4], [DeliveryAddress], [CurrencyCode], [Rate], [DateFrom], [DateTo], [Privilege], [TierID], [ConTypeID], [CGrpID], [DealerTypeID], [CreditTermID], [CreditLimit], [DateApproved], [Blocked], [InterestID], [DateBlocked], [Reasons], [lblUDF1], [lblUDF2], [lblUDF3], [lblUDF4], [lblUDF5], [Udf1], [Udf2], [Udf3], [Udf4], [Udf5], [Notes], [CreatedByID], [DateCreated], [ModifiedByID], [DateModified], [AccountID]) VALUES (N'4', N'DLRCV00001', N'0001', N'Al Futtaim Motors', N'Al Futtaim Motors Company LLC\r\nDubai UAE', N'afmotors-service@alfuttaim.ae', N'11052', N'', N'97143106500', N'97143384712', N'Ajayakumar Nair', N'97143106509', N'ajayan.nair@alfuttaim.ae', N'', N'Rachelle Angoluan/Sachin Kumar', N'sachin.kumar@alfuttaim.ae', N'97143784563', N'97143384712', N'Sachin Kumar', N'Rachelle Angoluan', N'Sanjita', N'', N'', N'', N'0', N'2015-02-24', N'2015-02-24', N'None', N'0', N'0', N'', N'0', N'0', N'0', N'2015-02-24', N'0', N'0', null, N'', N'UDF 1', N'UDF 2', N'UDF 3', N'UDF 4', N'UDF 5', N'', N'', N'', N'', N'', N'', N'0', N'2015-02-24', null, N'2015-05-18 14:20:46.0000000', N'0')
+INSERT INTO [dbo].[dealers] ([id], [DealerRefCode], [DealerNo], [Name], [Address], [Email], [PostalCode], [Province], [Phone], [Fax], [OPCName], [OPCEmail], [OPCPhone], [OPCFax], [FPCName], [FPCEmail], [FPCPhone], [FPCFax], [Person1], [Person2], [Person3], [Person4], [DeliveryAddress], [CurrencyCode], [Rate], [DateFrom], [DateTo], [Privilege], [TierID], [ConTypeID], [CGrpID], [DealerTypeID], [CreditTermID], [CreditLimit], [DateApproved], [Blocked], [InterestID], [DateBlocked], [Reasons], [lblUDF1], [lblUDF2], [lblUDF3], [lblUDF4], [lblUDF5], [Udf1], [Udf2], [Udf3], [Udf4], [Udf5], [Notes], [CreatedByID], [DateCreated], [ModifiedByID], [DateModified], [AccountID]) VALUES (N'4', N'DLRCV00001', N'0001', N'Al Futtaim Motors', N'Al Futtaim Motors Company LLC Dubai UAE', N'afmotors-service@alfuttaim.ae', N'11052', null, N'97143106500', N'97143384712', N'Ajayakumar Nair', N'97143106509@test.com', N'ajayan.nair@alfuttaim.ae', null, N'Rachelle Angoluan/Sachin Kumar', N'sachin.kumar@alfuttaim.ae', N'97143784563', N'97143384712', N'Sachin Kumar', N'Rachelle Angoluan', N'Sanjita', null, null, null, N'0', null, null, null, N'0', N'0', null, N'0', N'0', N'0', null, N'0', N'0', null, null, null, null, null, null, null, null, null, null, null, null, null, N'0', null, null, null, N'0')
 GO
 GO
 INSERT INTO [dbo].[dealers] ([id], [DealerRefCode], [DealerNo], [Name], [Address], [Email], [PostalCode], [Province], [Phone], [Fax], [OPCName], [OPCEmail], [OPCPhone], [OPCFax], [FPCName], [FPCEmail], [FPCPhone], [FPCFax], [Person1], [Person2], [Person3], [Person4], [DeliveryAddress], [CurrencyCode], [Rate], [DateFrom], [DateTo], [Privilege], [TierID], [ConTypeID], [CGrpID], [DealerTypeID], [CreditTermID], [CreditLimit], [DateApproved], [Blocked], [InterestID], [DateBlocked], [Reasons], [lblUDF1], [lblUDF2], [lblUDF3], [lblUDF4], [lblUDF5], [Udf1], [Udf2], [Udf3], [Udf4], [Udf5], [Notes], [CreatedByID], [DateCreated], [ModifiedByID], [DateModified], [AccountID]) VALUES (N'5', N'DLRCV00002', N'0002', N'Fast Rent A Car LLC', N'PO Box 32011 Dubai UAE', N'dxbaccts@fastuae.com', N'32011', N'', N'97143387171', N'97143385277', N'Jeff Balbaroza', N'971504587061', N'jeff@fastuae.com', N'', N'Jyothiraj Raghavan', N'jyothiraj@fastuae.com', N'97143846006', N'', N'Jeff Balbaroza', N'Jyothiraj Raghavan', N'', N'', N'', N'', N'0', N'2015-02-24', N'2015-02-24', N'None', N'0', N'0', N'', N'0', N'0', N'0', N'2015-02-24', N'0', N'0', null, N'', N'UDF 1', N'UDF 2', N'UDF 3', N'UDF 4', N'UDF 5', N'', N'', N'', N'', N'', N'', N'0', N'2015-02-24', null, N'2015-02-24 17:19:33.0000000', N'0')
 GO
 GO
-INSERT INTO [dbo].[dealers] ([id], [DealerRefCode], [DealerNo], [Name], [Address], [Email], [PostalCode], [Province], [Phone], [Fax], [OPCName], [OPCEmail], [OPCPhone], [OPCFax], [FPCName], [FPCEmail], [FPCPhone], [FPCFax], [Person1], [Person2], [Person3], [Person4], [DeliveryAddress], [CurrencyCode], [Rate], [DateFrom], [DateTo], [Privilege], [TierID], [ConTypeID], [CGrpID], [DealerTypeID], [CreditTermID], [CreditLimit], [DateApproved], [Blocked], [InterestID], [DateBlocked], [Reasons], [lblUDF1], [lblUDF2], [lblUDF3], [lblUDF4], [lblUDF5], [Udf1], [Udf2], [Udf3], [Udf4], [Udf5], [Notes], [CreatedByID], [DateCreated], [ModifiedByID], [DateModified], [AccountID]) VALUES (N'6', N'DLRCV00003', N'0003', N'AAA Service Center', N'Rashidiya Dubai, UAE\r\nPO Box10101', N'serviceadvisor.rashidiya@aaadubai.com', N'10101', N'', N'97142858989', N'97142850303', N'Eduardo Gavilan', N'97142858989', N'serviceadvisor.rashidiya@aaadubai.com', N'', N'POC - Al Quoz Branch', N'info@aaadubai.com', N'97143470400', N'97143470401', N'Eduardo Gavilan', N'', N'', N'', N'', N'', N'0', N'2015-02-24', N'2015-02-24', N'None', N'0', N'0', N'', N'0', N'0', N'0', N'2015-02-24', N'0', N'0', null, N'', N'UDF 1', N'UDF 2', N'UDF 3', N'UDF 4', N'UDF 5', N'', N'', N'', N'', N'', N'', N'0', N'2015-02-24', null, N'2015-05-18 14:24:28.0000000', N'0')
+INSERT INTO [dbo].[dealers] ([id], [DealerRefCode], [DealerNo], [Name], [Address], [Email], [PostalCode], [Province], [Phone], [Fax], [OPCName], [OPCEmail], [OPCPhone], [OPCFax], [FPCName], [FPCEmail], [FPCPhone], [FPCFax], [Person1], [Person2], [Person3], [Person4], [DeliveryAddress], [CurrencyCode], [Rate], [DateFrom], [DateTo], [Privilege], [TierID], [ConTypeID], [CGrpID], [DealerTypeID], [CreditTermID], [CreditLimit], [DateApproved], [Blocked], [InterestID], [DateBlocked], [Reasons], [lblUDF1], [lblUDF2], [lblUDF3], [lblUDF4], [lblUDF5], [Udf1], [Udf2], [Udf3], [Udf4], [Udf5], [Notes], [CreatedByID], [DateCreated], [ModifiedByID], [DateModified], [AccountID]) VALUES (N'6', N'DLRCV00003', N'0003', N'AAA Service Center', N'Rashidiya Dubai, UAE PO Box10101', N'serviceadvisor.rashidiya@aaadubai.com', N'10101', null, N'97142858989', N'97142850303', N'Eduardo Gavilan', N'serviceadvisor.rashidiya@aaadubai.com', N'serviceadvisor.rashidiya@aaadubai.com', null, N'POC - Al Quoz Branch', N'info@aaadubai.com', N'97143470400', N'97143470401', N'Eduardo Gavilan', null, null, null, null, null, N'0', null, null, null, N'0', N'0', null, N'0', N'0', N'0', null, N'0', N'0', null, null, null, null, null, null, null, null, null, null, null, null, N'test', N'0', null, null, null, N'0')
 GO
 GO
 INSERT INTO [dbo].[dealers] ([id], [DealerRefCode], [DealerNo], [Name], [Address], [Email], [PostalCode], [Province], [Phone], [Fax], [OPCName], [OPCEmail], [OPCPhone], [OPCFax], [FPCName], [FPCEmail], [FPCPhone], [FPCFax], [Person1], [Person2], [Person3], [Person4], [DeliveryAddress], [CurrencyCode], [Rate], [DateFrom], [DateTo], [Privilege], [TierID], [ConTypeID], [CGrpID], [DealerTypeID], [CreditTermID], [CreditLimit], [DateApproved], [Blocked], [InterestID], [DateBlocked], [Reasons], [lblUDF1], [lblUDF2], [lblUDF3], [lblUDF4], [lblUDF5], [Udf1], [Udf2], [Udf3], [Udf4], [Udf5], [Notes], [CreatedByID], [DateCreated], [ModifiedByID], [DateModified], [AccountID]) VALUES (N'7', N'DLRCV00004', N'0004', N'Upgrade Auto Services', N'PO Box 283638 Dubai UAE', N'upgautos@eim.ae', N'283638', N'', N'97143400969', N'97143400263', N'Syed Sabaul Hassan', N'971567277461', N'hassan@upgradeautoservices.ae', N'97143400263', N'Syed Sabaul Hassan', N'upgautos@eim.ae', N'97143233093', N'97143233013', N'Syed Sabaul Hassan', N'', N'', N'', N'', N'', N'0', N'2015-02-24', N'2015-02-24', N'None', N'0', N'0', N'', N'0', N'0', N'0', N'2015-02-24', N'0', N'0', null, N'', N'UDF 1', N'UDF 2', N'UDF 3', N'UDF 4', N'UDF 5', N'', N'', N'', N'', N'', N'', N'0', N'2015-02-24', null, N'2015-05-18 14:32:44.0000000', N'0')
@@ -421,6 +421,9 @@ GO
 INSERT INTO [dbo].[dealers] ([id], [DealerRefCode], [DealerNo], [Name], [Address], [Email], [PostalCode], [Province], [Phone], [Fax], [OPCName], [OPCEmail], [OPCPhone], [OPCFax], [FPCName], [FPCEmail], [FPCPhone], [FPCFax], [Person1], [Person2], [Person3], [Person4], [DeliveryAddress], [CurrencyCode], [Rate], [DateFrom], [DateTo], [Privilege], [TierID], [ConTypeID], [CGrpID], [DealerTypeID], [CreditTermID], [CreditLimit], [DateApproved], [Blocked], [InterestID], [DateBlocked], [Reasons], [lblUDF1], [lblUDF2], [lblUDF3], [lblUDF4], [lblUDF5], [Udf1], [Udf2], [Udf3], [Udf4], [Udf5], [Notes], [CreatedByID], [DateCreated], [ModifiedByID], [DateModified], [AccountID]) VALUES (N'15', N'DLRCV00012', N'0012', N'Ibrahim Juma Garage', N'PO Box 74964, Al Aweer Garage, Dubai UAE', N'tbc@email.com', N'74964', N'', N'97143337973', N'', N'Mr. Iqbal', N'971506954310', N'tbc@email.com', N'', N'Mr. Iqbal', N'tbc@email.com', N'97143337973', N'', N'Mr. Iqbal', N'', N'', N'', N'', N'', N'0', N'2016-03-27', N'2016-03-27', N'None', N'0', N'0', N'', N'0', N'0', N'0', N'2016-03-27', N'0', N'0', null, N'', N'UDF 1', N'UDF 2', N'UDF 3', N'UDF 4', N'UDF 5', N'', N'', N'', N'', N'', N'', N'0', N'2016-03-27', null, N'2016-03-27 16:40:35.0000000', N'0')
 GO
 GO
+INSERT INTO [dbo].[dealers] ([id], [DealerRefCode], [DealerNo], [Name], [Address], [Email], [PostalCode], [Province], [Phone], [Fax], [OPCName], [OPCEmail], [OPCPhone], [OPCFax], [FPCName], [FPCEmail], [FPCPhone], [FPCFax], [Person1], [Person2], [Person3], [Person4], [DeliveryAddress], [CurrencyCode], [Rate], [DateFrom], [DateTo], [Privilege], [TierID], [ConTypeID], [CGrpID], [DealerTypeID], [CreditTermID], [CreditLimit], [DateApproved], [Blocked], [InterestID], [DateBlocked], [Reasons], [lblUDF1], [lblUDF2], [lblUDF3], [lblUDF4], [lblUDF5], [Udf1], [Udf2], [Udf3], [Udf4], [Udf5], [Notes], [CreatedByID], [DateCreated], [ModifiedByID], [DateModified], [AccountID]) VALUES (N'16', N'000013', N'00000001', N'Jenno Cabrito', N'#1 Kamagong St. Pacita Complex 1', N'jennocabrito@gmail.com', N'4023', null, N'9175955925', N'9175955925', N'Jenno Cabrito', N'jennocabrito@gmail.com', N'+639175955925', null, N'Jenno Cabrito', N'jennocabrito@gmail.com', N'+639175955925', null, N'dumm record', null, null, null, null, null, N'0', null, null, null, N'0', N'0', null, N'0', N'0', N'0', null, N'0', N'0', null, null, null, null, null, null, null, null, null, null, null, null, null, N'0', null, null, null, N'0')
+GO
+GO
 SET IDENTITY_INSERT [dbo].[dealers] OFF
 GO
 
@@ -441,13 +444,19 @@ CREATE TABLE [dbo].[dealers_attachment] (
 
 
 GO
-DBCC CHECKIDENT(N'[dbo].[dealers_attachment]', RESEED, 66)
+DBCC CHECKIDENT(N'[dbo].[dealers_attachment]', RESEED, 79)
 GO
 
 -- ----------------------------
 -- Records of dealers_attachment
 -- ----------------------------
 SET IDENTITY_INSERT [dbo].[dealers_attachment] ON
+GO
+INSERT INTO [dbo].[dealers_attachment] ([DealerAttID], [DealerRefCode], [FileName], [FileSize], [file_source_location], [Description], [DateUpload]) VALUES (N'77', N'DLRCV00003', N'DLRCV00003-Gear.jpg', N'106637', N'C:\Users\JCABRITO\Documents\GIT\broken-code-corelib\corelib\webApp\WebApp\WebApp\Content\files\', N'sdfsadf', N'2016-07-27 14:46:43.183')
+GO
+GO
+INSERT INTO [dbo].[dealers_attachment] ([DealerAttID], [DealerRefCode], [FileName], [FileSize], [file_source_location], [Description], [DateUpload]) VALUES (N'79', N'DLRCV00003', N'DLRCV00003-elogo.png', N'28187', N'C:\Users\JCABRITO\Documents\GIT\broken-code-corelib\corelib\webApp\WebApp\WebApp\Content\files\', N'test', N'2016-07-28 17:46:50.270')
+GO
 GO
 SET IDENTITY_INSERT [dbo].[dealers_attachment] OFF
 GO
@@ -815,7 +824,7 @@ CREATE TABLE [dbo].[fleet] (
 
 
 GO
-DBCC CHECKIDENT(N'[dbo].[fleet]', RESEED, 10032)
+DBCC CHECKIDENT(N'[dbo].[fleet]', RESEED, 10031)
 GO
 IF ((SELECT COUNT(*) from fn_listextendedproperty('MS_Description', 
 'SCHEMA', N'dbo', 
@@ -837,7 +846,7 @@ GO
 -- ----------------------------
 SET IDENTITY_INSERT [dbo].[fleet] ON
 GO
-INSERT INTO [dbo].[fleet] ([NLID], [VIN], [PlateNo], [RegistrationDate], [RegistrationNo], [EngineNo], [EngineCode], [EngineType], [Year], [Make], [Model], [Series], [Color], [VehCat], [VehType], [NonVehType], [ReqStatus], [UtilStatus], [Status], [LastService], [ReleasedDate], [Released], [Mileage], [MileConversionValue], [MeterType], [FuelType], [Transmission], [Doors], [TyreSize], [NonVehTypeID], [UdfLbl1], [UdfLbl2], [UdfLbl3], [UdfLbl4], [UdfLbl5], [UdfLbl6], [UdfLbl7], [UdfLbl8], [UdfLbl9], [UdfLbl10], [Udf1], [Udf2], [Udf3], [Udf4], [Udf5], [Udf6], [Udf7], [Udf8], [Udf9], [Udf10], [OwnershipType], [CusRefCode], [ContractID], [CreatedBy], [Armored], [SiteCode], [Province], [RegionalCommand], [Notes], [DateCreated], [ModifiedBy], [DateModified], [Switch], [PassCap], [Unit], [Owned], [Uploaded], [IncludeStatus], [UIC], [Barcode], [TPEno], [EngineSize], [FuelSticker], [FuelCapacity], [KeyTag], [VehicleTag], [TransmissionCode], [Accessories], [GVWR], [Others], [WSD], [OLDNLID], [OldSiteCode], [Active], [NextServiceDate], [ReleasedYN], [ExcludeInspect], [IsArchive], [MainFollow], [ReturnFollow], [MainFollowRef], [ReturnFollowRef], [TempClose], [MainFollowNotes], [ReturnFollowNotes], [PurchasePrice], [RepairCount], [DateOfPurchase], [DealerRefCode], [DepreciationPeriod], [Transferred], [TransferDate], [ActLocation], [TransferRemarks], [Flagged], [FlagReason], [FlaggedUtil], [FlagUtilReason], [FleetID]) VALUES (N'MDHOLVTP000001', N'JTEBU25J840033288', N'AG55723', N'2016-02-10', N'Dubai G55723', N'1GR0141208', null, N'1GR-FE, V6 VVT-1', N'2004', N'TOYOTA', N'PRADO', null, N'GOLD', null, N'SUV', null, null, null, N'For Release', null, null, null, N'252700.00', N'N/A', N'Kilometer', N'Gasoline', N'Automatic', N'5', N'265-65R17', N'0', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, N'AMS', N'', N'0', N'', null, N'MDHO', N'DUBAI', null, null, N'2015-02-23 00:00:00.0000000', N'', N'2016-03-28 14:45:35.0000000', N'0', N'7', null, N'1', N'0', N'1', null, null, null, N'4.0 L', null, null, null, null, N'A02B/A340F', null, null, N'POOL VEHICLE - FSR', N'2001-01-01 00:00:00.0000000', null, null, N'1', null, N'No', null, null, N'0', N'0', N'', N'', null, null, null, N'25702', N'9', N'2007-01-01', N'DLRCV00001', N'48', null, null, null, null, null, null, null, null, N'21')
+INSERT INTO [dbo].[fleet] ([NLID], [VIN], [PlateNo], [RegistrationDate], [RegistrationNo], [EngineNo], [EngineCode], [EngineType], [Year], [Make], [Model], [Series], [Color], [VehCat], [VehType], [NonVehType], [ReqStatus], [UtilStatus], [Status], [LastService], [ReleasedDate], [Released], [Mileage], [MileConversionValue], [MeterType], [FuelType], [Transmission], [Doors], [TyreSize], [NonVehTypeID], [UdfLbl1], [UdfLbl2], [UdfLbl3], [UdfLbl4], [UdfLbl5], [UdfLbl6], [UdfLbl7], [UdfLbl8], [UdfLbl9], [UdfLbl10], [Udf1], [Udf2], [Udf3], [Udf4], [Udf5], [Udf6], [Udf7], [Udf8], [Udf9], [Udf10], [OwnershipType], [CusRefCode], [ContractID], [CreatedBy], [Armored], [SiteCode], [Province], [RegionalCommand], [Notes], [DateCreated], [ModifiedBy], [DateModified], [Switch], [PassCap], [Unit], [Owned], [Uploaded], [IncludeStatus], [UIC], [Barcode], [TPEno], [EngineSize], [FuelSticker], [FuelCapacity], [KeyTag], [VehicleTag], [TransmissionCode], [Accessories], [GVWR], [Others], [WSD], [OLDNLID], [OldSiteCode], [Active], [NextServiceDate], [ReleasedYN], [ExcludeInspect], [IsArchive], [MainFollow], [ReturnFollow], [MainFollowRef], [ReturnFollowRef], [TempClose], [MainFollowNotes], [ReturnFollowNotes], [PurchasePrice], [RepairCount], [DateOfPurchase], [DealerRefCode], [DepreciationPeriod], [Transferred], [TransferDate], [ActLocation], [TransferRemarks], [Flagged], [FlagReason], [FlaggedUtil], [FlagUtilReason], [FleetID]) VALUES (N'MDHOLVTP000001', N'JTEBU25J840033288', N'AG55723', N'2016-02-10', N'Dubai G55723', N'1GR0141208', null, N'1GR-FE, V6 VVT-1', N'2004', N'TOYOTA', N'PRADO', null, N'GOLD', null, N'SUV', null, null, null, N'For Release', null, null, null, N'248000.00', N'N/A', N'Kilometer', N'Gasoline', N'Automatic', N'5', N'265-65R17', N'0', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, N'AMS', N'', N'0', N'', null, N'MDHO', N'DUBAI', null, null, N'2015-02-23 00:00:00.0000000', N'', N'2016-03-28 14:45:35.0000000', N'0', N'7', null, N'1', N'0', N'1', null, null, null, N'4.0 L', null, null, null, null, N'A02B/A340F', null, null, N'POOL VEHICLE - FSR', N'2001-01-01 00:00:00.0000000', null, null, N'1', null, N'No', null, null, N'0', N'0', N'', N'', null, null, null, N'25702', N'9', N'2007-01-01', N'DLRCV00001', N'48', null, null, null, null, null, null, null, null, N'21')
 GO
 GO
 INSERT INTO [dbo].[fleet] ([NLID], [VIN], [PlateNo], [RegistrationDate], [RegistrationNo], [EngineNo], [EngineCode], [EngineType], [Year], [Make], [Model], [Series], [Color], [VehCat], [VehType], [NonVehType], [ReqStatus], [UtilStatus], [Status], [LastService], [ReleasedDate], [Released], [Mileage], [MileConversionValue], [MeterType], [FuelType], [Transmission], [Doors], [TyreSize], [NonVehTypeID], [UdfLbl1], [UdfLbl2], [UdfLbl3], [UdfLbl4], [UdfLbl5], [UdfLbl6], [UdfLbl7], [UdfLbl8], [UdfLbl9], [UdfLbl10], [Udf1], [Udf2], [Udf3], [Udf4], [Udf5], [Udf6], [Udf7], [Udf8], [Udf9], [Udf10], [OwnershipType], [CusRefCode], [ContractID], [CreatedBy], [Armored], [SiteCode], [Province], [RegionalCommand], [Notes], [DateCreated], [ModifiedBy], [DateModified], [Switch], [PassCap], [Unit], [Owned], [Uploaded], [IncludeStatus], [UIC], [Barcode], [TPEno], [EngineSize], [FuelSticker], [FuelCapacity], [KeyTag], [VehicleTag], [TransmissionCode], [Accessories], [GVWR], [Others], [WSD], [OLDNLID], [OldSiteCode], [Active], [NextServiceDate], [ReleasedYN], [ExcludeInspect], [IsArchive], [MainFollow], [ReturnFollow], [MainFollowRef], [ReturnFollowRef], [TempClose], [MainFollowNotes], [ReturnFollowNotes], [PurchasePrice], [RepairCount], [DateOfPurchase], [DealerRefCode], [DepreciationPeriod], [Transferred], [TransferDate], [ActLocation], [TransferRemarks], [Flagged], [FlagReason], [FlaggedUtil], [FlagUtilReason], [FleetID]) VALUES (N'MDHOLVTP000002', N'JTEBU25J985133635', N'AJ78367', N'2015-11-25', N'Dubai J78367', N'1GR5618528', null, N'1 GR-FE', N'2009', N'TOYOTA', N'PRADO', null, N'BLACK', null, N'SUV', null, null, null, N'For Release', null, null, null, N'340765.00', N'340765.00', N'Mile', N'Gasoline', N'Automatic', N'5', N'265-65R17', N'0', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, N'AMS', N'', N'0', N'', null, N'MDHO', N'DUBAI', null, null, N'2015-02-23 00:00:00.0000000', N'', N'2016-03-28 20:00:04.0000000', N'0', N'7', null, N'1', N'0', N'1', null, null, null, N'4.0L', null, N'87 L', null, null, N'A750F', null, null, N'SHYAM BASNET - USER', N'2001-01-01 00:00:00.0000000', null, null, N'1', null, N'No', null, null, N'0', N'0', N'', N'', null, null, null, N'35940', N'15', N'2009-11-01', N'DLRCV00001', N'48', null, null, null, null, null, null, null, null, N'22')
@@ -849,22 +858,19 @@ GO
 INSERT INTO [dbo].[fleet] ([NLID], [VIN], [PlateNo], [RegistrationDate], [RegistrationNo], [EngineNo], [EngineCode], [EngineType], [Year], [Make], [Model], [Series], [Color], [VehCat], [VehType], [NonVehType], [ReqStatus], [UtilStatus], [Status], [LastService], [ReleasedDate], [Released], [Mileage], [MileConversionValue], [MeterType], [FuelType], [Transmission], [Doors], [TyreSize], [NonVehTypeID], [UdfLbl1], [UdfLbl2], [UdfLbl3], [UdfLbl4], [UdfLbl5], [UdfLbl6], [UdfLbl7], [UdfLbl8], [UdfLbl9], [UdfLbl10], [Udf1], [Udf2], [Udf3], [Udf4], [Udf5], [Udf6], [Udf7], [Udf8], [Udf9], [Udf10], [OwnershipType], [CusRefCode], [ContractID], [CreatedBy], [Armored], [SiteCode], [Province], [RegionalCommand], [Notes], [DateCreated], [ModifiedBy], [DateModified], [Switch], [PassCap], [Unit], [Owned], [Uploaded], [IncludeStatus], [UIC], [Barcode], [TPEno], [EngineSize], [FuelSticker], [FuelCapacity], [KeyTag], [VehicleTag], [TransmissionCode], [Accessories], [GVWR], [Others], [WSD], [OLDNLID], [OldSiteCode], [Active], [NextServiceDate], [ReleasedYN], [ExcludeInspect], [IsArchive], [MainFollow], [ReturnFollow], [MainFollowRef], [ReturnFollowRef], [TempClose], [MainFollowNotes], [ReturnFollowNotes], [PurchasePrice], [RepairCount], [DateOfPurchase], [DealerRefCode], [DepreciationPeriod], [Transferred], [TransferDate], [ActLocation], [TransferRemarks], [Flagged], [FlagReason], [FlaggedUtil], [FlagUtilReason], [FleetID]) VALUES (N'MDHOLVTP000004', N'JTEBX9FJ1D5037779', N'AM34236', N'2016-01-18', N'Dubai M34236', N'2TR1223748', null, N'TBC', N'2013', N'TOYOTA', N'PRADO', null, N'WHITE', null, N'SUV', null, null, null, N'For Release', null, N'2015-06-24 00:00:00.000', null, N'72248.00', N'N/A', N'Kilometer', N'Gasoline', N'Automatic', N'5', N'265-65R17', N'0', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, N'AMS', N'', N'0', N'', null, N'MDHO', N'DUBAI', null, null, N'2015-02-23 00:00:00.0000000', N'', N'2015-07-09 13:20:12.0000000', N'0', N'7', null, N'1', N'0', N'1', null, null, null, null, null, null, null, null, null, null, null, N'Andrew Wilson- USER', N'2001-01-01 00:00:00.0000000', null, null, N'1', null, N'No', null, null, N'0', N'0', N'', N'', null, null, null, N'41191', N'11', N'2013-01-01', N'DLRCV00001', N'48', null, null, null, null, null, null, null, null, N'24')
 GO
 GO
-INSERT INTO [dbo].[fleet] ([NLID], [VIN], [PlateNo], [RegistrationDate], [RegistrationNo], [EngineNo], [EngineCode], [EngineType], [Year], [Make], [Model], [Series], [Color], [VehCat], [VehType], [NonVehType], [ReqStatus], [UtilStatus], [Status], [LastService], [ReleasedDate], [Released], [Mileage], [MileConversionValue], [MeterType], [FuelType], [Transmission], [Doors], [TyreSize], [NonVehTypeID], [UdfLbl1], [UdfLbl2], [UdfLbl3], [UdfLbl4], [UdfLbl5], [UdfLbl6], [UdfLbl7], [UdfLbl8], [UdfLbl9], [UdfLbl10], [Udf1], [Udf2], [Udf3], [Udf4], [Udf5], [Udf6], [Udf7], [Udf8], [Udf9], [Udf10], [OwnershipType], [CusRefCode], [ContractID], [CreatedBy], [Armored], [SiteCode], [Province], [RegionalCommand], [Notes], [DateCreated], [ModifiedBy], [DateModified], [Switch], [PassCap], [Unit], [Owned], [Uploaded], [IncludeStatus], [UIC], [Barcode], [TPEno], [EngineSize], [FuelSticker], [FuelCapacity], [KeyTag], [VehicleTag], [TransmissionCode], [Accessories], [GVWR], [Others], [WSD], [OLDNLID], [OldSiteCode], [Active], [NextServiceDate], [ReleasedYN], [ExcludeInspect], [IsArchive], [MainFollow], [ReturnFollow], [MainFollowRef], [ReturnFollowRef], [TempClose], [MainFollowNotes], [ReturnFollowNotes], [PurchasePrice], [RepairCount], [DateOfPurchase], [DealerRefCode], [DepreciationPeriod], [Transferred], [TransferDate], [ActLocation], [TransferRemarks], [Flagged], [FlagReason], [FlaggedUtil], [FlagUtilReason], [FleetID]) VALUES (N'MDHOLVTD000005', N'MHFYX59G5B8019261', N'AE73968', N'2014-12-14', N'Dubai - E73968', N'2TR6994239', null, N'2TR-EE', N'2011', N'TOYOTA', N'FORTUNER', null, N'BLACK', null, N'SUV', null, null, null, N'For Release', null, null, null, N'.00', N'N/A', N'Kilometer', N'Gasoline', N'Automatic', N'5', N'265-70R16', N'0', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, N'AMS', N'', N'0', N'', null, N'MDHO', N'DUBAI', null, null, N'2015-02-25 00:00:00.0000000', N'', N'2016-03-28 19:54:21.0000000', N'0', N'7', null, N'1', N'0', N'1', null, null, null, N'2.7 L', null, N'80 L', null, null, N'A343F', null, null, N'Damian Kilshaw - User', N'2001-01-01 00:00:00.0000000', null, null, N'1', null, N'No', null, null, N'0', N'0', N'', N'', null, null, null, N'26118', N'6', N'2010-11-01', N'DLRCV00001', N'48', null, null, null, null, null, null, null, null, N'25')
+INSERT INTO [dbo].[fleet] ([NLID], [VIN], [PlateNo], [RegistrationDate], [RegistrationNo], [EngineNo], [EngineCode], [EngineType], [Year], [Make], [Model], [Series], [Color], [VehCat], [VehType], [NonVehType], [ReqStatus], [UtilStatus], [Status], [LastService], [ReleasedDate], [Released], [Mileage], [MileConversionValue], [MeterType], [FuelType], [Transmission], [Doors], [TyreSize], [NonVehTypeID], [UdfLbl1], [UdfLbl2], [UdfLbl3], [UdfLbl4], [UdfLbl5], [UdfLbl6], [UdfLbl7], [UdfLbl8], [UdfLbl9], [UdfLbl10], [Udf1], [Udf2], [Udf3], [Udf4], [Udf5], [Udf6], [Udf7], [Udf8], [Udf9], [Udf10], [OwnershipType], [CusRefCode], [ContractID], [CreatedBy], [Armored], [SiteCode], [Province], [RegionalCommand], [Notes], [DateCreated], [ModifiedBy], [DateModified], [Switch], [PassCap], [Unit], [Owned], [Uploaded], [IncludeStatus], [UIC], [Barcode], [TPEno], [EngineSize], [FuelSticker], [FuelCapacity], [KeyTag], [VehicleTag], [TransmissionCode], [Accessories], [GVWR], [Others], [WSD], [OLDNLID], [OldSiteCode], [Active], [NextServiceDate], [ReleasedYN], [ExcludeInspect], [IsArchive], [MainFollow], [ReturnFollow], [MainFollowRef], [ReturnFollowRef], [TempClose], [MainFollowNotes], [ReturnFollowNotes], [PurchasePrice], [RepairCount], [DateOfPurchase], [DealerRefCode], [DepreciationPeriod], [Transferred], [TransferDate], [ActLocation], [TransferRemarks], [Flagged], [FlagReason], [FlaggedUtil], [FlagUtilReason], [FleetID]) VALUES (N'MDHOLVTD000005', N'MHFYX59G5B8019261', N'AE73968', N'2014-12-14', N'Dubai - E73968', N'2TR6994239', null, N'2TR-EE', N'2011', N'TOYOTA', N'FORTUNER', null, N'BLACK', null, N'SUV', null, null, null, N'For Inspection', null, null, null, N'.00', N'N/A', N'Kilometer', N'Gasoline', N'Automatic', N'5', N'265-70R16', N'0', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, N'AMS', N'', N'0', N'', null, N'MDHO', N'DUBAI', null, null, N'2015-02-25 00:00:00.0000000', N'', N'2016-03-28 19:54:21.0000000', N'0', N'7', null, N'1', N'0', N'1', null, null, null, N'2.7 L', null, N'80 L', null, null, N'A343F', null, null, N'Damian Kilshaw - User', N'2001-01-01 00:00:00.0000000', null, null, N'1', null, N'No', null, null, N'0', N'0', N'', N'', null, null, null, N'26118', N'6', N'2010-11-01', N'DLRCV00001', N'48', null, null, null, null, null, null, null, null, N'25')
 GO
 GO
-INSERT INTO [dbo].[fleet] ([NLID], [VIN], [PlateNo], [RegistrationDate], [RegistrationNo], [EngineNo], [EngineCode], [EngineType], [Year], [Make], [Model], [Series], [Color], [VehCat], [VehType], [NonVehType], [ReqStatus], [UtilStatus], [Status], [LastService], [ReleasedDate], [Released], [Mileage], [MileConversionValue], [MeterType], [FuelType], [Transmission], [Doors], [TyreSize], [NonVehTypeID], [UdfLbl1], [UdfLbl2], [UdfLbl3], [UdfLbl4], [UdfLbl5], [UdfLbl6], [UdfLbl7], [UdfLbl8], [UdfLbl9], [UdfLbl10], [Udf1], [Udf2], [Udf3], [Udf4], [Udf5], [Udf6], [Udf7], [Udf8], [Udf9], [Udf10], [OwnershipType], [CusRefCode], [ContractID], [CreatedBy], [Armored], [SiteCode], [Province], [RegionalCommand], [Notes], [DateCreated], [ModifiedBy], [DateModified], [Switch], [PassCap], [Unit], [Owned], [Uploaded], [IncludeStatus], [UIC], [Barcode], [TPEno], [EngineSize], [FuelSticker], [FuelCapacity], [KeyTag], [VehicleTag], [TransmissionCode], [Accessories], [GVWR], [Others], [WSD], [OLDNLID], [OldSiteCode], [Active], [NextServiceDate], [ReleasedYN], [ExcludeInspect], [IsArchive], [MainFollow], [ReturnFollow], [MainFollowRef], [ReturnFollowRef], [TempClose], [MainFollowNotes], [ReturnFollowNotes], [PurchasePrice], [RepairCount], [DateOfPurchase], [DealerRefCode], [DepreciationPeriod], [Transferred], [TransferDate], [ActLocation], [TransferRemarks], [Flagged], [FlagReason], [FlaggedUtil], [FlagUtilReason], [FleetID]) VALUES (N'MDHOLVGS000006', N'WA1AGDFE3DD007754', N'AD88783', N'2016-01-27', N'Dubai D88783', N'CJT112557', null, N'TBC', N'2013', N'AUDI', N'Q7', null, N'BLUE', null, N'SUV', null, null, null, N'For Release', null, null, null, N'23220.00', N'N/A', N'Kilometer', N'Gasoline', N'Automatic', N'5', N'295-40JR20', N'0', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, N'AMS', N'', N'0', N'', null, N'MDHO', N'DUBAI', null, null, N'2015-02-25 00:00:00.0000000', N'', N'2015-07-09 13:20:14.0000000', N'0', N'7', null, N'1', N'0', N'1', null, null, null, null, null, null, null, null, null, null, null, N'Paul Crawshaw - User', N'2001-01-01 00:00:00.0000000', null, null, N'1', null, N'No', null, null, N'0', N'0', N'', N'', null, null, null, N'45000', N'2', N'2013-02-03', N'DLRCV00005', N'48', null, null, null, null, null, null, null, null, N'26')
+INSERT INTO [dbo].[fleet] ([NLID], [VIN], [PlateNo], [RegistrationDate], [RegistrationNo], [EngineNo], [EngineCode], [EngineType], [Year], [Make], [Model], [Series], [Color], [VehCat], [VehType], [NonVehType], [ReqStatus], [UtilStatus], [Status], [LastService], [ReleasedDate], [Released], [Mileage], [MileConversionValue], [MeterType], [FuelType], [Transmission], [Doors], [TyreSize], [NonVehTypeID], [UdfLbl1], [UdfLbl2], [UdfLbl3], [UdfLbl4], [UdfLbl5], [UdfLbl6], [UdfLbl7], [UdfLbl8], [UdfLbl9], [UdfLbl10], [Udf1], [Udf2], [Udf3], [Udf4], [Udf5], [Udf6], [Udf7], [Udf8], [Udf9], [Udf10], [OwnershipType], [CusRefCode], [ContractID], [CreatedBy], [Armored], [SiteCode], [Province], [RegionalCommand], [Notes], [DateCreated], [ModifiedBy], [DateModified], [Switch], [PassCap], [Unit], [Owned], [Uploaded], [IncludeStatus], [UIC], [Barcode], [TPEno], [EngineSize], [FuelSticker], [FuelCapacity], [KeyTag], [VehicleTag], [TransmissionCode], [Accessories], [GVWR], [Others], [WSD], [OLDNLID], [OldSiteCode], [Active], [NextServiceDate], [ReleasedYN], [ExcludeInspect], [IsArchive], [MainFollow], [ReturnFollow], [MainFollowRef], [ReturnFollowRef], [TempClose], [MainFollowNotes], [ReturnFollowNotes], [PurchasePrice], [RepairCount], [DateOfPurchase], [DealerRefCode], [DepreciationPeriod], [Transferred], [TransferDate], [ActLocation], [TransferRemarks], [Flagged], [FlagReason], [FlaggedUtil], [FlagUtilReason], [FleetID]) VALUES (N'MDHOLVGS000006', N'WA1AGDFE3DD007754', N'AD88783', N'2016-01-27', N'Dubai D88783', N'CJT112557', null, N'TBC', N'2013', N'AUDI', N'Q7', null, N'BLUE', null, N'SUV', null, null, null, N'For Inspection', null, null, null, N'23220.00', N'N/A', N'Kilometer', N'Gasoline', N'Automatic', N'5', N'295-40JR20', N'0', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, N'AMS', N'', N'0', N'', null, N'MDHO', N'DUBAI', null, null, N'2015-02-25 00:00:00.0000000', N'', N'2015-07-09 13:20:14.0000000', N'0', N'7', null, N'1', N'0', N'1', null, null, null, null, null, null, null, null, null, null, null, N'Paul Crawshaw - User', N'2001-01-01 00:00:00.0000000', null, null, N'1', null, N'No', null, null, N'0', N'0', N'', N'', null, null, null, N'45000', N'2', N'2013-02-03', N'DLRCV00005', N'48', null, null, null, null, null, null, null, null, N'26')
 GO
 GO
 INSERT INTO [dbo].[fleet] ([NLID], [VIN], [PlateNo], [RegistrationDate], [RegistrationNo], [EngineNo], [EngineCode], [EngineType], [Year], [Make], [Model], [Series], [Color], [VehCat], [VehType], [NonVehType], [ReqStatus], [UtilStatus], [Status], [LastService], [ReleasedDate], [Released], [Mileage], [MileConversionValue], [MeterType], [FuelType], [Transmission], [Doors], [TyreSize], [NonVehTypeID], [UdfLbl1], [UdfLbl2], [UdfLbl3], [UdfLbl4], [UdfLbl5], [UdfLbl6], [UdfLbl7], [UdfLbl8], [UdfLbl9], [UdfLbl10], [Udf1], [Udf2], [Udf3], [Udf4], [Udf5], [Udf6], [Udf7], [Udf8], [Udf9], [Udf10], [OwnershipType], [CusRefCode], [ContractID], [CreatedBy], [Armored], [SiteCode], [Province], [RegionalCommand], [Notes], [DateCreated], [ModifiedBy], [DateModified], [Switch], [PassCap], [Unit], [Owned], [Uploaded], [IncludeStatus], [UIC], [Barcode], [TPEno], [EngineSize], [FuelSticker], [FuelCapacity], [KeyTag], [VehicleTag], [TransmissionCode], [Accessories], [GVWR], [Others], [WSD], [OLDNLID], [OldSiteCode], [Active], [NextServiceDate], [ReleasedYN], [ExcludeInspect], [IsArchive], [MainFollow], [ReturnFollow], [MainFollowRef], [ReturnFollowRef], [TempClose], [MainFollowNotes], [ReturnFollowNotes], [PurchasePrice], [RepairCount], [DateOfPurchase], [DealerRefCode], [DepreciationPeriod], [Transferred], [TransferDate], [ActLocation], [TransferRemarks], [Flagged], [FlagReason], [FlaggedUtil], [FlagUtilReason], [FleetID]) VALUES (N'MDHOLVC3000007', N'MDHBN7AD2DG032935', N'L615847', N'2013-05-27', N'', N'HR15758026B', N'', N'', N'2013', N'NISSAN', N'ATLAS', N'', N'WHITE', N'', N'SEDAN', N'', N'For Inspection', N'Off Lease', N'For Inspection', null, null, N'0', N'.00', N'0.0000', N'Kilometers', N'Gasoline', N'Automatic', N'4', N'', N'0', N'UDF 1', N'UDF 2', N'UDF 3', N'UDF 4', N'UDF 5', N'UDF 6', N'UDF 7', N'UDF 8', N'UDF 9', N'UDF 10', N'', N'', N'', N'', N'', N'', N'', N'', N'', N'', N'Leased', N'', N'0', N'', N'0', N'MDHO', N'ABU DHABI', N'', N'', N'2015-02-25 00:00:00.0000000', N'', N'2015-10-15 19:20:55.0000000', N'0', N'5', null, N'0', N'0', N'0', N'', N'', N'', N'', N'', N'', N'', N'', N'', N'', N'', N'', N'2001-01-01 00:00:00.0000000', N'MDHOLVC3000007', N'', N'1', null, N'No', N'0', N'0', N'0', N'0', N'', N'', N'0', N'', N'', N'500', N'0', N'2014-03-24', N'DLRCV00001', N'48', null, null, N'DHO', N'Changed Vehicle Location from  To DHO:\r\n', N'0', null, N'0', null, N'27')
 GO
 GO
-INSERT INTO [dbo].[fleet] ([NLID], [VIN], [PlateNo], [RegistrationDate], [RegistrationNo], [EngineNo], [EngineCode], [EngineType], [Year], [Make], [Model], [Series], [Color], [VehCat], [VehType], [NonVehType], [ReqStatus], [UtilStatus], [Status], [LastService], [ReleasedDate], [Released], [Mileage], [MileConversionValue], [MeterType], [FuelType], [Transmission], [Doors], [TyreSize], [NonVehTypeID], [UdfLbl1], [UdfLbl2], [UdfLbl3], [UdfLbl4], [UdfLbl5], [UdfLbl6], [UdfLbl7], [UdfLbl8], [UdfLbl9], [UdfLbl10], [Udf1], [Udf2], [Udf3], [Udf4], [Udf5], [Udf6], [Udf7], [Udf8], [Udf9], [Udf10], [OwnershipType], [CusRefCode], [ContractID], [CreatedBy], [Armored], [SiteCode], [Province], [RegionalCommand], [Notes], [DateCreated], [ModifiedBy], [DateModified], [Switch], [PassCap], [Unit], [Owned], [Uploaded], [IncludeStatus], [UIC], [Barcode], [TPEno], [EngineSize], [FuelSticker], [FuelCapacity], [KeyTag], [VehicleTag], [TransmissionCode], [Accessories], [GVWR], [Others], [WSD], [OLDNLID], [OldSiteCode], [Active], [NextServiceDate], [ReleasedYN], [ExcludeInspect], [IsArchive], [MainFollow], [ReturnFollow], [MainFollowRef], [ReturnFollowRef], [TempClose], [MainFollowNotes], [ReturnFollowNotes], [PurchasePrice], [RepairCount], [DateOfPurchase], [DealerRefCode], [DepreciationPeriod], [Transferred], [TransferDate], [ActLocation], [TransferRemarks], [Flagged], [FlagReason], [FlaggedUtil], [FlagUtilReason], [FleetID]) VALUES (N'MDHOLVML000008', N'JMYSRC1AEU713919', N'LK37421', N'2014-01-25', null, N'4A92BJ8560', null, null, N'2014', N'CHEVROLET', N'3500', null, N'BLUE', null, N'SEDAN', null, null, null, N'Completed Repair', null, N'2016-05-22 00:00:00.000', null, N'.00', N'N/A', N'Kilometer', N'Gasoline', N'Automatic', N'4', null, N'0', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, N'Leased', N'', N'0', N'', null, N'MDHO', N'DUBAI', null, null, N'2015-02-25 00:00:00.0000000', N'', N'2015-07-09 13:20:16.0000000', N'0', N'5', null, N'0', N'0', N'0', null, null, null, null, null, null, null, null, null, null, null, null, N'2001-01-01 00:00:00.0000000', null, null, N'1', null, N'No', null, null, N'0', N'0', N'', N'', null, null, null, N'500', N'1', N'2014-03-24', N'DLRCV00002', N'48', null, null, null, null, null, null, null, null, N'28')
+INSERT INTO [dbo].[fleet] ([NLID], [VIN], [PlateNo], [RegistrationDate], [RegistrationNo], [EngineNo], [EngineCode], [EngineType], [Year], [Make], [Model], [Series], [Color], [VehCat], [VehType], [NonVehType], [ReqStatus], [UtilStatus], [Status], [LastService], [ReleasedDate], [Released], [Mileage], [MileConversionValue], [MeterType], [FuelType], [Transmission], [Doors], [TyreSize], [NonVehTypeID], [UdfLbl1], [UdfLbl2], [UdfLbl3], [UdfLbl4], [UdfLbl5], [UdfLbl6], [UdfLbl7], [UdfLbl8], [UdfLbl9], [UdfLbl10], [Udf1], [Udf2], [Udf3], [Udf4], [Udf5], [Udf6], [Udf7], [Udf8], [Udf9], [Udf10], [OwnershipType], [CusRefCode], [ContractID], [CreatedBy], [Armored], [SiteCode], [Province], [RegionalCommand], [Notes], [DateCreated], [ModifiedBy], [DateModified], [Switch], [PassCap], [Unit], [Owned], [Uploaded], [IncludeStatus], [UIC], [Barcode], [TPEno], [EngineSize], [FuelSticker], [FuelCapacity], [KeyTag], [VehicleTag], [TransmissionCode], [Accessories], [GVWR], [Others], [WSD], [OLDNLID], [OldSiteCode], [Active], [NextServiceDate], [ReleasedYN], [ExcludeInspect], [IsArchive], [MainFollow], [ReturnFollow], [MainFollowRef], [ReturnFollowRef], [TempClose], [MainFollowNotes], [ReturnFollowNotes], [PurchasePrice], [RepairCount], [DateOfPurchase], [DealerRefCode], [DepreciationPeriod], [Transferred], [TransferDate], [ActLocation], [TransferRemarks], [Flagged], [FlagReason], [FlaggedUtil], [FlagUtilReason], [FleetID]) VALUES (N'MDHOLVML000008', N'JMYSRC1AEU713919', N'LK37421', N'2014-01-25', null, N'4A92BJ8560', null, null, N'2014', N'CHEVROLET', N'3500', null, N'BLUE', null, N'SEDAN', null, null, null, N'In-Progress', null, N'2016-05-22 00:00:00.000', null, N'.00', N'N/A', N'Kilometer', N'Gasoline', N'Automatic', N'4', null, N'0', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, N'Leased', N'', N'0', N'', null, N'MDHO', N'DUBAI', null, null, N'2015-02-25 00:00:00.0000000', N'', N'2015-07-09 13:20:16.0000000', N'0', N'5', null, N'0', N'0', N'0', null, null, null, null, null, null, null, null, null, null, null, null, N'2001-01-01 00:00:00.0000000', null, null, N'1', null, N'No', null, null, N'0', N'0', N'', N'', null, null, null, N'500', N'1', N'2014-03-24', N'DLRCV00002', N'48', null, null, null, null, null, null, null, null, N'28')
 GO
 GO
-INSERT INTO [dbo].[fleet] ([NLID], [VIN], [PlateNo], [RegistrationDate], [RegistrationNo], [EngineNo], [EngineCode], [EngineType], [Year], [Make], [Model], [Series], [Color], [VehCat], [VehType], [NonVehType], [ReqStatus], [UtilStatus], [Status], [LastService], [ReleasedDate], [Released], [Mileage], [MileConversionValue], [MeterType], [FuelType], [Transmission], [Doors], [TyreSize], [NonVehTypeID], [UdfLbl1], [UdfLbl2], [UdfLbl3], [UdfLbl4], [UdfLbl5], [UdfLbl6], [UdfLbl7], [UdfLbl8], [UdfLbl9], [UdfLbl10], [Udf1], [Udf2], [Udf3], [Udf4], [Udf5], [Udf6], [Udf7], [Udf8], [Udf9], [Udf10], [OwnershipType], [CusRefCode], [ContractID], [CreatedBy], [Armored], [SiteCode], [Province], [RegionalCommand], [Notes], [DateCreated], [ModifiedBy], [DateModified], [Switch], [PassCap], [Unit], [Owned], [Uploaded], [IncludeStatus], [UIC], [Barcode], [TPEno], [EngineSize], [FuelSticker], [FuelCapacity], [KeyTag], [VehicleTag], [TransmissionCode], [Accessories], [GVWR], [Others], [WSD], [OLDNLID], [OldSiteCode], [Active], [NextServiceDate], [ReleasedYN], [ExcludeInspect], [IsArchive], [MainFollow], [ReturnFollow], [MainFollowRef], [ReturnFollowRef], [TempClose], [MainFollowNotes], [ReturnFollowNotes], [PurchasePrice], [RepairCount], [DateOfPurchase], [DealerRefCode], [DepreciationPeriod], [Transferred], [TransferDate], [ActLocation], [TransferRemarks], [Flagged], [FlagReason], [FlaggedUtil], [FlagUtilReason], [FleetID]) VALUES (N'MDHOLVMX000009', N'5RJSYAFH57W476280', N'AH25943', N'2016-06-12', N'DUBAI-H25943', N'Not Indicated', null, null, N'2007', N'INTERNATIONAL', N'MXT', null, N'GRAY', null, N'TRUCK', null, null, null, N'For Release', null, null, null, N'501.00', N'N/A', N'Kilometer', N'Diesel', N'Automatic', N'4', null, N'0', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, N'AMS', N'', N'0', N'', null, N'MDHO', N'DUBAI', null, null, N'2015-06-24 00:00:00.0000000', N'', N'2016-03-28 19:52:07.0000000', N'0', N'5', null, N'0', N'0', N'1', null, null, null, null, null, null, null, null, null, null, null, N'Pool Vehicle', N'2001-01-01 00:00:00.0000000', null, null, N'1', null, N'No', null, null, N'0', N'0', N'', N'', null, null, null, N'32075', N'6', N'2014-06-01', N'DLRCV00002', N'48', null, null, null, null, null, null, null, null, N'29')
-GO
-GO
-INSERT INTO [dbo].[fleet] ([NLID], [VIN], [PlateNo], [RegistrationDate], [RegistrationNo], [EngineNo], [EngineCode], [EngineType], [Year], [Make], [Model], [Series], [Color], [VehCat], [VehType], [NonVehType], [ReqStatus], [UtilStatus], [Status], [LastService], [ReleasedDate], [Released], [Mileage], [MileConversionValue], [MeterType], [FuelType], [Transmission], [Doors], [TyreSize], [NonVehTypeID], [UdfLbl1], [UdfLbl2], [UdfLbl3], [UdfLbl4], [UdfLbl5], [UdfLbl6], [UdfLbl7], [UdfLbl8], [UdfLbl9], [UdfLbl10], [Udf1], [Udf2], [Udf3], [Udf4], [Udf5], [Udf6], [Udf7], [Udf8], [Udf9], [Udf10], [OwnershipType], [CusRefCode], [ContractID], [CreatedBy], [Armored], [SiteCode], [Province], [RegionalCommand], [Notes], [DateCreated], [ModifiedBy], [DateModified], [Switch], [PassCap], [Unit], [Owned], [Uploaded], [IncludeStatus], [UIC], [Barcode], [TPEno], [EngineSize], [FuelSticker], [FuelCapacity], [KeyTag], [VehicleTag], [TransmissionCode], [Accessories], [GVWR], [Others], [WSD], [OLDNLID], [OldSiteCode], [Active], [NextServiceDate], [ReleasedYN], [ExcludeInspect], [IsArchive], [MainFollow], [ReturnFollow], [MainFollowRef], [ReturnFollowRef], [TempClose], [MainFollowNotes], [ReturnFollowNotes], [PurchasePrice], [RepairCount], [DateOfPurchase], [DealerRefCode], [DepreciationPeriod], [Transferred], [TransferDate], [ActLocation], [TransferRemarks], [Flagged], [FlagReason], [FlaggedUtil], [FlagUtilReason], [FleetID]) VALUES (N'AMSXL000010', N'1GKS28KJ3GR219567', N'S31822', N'2016-07-13', N'Dubai - S31822', N'TGR219567', null, null, N'2016', N'GMC', N'YUKON DENALI', N'2016', N'BLACK', null, N'SUV', null, null, null, N'For Inspection', null, null, null, N'.00', N'N/A', N'Kilometer', N'Diesel', N'Automatic', N'5', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, N'AMS', null, null, null, null, N'MDHO', N'DUBAI', null, null, null, null, null, null, N'7', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, N'2016-07-18 00:00:00.0000000', null, null, N'1', null, N'No', null, null, N'0', N'0', null, null, null, null, null, N'75906', N'0', N'2016-07-13', N'DLRCV00005', N'0', null, null, null, null, null, null, null, null, N'10032')
+INSERT INTO [dbo].[fleet] ([NLID], [VIN], [PlateNo], [RegistrationDate], [RegistrationNo], [EngineNo], [EngineCode], [EngineType], [Year], [Make], [Model], [Series], [Color], [VehCat], [VehType], [NonVehType], [ReqStatus], [UtilStatus], [Status], [LastService], [ReleasedDate], [Released], [Mileage], [MileConversionValue], [MeterType], [FuelType], [Transmission], [Doors], [TyreSize], [NonVehTypeID], [UdfLbl1], [UdfLbl2], [UdfLbl3], [UdfLbl4], [UdfLbl5], [UdfLbl6], [UdfLbl7], [UdfLbl8], [UdfLbl9], [UdfLbl10], [Udf1], [Udf2], [Udf3], [Udf4], [Udf5], [Udf6], [Udf7], [Udf8], [Udf9], [Udf10], [OwnershipType], [CusRefCode], [ContractID], [CreatedBy], [Armored], [SiteCode], [Province], [RegionalCommand], [Notes], [DateCreated], [ModifiedBy], [DateModified], [Switch], [PassCap], [Unit], [Owned], [Uploaded], [IncludeStatus], [UIC], [Barcode], [TPEno], [EngineSize], [FuelSticker], [FuelCapacity], [KeyTag], [VehicleTag], [TransmissionCode], [Accessories], [GVWR], [Others], [WSD], [OLDNLID], [OldSiteCode], [Active], [NextServiceDate], [ReleasedYN], [ExcludeInspect], [IsArchive], [MainFollow], [ReturnFollow], [MainFollowRef], [ReturnFollowRef], [TempClose], [MainFollowNotes], [ReturnFollowNotes], [PurchasePrice], [RepairCount], [DateOfPurchase], [DealerRefCode], [DepreciationPeriod], [Transferred], [TransferDate], [ActLocation], [TransferRemarks], [Flagged], [FlagReason], [FlaggedUtil], [FlagUtilReason], [FleetID]) VALUES (N'MDHOLVMX000009', N'5RJSYAFH57W476280', N'AH25943', N'2016-06-12', N'DUBAI-H25943', N'Not Indicated', null, null, N'2007', N'INTERNATIONAL', N'MXT', null, N'GRAY', null, N'TRUCK', null, null, null, N'For Inspection', null, null, null, N'501.00', N'N/A', N'Kilometer', N'Diesel', N'Automatic', N'4', null, N'0', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, N'AMS', N'', N'0', N'', null, N'MDHO', N'DUBAI', null, null, N'2015-06-24 00:00:00.0000000', N'', N'2016-03-28 19:52:07.0000000', N'0', N'5', null, N'0', N'0', N'1', null, null, null, null, null, null, null, null, null, null, null, N'Pool Vehicle', N'2001-01-01 00:00:00.0000000', null, null, N'1', null, N'No', null, null, N'0', N'0', N'', N'', null, null, null, N'32075', N'6', N'2014-06-01', N'DLRCV00001', N'48', null, null, null, null, null, null, null, null, N'29')
 GO
 GO
 SET IDENTITY_INSERT [dbo].[fleet] OFF
@@ -927,9 +933,6 @@ GO
 -- Records of fleet_attachment
 -- ----------------------------
 SET IDENTITY_INSERT [dbo].[fleet_attachment] ON
-GO
-INSERT INTO [dbo].[fleet_attachment] ([attachment_id], [VIN], [file_name], [file_type], [file_size], [file_source_location], [date_created], [descriptions]) VALUES (N'69', N'CHALIE00001', N'AMSCC000010-FleetList.xls', N'application/vnd.ms-excel', N'22528', N'C:\inetpub\wwwroot\amsfsx\Content\uploaded_files\', N'2016-05-22 14:45:00.977', null)
-GO
 GO
 SET IDENTITY_INSERT [dbo].[fleet_attachment] OFF
 GO
@@ -1200,7 +1203,7 @@ CREATE TABLE [dbo].[fleet_colors] (
 
 
 GO
-DBCC CHECKIDENT(N'[dbo].[fleet_colors]', RESEED, 1016)
+DBCC CHECKIDENT(N'[dbo].[fleet_colors]', RESEED, 1031)
 GO
 
 -- ----------------------------
@@ -1208,43 +1211,43 @@ GO
 -- ----------------------------
 SET IDENTITY_INSERT [dbo].[fleet_colors] ON
 GO
-INSERT INTO [dbo].[fleet_colors] ([id], [color_name]) VALUES (N'1', N'BLACK')
+INSERT INTO [dbo].[fleet_colors] ([id], [color_name]) VALUES (N'1016', N'BLACK')
 GO
 GO
-INSERT INTO [dbo].[fleet_colors] ([id], [color_name]) VALUES (N'2', N'BLUE')
+INSERT INTO [dbo].[fleet_colors] ([id], [color_name]) VALUES (N'1017', N'BLUE')
 GO
 GO
-INSERT INTO [dbo].[fleet_colors] ([id], [color_name]) VALUES (N'3', N'BROWN')
+INSERT INTO [dbo].[fleet_colors] ([id], [color_name]) VALUES (N'1018', N'BROWN')
 GO
 GO
-INSERT INTO [dbo].[fleet_colors] ([id], [color_name]) VALUES (N'16', N'CYAN')
+INSERT INTO [dbo].[fleet_colors] ([id], [color_name]) VALUES (N'1019', N'CYAN')
 GO
 GO
-INSERT INTO [dbo].[fleet_colors] ([id], [color_name]) VALUES (N'4', N'GOLD')
+INSERT INTO [dbo].[fleet_colors] ([id], [color_name]) VALUES (N'1020', N'GOLD')
 GO
 GO
-INSERT INTO [dbo].[fleet_colors] ([id], [color_name]) VALUES (N'5', N'GRAY')
+INSERT INTO [dbo].[fleet_colors] ([id], [color_name]) VALUES (N'1021', N'GRAY')
 GO
 GO
-INSERT INTO [dbo].[fleet_colors] ([id], [color_name]) VALUES (N'6', N'GREEN')
+INSERT INTO [dbo].[fleet_colors] ([id], [color_name]) VALUES (N'1022', N'GREEN')
 GO
 GO
-INSERT INTO [dbo].[fleet_colors] ([id], [color_name]) VALUES (N'7', N'ORANGE')
+INSERT INTO [dbo].[fleet_colors] ([id], [color_name]) VALUES (N'1023', N'ORANGE')
 GO
 GO
-INSERT INTO [dbo].[fleet_colors] ([id], [color_name]) VALUES (N'18', N'PINKY')
+INSERT INTO [dbo].[fleet_colors] ([id], [color_name]) VALUES (N'1024', N'PINKY')
 GO
 GO
-INSERT INTO [dbo].[fleet_colors] ([id], [color_name]) VALUES (N'8', N'RED')
+INSERT INTO [dbo].[fleet_colors] ([id], [color_name]) VALUES (N'1025', N'RED')
 GO
 GO
-INSERT INTO [dbo].[fleet_colors] ([id], [color_name]) VALUES (N'9', N'WHITE')
+INSERT INTO [dbo].[fleet_colors] ([id], [color_name]) VALUES (N'1026', N'WHITE')
 GO
 GO
-INSERT INTO [dbo].[fleet_colors] ([id], [color_name]) VALUES (N'10', N'YELLOW')
+INSERT INTO [dbo].[fleet_colors] ([id], [color_name]) VALUES (N'1027', N'YELLOW')
 GO
 GO
-INSERT INTO [dbo].[fleet_colors] ([id], [color_name]) VALUES (N'11', N'YELLOW GREEN')
+INSERT INTO [dbo].[fleet_colors] ([id], [color_name]) VALUES (N'1028', N'YELLOW GREEN')
 GO
 GO
 SET IDENTITY_INSERT [dbo].[fleet_colors] OFF
@@ -1382,7 +1385,7 @@ CREATE TABLE [dbo].[fleet_odomhistory] (
 
 
 GO
-DBCC CHECKIDENT(N'[dbo].[fleet_odomhistory]', RESEED, 10345)
+DBCC CHECKIDENT(N'[dbo].[fleet_odomhistory]', RESEED, 10347)
 GO
 
 -- ----------------------------
@@ -1417,13 +1420,13 @@ GO
 INSERT INTO [dbo].[fleet_odomhistory] ([OHID], [NLID], [Date], [From], [To], [Notes]) VALUES (N'287', N'AMSBA000001', N'2016-03-30', N'2.0000', N'12.0000', N'21')
 GO
 GO
-INSERT INTO [dbo].[fleet_odomhistory] ([OHID], [NLID], [Date], [From], [To], [Notes]) VALUES (N'10341', N'MDHOLVMX000009', N'2016-05-22', N'50.0000', N'30.0000', N'edited value - wrong input')
-GO
-GO
 INSERT INTO [dbo].[fleet_odomhistory] ([OHID], [NLID], [Date], [From], [To], [Notes]) VALUES (N'10344', N'MDHOLVTP000002', N'2016-04-06', N'336479.0000', N'213.0000', N'213')
 GO
 GO
 INSERT INTO [dbo].[fleet_odomhistory] ([OHID], [NLID], [Date], [From], [To], [Notes]) VALUES (N'10345', N'MDHOLVTP000002', N'2016-04-06', N'213.0000', N'2.0000', N'21')
+GO
+GO
+INSERT INTO [dbo].[fleet_odomhistory] ([OHID], [NLID], [Date], [From], [To], [Notes]) VALUES (N'10347', N'MDHOLVMX000009', N'2016-05-22', N'50.0000', N'30.0000', N'edited value - wrong input')
 GO
 GO
 SET IDENTITY_INSERT [dbo].[fleet_odomhistory] OFF
@@ -1441,7 +1444,7 @@ CREATE TABLE [dbo].[fleet_provinces] (
 
 
 GO
-DBCC CHECKIDENT(N'[dbo].[fleet_provinces]', RESEED, 41)
+DBCC CHECKIDENT(N'[dbo].[fleet_provinces]', RESEED, 64)
 GO
 
 -- ----------------------------
@@ -1584,7 +1587,7 @@ CREATE TABLE [dbo].[fleet_vehicle_make] (
 
 
 GO
-DBCC CHECKIDENT(N'[dbo].[fleet_vehicle_make]', RESEED, 1022)
+DBCC CHECKIDENT(N'[dbo].[fleet_vehicle_make]', RESEED, 1023)
 GO
 
 -- ----------------------------
@@ -1592,7 +1595,7 @@ GO
 -- ----------------------------
 SET IDENTITY_INSERT [dbo].[fleet_vehicle_make] ON
 GO
-INSERT INTO [dbo].[fleet_vehicle_make] ([id], [vehicle_make]) VALUES (N'1', N'AUDI')
+INSERT INTO [dbo].[fleet_vehicle_make] ([id], [vehicle_make]) VALUES (N'1', N'AUDIS')
 GO
 GO
 INSERT INTO [dbo].[fleet_vehicle_make] ([id], [vehicle_make]) VALUES (N'22', N'CADILLAC')
@@ -1670,7 +1673,7 @@ CREATE TABLE [dbo].[fleet_vehicle_models] (
 
 
 GO
-DBCC CHECKIDENT(N'[dbo].[fleet_vehicle_models]', RESEED, 1141)
+DBCC CHECKIDENT(N'[dbo].[fleet_vehicle_models]', RESEED, 1143)
 GO
 
 -- ----------------------------
@@ -1894,9 +1897,6 @@ GO
 INSERT INTO [dbo].[fleet_vehicle_models] ([ModelID], [Model], [Make], [ForAid], [VehicleCode]) VALUES (N'140', N'NEW-MODEL', N'NEW-MAKE', N'0', N'NN')
 GO
 GO
-INSERT INTO [dbo].[fleet_vehicle_models] ([ModelID], [Model], [Make], [ForAid], [VehicleCode]) VALUES (N'1141', N'YUKON DENALI', N'GMC', N'1', N'XL')
-GO
-GO
 SET IDENTITY_INSERT [dbo].[fleet_vehicle_models] OFF
 GO
 
@@ -1914,7 +1914,7 @@ CREATE TABLE [dbo].[fleet_vehicle_series] (
 
 
 GO
-DBCC CHECKIDENT(N'[dbo].[fleet_vehicle_series]', RESEED, 1043)
+DBCC CHECKIDENT(N'[dbo].[fleet_vehicle_series]', RESEED, 1046)
 GO
 
 -- ----------------------------
@@ -1922,7 +1922,7 @@ GO
 -- ----------------------------
 SET IDENTITY_INSERT [dbo].[fleet_vehicle_series] ON
 GO
-INSERT INTO [dbo].[fleet_vehicle_series] ([id], [SeriesNo], [Make], [Model]) VALUES (N'1', N'2500', N'CHEVROLET', N'EXPRESS')
+INSERT INTO [dbo].[fleet_vehicle_series] ([id], [SeriesNo], [Make], [Model]) VALUES (N'1', N'2500', N'CHEVROLET', N'BLAZER')
 GO
 GO
 INSERT INTO [dbo].[fleet_vehicle_series] ([id], [SeriesNo], [Make], [Model]) VALUES (N'2', N'3500', N'CHEVROLET', N'EXPRESS')
@@ -2045,7 +2045,7 @@ GO
 INSERT INTO [dbo].[fleet_vehicle_series] ([id], [SeriesNo], [Make], [Model]) VALUES (N'43', N'MAKE-NEW-MODEl-SERIES', N'NEW-MAKE', N'NEW-MODEL')
 GO
 GO
-INSERT INTO [dbo].[fleet_vehicle_series] ([id], [SeriesNo], [Make], [Model]) VALUES (N'1043', N'2016', N'GMC', N'YUKON DENALI')
+INSERT INTO [dbo].[fleet_vehicle_series] ([id], [SeriesNo], [Make], [Model]) VALUES (N'1046', N'BO', N'FORD', N'F150')
 GO
 GO
 SET IDENTITY_INSERT [dbo].[fleet_vehicle_series] OFF
@@ -2069,7 +2069,7 @@ CREATE TABLE [dbo].[fleet_vehicle_type] (
 
 
 GO
-DBCC CHECKIDENT(N'[dbo].[fleet_vehicle_type]', RESEED, 1015)
+DBCC CHECKIDENT(N'[dbo].[fleet_vehicle_type]', RESEED, 1016)
 GO
 
 -- ----------------------------
@@ -2129,16 +2129,13 @@ CREATE TABLE [dbo].[fleet_vehicle_type_mapping] (
 
 
 GO
-DBCC CHECKIDENT(N'[dbo].[fleet_vehicle_type_mapping]', RESEED, 1148)
+DBCC CHECKIDENT(N'[dbo].[fleet_vehicle_type_mapping]', RESEED, 1195)
 GO
 
 -- ----------------------------
 -- Records of fleet_vehicle_type_mapping
 -- ----------------------------
 SET IDENTITY_INSERT [dbo].[fleet_vehicle_type_mapping] ON
-GO
-INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) VALUES (N'1', N'68', N'4')
-GO
 GO
 INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) VALUES (N'3', N'126', N'8')
 GO
@@ -2173,22 +2170,7 @@ GO
 INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) VALUES (N'18', N'180', N'2')
 GO
 GO
-INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) VALUES (N'19', N'185', N'4')
-GO
-GO
 INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) VALUES (N'20', N'186', N'3')
-GO
-GO
-INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) VALUES (N'22', N'202', N'4')
-GO
-GO
-INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) VALUES (N'23', N'211', N'4')
-GO
-GO
-INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) VALUES (N'25', N'223', N'4')
-GO
-GO
-INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) VALUES (N'26', N'225', N'4')
 GO
 GO
 INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) VALUES (N'27', N'226', N'5')
@@ -2212,9 +2194,6 @@ GO
 INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) VALUES (N'33', N'263', N'8')
 GO
 GO
-INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) VALUES (N'34', N'264', N'4')
-GO
-GO
 INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) VALUES (N'35', N'266', N'8')
 GO
 GO
@@ -2231,9 +2210,6 @@ INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) 
 GO
 GO
 INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) VALUES (N'41', N'314', N'3')
-GO
-GO
-INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) VALUES (N'43', N'318', N'4')
 GO
 GO
 INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) VALUES (N'44', N'323', N'3')
@@ -2275,9 +2251,6 @@ GO
 INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) VALUES (N'59', N'427', N'5')
 GO
 GO
-INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) VALUES (N'60', N'430', N'4')
-GO
-GO
 INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) VALUES (N'61', N'433', N'5')
 GO
 GO
@@ -2290,16 +2263,10 @@ GO
 INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) VALUES (N'66', N'469', N'3')
 GO
 GO
-INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) VALUES (N'67', N'471', N'4')
-GO
-GO
 INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) VALUES (N'68', N'472', N'3')
 GO
 GO
 INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) VALUES (N'70', N'478', N'5')
-GO
-GO
-INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) VALUES (N'71', N'484', N'4')
 GO
 GO
 INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) VALUES (N'72', N'488', N'3')
@@ -2311,13 +2278,7 @@ GO
 INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) VALUES (N'76', N'506', N'5')
 GO
 GO
-INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) VALUES (N'78', N'513', N'4')
-GO
-GO
 INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) VALUES (N'79', N'525', N'8')
-GO
-GO
-INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) VALUES (N'80', N'532', N'4')
 GO
 GO
 INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) VALUES (N'81', N'533', N'3')
@@ -2326,19 +2287,10 @@ GO
 INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) VALUES (N'82', N'534', N'3')
 GO
 GO
-INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) VALUES (N'83', N'540', N'4')
-GO
-GO
 INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) VALUES (N'84', N'544', N'3')
 GO
 GO
-INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) VALUES (N'85', N'549', N'4')
-GO
-GO
 INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) VALUES (N'87', N'554', N'8')
-GO
-GO
-INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) VALUES (N'88', N'561', N'4')
 GO
 GO
 INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) VALUES (N'89', N'562', N'5')
@@ -2366,12 +2318,6 @@ INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) 
 GO
 GO
 INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) VALUES (N'97', N'673', N'8')
-GO
-GO
-INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) VALUES (N'98', N'690', N'4')
-GO
-GO
-INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) VALUES (N'99', N'705', N'4')
 GO
 GO
 INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) VALUES (N'100', N'728', N'5')
@@ -2413,6 +2359,15 @@ GO
 INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) VALUES (N'139', N'136', N'1')
 GO
 GO
+INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) VALUES (N'140', N'134', N'7')
+GO
+GO
+INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) VALUES (N'141', N'132', N'7')
+GO
+GO
+INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) VALUES (N'142', N'133', N'7')
+GO
+GO
 INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) VALUES (N'143', N'138', N'14')
 GO
 GO
@@ -2422,16 +2377,16 @@ GO
 INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) VALUES (N'145', N'140', N'16')
 GO
 GO
-INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) VALUES (N'1145', N'134', N'7')
+INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) VALUES (N'1186', N'1', N'1016')
 GO
 GO
-INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) VALUES (N'1146', N'1141', N'7')
+INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) VALUES (N'1187', N'2', N'1016')
 GO
 GO
-INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) VALUES (N'1147', N'132', N'7')
+INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) VALUES (N'1188', N'3', N'1016')
 GO
 GO
-INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) VALUES (N'1148', N'133', N'7')
+INSERT INTO [dbo].[fleet_vehicle_type_mapping] ([id], [VTModelID], [VehTypeID]) VALUES (N'1195', N'68', N'4')
 GO
 GO
 SET IDENTITY_INSERT [dbo].[fleet_vehicle_type_mapping] OFF
@@ -2445,9 +2400,9 @@ GO
 CREATE TABLE [dbo].[gsa_user_pages] (
 [user_id] bigint NOT NULL ,
 [PageID] bigint NOT NULL ,
-[AlView] tinyint NULL ,
-[AlDownload] tinyint NULL ,
-[AlUpload] tinyint NULL 
+[View] tinyint NULL ,
+[Download] tinyint NULL ,
+[Upload] tinyint NULL 
 )
 
 
@@ -2456,763 +2411,73 @@ GO
 -- ----------------------------
 -- Records of gsa_user_pages
 -- ----------------------------
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'118', N'1', N'0', N'0', N'0')
+INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [View], [Download], [Upload]) VALUES (N'118', N'1', N'0', N'1', N'1')
 GO
 GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'118', N'2', N'1', N'1', N'0')
+INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [View], [Download], [Upload]) VALUES (N'118', N'2', N'0', N'1', N'1')
 GO
 GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'118', N'3', N'0', N'0', N'0')
+INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [View], [Download], [Upload]) VALUES (N'118', N'3', N'1', N'1', N'1')
 GO
 GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'118', N'4', N'1', N'1', N'0')
+INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [View], [Download], [Upload]) VALUES (N'118', N'4', N'1', N'0', N'1')
 GO
 GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'118', N'5', N'1', N'1', N'0')
+INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [View], [Download], [Upload]) VALUES (N'118', N'5', N'1', N'1', N'1')
 GO
 GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'118', N'6', N'1', N'0', N'0')
+INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [View], [Download], [Upload]) VALUES (N'118', N'6', N'1', N'1', N'1')
 GO
 GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'118', N'7', N'0', N'0', N'0')
+INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [View], [Download], [Upload]) VALUES (N'118', N'7', N'1', N'1', N'1')
 GO
 GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'118', N'8', N'1', N'1', N'0')
+INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [View], [Download], [Upload]) VALUES (N'118', N'8', N'1', N'1', N'1')
 GO
 GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'118', N'9', N'1', N'1', N'0')
+INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [View], [Download], [Upload]) VALUES (N'118', N'9', N'1', N'1', N'1')
 GO
 GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'118', N'10', N'1', N'1', N'0')
+INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [View], [Download], [Upload]) VALUES (N'118', N'10', N'1', N'1', N'1')
 GO
 GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'118', N'11', N'1', N'1', N'0')
+INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [View], [Download], [Upload]) VALUES (N'118', N'11', N'1', N'1', N'1')
 GO
 GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'118', N'12', N'1', N'1', N'0')
+INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [View], [Download], [Upload]) VALUES (N'118', N'12', N'1', N'1', N'1')
 GO
 GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'118', N'13', N'1', N'1', N'0')
+INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [View], [Download], [Upload]) VALUES (N'118', N'13', N'1', N'1', N'1')
 GO
 GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'118', N'14', N'0', N'0', N'0')
+INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [View], [Download], [Upload]) VALUES (N'118', N'14', N'1', N'1', N'1')
 GO
 GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'118', N'15', N'1', N'1', N'0')
+INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [View], [Download], [Upload]) VALUES (N'118', N'15', N'1', N'1', N'1')
 GO
 GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'118', N'16', N'1', N'1', N'0')
+INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [View], [Download], [Upload]) VALUES (N'118', N'16', N'1', N'1', N'1')
 GO
 GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'118', N'17', N'1', N'1', N'0')
+INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [View], [Download], [Upload]) VALUES (N'118', N'17', N'1', N'1', N'1')
 GO
 GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'118', N'18', N'1', N'1', N'0')
+INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [View], [Download], [Upload]) VALUES (N'118', N'18', N'1', N'1', N'1')
 GO
 GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'118', N'19', N'1', N'1', N'0')
+INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [View], [Download], [Upload]) VALUES (N'118', N'19', N'1', N'1', N'1')
 GO
 GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'118', N'20', N'1', N'1', N'0')
+INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [View], [Download], [Upload]) VALUES (N'118', N'20', N'1', N'1', N'1')
 GO
 GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'118', N'21', N'1', N'1', N'1')
+INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [View], [Download], [Upload]) VALUES (N'118', N'21', N'1', N'1', N'1')
 GO
 GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'118', N'22', N'1', N'0', N'0')
+INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [View], [Download], [Upload]) VALUES (N'118', N'22', N'1', N'1', N'1')
 GO
 GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'118', N'23', N'1', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'119', N'1', N'1', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'119', N'2', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'119', N'3', N'0', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'119', N'4', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'119', N'5', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'119', N'6', N'0', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'119', N'7', N'0', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'119', N'8', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'119', N'9', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'119', N'10', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'119', N'11', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'119', N'12', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'119', N'13', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'119', N'14', N'0', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'119', N'15', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'119', N'16', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'119', N'17', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'119', N'18', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'119', N'19', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'119', N'20', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'119', N'21', N'1', N'1', N'1')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'119', N'22', N'1', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'119', N'23', N'1', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'120', N'1', N'0', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'120', N'2', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'120', N'3', N'0', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'120', N'4', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'120', N'5', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'120', N'6', N'0', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'120', N'7', N'0', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'120', N'8', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'120', N'9', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'120', N'10', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'120', N'11', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'120', N'12', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'120', N'13', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'120', N'14', N'0', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'120', N'15', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'120', N'16', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'120', N'17', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'120', N'18', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'120', N'19', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'120', N'20', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'120', N'21', N'1', N'1', N'1')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'120', N'22', N'1', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'120', N'23', N'1', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'121', N'1', N'0', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'121', N'2', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'121', N'3', N'0', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'121', N'4', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'121', N'5', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'121', N'6', N'0', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'121', N'7', N'0', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'121', N'8', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'121', N'9', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'121', N'10', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'121', N'11', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'121', N'12', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'121', N'13', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'121', N'14', N'0', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'121', N'15', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'121', N'16', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'121', N'17', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'121', N'18', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'121', N'19', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'121', N'20', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'121', N'21', N'1', N'1', N'1')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'121', N'22', N'1', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'121', N'23', N'1', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'122', N'1', N'0', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'122', N'2', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'122', N'3', N'0', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'122', N'4', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'122', N'5', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'122', N'6', N'0', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'122', N'7', N'0', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'122', N'8', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'122', N'9', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'122', N'10', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'122', N'11', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'122', N'12', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'122', N'13', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'122', N'14', N'0', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'122', N'15', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'122', N'16', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'122', N'17', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'122', N'18', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'122', N'19', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'122', N'20', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'122', N'21', N'1', N'1', N'1')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'122', N'22', N'0', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'122', N'23', N'0', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'123', N'1', N'0', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'123', N'2', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'123', N'3', N'0', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'123', N'4', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'123', N'5', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'123', N'6', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'123', N'7', N'0', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'123', N'8', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'123', N'9', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'123', N'10', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'123', N'11', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'123', N'12', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'123', N'13', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'123', N'14', N'0', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'123', N'15', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'123', N'16', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'123', N'17', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'123', N'18', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'123', N'19', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'123', N'20', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'123', N'21', N'1', N'1', N'1')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'123', N'22', N'0', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'123', N'23', N'0', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'124', N'1', N'0', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'124', N'2', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'124', N'3', N'0', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'124', N'4', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'124', N'5', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'124', N'6', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'124', N'7', N'0', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'124', N'8', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'124', N'9', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'124', N'10', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'124', N'11', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'124', N'12', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'124', N'13', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'124', N'14', N'0', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'124', N'15', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'124', N'16', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'124', N'17', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'124', N'18', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'124', N'19', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'124', N'20', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'124', N'21', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'124', N'22', N'0', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'124', N'23', N'0', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'125', N'1', N'0', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'125', N'2', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'125', N'3', N'0', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'125', N'4', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'125', N'5', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'125', N'6', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'125', N'7', N'0', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'125', N'8', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'125', N'9', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'125', N'10', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'125', N'11', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'125', N'12', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'125', N'13', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'125', N'14', N'0', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'125', N'15', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'125', N'16', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'125', N'17', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'125', N'18', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'125', N'19', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'125', N'20', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'125', N'21', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'125', N'22', N'0', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'125', N'23', N'0', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'126', N'1', N'0', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'126', N'2', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'126', N'3', N'0', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'126', N'4', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'126', N'5', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'126', N'6', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'126', N'7', N'0', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'126', N'8', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'126', N'9', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'126', N'10', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'126', N'11', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'126', N'12', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'126', N'13', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'126', N'14', N'0', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'126', N'15', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'126', N'16', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'126', N'17', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'126', N'18', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'126', N'19', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'126', N'20', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'126', N'21', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'126', N'22', N'0', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'126', N'23', N'0', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'127', N'1', N'0', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'127', N'2', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'127', N'3', N'0', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'127', N'4', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'127', N'5', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'127', N'6', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'127', N'7', N'0', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'127', N'8', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'127', N'9', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'127', N'10', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'127', N'11', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'127', N'12', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'127', N'13', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'127', N'14', N'0', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'127', N'15', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'127', N'16', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'127', N'17', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'127', N'18', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'127', N'19', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'127', N'20', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'127', N'21', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'127', N'22', N'1', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'127', N'23', N'1', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'128', N'1', N'0', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'128', N'2', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'128', N'3', N'0', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'128', N'4', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'128', N'5', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'128', N'6', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'128', N'7', N'0', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'128', N'8', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'128', N'9', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'128', N'10', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'128', N'11', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'128', N'12', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'128', N'13', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'128', N'14', N'0', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'128', N'15', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'128', N'16', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'128', N'17', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'128', N'18', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'128', N'19', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'128', N'20', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'128', N'21', N'1', N'1', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'128', N'22', N'1', N'0', N'0')
-GO
-GO
-INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [AlView], [AlDownload], [AlUpload]) VALUES (N'128', N'23', N'1', N'0', N'0')
+INSERT INTO [dbo].[gsa_user_pages] ([user_id], [PageID], [View], [Download], [Upload]) VALUES (N'118', N'23', N'1', N'1', N'1')
 GO
 GO
 
@@ -3252,7 +2517,11 @@ CREATE TABLE [dbo].[gsa_users] (
 [Switch] tinyint NULL ,
 [Status] varchar(10) NULL ,
 [usertypedisp] varchar(50) NULL ,
-[rfqApproveryn] varchar(50) NULL 
+[rfqApproveryn] varchar(50) NULL ,
+[email_recipient] int NULL DEFAULT ((0)) ,
+[accessible_page] text NULL ,
+[image_url] text NULL ,
+[requisition_approver] int NULL 
 )
 
 
@@ -3279,31 +2548,31 @@ GO
 -- ----------------------------
 SET IDENTITY_INSERT [dbo].[gsa_users] ON
 GO
-INSERT INTO [dbo].[gsa_users] ([user_id], [username], [password], [name], [position], [usertype], [rfqApprover], [rfqAmount], [email], [Switch], [Status], [usertypedisp], [rfqApproveryn]) VALUES (N'118', N'Administrator', N'FsKiMhX5Vxc8FLr1QvVouw==', N'Jenno Cabrito', N'Administrator', N'2', N'0', N'1', N'mbardos@a-m-s.ae', null, N'Active', N'AMS Administrator', N'No')
+INSERT INTO [dbo].[gsa_users] ([user_id], [username], [password], [name], [position], [usertype], [rfqApprover], [rfqAmount], [email], [Switch], [Status], [usertypedisp], [rfqApproveryn], [email_recipient], [accessible_page], [image_url], [requisition_approver]) VALUES (N'118', N'Administrator', N'VcaaJrOZoNQ=', N'Jenno Cabrito', N'Administrator', N'2', N'0', N'1', N'jcabrito@a-m-s.ae', null, N'Active', N'AMS Administrator', N'No', N'0', N'ATEMP,DHO, TMP, UNSOS', null, null)
 GO
 GO
-INSERT INTO [dbo].[gsa_users] ([user_id], [username], [password], [name], [position], [usertype], [rfqApprover], [rfqAmount], [email], [Switch], [Status], [usertypedisp], [rfqApproveryn]) VALUES (N'119', N'Client', N'kwrLk9Dj+yrxvDgGy7xWElBkOtkjqGgx', N'Client', N'Client', N'2', N'0', N'1', N'mbardos@a-m-s.ae', null, N'Active', N'AMS Administrator', N'No')
+INSERT INTO [dbo].[gsa_users] ([user_id], [username], [password], [name], [position], [usertype], [rfqApprover], [rfqAmount], [email], [Switch], [Status], [usertypedisp], [rfqApproveryn], [email_recipient], [accessible_page], [image_url], [requisition_approver]) VALUES (N'119', N'Client', N'kwrLk9Dj+yrxvDgGy7xWElBkOtkjqGgx', N'Client', N'Client', N'2', N'0', N'1', N'test@a-m-s.ae', null, N'Active', N'AMS Administrator', N'No', N'0', null, null, null)
 GO
 GO
-INSERT INTO [dbo].[gsa_users] ([user_id], [username], [password], [name], [position], [usertype], [rfqApprover], [rfqAmount], [email], [Switch], [Status], [usertypedisp], [rfqApproveryn]) VALUES (N'120', N'ams-itpm', N'L7Mf/laiCnn5jM4DTkDrSg==', N'Edison Tanzon', N'Project Manager', N'2', N'0', N'1', N'etanzon@a-m-s.ae', null, N'Active', N'AMS Administrator', N'No')
+INSERT INTO [dbo].[gsa_users] ([user_id], [username], [password], [name], [position], [usertype], [rfqApprover], [rfqAmount], [email], [Switch], [Status], [usertypedisp], [rfqApproveryn], [email_recipient], [accessible_page], [image_url], [requisition_approver]) VALUES (N'120', N'ams-itpm', N'L7Mf/laiCnn5jM4DTkDrSg==', N'Edison Tanzon', N'Project Manager', N'2', N'0', N'1', N'etanzon@a-m-s.ae', null, N'Active', N'AMS Administrator', N'No', N'0', null, null, null)
 GO
 GO
-INSERT INTO [dbo].[gsa_users] ([user_id], [username], [password], [name], [position], [usertype], [rfqApprover], [rfqAmount], [email], [Switch], [Status], [usertypedisp], [rfqApproveryn]) VALUES (N'121', N'APR', N'xp6tTEO6Cqx+I90tzcw2AA==', N'Arnel Presbitero', N'Business Process Project Coordinator', N'2', N'0', N'1', N'arnelpresbitero@a-m-s.ae', null, N'Active', N'AMS Administrator', N'No')
+INSERT INTO [dbo].[gsa_users] ([user_id], [username], [password], [name], [position], [usertype], [rfqApprover], [rfqAmount], [email], [Switch], [Status], [usertypedisp], [rfqApproveryn], [email_recipient], [accessible_page], [image_url], [requisition_approver]) VALUES (N'121', N'APR', N'xp6tTEO6Cqx+I90tzcw2AA==', N'Arnel Presbitero', N'Business Process Project Coordinator', N'2', N'0', N'1', N'arnelpresbitero@a-m-s.ae', null, N'Active', N'AMS Administrator', N'No', N'0', null, null, null)
 GO
 GO
-INSERT INTO [dbo].[gsa_users] ([user_id], [username], [password], [name], [position], [usertype], [rfqApprover], [rfqAmount], [email], [Switch], [Status], [usertypedisp], [rfqApproveryn]) VALUES (N'122', N'pcrawshaw@a-m-s.ae', N'xp6tTEO6Cqx+I90tzcw2AA==', N'Paul Crawshaw', N'Technical Director', N'4', N'0', N'1', N'pcrawshaw@a-m-s.ae', null, N'Active', N'Super Administrator', N'No')
+INSERT INTO [dbo].[gsa_users] ([user_id], [username], [password], [name], [position], [usertype], [rfqApprover], [rfqAmount], [email], [Switch], [Status], [usertypedisp], [rfqApproveryn], [email_recipient], [accessible_page], [image_url], [requisition_approver]) VALUES (N'122', N'pcrawshaw@a-m-s.ae', N'xp6tTEO6Cqx+I90tzcw2AA==', N'Paul Crawshaw', N'Technical Director', N'4', N'0', N'1', N'pcrawshaw@a-m-s.ae', null, N'Active', N'Super Administrator', N'No', N'0', null, null, null)
 GO
 GO
-INSERT INTO [dbo].[gsa_users] ([user_id], [username], [password], [name], [position], [usertype], [rfqApprover], [rfqAmount], [email], [Switch], [Status], [usertypedisp], [rfqApproveryn]) VALUES (N'123', N'smariano@a-m-s.ae', N'xp6tTEO6Cqx+I90tzcw2AA==', N'Steve Mariano', N'Head of IT', N'4', N'0', N'1', N'smariano@a-m-s.ae', null, N'Active', N'Super Administrator', N'No')
+INSERT INTO [dbo].[gsa_users] ([user_id], [username], [password], [name], [position], [usertype], [rfqApprover], [rfqAmount], [email], [Switch], [Status], [usertypedisp], [rfqApproveryn], [email_recipient], [accessible_page], [image_url], [requisition_approver]) VALUES (N'123', N'smariano@a-m-s.ae', N'xp6tTEO6Cqx+I90tzcw2AA==', N'Steve Mariano', N'Head of IT', N'4', N'0', N'1', N'smariano@a-m-s.ae', null, N'Active', N'Super Administrator', N'No', N'0', null, null, null)
 GO
 GO
-INSERT INTO [dbo].[gsa_users] ([user_id], [username], [password], [name], [position], [usertype], [rfqApprover], [rfqAmount], [email], [Switch], [Status], [usertypedisp], [rfqApproveryn]) VALUES (N'124', N'WLO', N'xp6tTEO6Cqx+I90tzcw2AA==', N'Whienzel Logranio', N'Admin Staff', N'2', N'0', N'1', null, null, N'Active', N'AMS Administrator', N'No')
+INSERT INTO [dbo].[gsa_users] ([user_id], [username], [password], [name], [position], [usertype], [rfqApprover], [rfqAmount], [email], [Switch], [Status], [usertypedisp], [rfqApproveryn], [email_recipient], [accessible_page], [image_url], [requisition_approver]) VALUES (N'124', N'WLO', N'xp6tTEO6Cqx+I90tzcw2AA==', N'Whienzel Logranio', N'Admin Staff', N'2', N'0', N'1', null, null, N'Active', N'AMS Administrator', N'No', N'0', null, null, null)
 GO
 GO
-INSERT INTO [dbo].[gsa_users] ([user_id], [username], [password], [name], [position], [usertype], [rfqApprover], [rfqAmount], [email], [Switch], [Status], [usertypedisp], [rfqApproveryn]) VALUES (N'125', N'JSA', N'xp6tTEO6Cqx+I90tzcw2AA==', N'Jerick Saragoza', N'Head of Admin', N'2', N'0', N'1', null, null, N'Active', N'AMS Administrator', N'No')
+INSERT INTO [dbo].[gsa_users] ([user_id], [username], [password], [name], [position], [usertype], [rfqApprover], [rfqAmount], [email], [Switch], [Status], [usertypedisp], [rfqApproveryn], [email_recipient], [accessible_page], [image_url], [requisition_approver]) VALUES (N'125', N'JSA', N'xp6tTEO6Cqx+I90tzcw2AA==', N'Jerick Saragoza', N'Head of Admin', N'2', N'0', N'1', null, null, N'Active', N'AMS Administrator', N'No', N'0', null, null, null)
 GO
 GO
-INSERT INTO [dbo].[gsa_users] ([user_id], [username], [password], [name], [position], [usertype], [rfqApprover], [rfqAmount], [email], [Switch], [Status], [usertypedisp], [rfqApproveryn]) VALUES (N'126', N'CZA', N'xp6tTEO6Cqx+I90tzcw2AA==', N'Chalie Zaragoza', N'Admin Staff', N'2', N'0', N'1', null, null, N'Active', N'AMS Administrator', N'No')
+INSERT INTO [dbo].[gsa_users] ([user_id], [username], [password], [name], [position], [usertype], [rfqApprover], [rfqAmount], [email], [Switch], [Status], [usertypedisp], [rfqApproveryn], [email_recipient], [accessible_page], [image_url], [requisition_approver]) VALUES (N'126', N'CZA', N'xp6tTEO6Cqx+I90tzcw2AA==', N'Chalie Zaragoza', N'Admin Staff', N'2', N'0', N'1', null, null, N'Active', N'AMS Administrator', N'No', N'0', null, null, null)
 GO
 GO
 SET IDENTITY_INSERT [dbo].[gsa_users] OFF
@@ -3448,7 +2717,7 @@ CREATE TABLE [dbo].[parts] (
 [Outgoing] int NULL DEFAULT ('0') ,
 [ReOrderPoint] int NULL DEFAULT ('0') ,
 [ReOrderQty] int NULL DEFAULT ('0') ,
-[UnitCost] decimal(10,2) NULL DEFAULT ((0.00)) ,
+[UnitCost] decimal(10,2) NULL DEFAULT ('0.00') ,
 [ProfitPercentage] decimal(10,2) NULL DEFAULT ('0.00') ,
 [SalesPrice] decimal(10,2) NULL DEFAULT NULL ,
 [PartType] varchar(20) NULL DEFAULT ('Non-Stocking') ,
@@ -3493,6 +2762,8 @@ CREATE TABLE [dbo].[parts] (
 )
 
 
+GO
+DBCC CHECKIDENT(N'[dbo].[parts]', RESEED, 6)
 GO
 
 -- ----------------------------
@@ -4595,7 +3866,7 @@ CREATE TABLE [dbo].[uploadedimage] (
 
 
 GO
-DBCC CHECKIDENT(N'[dbo].[uploadedimage]', RESEED, 20608)
+DBCC CHECKIDENT(N'[dbo].[uploadedimage]', RESEED, 10615)
 GO
 
 -- ----------------------------
@@ -5348,7 +4619,7 @@ GO
 -- ----------------------------
 SET IDENTITY_INSERT [dbo].[workorder] ON
 GO
-INSERT INTO [dbo].[workorder] ([WONo], [RefWONo], [NLID], [CusRefCode], [DeptID], [LocID], [Issued], [Closed], [DtCompleted], [Status], [WorkPerformed], [Meter], [Notes], [ETC], [Priority], [CServiceID], [Udf1], [Udf2], [Udf3], [Udf4], [Udf5], [Udf6], [Udfl1], [Udfl2], [Udfl3], [Udfl4], [Udfl5], [Udfl6], [DealerRefCode], [PricesBy], [InspectedBy1], [InspectedBy2], [Fuel1], [Fuel2], [InvoiceType], [WOType], [CurrencyCode], [AgreedRate], [Rate], [Gross], [Discount], [Net], [QuotationNo], [CreatedByID], [DateCreated], [ModifiedByID], [DateModified], [SiteCode], [DamageCause], [PreventiveCause], [Accidental], [PartsCost], [Recovery], [Labor], [NoHour], [Total], [LaborCost], [LaborProfPerc], [WOGross], [WODiscount], [WONet], [DiscPerc], [CTOCusRefCode], [CTODealerRefCode], [VehStatus], [TempClose], [UpdatedLastServe], [WOReopen], [LastFleetMeter], [Department], [Location], [id], [WOSuffixCode]) VALUES (N'SUBMDHO15000001', N'', N'MDHOLVTP000001', N'', N'6', N'12', N'2015-02-12', N'2015-02-12', N'2015-02-12', N'Closed', N'GENERAL>GENERAL>ROAD WHEEL AND TIRE ', N'248000', N'', null, N'0', N'0', N'', N'', N'', N'', N'', N'', N'UDF 1', N'UDF 2', N'UDF 3', N'UDF 4', N'UDF 5', N'UDF 6', N'', N'3RD PARTY, MECHANIC ', N'3RD PARTY, MECHANIC ', N'3RD PARTY, MECHANIC ', N'1', N'1', N'', N'SUBCON', N'USD', N'0', N'1.00', N'1300.00', N'.00', N'1300.00', N'QTMDHOVTP041500001', N'0', N'2015-03-05', N'0', N'2015-06-24 14:55:53.0000000', N'MDHO', N'', N'', N'0', null, null, null, null, null, N'20.0000', N'1.0000', N'1300.00', N'.00', N'1300.00', N'.0000', null, N'', N'MC', N'0', N'0', N'0', N'100', N'AAA Service Center', null, N'59', null)
+INSERT INTO [dbo].[workorder] ([WONo], [RefWONo], [NLID], [CusRefCode], [DeptID], [LocID], [Issued], [Closed], [DtCompleted], [Status], [WorkPerformed], [Meter], [Notes], [ETC], [Priority], [CServiceID], [Udf1], [Udf2], [Udf3], [Udf4], [Udf5], [Udf6], [Udfl1], [Udfl2], [Udfl3], [Udfl4], [Udfl5], [Udfl6], [DealerRefCode], [PricesBy], [InspectedBy1], [InspectedBy2], [Fuel1], [Fuel2], [InvoiceType], [WOType], [CurrencyCode], [AgreedRate], [Rate], [Gross], [Discount], [Net], [QuotationNo], [CreatedByID], [DateCreated], [ModifiedByID], [DateModified], [SiteCode], [DamageCause], [PreventiveCause], [Accidental], [PartsCost], [Recovery], [Labor], [NoHour], [Total], [LaborCost], [LaborProfPerc], [WOGross], [WODiscount], [WONet], [DiscPerc], [CTOCusRefCode], [CTODealerRefCode], [VehStatus], [TempClose], [UpdatedLastServe], [WOReopen], [LastFleetMeter], [Department], [Location], [id], [WOSuffixCode]) VALUES (N'SUBMDHO', N'', N'MDHOLVTP000001', null, N'0', N'0', N'2015-02-12', N'2015-02-12', N'2015-02-12', N'Closed', N'GENERAL>GENERAL>ROAD WHEEL AND TIRE', N'248000', null, N'2016-07-07', N'0', N'0', null, null, null, null, null, null, null, null, null, null, null, null, null, N'EMR-MDHO-000001', N'EMR-MDHO-000001', null, N'1', N'1', null, N'SUBCON', N'USD', null, N'1.00', N'1300.00', N'.00', N'1300.00', N'QTMDHOVHU000', N'0', null, N'0', N'2015-06-24 14:55:53.0000000', null, null, null, null, null, null, null, null, null, null, null, null, null, N'.00', null, null, N'', N'NMCM', null, N'0', N'0', N'100', N'3rd Party', N'Fast Rent-a-Car LLC', N'59', null)
 GO
 GO
 INSERT INTO [dbo].[workorder] ([WONo], [RefWONo], [NLID], [CusRefCode], [DeptID], [LocID], [Issued], [Closed], [DtCompleted], [Status], [WorkPerformed], [Meter], [Notes], [ETC], [Priority], [CServiceID], [Udf1], [Udf2], [Udf3], [Udf4], [Udf5], [Udf6], [Udfl1], [Udfl2], [Udfl3], [Udfl4], [Udfl5], [Udfl6], [DealerRefCode], [PricesBy], [InspectedBy1], [InspectedBy2], [Fuel1], [Fuel2], [InvoiceType], [WOType], [CurrencyCode], [AgreedRate], [Rate], [Gross], [Discount], [Net], [QuotationNo], [CreatedByID], [DateCreated], [ModifiedByID], [DateModified], [SiteCode], [DamageCause], [PreventiveCause], [Accidental], [PartsCost], [Recovery], [Labor], [NoHour], [Total], [LaborCost], [LaborProfPerc], [WOGross], [WODiscount], [WONet], [DiscPerc], [CTOCusRefCode], [CTODealerRefCode], [VehStatus], [TempClose], [UpdatedLastServe], [WOReopen], [LastFleetMeter], [Department], [Location], [id], [WOSuffixCode]) VALUES (N'SUBMDHO15000002', N'', N'MDHOLVTP000002', N'', N'6', N'13', N'2015-02-08', N'2015-02-08', N'2015-03-09', N'Closed', N'GENERAL>GENERAL>SUSPENSION SYSTEM', N'304433', N'', null, N'0', N'0', N'', N'', N'', N'', N'', N'', N'UDF 1', N'UDF 2', N'UDF 3', N'UDF 4', N'UDF 5', N'UDF 6', N'', N'3RD PARTY, MECHANIC ', N'3RD PARTY, MECHANIC ', N'', N'2', N'0', N'', N'SUBCON', N'USD', N'0', N'1.00', N'.00', N'.00', N'.00', N'QTMDHOVTP011500004', N'0', N'2015-03-09', N'0', N'2016-02-29 11:04:42.0000000', N'MDHO', N'', N'', N'0', null, null, null, null, null, N'20.0000', N'1.0000', N'.00', N'.00', N'.00', N'.0000', null, N'', N'NMCM', N'0', N'0', N'0', N'304433', N'AAA Service Center', null, N'60', null)
@@ -5513,31 +4784,34 @@ GO
 INSERT INTO [dbo].[workorder] ([WONo], [RefWONo], [NLID], [CusRefCode], [DeptID], [LocID], [Issued], [Closed], [DtCompleted], [Status], [WorkPerformed], [Meter], [Notes], [ETC], [Priority], [CServiceID], [Udf1], [Udf2], [Udf3], [Udf4], [Udf5], [Udf6], [Udfl1], [Udfl2], [Udfl3], [Udfl4], [Udfl5], [Udfl6], [DealerRefCode], [PricesBy], [InspectedBy1], [InspectedBy2], [Fuel1], [Fuel2], [InvoiceType], [WOType], [CurrencyCode], [AgreedRate], [Rate], [Gross], [Discount], [Net], [QuotationNo], [CreatedByID], [DateCreated], [ModifiedByID], [DateModified], [SiteCode], [DamageCause], [PreventiveCause], [Accidental], [PartsCost], [Recovery], [Labor], [NoHour], [Total], [LaborCost], [LaborProfPerc], [WOGross], [WODiscount], [WONet], [DiscPerc], [CTOCusRefCode], [CTODealerRefCode], [VehStatus], [TempClose], [UpdatedLastServe], [WOReopen], [LastFleetMeter], [Department], [Location], [id], [WOSuffixCode]) VALUES (N'WARMDHO15000003', N'', N'MDHOLVGS000006', N'', N'6', N'9', N'2014-02-06', N'2014-02-09', N'2014-02-09', N'Closed', N'GENERAL>GENERAL>BRAKE SYSTEM, GENERAL>GENERAL>SERVICE A, GENERAL>GENERAL>AC REPAIR', N'9476', N'', null, N'0', N'0', N'', N'', N'', N'', N'', N'', N'UDF 1', N'UDF 2', N'UDF 3', N'UDF 4', N'UDF 5', N'UDF 6', N'', N'3RD PARTY, MECHANIC ', N'3RD PARTY, MECHANIC ', N'3RD PARTY, MECHANIC ', N'80', N'80', N'', N'WARRANTY', N'USD', N'0', N'1.00', N'.00', N'.00', N'.00', N'QTMDHOVAQ031500005', N'0', N'2015-06-24', N'0', N'2015-07-13 10:36:16.0000000', N'MDHO', N'', N'', N'0', null, null, null, null, null, N'20.0000', N'1.0000', N'.00', N'.00', N'.00', N'.0000', null, N'DLRCV00005', N'MC', N'0', N'1', N'0', N'9476', N'AAA Service Center', null, N'113', null)
 GO
 GO
-INSERT INTO [dbo].[workorder] ([WONo], [RefWONo], [NLID], [CusRefCode], [DeptID], [LocID], [Issued], [Closed], [DtCompleted], [Status], [WorkPerformed], [Meter], [Notes], [ETC], [Priority], [CServiceID], [Udf1], [Udf2], [Udf3], [Udf4], [Udf5], [Udf6], [Udfl1], [Udfl2], [Udfl3], [Udfl4], [Udfl5], [Udfl6], [DealerRefCode], [PricesBy], [InspectedBy1], [InspectedBy2], [Fuel1], [Fuel2], [InvoiceType], [WOType], [CurrencyCode], [AgreedRate], [Rate], [Gross], [Discount], [Net], [QuotationNo], [CreatedByID], [DateCreated], [ModifiedByID], [DateModified], [SiteCode], [DamageCause], [PreventiveCause], [Accidental], [PartsCost], [Recovery], [Labor], [NoHour], [Total], [LaborCost], [LaborProfPerc], [WOGross], [WODiscount], [WONet], [DiscPerc], [CTOCusRefCode], [CTODealerRefCode], [VehStatus], [TempClose], [UpdatedLastServe], [WOReopen], [LastFleetMeter], [Department], [Location], [id], [WOSuffixCode]) VALUES (N'WARMDHO000056', null, N'MDHOLVMX000009', null, N'0', N'0', N'2016-04-07', N'2016-04-07', N'2016-04-07', N'Closed', N'GENERAL>GENERAL>GENERAL INSPECTION,GENERAL>GENERAL>SERVICE A,GENERAL>GENERAL>SERVICE B', N'0', null, N'2016-04-07', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, N'EMR-MDHO-000001', N'EMR-MDHO-000001', N'EMR-MDHO-000001', N'0', N'0', null, N'WARRANTY', N'USD', null, N'1.00', N'2400.00', N'.00', N'2400.00', N'QTMDHOVHU000000056', null, N'2016-04-07', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, N'.00', null, N'DLRCV00001', null, N'MC', null, null, null, null, N'3rd Party', N'Oxford Auto Repair Workshop', N'114', N'000056')
+INSERT INTO [dbo].[workorder] ([WONo], [RefWONo], [NLID], [CusRefCode], [DeptID], [LocID], [Issued], [Closed], [DtCompleted], [Status], [WorkPerformed], [Meter], [Notes], [ETC], [Priority], [CServiceID], [Udf1], [Udf2], [Udf3], [Udf4], [Udf5], [Udf6], [Udfl1], [Udfl2], [Udfl3], [Udfl4], [Udfl5], [Udfl6], [DealerRefCode], [PricesBy], [InspectedBy1], [InspectedBy2], [Fuel1], [Fuel2], [InvoiceType], [WOType], [CurrencyCode], [AgreedRate], [Rate], [Gross], [Discount], [Net], [QuotationNo], [CreatedByID], [DateCreated], [ModifiedByID], [DateModified], [SiteCode], [DamageCause], [PreventiveCause], [Accidental], [PartsCost], [Recovery], [Labor], [NoHour], [Total], [LaborCost], [LaborProfPerc], [WOGross], [WODiscount], [WONet], [DiscPerc], [CTOCusRefCode], [CTODealerRefCode], [VehStatus], [TempClose], [UpdatedLastServe], [WOReopen], [LastFleetMeter], [Department], [Location], [id], [WOSuffixCode]) VALUES (N'WARMDHO000056', null, N'MDHOLVMX000009', null, N'0', N'0', N'2016-04-07', N'2016-04-07', N'2016-04-07', N'Closed', N'GENERAL>GENERAL>GENERAL INSPECTION,GENERAL>GENERAL>SERVICE A,GENERAL>GENERAL>SERVICE B', N'0', null, N'2016-04-07', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, N'EMR-MDHO-000001', N'EMR-MDHO-000001', N'EMR-MDHO-000001', N'0', N'0', null, N'WARRANTY', N'USD', null, N'1.00', N'2400.00', N'.00', N'2400.00', N'QTMDHOVHU000000056', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, N'.00', null, N'DLRCV00001', null, N'MC', null, null, null, null, N'3rd Party', N'Oxford Auto Repair Workshop', N'114', N'000056')
 GO
 GO
-INSERT INTO [dbo].[workorder] ([WONo], [RefWONo], [NLID], [CusRefCode], [DeptID], [LocID], [Issued], [Closed], [DtCompleted], [Status], [WorkPerformed], [Meter], [Notes], [ETC], [Priority], [CServiceID], [Udf1], [Udf2], [Udf3], [Udf4], [Udf5], [Udf6], [Udfl1], [Udfl2], [Udfl3], [Udfl4], [Udfl5], [Udfl6], [DealerRefCode], [PricesBy], [InspectedBy1], [InspectedBy2], [Fuel1], [Fuel2], [InvoiceType], [WOType], [CurrencyCode], [AgreedRate], [Rate], [Gross], [Discount], [Net], [QuotationNo], [CreatedByID], [DateCreated], [ModifiedByID], [DateModified], [SiteCode], [DamageCause], [PreventiveCause], [Accidental], [PartsCost], [Recovery], [Labor], [NoHour], [Total], [LaborCost], [LaborProfPerc], [WOGross], [WODiscount], [WONet], [DiscPerc], [CTOCusRefCode], [CTODealerRefCode], [VehStatus], [TempClose], [UpdatedLastServe], [WOReopen], [LastFleetMeter], [Department], [Location], [id], [WOSuffixCode]) VALUES (N'WARMDHO000057', null, N'MDHOLVMX000009', null, N'0', N'0', N'2016-05-22', N'2016-05-22', N'2016-05-22', N'Closed', N'GENERAL>GENERAL>GENERAL INSPECTION,GENERAL>GENERAL>COOLING SYSTEM,GENERAL>GENERAL>BRAKE SYSTEM', N'0', null, N'2016-05-22', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, N'EMR-MDHO-000001', N'EMR-MDHO-000001', N'EMR-MDHO-000001', N'20', N'0', null, N'WARRANTY', N'AED', null, N'3.67', N'630.00', N'.00', N'630.00', N'QTMDHOVHU000000057', null, N'2016-05-22', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, N'.00', null, N'DLRCV00001', null, N'MC', null, null, null, null, N'Maintenance', N'DHO', N'116', N'000057')
+INSERT INTO [dbo].[workorder] ([WONo], [RefWONo], [NLID], [CusRefCode], [DeptID], [LocID], [Issued], [Closed], [DtCompleted], [Status], [WorkPerformed], [Meter], [Notes], [ETC], [Priority], [CServiceID], [Udf1], [Udf2], [Udf3], [Udf4], [Udf5], [Udf6], [Udfl1], [Udfl2], [Udfl3], [Udfl4], [Udfl5], [Udfl6], [DealerRefCode], [PricesBy], [InspectedBy1], [InspectedBy2], [Fuel1], [Fuel2], [InvoiceType], [WOType], [CurrencyCode], [AgreedRate], [Rate], [Gross], [Discount], [Net], [QuotationNo], [CreatedByID], [DateCreated], [ModifiedByID], [DateModified], [SiteCode], [DamageCause], [PreventiveCause], [Accidental], [PartsCost], [Recovery], [Labor], [NoHour], [Total], [LaborCost], [LaborProfPerc], [WOGross], [WODiscount], [WONet], [DiscPerc], [CTOCusRefCode], [CTODealerRefCode], [VehStatus], [TempClose], [UpdatedLastServe], [WOReopen], [LastFleetMeter], [Department], [Location], [id], [WOSuffixCode]) VALUES (N'WARMDHO000057', null, N'MDHOLVMX000009', null, N'0', N'0', N'2016-05-22', N'2016-05-22', N'2016-05-22', N'Closed', N'GENERAL>GENERAL>GENERAL INSPECTION,GENERAL>GENERAL>COOLING SYSTEM,GENERAL>GENERAL>BRAKE SYSTEM', N'0', null, N'2016-05-22', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, N'EMR-MDHO-000001', N'EMR-MDHO-000001', N'EMR-MDHO-000001', N'20', N'0', null, N'WARRANTY', N'AED', null, N'3.67', N'630.00', N'.00', N'630.00', N'QTMDHOVHU000000057', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, N'.00', null, N'DLRCV00001', null, N'MC', null, null, null, null, N'Maintenance', N'DHO', N'116', N'000057')
 GO
 GO
-INSERT INTO [dbo].[workorder] ([WONo], [RefWONo], [NLID], [CusRefCode], [DeptID], [LocID], [Issued], [Closed], [DtCompleted], [Status], [WorkPerformed], [Meter], [Notes], [ETC], [Priority], [CServiceID], [Udf1], [Udf2], [Udf3], [Udf4], [Udf5], [Udf6], [Udfl1], [Udfl2], [Udfl3], [Udfl4], [Udfl5], [Udfl6], [DealerRefCode], [PricesBy], [InspectedBy1], [InspectedBy2], [Fuel1], [Fuel2], [InvoiceType], [WOType], [CurrencyCode], [AgreedRate], [Rate], [Gross], [Discount], [Net], [QuotationNo], [CreatedByID], [DateCreated], [ModifiedByID], [DateModified], [SiteCode], [DamageCause], [PreventiveCause], [Accidental], [PartsCost], [Recovery], [Labor], [NoHour], [Total], [LaborCost], [LaborProfPerc], [WOGross], [WODiscount], [WONet], [DiscPerc], [CTOCusRefCode], [CTODealerRefCode], [VehStatus], [TempClose], [UpdatedLastServe], [WOReopen], [LastFleetMeter], [Department], [Location], [id], [WOSuffixCode]) VALUES (N'INTMDHO000059', null, N'MDHOLVML000008', null, N'0', N'0', N'2016-05-22', N'2016-05-22', N'2016-05-22', N'Closed', N'GENERAL>GENERAL>GENERAL INSPECTION', N'0', null, N'2016-05-22', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, N'EMR-MDHO-000001', N'EMR-MDHO-000001', N'EMR-MDHO-000001', N'0', N'0', null, N'INTERNAL', N'USD', null, N'1.00', N'20.00', N'.00', N'20.00', N'QTMDHOVHU000000059', null, N'2016-05-22', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, N'.00', null, null, null, N'MC', null, null, null, null, N'Maintenance', N'DHO', N'118', N'000059')
+INSERT INTO [dbo].[workorder] ([WONo], [RefWONo], [NLID], [CusRefCode], [DeptID], [LocID], [Issued], [Closed], [DtCompleted], [Status], [WorkPerformed], [Meter], [Notes], [ETC], [Priority], [CServiceID], [Udf1], [Udf2], [Udf3], [Udf4], [Udf5], [Udf6], [Udfl1], [Udfl2], [Udfl3], [Udfl4], [Udfl5], [Udfl6], [DealerRefCode], [PricesBy], [InspectedBy1], [InspectedBy2], [Fuel1], [Fuel2], [InvoiceType], [WOType], [CurrencyCode], [AgreedRate], [Rate], [Gross], [Discount], [Net], [QuotationNo], [CreatedByID], [DateCreated], [ModifiedByID], [DateModified], [SiteCode], [DamageCause], [PreventiveCause], [Accidental], [PartsCost], [Recovery], [Labor], [NoHour], [Total], [LaborCost], [LaborProfPerc], [WOGross], [WODiscount], [WONet], [DiscPerc], [CTOCusRefCode], [CTODealerRefCode], [VehStatus], [TempClose], [UpdatedLastServe], [WOReopen], [LastFleetMeter], [Department], [Location], [id], [WOSuffixCode]) VALUES (N'INTMDHO000059', null, N'MDHOLVML000008', null, N'0', N'0', N'2016-05-22', N'2016-05-22', N'2016-05-22', N'Closed', N'GENERAL>GENERAL>GENERAL INSPECTION', N'0', null, N'2016-05-22', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, N'EMR-MDHO-000001', N'EMR-MDHO-000001', N'EMR-MDHO-000001', N'0', N'0', null, N'INTERNAL', N'USD', null, N'1.00', N'20.00', N'.00', N'20.00', N'QTMDHOVHU000000059', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, N'.00', null, null, null, N'MC', null, null, null, null, N'Maintenance', N'DHO', N'118', N'000059')
 GO
 GO
-INSERT INTO [dbo].[workorder] ([WONo], [RefWONo], [NLID], [CusRefCode], [DeptID], [LocID], [Issued], [Closed], [DtCompleted], [Status], [WorkPerformed], [Meter], [Notes], [ETC], [Priority], [CServiceID], [Udf1], [Udf2], [Udf3], [Udf4], [Udf5], [Udf6], [Udfl1], [Udfl2], [Udfl3], [Udfl4], [Udfl5], [Udfl6], [DealerRefCode], [PricesBy], [InspectedBy1], [InspectedBy2], [Fuel1], [Fuel2], [InvoiceType], [WOType], [CurrencyCode], [AgreedRate], [Rate], [Gross], [Discount], [Net], [QuotationNo], [CreatedByID], [DateCreated], [ModifiedByID], [DateModified], [SiteCode], [DamageCause], [PreventiveCause], [Accidental], [PartsCost], [Recovery], [Labor], [NoHour], [Total], [LaborCost], [LaborProfPerc], [WOGross], [WODiscount], [WONet], [DiscPerc], [CTOCusRefCode], [CTODealerRefCode], [VehStatus], [TempClose], [UpdatedLastServe], [WOReopen], [LastFleetMeter], [Department], [Location], [id], [WOSuffixCode]) VALUES (N'SUBMDHO000060', null, N'MDHOLVTP000003', null, N'0', N'0', N'2016-05-15', N'2016-05-23', N'2016-05-23', N'Closed', N'GENERAL>GENERAL>ROAD WHEEL AND TIRE,GENERAL>GENERAL>STEERING SYSTEM', N'148710', null, N'2016-05-15', null, null, N'1118494', null, null, null, null, null, N'Job Order', null, null, null, null, null, null, N'EMR-MDHO-000001', N'EMR-MDHO-000001', N'EMR-MDHO-000001', N'0', N'0', null, N'SUBCON', N'AED', null, N'3.67', N'450.00', N'.00', N'450.00', N'QTMDHOVHU000000060', null, N'2016-05-15', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, N'.00', null, null, null, N'MC', null, null, null, null, N'3rd Party', N'AAA Service Center', N'119', N'000060')
+INSERT INTO [dbo].[workorder] ([WONo], [RefWONo], [NLID], [CusRefCode], [DeptID], [LocID], [Issued], [Closed], [DtCompleted], [Status], [WorkPerformed], [Meter], [Notes], [ETC], [Priority], [CServiceID], [Udf1], [Udf2], [Udf3], [Udf4], [Udf5], [Udf6], [Udfl1], [Udfl2], [Udfl3], [Udfl4], [Udfl5], [Udfl6], [DealerRefCode], [PricesBy], [InspectedBy1], [InspectedBy2], [Fuel1], [Fuel2], [InvoiceType], [WOType], [CurrencyCode], [AgreedRate], [Rate], [Gross], [Discount], [Net], [QuotationNo], [CreatedByID], [DateCreated], [ModifiedByID], [DateModified], [SiteCode], [DamageCause], [PreventiveCause], [Accidental], [PartsCost], [Recovery], [Labor], [NoHour], [Total], [LaborCost], [LaborProfPerc], [WOGross], [WODiscount], [WONet], [DiscPerc], [CTOCusRefCode], [CTODealerRefCode], [VehStatus], [TempClose], [UpdatedLastServe], [WOReopen], [LastFleetMeter], [Department], [Location], [id], [WOSuffixCode]) VALUES (N'SUBMDHO000060', null, N'MDHOLVTP000003', null, N'0', N'0', N'2016-05-15', N'2016-05-23', N'2016-05-23', N'Closed', N'GENERAL>GENERAL>ROAD WHEEL AND TIRE,GENERAL>GENERAL>STEERING SYSTEM', N'148710', null, N'2016-05-15', null, null, N'1118494', null, null, null, null, null, N'Job Order', null, null, null, null, null, null, N'EMR-MDHO-000001', N'EMR-MDHO-000001', N'EMR-MDHO-000001', N'0', N'0', null, N'SUBCON', N'AED', null, N'3.67', N'450.00', N'.00', N'450.00', N'QTMDHOVHU000000060', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, N'.00', null, null, null, N'MC', null, null, null, null, N'3rd Party', N'AAA Service Center', N'119', N'000060')
 GO
 GO
-INSERT INTO [dbo].[workorder] ([WONo], [RefWONo], [NLID], [CusRefCode], [DeptID], [LocID], [Issued], [Closed], [DtCompleted], [Status], [WorkPerformed], [Meter], [Notes], [ETC], [Priority], [CServiceID], [Udf1], [Udf2], [Udf3], [Udf4], [Udf5], [Udf6], [Udfl1], [Udfl2], [Udfl3], [Udfl4], [Udfl5], [Udfl6], [DealerRefCode], [PricesBy], [InspectedBy1], [InspectedBy2], [Fuel1], [Fuel2], [InvoiceType], [WOType], [CurrencyCode], [AgreedRate], [Rate], [Gross], [Discount], [Net], [QuotationNo], [CreatedByID], [DateCreated], [ModifiedByID], [DateModified], [SiteCode], [DamageCause], [PreventiveCause], [Accidental], [PartsCost], [Recovery], [Labor], [NoHour], [Total], [LaborCost], [LaborProfPerc], [WOGross], [WODiscount], [WONet], [DiscPerc], [CTOCusRefCode], [CTODealerRefCode], [VehStatus], [TempClose], [UpdatedLastServe], [WOReopen], [LastFleetMeter], [Department], [Location], [id], [WOSuffixCode]) VALUES (N'INTMDHO000060', null, N'MDHOLVTP000003', null, N'0', N'0', N'2016-05-26', N'2016-05-26', N'2016-05-26', N'Closed', N'GENERAL>GENERAL>GENERAL INSPECTION,GENERAL>GENERAL>BRAKE SYSTEM', N'151658', null, N'2016-05-26', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, N'EMR-MDHO-000001', N'EMR-MDHO-000001', null, N'0', N'0', null, N'INTERNAL', N'AED', null, N'3.67', N'960.40', N'.00', N'960.40', N'QTMDHOVHU000000060', null, N'2016-05-26', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, N'.00', null, null, null, N'MC', null, null, null, null, N'Maintenance', N'DHO', N'1117', N'000060')
+INSERT INTO [dbo].[workorder] ([WONo], [RefWONo], [NLID], [CusRefCode], [DeptID], [LocID], [Issued], [Closed], [DtCompleted], [Status], [WorkPerformed], [Meter], [Notes], [ETC], [Priority], [CServiceID], [Udf1], [Udf2], [Udf3], [Udf4], [Udf5], [Udf6], [Udfl1], [Udfl2], [Udfl3], [Udfl4], [Udfl5], [Udfl6], [DealerRefCode], [PricesBy], [InspectedBy1], [InspectedBy2], [Fuel1], [Fuel2], [InvoiceType], [WOType], [CurrencyCode], [AgreedRate], [Rate], [Gross], [Discount], [Net], [QuotationNo], [CreatedByID], [DateCreated], [ModifiedByID], [DateModified], [SiteCode], [DamageCause], [PreventiveCause], [Accidental], [PartsCost], [Recovery], [Labor], [NoHour], [Total], [LaborCost], [LaborProfPerc], [WOGross], [WODiscount], [WONet], [DiscPerc], [CTOCusRefCode], [CTODealerRefCode], [VehStatus], [TempClose], [UpdatedLastServe], [WOReopen], [LastFleetMeter], [Department], [Location], [id], [WOSuffixCode]) VALUES (N'INTMDHO000060', null, N'MDHOLVTP000003', null, N'0', N'0', N'2016-05-26', N'2016-05-26', N'2016-05-26', N'Closed', N'GENERAL>GENERAL>GENERAL INSPECTION,GENERAL>GENERAL>BRAKE SYSTEM', N'151658', null, N'2016-05-26', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, N'EMR-MDHO-000001', N'EMR-MDHO-000001', null, N'0', N'0', null, N'INTERNAL', N'AED', null, N'3.67', N'960.40', N'.00', N'960.40', N'QTMDHOVHU000000060', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, N'.00', null, null, null, N'MC', null, null, null, null, N'Maintenance', N'DHO', N'1117', N'000060')
 GO
 GO
-INSERT INTO [dbo].[workorder] ([WONo], [RefWONo], [NLID], [CusRefCode], [DeptID], [LocID], [Issued], [Closed], [DtCompleted], [Status], [WorkPerformed], [Meter], [Notes], [ETC], [Priority], [CServiceID], [Udf1], [Udf2], [Udf3], [Udf4], [Udf5], [Udf6], [Udfl1], [Udfl2], [Udfl3], [Udfl4], [Udfl5], [Udfl6], [DealerRefCode], [PricesBy], [InspectedBy1], [InspectedBy2], [Fuel1], [Fuel2], [InvoiceType], [WOType], [CurrencyCode], [AgreedRate], [Rate], [Gross], [Discount], [Net], [QuotationNo], [CreatedByID], [DateCreated], [ModifiedByID], [DateModified], [SiteCode], [DamageCause], [PreventiveCause], [Accidental], [PartsCost], [Recovery], [Labor], [NoHour], [Total], [LaborCost], [LaborProfPerc], [WOGross], [WODiscount], [WONet], [DiscPerc], [CTOCusRefCode], [CTODealerRefCode], [VehStatus], [TempClose], [UpdatedLastServe], [WOReopen], [LastFleetMeter], [Department], [Location], [id], [WOSuffixCode]) VALUES (N'SUBMDHO000061', null, N'MDHOLVTP000002', null, N'0', N'0', N'2016-03-13', N'2016-03-13', N'2016-03-13', N'Closed', N'GENERAL>GENERAL>AC REPAIR', N'340765', null, N'2016-07-05', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, N'EMR-MDHO-000001', N'EMR-MDHO-000001', null, N'0', N'0', null, N'SUBCON', N'AED', null, N'3.67', N'680.80', N'.00', N'680.80', N'QTMDHOVHU000000061', null, N'2016-03-13', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, N'.00', null, null, null, N'MC', null, null, null, null, N'Maintenance', N'DHO', N'1118', N'000061')
+INSERT INTO [dbo].[workorder] ([WONo], [RefWONo], [NLID], [CusRefCode], [DeptID], [LocID], [Issued], [Closed], [DtCompleted], [Status], [WorkPerformed], [Meter], [Notes], [ETC], [Priority], [CServiceID], [Udf1], [Udf2], [Udf3], [Udf4], [Udf5], [Udf6], [Udfl1], [Udfl2], [Udfl3], [Udfl4], [Udfl5], [Udfl6], [DealerRefCode], [PricesBy], [InspectedBy1], [InspectedBy2], [Fuel1], [Fuel2], [InvoiceType], [WOType], [CurrencyCode], [AgreedRate], [Rate], [Gross], [Discount], [Net], [QuotationNo], [CreatedByID], [DateCreated], [ModifiedByID], [DateModified], [SiteCode], [DamageCause], [PreventiveCause], [Accidental], [PartsCost], [Recovery], [Labor], [NoHour], [Total], [LaborCost], [LaborProfPerc], [WOGross], [WODiscount], [WONet], [DiscPerc], [CTOCusRefCode], [CTODealerRefCode], [VehStatus], [TempClose], [UpdatedLastServe], [WOReopen], [LastFleetMeter], [Department], [Location], [id], [WOSuffixCode]) VALUES (N'SUBMDHO000061', null, N'MDHOLVTP000002', null, N'0', N'0', N'2016-03-13', N'2016-03-13', N'2016-03-13', N'Closed', N'GENERAL>GENERAL>AC REPAIR', N'340765', null, N'2016-07-05', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, N'EMR-MDHO-000001', N'EMR-MDHO-000001', null, N'0', N'0', null, N'SUBCON', N'AED', null, N'3.67', N'680.80', N'.00', N'680.80', N'QTMDHOVHU000000061', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, N'.00', null, null, null, N'MC', null, null, null, null, N'Maintenance', N'DHO', N'1118', N'000061')
 GO
 GO
-INSERT INTO [dbo].[workorder] ([WONo], [RefWONo], [NLID], [CusRefCode], [DeptID], [LocID], [Issued], [Closed], [DtCompleted], [Status], [WorkPerformed], [Meter], [Notes], [ETC], [Priority], [CServiceID], [Udf1], [Udf2], [Udf3], [Udf4], [Udf5], [Udf6], [Udfl1], [Udfl2], [Udfl3], [Udfl4], [Udfl5], [Udfl6], [DealerRefCode], [PricesBy], [InspectedBy1], [InspectedBy2], [Fuel1], [Fuel2], [InvoiceType], [WOType], [CurrencyCode], [AgreedRate], [Rate], [Gross], [Discount], [Net], [QuotationNo], [CreatedByID], [DateCreated], [ModifiedByID], [DateModified], [SiteCode], [DamageCause], [PreventiveCause], [Accidental], [PartsCost], [Recovery], [Labor], [NoHour], [Total], [LaborCost], [LaborProfPerc], [WOGross], [WODiscount], [WONet], [DiscPerc], [CTOCusRefCode], [CTODealerRefCode], [VehStatus], [TempClose], [UpdatedLastServe], [WOReopen], [LastFleetMeter], [Department], [Location], [id], [WOSuffixCode]) VALUES (N'INTMDHO000062', null, N'MDHOLVTD000005', null, N'0', N'0', N'2016-05-02', N'2016-05-02', N'2016-05-02', N'Closed', N'GENERAL>GENERAL>BRAKE SYSTEM,GENERAL>GENERAL>GENERAL INSPECTION,GENERAL>GENERAL>FUEL SYSTEM', N'344329', null, N'2016-05-02', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, N'EMR-MDHO-000001', N'EMR-MDHO-000001', null, N'0', N'0', null, N'INTERNAL', N'AED', null, N'3.67', N'1996.00', N'.00', N'1996.00', N'QTMDHOVHU000000062', null, N'2016-05-02', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, N'.00', null, null, null, N'MC', null, null, null, null, N'Maintenance', N'DHO', N'1119', N'000062')
+INSERT INTO [dbo].[workorder] ([WONo], [RefWONo], [NLID], [CusRefCode], [DeptID], [LocID], [Issued], [Closed], [DtCompleted], [Status], [WorkPerformed], [Meter], [Notes], [ETC], [Priority], [CServiceID], [Udf1], [Udf2], [Udf3], [Udf4], [Udf5], [Udf6], [Udfl1], [Udfl2], [Udfl3], [Udfl4], [Udfl5], [Udfl6], [DealerRefCode], [PricesBy], [InspectedBy1], [InspectedBy2], [Fuel1], [Fuel2], [InvoiceType], [WOType], [CurrencyCode], [AgreedRate], [Rate], [Gross], [Discount], [Net], [QuotationNo], [CreatedByID], [DateCreated], [ModifiedByID], [DateModified], [SiteCode], [DamageCause], [PreventiveCause], [Accidental], [PartsCost], [Recovery], [Labor], [NoHour], [Total], [LaborCost], [LaborProfPerc], [WOGross], [WODiscount], [WONet], [DiscPerc], [CTOCusRefCode], [CTODealerRefCode], [VehStatus], [TempClose], [UpdatedLastServe], [WOReopen], [LastFleetMeter], [Department], [Location], [id], [WOSuffixCode]) VALUES (N'INTMDHO000062', null, N'MDHOLVTD000005', null, N'0', N'0', N'2016-05-02', N'2016-05-02', N'2016-05-02', N'Closed', N'GENERAL>GENERAL>BRAKE SYSTEM,GENERAL>GENERAL>GENERAL INSPECTION,GENERAL>GENERAL>FUEL SYSTEM', N'344329', null, N'2016-05-02', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, N'EMR-MDHO-000001', N'EMR-MDHO-000001', null, N'0', N'0', null, N'INTERNAL', N'AED', null, N'3.67', N'1996.00', N'.00', N'1996.00', N'QTMDHOVHU000000062', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, N'.00', null, null, null, N'MC', null, null, null, null, N'Maintenance', N'DHO', N'1119', N'000062')
 GO
 GO
-INSERT INTO [dbo].[workorder] ([WONo], [RefWONo], [NLID], [CusRefCode], [DeptID], [LocID], [Issued], [Closed], [DtCompleted], [Status], [WorkPerformed], [Meter], [Notes], [ETC], [Priority], [CServiceID], [Udf1], [Udf2], [Udf3], [Udf4], [Udf5], [Udf6], [Udfl1], [Udfl2], [Udfl3], [Udfl4], [Udfl5], [Udfl6], [DealerRefCode], [PricesBy], [InspectedBy1], [InspectedBy2], [Fuel1], [Fuel2], [InvoiceType], [WOType], [CurrencyCode], [AgreedRate], [Rate], [Gross], [Discount], [Net], [QuotationNo], [CreatedByID], [DateCreated], [ModifiedByID], [DateModified], [SiteCode], [DamageCause], [PreventiveCause], [Accidental], [PartsCost], [Recovery], [Labor], [NoHour], [Total], [LaborCost], [LaborProfPerc], [WOGross], [WODiscount], [WONet], [DiscPerc], [CTOCusRefCode], [CTODealerRefCode], [VehStatus], [TempClose], [UpdatedLastServe], [WOReopen], [LastFleetMeter], [Department], [Location], [id], [WOSuffixCode]) VALUES (N'INTMDHO000063', null, N'MDHOLVTP000004', null, N'0', N'0', N'2016-02-08', N'2016-02-08', N'2016-02-08', N'Closed', N'GENERAL>GENERAL>GENERAL INSPECTION', N'64886', null, N'2016-02-08', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, N'EMR-MDHO-000001', N'EMR-MDHO-000001', null, N'0', N'0', null, N'INTERNAL', N'AED', null, N'3.67', N'91.70', N'.00', N'91.70', N'QTMDHOVHU000000063', null, N'2016-02-08', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, N'.00', null, null, null, N'MC', null, null, null, null, N'Maintenance', N'DHO', N'1120', N'000063')
+INSERT INTO [dbo].[workorder] ([WONo], [RefWONo], [NLID], [CusRefCode], [DeptID], [LocID], [Issued], [Closed], [DtCompleted], [Status], [WorkPerformed], [Meter], [Notes], [ETC], [Priority], [CServiceID], [Udf1], [Udf2], [Udf3], [Udf4], [Udf5], [Udf6], [Udfl1], [Udfl2], [Udfl3], [Udfl4], [Udfl5], [Udfl6], [DealerRefCode], [PricesBy], [InspectedBy1], [InspectedBy2], [Fuel1], [Fuel2], [InvoiceType], [WOType], [CurrencyCode], [AgreedRate], [Rate], [Gross], [Discount], [Net], [QuotationNo], [CreatedByID], [DateCreated], [ModifiedByID], [DateModified], [SiteCode], [DamageCause], [PreventiveCause], [Accidental], [PartsCost], [Recovery], [Labor], [NoHour], [Total], [LaborCost], [LaborProfPerc], [WOGross], [WODiscount], [WONet], [DiscPerc], [CTOCusRefCode], [CTODealerRefCode], [VehStatus], [TempClose], [UpdatedLastServe], [WOReopen], [LastFleetMeter], [Department], [Location], [id], [WOSuffixCode]) VALUES (N'INTMDHO000063', null, N'MDHOLVTP000004', null, N'0', N'0', N'2016-02-08', N'2016-02-08', N'2016-02-08', N'Closed', N'GENERAL>GENERAL>GENERAL INSPECTION', N'64886', null, N'2016-02-08', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, N'EMR-MDHO-000001', N'EMR-MDHO-000001', null, N'0', N'0', null, N'INTERNAL', N'AED', null, N'3.67', N'91.70', N'.00', N'91.70', N'QTMDHOVHU000000063', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, N'.00', null, null, null, N'MC', null, null, null, null, N'Maintenance', N'DHO', N'1120', N'000063')
 GO
 GO
-INSERT INTO [dbo].[workorder] ([WONo], [RefWONo], [NLID], [CusRefCode], [DeptID], [LocID], [Issued], [Closed], [DtCompleted], [Status], [WorkPerformed], [Meter], [Notes], [ETC], [Priority], [CServiceID], [Udf1], [Udf2], [Udf3], [Udf4], [Udf5], [Udf6], [Udfl1], [Udfl2], [Udfl3], [Udfl4], [Udfl5], [Udfl6], [DealerRefCode], [PricesBy], [InspectedBy1], [InspectedBy2], [Fuel1], [Fuel2], [InvoiceType], [WOType], [CurrencyCode], [AgreedRate], [Rate], [Gross], [Discount], [Net], [QuotationNo], [CreatedByID], [DateCreated], [ModifiedByID], [DateModified], [SiteCode], [DamageCause], [PreventiveCause], [Accidental], [PartsCost], [Recovery], [Labor], [NoHour], [Total], [LaborCost], [LaborProfPerc], [WOGross], [WODiscount], [WONet], [DiscPerc], [CTOCusRefCode], [CTODealerRefCode], [VehStatus], [TempClose], [UpdatedLastServe], [WOReopen], [LastFleetMeter], [Department], [Location], [id], [WOSuffixCode]) VALUES (N'INTMDHO000064', null, N'MDHOLVTP000004', null, N'0', N'0', N'2016-05-05', N'2016-05-05', N'2016-05-05', N'Closed', N'GENERAL>GENERAL>BRAKE SYSTEM', N'72248', null, N'2016-07-05', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, N'EMR-MDHO-000001', N'EMR-MDHO-000001', null, N'0', N'0', null, N'INTERNAL', N'AED', null, N'3.67', N'546.00', N'.00', N'546.00', N'QTMDHOVHU000000064', null, N'2016-05-05', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, N'.00', null, null, null, N'MC', null, null, null, null, N'Maintenance', N'DHO', N'1121', N'000064')
+INSERT INTO [dbo].[workorder] ([WONo], [RefWONo], [NLID], [CusRefCode], [DeptID], [LocID], [Issued], [Closed], [DtCompleted], [Status], [WorkPerformed], [Meter], [Notes], [ETC], [Priority], [CServiceID], [Udf1], [Udf2], [Udf3], [Udf4], [Udf5], [Udf6], [Udfl1], [Udfl2], [Udfl3], [Udfl4], [Udfl5], [Udfl6], [DealerRefCode], [PricesBy], [InspectedBy1], [InspectedBy2], [Fuel1], [Fuel2], [InvoiceType], [WOType], [CurrencyCode], [AgreedRate], [Rate], [Gross], [Discount], [Net], [QuotationNo], [CreatedByID], [DateCreated], [ModifiedByID], [DateModified], [SiteCode], [DamageCause], [PreventiveCause], [Accidental], [PartsCost], [Recovery], [Labor], [NoHour], [Total], [LaborCost], [LaborProfPerc], [WOGross], [WODiscount], [WONet], [DiscPerc], [CTOCusRefCode], [CTODealerRefCode], [VehStatus], [TempClose], [UpdatedLastServe], [WOReopen], [LastFleetMeter], [Department], [Location], [id], [WOSuffixCode]) VALUES (N'INTMDHO000064', null, N'MDHOLVTP000004', null, N'0', N'0', N'2016-05-05', N'2016-05-05', N'2016-05-05', N'Closed', N'GENERAL>GENERAL>BRAKE SYSTEM', N'72248', null, N'2016-07-05', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, N'EMR-MDHO-000001', N'EMR-MDHO-000001', null, N'0', N'0', null, N'INTERNAL', N'AED', null, N'3.67', N'546.00', N'.00', N'546.00', N'QTMDHOVHU000000064', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, N'.00', null, null, null, N'MC', null, null, null, null, N'Maintenance', N'DHO', N'1121', N'000064')
+GO
+GO
+INSERT INTO [dbo].[workorder] ([WONo], [RefWONo], [NLID], [CusRefCode], [DeptID], [LocID], [Issued], [Closed], [DtCompleted], [Status], [WorkPerformed], [Meter], [Notes], [ETC], [Priority], [CServiceID], [Udf1], [Udf2], [Udf3], [Udf4], [Udf5], [Udf6], [Udfl1], [Udfl2], [Udfl3], [Udfl4], [Udfl5], [Udfl6], [DealerRefCode], [PricesBy], [InspectedBy1], [InspectedBy2], [Fuel1], [Fuel2], [InvoiceType], [WOType], [CurrencyCode], [AgreedRate], [Rate], [Gross], [Discount], [Net], [QuotationNo], [CreatedByID], [DateCreated], [ModifiedByID], [DateModified], [SiteCode], [DamageCause], [PreventiveCause], [Accidental], [PartsCost], [Recovery], [Labor], [NoHour], [Total], [LaborCost], [LaborProfPerc], [WOGross], [WODiscount], [WONet], [DiscPerc], [CTOCusRefCode], [CTODealerRefCode], [VehStatus], [TempClose], [UpdatedLastServe], [WOReopen], [LastFleetMeter], [Department], [Location], [id], [WOSuffixCode]) VALUES (N'SUBMDHO000065', null, N'MDHOLVML000008', null, N'0', N'0', N'2016-07-11', N'2016-07-11', N'2016-07-11', N'Open', N'GENERAL>GENERAL>GENERAL INSPECTION', N'0', null, N'2016-07-11', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, N'6', N'0', null, N'SUBCON', N'USD', null, N'1.00', N'.00', N'.00', N'.00', N'QTMDHOVHU000000065', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, N'.00', null, null, null, N'MC', null, null, null, null, N'3rd Party', N'Fast Rent-a-Car LLC', N'1122', N'000065')
 GO
 GO
 SET IDENTITY_INSERT [dbo].[workorder] OFF
@@ -5688,7 +4962,7 @@ CREATE TABLE [dbo].[workorderparts] (
 
 
 GO
-DBCC CHECKIDENT(N'[dbo].[workorderparts]', RESEED, 1142)
+DBCC CHECKIDENT(N'[dbo].[workorderparts]', RESEED, 1146)
 GO
 
 -- ----------------------------
@@ -5843,6 +5117,9 @@ GO
 INSERT INTO [dbo].[workorderparts] ([WOPartID], [WONO], [PartID], [PartNo], [Name], [VehicleType], [UnitType], [Quantity], [CostPrice], [SalesPrice], [ProfitPercentage], [IsPriceGroup], [ServiceID], [Returned], [PONO], [ETA], [PromoID], [Issued], [Special], [Remarks], [IssuedDate], [IssuedBy], [Approved], [RefWOPartID], [GSACostPriceUSD], [IsNew], [id]) VALUES (N'0', N'INTMDHO000064', N'0', N'n/a', N'Disc skimming', null, N'PCS', N'2', N'.00', N'30.00', N'.00', null, null, N'0', null, null, null, N'1', null, N'', N'2016-05-05', N'', N'1', null, N'.00', N'0', N'1142')
 GO
 GO
+INSERT INTO [dbo].[workorderparts] ([WOPartID], [WONO], [PartID], [PartNo], [Name], [VehicleType], [UnitType], [Quantity], [CostPrice], [SalesPrice], [ProfitPercentage], [IsPriceGroup], [ServiceID], [Returned], [PONO], [ETA], [PromoID], [Issued], [Special], [Remarks], [IssuedDate], [IssuedBy], [Approved], [RefWOPartID], [GSACostPriceUSD], [IsNew], [id]) VALUES (N'0', N'SUBMDHO', N'0', N'DT-001', N'DUNLOP TYRE - JAPAN - updated', null, N'PC', N'2', N'.00', N'650.00', N'.00', null, null, N'0', null, null, null, N'1', null, N'', N'2015-02-12', N'', N'1', null, N'.00', N'0', N'1146')
+GO
+GO
 SET IDENTITY_INSERT [dbo].[workorderparts] OFF
 GO
 
@@ -5880,7 +5157,7 @@ CREATE TABLE [dbo].[workorderservices] (
 
 
 GO
-DBCC CHECKIDENT(N'[dbo].[workorderservices]', RESEED, 1141)
+DBCC CHECKIDENT(N'[dbo].[workorderservices]', RESEED, 1147)
 GO
 
 -- ----------------------------
@@ -6242,6 +5519,12 @@ GO
 INSERT INTO [dbo].[workorderservices] ([WONO], [ServiceID], [ServiceCode], [ServiceDesc], [Hours], [SalesPrice], [IsPriceGroup], [SServiceID], [PromoID], [TypeID], [Remarks], [Issued], [Special], [SubCategory], [ProfitPercentage], [CostPrice], [Approved], [OperationID], [CategoryID], [RefWOServiceID], [WOServiceID], [actualHours], [fleetRefNO], [WOStatus]) VALUES (N'INTMDHO000064', N'11', N'BS', N'GENERAL>GENERAL>BRAKE SYSTEM', N'.00', N'.00', null, null, null, null, N'', N'0', null, N'WEAR AND TEAR', null, null, N'1', null, null, null, N'1141', N'0', N'MDHOLVTP000004', N'Closed')
 GO
 GO
+INSERT INTO [dbo].[workorderservices] ([WONO], [ServiceID], [ServiceCode], [ServiceDesc], [Hours], [SalesPrice], [IsPriceGroup], [SServiceID], [PromoID], [TypeID], [Remarks], [Issued], [Special], [SubCategory], [ProfitPercentage], [CostPrice], [Approved], [OperationID], [CategoryID], [RefWOServiceID], [WOServiceID], [actualHours], [fleetRefNO], [WOStatus]) VALUES (N'SUBMDHO', N'10', N'RWT', N'GENERAL>GENERAL>ROAD WHEEL AND TIRE', N'1.00', N'.00', null, null, null, null, N'ROAD WHEEL AND TIRE ; ', N'1', null, N'WEAR AND TEAR', null, null, N'1', null, null, null, N'1145', N'0', N'MDHOLVTP000001', N'Closed')
+GO
+GO
+INSERT INTO [dbo].[workorderservices] ([WONO], [ServiceID], [ServiceCode], [ServiceDesc], [Hours], [SalesPrice], [IsPriceGroup], [SServiceID], [PromoID], [TypeID], [Remarks], [Issued], [Special], [SubCategory], [ProfitPercentage], [CostPrice], [Approved], [OperationID], [CategoryID], [RefWOServiceID], [WOServiceID], [actualHours], [fleetRefNO], [WOStatus]) VALUES (N'SUBMDHO000065', N'1', N'GI', N'GENERAL>GENERAL>GENERAL INSPECTION', N'.00', N'.00', null, null, null, null, N'', N'0', null, N'WEAR AND TEAR', null, null, N'1', null, null, null, N'1147', N'0', N'MDHOLVML000008', N'Open')
+GO
+GO
 SET IDENTITY_INSERT [dbo].[workorderservices] OFF
 GO
 
@@ -6295,7 +5578,7 @@ CREATE TABLE [dbo].[wp_columns] (
 
 
 GO
-DBCC CHECKIDENT(N'[dbo].[wp_columns]', RESEED, 52027)
+DBCC CHECKIDENT(N'[dbo].[wp_columns]', RESEED, 51985)
 GO
 
 -- ----------------------------
@@ -8691,132 +7974,6 @@ GO
 INSERT INTO [dbo].[wp_columns] ([DetailID], [TableName], [ColumnName], [DisplayName], [Visible], [Username], [ColOrder]) VALUES (N'51985', N'LogActivity', N'DateTime', N'Date and Time', N'1', N'ams-itpm', N'6')
 GO
 GO
-INSERT INTO [dbo].[wp_columns] ([DetailID], [TableName], [ColumnName], [DisplayName], [Visible], [Username], [ColOrder]) VALUES (N'51986', N'PMOverdueReport', N'NLID', N'Equipment ID', N'1', N'CZA', N'1')
-GO
-GO
-INSERT INTO [dbo].[wp_columns] ([DetailID], [TableName], [ColumnName], [DisplayName], [Visible], [Username], [ColOrder]) VALUES (N'51987', N'PMOverdueReport', N'VIN', N'VIN', N'1', N'CZA', N'2')
-GO
-GO
-INSERT INTO [dbo].[wp_columns] ([DetailID], [TableName], [ColumnName], [DisplayName], [Visible], [Username], [ColOrder]) VALUES (N'51988', N'PMOverdueReport', N'Make', N'Make', N'1', N'CZA', N'3')
-GO
-GO
-INSERT INTO [dbo].[wp_columns] ([DetailID], [TableName], [ColumnName], [DisplayName], [Visible], [Username], [ColOrder]) VALUES (N'51989', N'PMOverdueReport', N'Model', N'Model', N'1', N'CZA', N'4')
-GO
-GO
-INSERT INTO [dbo].[wp_columns] ([DetailID], [TableName], [ColumnName], [DisplayName], [Visible], [Username], [ColOrder]) VALUES (N'51990', N'PMOverdueReport', N'POC', N'Point Of Contact', N'1', N'CZA', N'5')
-GO
-GO
-INSERT INTO [dbo].[wp_columns] ([DetailID], [TableName], [ColumnName], [DisplayName], [Visible], [Username], [ColOrder]) VALUES (N'51991', N'PMOverdueReport', N'LastService', N'Last Service Date', N'1', N'CZA', N'6')
-GO
-GO
-INSERT INTO [dbo].[wp_columns] ([DetailID], [TableName], [ColumnName], [DisplayName], [Visible], [Username], [ColOrder]) VALUES (N'51992', N'PMOverdueReport', N'NextServiceDate', N'Next Service Date', N'1', N'CZA', N'7')
-GO
-GO
-INSERT INTO [dbo].[wp_columns] ([DetailID], [TableName], [ColumnName], [DisplayName], [Visible], [Username], [ColOrder]) VALUES (N'51993', N'PMOverdueReport', N'DaysOverdue', N'Days Overdue', N'1', N'CZA', N'8')
-GO
-GO
-INSERT INTO [dbo].[wp_columns] ([DetailID], [TableName], [ColumnName], [DisplayName], [Visible], [Username], [ColOrder]) VALUES (N'51994', N'PMOverdueReport', N'Overdue', N'Overdue', N'1', N'CZA', N'9')
-GO
-GO
-INSERT INTO [dbo].[wp_columns] ([DetailID], [TableName], [ColumnName], [DisplayName], [Visible], [Username], [ColOrder]) VALUES (N'51995', N'PMOverdueReport', N'Type', N'Type', N'1', N'CZA', N'10')
-GO
-GO
-INSERT INTO [dbo].[wp_columns] ([DetailID], [TableName], [ColumnName], [DisplayName], [Visible], [Username], [ColOrder]) VALUES (N'51996', N'PMOverdueReport', N'Responsibility', N'Responsibility', N'1', N'CZA', N'11')
-GO
-GO
-INSERT INTO [dbo].[wp_columns] ([DetailID], [TableName], [ColumnName], [DisplayName], [Visible], [Username], [ColOrder]) VALUES (N'51997', N'PMOverdueReport', N'LicenseNo', N'License No.', N'0', N'CZA', N'11')
-GO
-GO
-INSERT INTO [dbo].[wp_columns] ([DetailID], [TableName], [ColumnName], [DisplayName], [Visible], [Username], [ColOrder]) VALUES (N'51998', N'PMOverdueReport', N'Position', N'Position', N'0', N'CZA', N'11')
-GO
-GO
-INSERT INTO [dbo].[wp_columns] ([DetailID], [TableName], [ColumnName], [DisplayName], [Visible], [Username], [ColOrder]) VALUES (N'51999', N'PMOverdueReport', N'PrefContactNo', N'Pref. Contact No.', N'0', N'CZA', N'11')
-GO
-GO
-INSERT INTO [dbo].[wp_columns] ([DetailID], [TableName], [ColumnName], [DisplayName], [Visible], [Username], [ColOrder]) VALUES (N'52000', N'PMOverdueReport', N'EmailAddress', N'E-Mail', N'0', N'CZA', N'11')
-GO
-GO
-INSERT INTO [dbo].[wp_columns] ([DetailID], [TableName], [ColumnName], [DisplayName], [Visible], [Username], [ColOrder]) VALUES (N'52001', N'PMOverdueReport', N'EquipCat', N'Equipment Category', N'0', N'CZA', N'11')
-GO
-GO
-INSERT INTO [dbo].[wp_columns] ([DetailID], [TableName], [ColumnName], [DisplayName], [Visible], [Username], [ColOrder]) VALUES (N'52002', N'PMOverdueReport', N'EquipType', N'Equipment Type', N'0', N'CZA', N'11')
-GO
-GO
-INSERT INTO [dbo].[wp_columns] ([DetailID], [TableName], [ColumnName], [DisplayName], [Visible], [Username], [ColOrder]) VALUES (N'52003', N'PMOverdueReport', N'OrgName', N'Organization Name', N'0', N'CZA', N'11')
-GO
-GO
-INSERT INTO [dbo].[wp_columns] ([DetailID], [TableName], [ColumnName], [DisplayName], [Visible], [Username], [ColOrder]) VALUES (N'52004', N'PMOverdueReport', N'Year', N'Year', N'0', N'CZA', N'11')
-GO
-GO
-INSERT INTO [dbo].[wp_columns] ([DetailID], [TableName], [ColumnName], [DisplayName], [Visible], [Username], [ColOrder]) VALUES (N'52005', N'PMOverdueReport', N'Color', N'Color', N'0', N'CZA', N'11')
-GO
-GO
-INSERT INTO [dbo].[wp_columns] ([DetailID], [TableName], [ColumnName], [DisplayName], [Visible], [Username], [ColOrder]) VALUES (N'52006', N'PMOverdueReport', N'VehType', N'Vehicle Type', N'0', N'CZA', N'11')
-GO
-GO
-INSERT INTO [dbo].[wp_columns] ([DetailID], [TableName], [ColumnName], [DisplayName], [Visible], [Username], [ColOrder]) VALUES (N'52007', N'PMOverdueReport', N'BodyType', N'Body Type', N'0', N'CZA', N'11')
-GO
-GO
-INSERT INTO [dbo].[wp_columns] ([DetailID], [TableName], [ColumnName], [DisplayName], [Visible], [Username], [ColOrder]) VALUES (N'52008', N'PMOverdueReport', N'OwnershipType', N'Ownership Type', N'0', N'CZA', N'11')
-GO
-GO
-INSERT INTO [dbo].[wp_columns] ([DetailID], [TableName], [ColumnName], [DisplayName], [Visible], [Username], [ColOrder]) VALUES (N'52009', N'PMOverdueReport', N'PlateNo', N'Plate No.', N'0', N'CZA', N'11')
-GO
-GO
-INSERT INTO [dbo].[wp_columns] ([DetailID], [TableName], [ColumnName], [DisplayName], [Visible], [Username], [ColOrder]) VALUES (N'52010', N'PMOverdueReport', N'RegistrationDate', N'Registration Date', N'0', N'CZA', N'11')
-GO
-GO
-INSERT INTO [dbo].[wp_columns] ([DetailID], [TableName], [ColumnName], [DisplayName], [Visible], [Username], [ColOrder]) VALUES (N'52011', N'PMOverdueReport', N'RegistrationNo', N'Registration No.', N'0', N'CZA', N'11')
-GO
-GO
-INSERT INTO [dbo].[wp_columns] ([DetailID], [TableName], [ColumnName], [DisplayName], [Visible], [Username], [ColOrder]) VALUES (N'52012', N'PMOverdueReport', N'EngineNo', N'Engine No.', N'0', N'CZA', N'11')
-GO
-GO
-INSERT INTO [dbo].[wp_columns] ([DetailID], [TableName], [ColumnName], [DisplayName], [Visible], [Username], [ColOrder]) VALUES (N'52013', N'PMOverdueReport', N'EngineType', N'Engine Type', N'0', N'CZA', N'11')
-GO
-GO
-INSERT INTO [dbo].[wp_columns] ([DetailID], [TableName], [ColumnName], [DisplayName], [Visible], [Username], [ColOrder]) VALUES (N'52014', N'PMOverdueReport', N'Series', N'Series', N'0', N'CZA', N'11')
-GO
-GO
-INSERT INTO [dbo].[wp_columns] ([DetailID], [TableName], [ColumnName], [DisplayName], [Visible], [Username], [ColOrder]) VALUES (N'52015', N'PMOverdueReport', N'Mileage', N'Odometer Reading', N'0', N'CZA', N'11')
-GO
-GO
-INSERT INTO [dbo].[wp_columns] ([DetailID], [TableName], [ColumnName], [DisplayName], [Visible], [Username], [ColOrder]) VALUES (N'52016', N'PMOverdueReport', N'MeterType', N'Meter Type', N'0', N'CZA', N'11')
-GO
-GO
-INSERT INTO [dbo].[wp_columns] ([DetailID], [TableName], [ColumnName], [DisplayName], [Visible], [Username], [ColOrder]) VALUES (N'52017', N'PMOverdueReport', N'FuelType', N'Fuel Type', N'0', N'CZA', N'11')
-GO
-GO
-INSERT INTO [dbo].[wp_columns] ([DetailID], [TableName], [ColumnName], [DisplayName], [Visible], [Username], [ColOrder]) VALUES (N'52018', N'PMOverdueReport', N'Transmission', N'Transmission', N'0', N'CZA', N'11')
-GO
-GO
-INSERT INTO [dbo].[wp_columns] ([DetailID], [TableName], [ColumnName], [DisplayName], [Visible], [Username], [ColOrder]) VALUES (N'52019', N'PMOverdueReport', N'Doors', N'Doors', N'0', N'CZA', N'11')
-GO
-GO
-INSERT INTO [dbo].[wp_columns] ([DetailID], [TableName], [ColumnName], [DisplayName], [Visible], [Username], [ColOrder]) VALUES (N'52020', N'PMOverdueReport', N'TyreSize', N'Tyre Size', N'0', N'CZA', N'11')
-GO
-GO
-INSERT INTO [dbo].[wp_columns] ([DetailID], [TableName], [ColumnName], [DisplayName], [Visible], [Username], [ColOrder]) VALUES (N'52021', N'PMOverdueReport', N'Province', N'Province', N'0', N'CZA', N'11')
-GO
-GO
-INSERT INTO [dbo].[wp_columns] ([DetailID], [TableName], [ColumnName], [DisplayName], [Visible], [Username], [ColOrder]) VALUES (N'52022', N'PMOverdueReport', N'PassCap', N'Passenger Capacity', N'0', N'CZA', N'11')
-GO
-GO
-INSERT INTO [dbo].[wp_columns] ([DetailID], [TableName], [ColumnName], [DisplayName], [Visible], [Username], [ColOrder]) VALUES (N'52023', N'PMOverdueReport', N'Barcode', N'Barcode', N'0', N'CZA', N'11')
-GO
-GO
-INSERT INTO [dbo].[wp_columns] ([DetailID], [TableName], [ColumnName], [DisplayName], [Visible], [Username], [ColOrder]) VALUES (N'52024', N'PMOverdueReport', N'EngineSize', N'Engine Size', N'0', N'CZA', N'11')
-GO
-GO
-INSERT INTO [dbo].[wp_columns] ([DetailID], [TableName], [ColumnName], [DisplayName], [Visible], [Username], [ColOrder]) VALUES (N'52025', N'PMOverdueReport', N'FuelCapacity', N'Fuel Capacity', N'0', N'CZA', N'11')
-GO
-GO
-INSERT INTO [dbo].[wp_columns] ([DetailID], [TableName], [ColumnName], [DisplayName], [Visible], [Username], [ColOrder]) VALUES (N'52026', N'PMOverdueReport', N'KeyTag', N'Key Tag', N'0', N'CZA', N'11')
-GO
-GO
-INSERT INTO [dbo].[wp_columns] ([DetailID], [TableName], [ColumnName], [DisplayName], [Visible], [Username], [ColOrder]) VALUES (N'52027', N'PMOverdueReport', N'TransmissionCode', N'Transmission Code', N'0', N'CZA', N'11')
-GO
-GO
 SET IDENTITY_INSERT [dbo].[wp_columns] OFF
 GO
 
@@ -8954,7 +8111,7 @@ CREATE TABLE [dbo].[wp_logactivities] (
 
 
 GO
-DBCC CHECKIDENT(N'[dbo].[wp_logactivities]', RESEED, 115991)
+DBCC CHECKIDENT(N'[dbo].[wp_logactivities]', RESEED, 105988)
 GO
 
 -- ----------------------------
@@ -10417,88 +9574,46 @@ GO
 INSERT INTO [dbo].[wp_logactivities] ([DetailID], [User], [Transaction], [Action], [IPAddress], [ComputerName], [DateTime]) VALUES (N'105974', N'Jenno Cabrito', N'Logged in', N'Logged in using `Administrator` account', N'192.168.100.2', N'192.168.100.2', N'2016-07-07 09:14:47.407')
 GO
 GO
-INSERT INTO [dbo].[wp_logactivities] ([DetailID], [User], [Transaction], [Action], [IPAddress], [ComputerName], [DateTime]) VALUES (N'105975', N'Jenno Cabrito', N'Logged in', N'Logged in using `Administrator` account', N'::1', N'ITJCAPC', N'2016-07-07 13:25:52.543')
+INSERT INTO [dbo].[wp_logactivities] ([DetailID], [User], [Transaction], [Action], [IPAddress], [ComputerName], [DateTime]) VALUES (N'105975', N'Jenno Cabrito', N'Logged in', N'Logged in using `Administrator` account', N'::1', N'ITJCAPC', N'2016-07-10 11:08:06.440')
 GO
 GO
-INSERT INTO [dbo].[wp_logactivities] ([DetailID], [User], [Transaction], [Action], [IPAddress], [ComputerName], [DateTime]) VALUES (N'105976', N'Jenno Cabrito', N'Logged in', N'Logged in using `Administrator` account', N'192.168.100.2', N'192.168.100.2', N'2016-07-07 13:39:33.963')
+INSERT INTO [dbo].[wp_logactivities] ([DetailID], [User], [Transaction], [Action], [IPAddress], [ComputerName], [DateTime]) VALUES (N'105976', N'Jenno Cabrito', N'Logged in', N'Logged in using `Administrator` account', N'::1', N'ITJCAPC', N'2016-07-11 10:14:17.500')
 GO
 GO
-INSERT INTO [dbo].[wp_logactivities] ([DetailID], [User], [Transaction], [Action], [IPAddress], [ComputerName], [DateTime]) VALUES (N'105977', N'Jenno Cabrito', N'Logged out', N'Logged out using `Administrator` account', N'192.168.100.2', N'192.168.100.2', N'2016-07-07 16:12:46.900')
+INSERT INTO [dbo].[wp_logactivities] ([DetailID], [User], [Transaction], [Action], [IPAddress], [ComputerName], [DateTime]) VALUES (N'105977', N'Jenno Cabrito', N'Logged out', N'Logged out using `Administrator` account', N'::1', N'ITJCAPC', N'2016-07-11 10:14:28.460')
 GO
 GO
-INSERT INTO [dbo].[wp_logactivities] ([DetailID], [User], [Transaction], [Action], [IPAddress], [ComputerName], [DateTime]) VALUES (N'105978', N'Jenno Cabrito', N'Logged in', N'Logged in using `Administrator` account', N'192.168.100.2', N'192.168.100.2', N'2016-07-07 16:16:30.657')
+INSERT INTO [dbo].[wp_logactivities] ([DetailID], [User], [Transaction], [Action], [IPAddress], [ComputerName], [DateTime]) VALUES (N'105978', N'Jenno Cabrito', N'Logged in', N'Logged in using `Administrator` account', N'::1', N'ITJCAPC', N'2016-07-11 13:43:48.287')
 GO
 GO
-INSERT INTO [dbo].[wp_logactivities] ([DetailID], [User], [Transaction], [Action], [IPAddress], [ComputerName], [DateTime]) VALUES (N'115968', N'Jenno Cabrito', N'Logged in', N'Logged in using `Administrator` account', N'192.168.100.2', N'192.168.100.2', N'2016-07-10 12:32:41.450')
+INSERT INTO [dbo].[wp_logactivities] ([DetailID], [User], [Transaction], [Action], [IPAddress], [ComputerName], [DateTime]) VALUES (N'105979', N'Jenno Cabrito', N'Logged out', N'Logged out using `Administrator` account', N'::1', N'ITJCAPC', N'2016-07-11 15:48:39.980')
 GO
 GO
-INSERT INTO [dbo].[wp_logactivities] ([DetailID], [User], [Transaction], [Action], [IPAddress], [ComputerName], [DateTime]) VALUES (N'115969', N'Edison Tanzon', N'Logged in', N'Logged in using `ams-itpm` account', N'192.168.100.2', N'dxbho.a-m-s.ae', N'2016-07-10 15:34:45.793')
+INSERT INTO [dbo].[wp_logactivities] ([DetailID], [User], [Transaction], [Action], [IPAddress], [ComputerName], [DateTime]) VALUES (N'105980', N'Jenno Cabrito', N'Logged in', N'Logged in using `Administrator` account', N'::1', N'ITJCAPC', N'2016-07-11 15:54:26.590')
 GO
 GO
-INSERT INTO [dbo].[wp_logactivities] ([DetailID], [User], [Transaction], [Action], [IPAddress], [ComputerName], [DateTime]) VALUES (N'115970', N'Jenno Cabrito', N'Logged in', N'Logged in using `Administrator` account', N'192.168.100.2', N'192.168.100.2', N'2016-07-12 09:28:39.730')
+INSERT INTO [dbo].[wp_logactivities] ([DetailID], [User], [Transaction], [Action], [IPAddress], [ComputerName], [DateTime]) VALUES (N'105981', N'Jenno Cabrito', N'Logged in', N'Logged in using `Administrator` account', N'::1', N'ITJCAPC', N'2016-07-12 08:07:36.177')
 GO
 GO
-INSERT INTO [dbo].[wp_logactivities] ([DetailID], [User], [Transaction], [Action], [IPAddress], [ComputerName], [DateTime]) VALUES (N'115971', N'Edison Tanzon', N'Logged in', N'Logged in using `ams-itpm` account', N'192.168.100.2', N'192.168.100.2', N'2016-07-12 09:40:30.940')
+INSERT INTO [dbo].[wp_logactivities] ([DetailID], [User], [Transaction], [Action], [IPAddress], [ComputerName], [DateTime]) VALUES (N'105982', N'Jenno Cabrito', N'Update User', N'Updated user account of `Jenno Cabrito` with User Name `Administrator`', N'::1', N'ITJCAPC', N'2016-07-12 15:58:39.927')
 GO
 GO
-INSERT INTO [dbo].[wp_logactivities] ([DetailID], [User], [Transaction], [Action], [IPAddress], [ComputerName], [DateTime]) VALUES (N'115972', N'Jenno Cabrito', N'Logged in', N'Logged in using `Administrator` account', N'192.168.100.2', N'192.168.100.2', N'2016-07-12 13:28:23.377')
+INSERT INTO [dbo].[wp_logactivities] ([DetailID], [User], [Transaction], [Action], [IPAddress], [ComputerName], [DateTime]) VALUES (N'105983', N'Jenno Cabrito', N'Logged out', N'Logged out using `Administrator` account', N'::1', N'ITJCAPC', N'2016-07-12 15:58:47.397')
 GO
 GO
-INSERT INTO [dbo].[wp_logactivities] ([DetailID], [User], [Transaction], [Action], [IPAddress], [ComputerName], [DateTime]) VALUES (N'115973', N'Chalie Zaragoza', N'Logged in', N'Logged in using `CZA` account', N'192.168.100.2', N'192.168.100.2', N'2016-07-13 11:04:21.547')
+INSERT INTO [dbo].[wp_logactivities] ([DetailID], [User], [Transaction], [Action], [IPAddress], [ComputerName], [DateTime]) VALUES (N'105984', N'Jenno Cabrito', N'Logged in', N'Logged in using `Administrator` account', N'::1', N'ITJCAPC', N'2016-07-12 15:58:57.270')
 GO
 GO
-INSERT INTO [dbo].[wp_logactivities] ([DetailID], [User], [Transaction], [Action], [IPAddress], [ComputerName], [DateTime]) VALUES (N'115974', N'Chalie Zaragoza', N'Logged in', N'Logged in using `CZA` account', N'192.168.100.2', N'dxbho.a-m-s.ae', N'2016-07-13 17:02:59.277')
+INSERT INTO [dbo].[wp_logactivities] ([DetailID], [User], [Transaction], [Action], [IPAddress], [ComputerName], [DateTime]) VALUES (N'105985', N'Jenno Cabrito', N'Update User', N'Updated user account of `Jenno Cabrito` with User Name `Administrator`', N'::1', N'ITJCAPC', N'2016-07-12 16:01:11.213')
 GO
 GO
-INSERT INTO [dbo].[wp_logactivities] ([DetailID], [User], [Transaction], [Action], [IPAddress], [ComputerName], [DateTime]) VALUES (N'115975', N'Chalie Zaragoza', N'Logged in', N'Logged in using `CZA` account', N'192.168.100.2', N'dxbho.a-m-s.ae', N'2016-07-13 17:03:01.637')
+INSERT INTO [dbo].[wp_logactivities] ([DetailID], [User], [Transaction], [Action], [IPAddress], [ComputerName], [DateTime]) VALUES (N'105986', N'Jenno Cabrito', N'Logged out', N'Logged out using `Administrator` account', N'::1', N'ITJCAPC', N'2016-07-12 16:01:17.700')
 GO
 GO
-INSERT INTO [dbo].[wp_logactivities] ([DetailID], [User], [Transaction], [Action], [IPAddress], [ComputerName], [DateTime]) VALUES (N'115976', N'Jenno Cabrito', N'Logged in', N'Logged in using `Administrator` account', N'192.168.100.2', N'192.168.100.2', N'2016-07-17 12:45:11.340')
+INSERT INTO [dbo].[wp_logactivities] ([DetailID], [User], [Transaction], [Action], [IPAddress], [ComputerName], [DateTime]) VALUES (N'105987', N'Jenno Cabrito', N'Logged in', N'Logged in using `Administrator` account', N'::1', N'ITJCAPC', N'2016-07-12 16:01:27.433')
 GO
 GO
-INSERT INTO [dbo].[wp_logactivities] ([DetailID], [User], [Transaction], [Action], [IPAddress], [ComputerName], [DateTime]) VALUES (N'115977', N'Jenno Cabrito', N'Logged out', N'Logged out using `Administrator` account', N'192.168.100.2', N'192.168.100.2', N'2016-07-17 16:25:37.157')
-GO
-GO
-INSERT INTO [dbo].[wp_logactivities] ([DetailID], [User], [Transaction], [Action], [IPAddress], [ComputerName], [DateTime]) VALUES (N'115978', N'Jenno Cabrito', N'Logged in', N'Logged in using `Administrator` account', N'192.168.100.2', N'dxbho.a-m-s.ae', N'2016-07-17 16:25:54.483')
-GO
-GO
-INSERT INTO [dbo].[wp_logactivities] ([DetailID], [User], [Transaction], [Action], [IPAddress], [ComputerName], [DateTime]) VALUES (N'115979', N'Jenno Cabrito', N'Logged out', N'Logged out using `Administrator` account', N'192.168.100.2', N'dxbho.a-m-s.ae', N'2016-07-17 17:31:06.720')
-GO
-GO
-INSERT INTO [dbo].[wp_logactivities] ([DetailID], [User], [Transaction], [Action], [IPAddress], [ComputerName], [DateTime]) VALUES (N'115980', N'Jenno Cabrito', N'Logged in', N'Logged in using `Administrator` account', N'192.168.100.2', N'192.168.100.2', N'2016-07-17 17:35:06.797')
-GO
-GO
-INSERT INTO [dbo].[wp_logactivities] ([DetailID], [User], [Transaction], [Action], [IPAddress], [ComputerName], [DateTime]) VALUES (N'115981', N'Jenno Cabrito', N'Logged out', N'Logged out using `Administrator` account', N'192.168.100.2', N'192.168.100.2', N'2016-07-17 17:35:48.233')
-GO
-GO
-INSERT INTO [dbo].[wp_logactivities] ([DetailID], [User], [Transaction], [Action], [IPAddress], [ComputerName], [DateTime]) VALUES (N'115982', N'Jerick Saragoza', N'Logged in', N'Logged in using `JSA` account', N'192.168.100.2', N'192.168.100.2', N'2016-07-17 17:35:59.800')
-GO
-GO
-INSERT INTO [dbo].[wp_logactivities] ([DetailID], [User], [Transaction], [Action], [IPAddress], [ComputerName], [DateTime]) VALUES (N'115983', N'Chalie Zaragoza', N'Logged in', N'Logged in using `CZA` account', N'192.168.100.2', N'192.168.100.2', N'2016-07-17 17:39:43.527')
-GO
-GO
-INSERT INTO [dbo].[wp_logactivities] ([DetailID], [User], [Transaction], [Action], [IPAddress], [ComputerName], [DateTime]) VALUES (N'115984', N'Chalie Zaragoza', N'Logged in', N'Logged in using `CZA` account', N'192.168.100.2', N'192.168.100.2', N'2016-07-18 07:45:08.553')
-GO
-GO
-INSERT INTO [dbo].[wp_logactivities] ([DetailID], [User], [Transaction], [Action], [IPAddress], [ComputerName], [DateTime]) VALUES (N'115985', N'Chalie Zaragoza', N'Logged in', N'Logged in using `CZA` account', N'192.168.100.2', N'192.168.100.2', N'2016-07-18 07:45:12.713')
-GO
-GO
-INSERT INTO [dbo].[wp_logactivities] ([DetailID], [User], [Transaction], [Action], [IPAddress], [ComputerName], [DateTime]) VALUES (N'115986', N'Jerick Saragoza', N'Logged out', N'Logged out using `JSA` account', N'192.168.100.2', N'192.168.100.2', N'2016-07-18 08:04:29.577')
-GO
-GO
-INSERT INTO [dbo].[wp_logactivities] ([DetailID], [User], [Transaction], [Action], [IPAddress], [ComputerName], [DateTime]) VALUES (N'115987', N'Jenno Cabrito', N'Logged in', N'Logged in using `Administrator` account', N'192.168.100.2', N'192.168.100.2', N'2016-07-18 08:04:52.353')
-GO
-GO
-INSERT INTO [dbo].[wp_logactivities] ([DetailID], [User], [Transaction], [Action], [IPAddress], [ComputerName], [DateTime]) VALUES (N'115988', N'Jenno Cabrito', N'Logged in', N'Logged in using `Administrator` account', N'192.168.100.2', N'192.168.100.2', N'2016-07-18 11:37:57.270')
-GO
-GO
-INSERT INTO [dbo].[wp_logactivities] ([DetailID], [User], [Transaction], [Action], [IPAddress], [ComputerName], [DateTime]) VALUES (N'115989', N'Jenno Cabrito', N'Update User', N'Updated user account of `Jenno Cabrito` with User Name `Administrator`', N'192.168.100.2', N'192.168.100.2', N'2016-07-18 12:09:48.477')
-GO
-GO
-INSERT INTO [dbo].[wp_logactivities] ([DetailID], [User], [Transaction], [Action], [IPAddress], [ComputerName], [DateTime]) VALUES (N'115990', N'Jenno Cabrito', N'Update User', N'Updated user account of `Jenno Cabrito` with User Name `Administrator`', N'192.168.100.2', N'192.168.100.2', N'2016-07-18 12:10:18.903')
-GO
-GO
-INSERT INTO [dbo].[wp_logactivities] ([DetailID], [User], [Transaction], [Action], [IPAddress], [ComputerName], [DateTime]) VALUES (N'115991', N'Jenno Cabrito', N'Logged in', N'Logged in using `Administrator` account', N'192.168.100.2', N'192.168.100.2', N'2016-07-19 08:55:07.620')
+INSERT INTO [dbo].[wp_logactivities] ([DetailID], [User], [Transaction], [Action], [IPAddress], [ComputerName], [DateTime]) VALUES (N'105988', N'Jenno Cabrito', N'Logged in', N'Logged in using `Administrator` account', N'::1', N'ITJCAPC', N'2016-07-13 08:13:44.570')
 GO
 GO
 SET IDENTITY_INSERT [dbo].[wp_logactivities] OFF
@@ -10763,89 +9878,116 @@ GO
 DROP TABLE [dbo].[wp_pages]
 GO
 CREATE TABLE [dbo].[wp_pages] (
-[PageID] bigint NOT NULL ,
+[PageID] bigint NOT NULL IDENTITY(1,1) ,
 [Page] varchar(150) NULL ,
 [SubPage] varchar(150) NULL ,
 [View] tinyint NULL ,
 [Download] tinyint NULL ,
 [Upload] tinyint NULL ,
-[Index] int NULL 
+[Index] int NULL ,
+[page_type] int NULL DEFAULT ((1)) 
 )
 
 
+GO
+DBCC CHECKIDENT(N'[dbo].[wp_pages]', RESEED, 25)
+GO
+IF ((SELECT COUNT(*) from fn_listextendedproperty('MS_Description', 
+'SCHEMA', N'dbo', 
+'TABLE', N'wp_pages', 
+'COLUMN', N'page_type')) > 0) 
+EXEC sp_updateextendedproperty @name = N'MS_Description', @value = N'1 = page, 2 = report'
+, @level0type = 'SCHEMA', @level0name = N'dbo'
+, @level1type = 'TABLE', @level1name = N'wp_pages'
+, @level2type = 'COLUMN', @level2name = N'page_type'
+ELSE
+EXEC sp_addextendedproperty @name = N'MS_Description', @value = N'1 = page, 2 = report'
+, @level0type = 'SCHEMA', @level0name = N'dbo'
+, @level1type = 'TABLE', @level1name = N'wp_pages'
+, @level2type = 'COLUMN', @level2name = N'page_type'
 GO
 
 -- ----------------------------
 -- Records of wp_pages
 -- ----------------------------
-INSERT INTO [dbo].[wp_pages] ([PageID], [Page], [SubPage], [View], [Download], [Upload], [Index]) VALUES (N'1', N'General Equipment Pool', null, N'0', N'0', N'1', N'1')
+SET IDENTITY_INSERT [dbo].[wp_pages] ON
+GO
+INSERT INTO [dbo].[wp_pages] ([PageID], [Page], [SubPage], [View], [Download], [Upload], [Index], [page_type]) VALUES (N'1', N'General Equipment Pool', null, N'1', N'0', N'1', N'1', N'1')
 GO
 GO
-INSERT INTO [dbo].[wp_pages] ([PageID], [Page], [SubPage], [View], [Download], [Upload], [Index]) VALUES (N'2', null, N'General Equipment Pool', N'1', N'1', N'0', N'2')
+INSERT INTO [dbo].[wp_pages] ([PageID], [Page], [SubPage], [View], [Download], [Upload], [Index], [page_type]) VALUES (N'2', null, N'General Equipment Pool', N'1', N'1', N'1', N'2', N'1')
 GO
 GO
-INSERT INTO [dbo].[wp_pages] ([PageID], [Page], [SubPage], [View], [Download], [Upload], [Index]) VALUES (N'3', N'General Equipment Information Dashboard and Reports', null, N'0', N'0', N'0', N'3')
+INSERT INTO [dbo].[wp_pages] ([PageID], [Page], [SubPage], [View], [Download], [Upload], [Index], [page_type]) VALUES (N'3', N'General Equipment Information Dashboard and Reports', null, N'0', N'0', N'0', N'3', N'2')
 GO
 GO
-INSERT INTO [dbo].[wp_pages] ([PageID], [Page], [SubPage], [View], [Download], [Upload], [Index]) VALUES (N'4', null, N'Equipment Allocation', N'1', N'1', N'0', N'4')
+INSERT INTO [dbo].[wp_pages] ([PageID], [Page], [SubPage], [View], [Download], [Upload], [Index], [page_type]) VALUES (N'4', null, N'Equipment Allocation', N'1', N'1', N'0', N'4', N'2')
 GO
 GO
-INSERT INTO [dbo].[wp_pages] ([PageID], [Page], [SubPage], [View], [Download], [Upload], [Index]) VALUES (N'5', null, N'Equipment Model Year', N'1', N'1', N'0', N'5')
+INSERT INTO [dbo].[wp_pages] ([PageID], [Page], [SubPage], [View], [Download], [Upload], [Index], [page_type]) VALUES (N'5', null, N'Equipment Model Year', N'1', N'1', N'0', N'5', N'2')
 GO
 GO
-INSERT INTO [dbo].[wp_pages] ([PageID], [Page], [SubPage], [View], [Download], [Upload], [Index]) VALUES (N'6', null, N'Annual Utilization', N'1', N'1', N'0', N'6')
+INSERT INTO [dbo].[wp_pages] ([PageID], [Page], [SubPage], [View], [Download], [Upload], [Index], [page_type]) VALUES (N'6', null, N'Annual Utilization', N'1', N'1', N'0', N'6', N'2')
 GO
 GO
-INSERT INTO [dbo].[wp_pages] ([PageID], [Page], [SubPage], [View], [Download], [Upload], [Index]) VALUES (N'7', N'Equipment Maintenance', null, N'0', N'0', N'0', N'7')
+INSERT INTO [dbo].[wp_pages] ([PageID], [Page], [SubPage], [View], [Download], [Upload], [Index], [page_type]) VALUES (N'7', N'Equipment Maintenance', null, N'0', N'0', N'0', N'7', N'1')
 GO
 GO
-INSERT INTO [dbo].[wp_pages] ([PageID], [Page], [SubPage], [View], [Download], [Upload], [Index]) VALUES (N'8', null, N'Equipment Overdue for Inspection', N'1', N'1', N'0', N'8')
+INSERT INTO [dbo].[wp_pages] ([PageID], [Page], [SubPage], [View], [Download], [Upload], [Index], [page_type]) VALUES (N'8', null, N'Equipment Overdue for Inspection', N'1', N'1', N'0', N'8', N'1')
 GO
 GO
-INSERT INTO [dbo].[wp_pages] ([PageID], [Page], [SubPage], [View], [Download], [Upload], [Index]) VALUES (N'9', null, N'Equipment Overdue for Preventive Maintenance', N'1', N'1', N'0', N'9')
+INSERT INTO [dbo].[wp_pages] ([PageID], [Page], [SubPage], [View], [Download], [Upload], [Index], [page_type]) VALUES (N'9', null, N'Equipment Overdue for Preventive Maintenance', N'1', N'1', N'0', N'9', N'1')
 GO
 GO
-INSERT INTO [dbo].[wp_pages] ([PageID], [Page], [SubPage], [View], [Download], [Upload], [Index]) VALUES (N'10', null, N'Outstanding Equipments for Maintenance and Repair', N'1', N'1', N'0', N'10')
+INSERT INTO [dbo].[wp_pages] ([PageID], [Page], [SubPage], [View], [Download], [Upload], [Index], [page_type]) VALUES (N'10', null, N'Outstanding Equipments for Maintenance and Repair', N'1', N'1', N'0', N'10', N'1')
 GO
 GO
-INSERT INTO [dbo].[wp_pages] ([PageID], [Page], [SubPage], [View], [Download], [Upload], [Index]) VALUES (N'11', null, N'Outstanding Work Orders', N'1', N'1', N'0', N'11')
+INSERT INTO [dbo].[wp_pages] ([PageID], [Page], [SubPage], [View], [Download], [Upload], [Index], [page_type]) VALUES (N'11', null, N'Outstanding Work Orders', N'1', N'1', N'0', N'11', N'1')
 GO
 GO
-INSERT INTO [dbo].[wp_pages] ([PageID], [Page], [SubPage], [View], [Download], [Upload], [Index]) VALUES (N'12', null, N'Completed Work Orders', N'1', N'1', N'0', N'12')
+INSERT INTO [dbo].[wp_pages] ([PageID], [Page], [SubPage], [View], [Download], [Upload], [Index], [page_type]) VALUES (N'12', null, N'Completed Work Orders', N'1', N'1', N'0', N'12', N'1')
 GO
 GO
-INSERT INTO [dbo].[wp_pages] ([PageID], [Page], [SubPage], [View], [Download], [Upload], [Index]) VALUES (N'13', null, N'Written-Off Equipment', N'1', N'1', N'0', N'13')
+INSERT INTO [dbo].[wp_pages] ([PageID], [Page], [SubPage], [View], [Download], [Upload], [Index], [page_type]) VALUES (N'13', null, N'Written-Off Equipment', N'1', N'1', N'0', N'13', N'1')
 GO
 GO
-INSERT INTO [dbo].[wp_pages] ([PageID], [Page], [SubPage], [View], [Download], [Upload], [Index]) VALUES (N'14', N'Equipment Maintenance Information Dashboard and Reports', null, N'0', N'0', N'0', N'14')
+INSERT INTO [dbo].[wp_pages] ([PageID], [Page], [SubPage], [View], [Download], [Upload], [Index], [page_type]) VALUES (N'14', N'Equipment Maintenance Information Dashboard and Reports', null, N'0', N'0', N'0', N'14', N'2')
 GO
 GO
-INSERT INTO [dbo].[wp_pages] ([PageID], [Page], [SubPage], [View], [Download], [Upload], [Index]) VALUES (N'15', null, N'Equipment Maintenance', N'1', N'1', N'0', N'15')
+INSERT INTO [dbo].[wp_pages] ([PageID], [Page], [SubPage], [View], [Download], [Upload], [Index], [page_type]) VALUES (N'15', null, N'Equipment Maintenance', N'1', N'1', N'0', N'15', N'2')
 GO
 GO
-INSERT INTO [dbo].[wp_pages] ([PageID], [Page], [SubPage], [View], [Download], [Upload], [Index]) VALUES (N'16', null, N'Maintenance Cost Per Mile', N'1', N'1', N'0', N'16')
+INSERT INTO [dbo].[wp_pages] ([PageID], [Page], [SubPage], [View], [Download], [Upload], [Index], [page_type]) VALUES (N'16', null, N'Maintenance Cost Per Mile', N'1', N'1', N'0', N'16', N'2')
 GO
 GO
-INSERT INTO [dbo].[wp_pages] ([PageID], [Page], [SubPage], [View], [Download], [Upload], [Index]) VALUES (N'17', null, N'Accident Cost Per Mile', N'1', N'1', N'0', N'17')
+INSERT INTO [dbo].[wp_pages] ([PageID], [Page], [SubPage], [View], [Download], [Upload], [Index], [page_type]) VALUES (N'17', null, N'Accident Cost Per Mile', N'1', N'1', N'0', N'17', N'2')
 GO
 GO
-INSERT INTO [dbo].[wp_pages] ([PageID], [Page], [SubPage], [View], [Download], [Upload], [Index]) VALUES (N'18', null, N'Non-Mission Capable Equipment', N'1', N'1', N'0', N'18')
+INSERT INTO [dbo].[wp_pages] ([PageID], [Page], [SubPage], [View], [Download], [Upload], [Index], [page_type]) VALUES (N'18', null, N'Non-Mission Capable Equipment', N'1', N'1', N'0', N'18', N'2')
 GO
 GO
-INSERT INTO [dbo].[wp_pages] ([PageID], [Page], [SubPage], [View], [Download], [Upload], [Index]) VALUES (N'19', null, N'Average Cost of Maintenance', N'1', N'1', N'0', N'19')
+INSERT INTO [dbo].[wp_pages] ([PageID], [Page], [SubPage], [View], [Download], [Upload], [Index], [page_type]) VALUES (N'19', null, N'Average Cost of Maintenance', N'1', N'1', N'0', N'19', N'2')
 GO
 GO
-INSERT INTO [dbo].[wp_pages] ([PageID], [Page], [SubPage], [View], [Download], [Upload], [Index]) VALUES (N'20', null, N'Estimated Cost of Damage (ECOD) Report', N'1', N'1', N'0', N'20')
+INSERT INTO [dbo].[wp_pages] ([PageID], [Page], [SubPage], [View], [Download], [Upload], [Index], [page_type]) VALUES (N'20', null, N'Estimated Cost of Damage (ECOD) Report', N'1', N'1', N'0', N'20', N'2')
 GO
 GO
-INSERT INTO [dbo].[wp_pages] ([PageID], [Page], [SubPage], [View], [Download], [Upload], [Index]) VALUES (N'21', null, N'Warranty Repairs', N'1', N'1', N'1', N'21')
+INSERT INTO [dbo].[wp_pages] ([PageID], [Page], [SubPage], [View], [Download], [Upload], [Index], [page_type]) VALUES (N'21', null, N'Warranty Repairs', N'1', N'1', N'1', N'21', N'2')
 GO
 GO
-INSERT INTO [dbo].[wp_pages] ([PageID], [Page], [SubPage], [View], [Download], [Upload], [Index]) VALUES (N'22', N'User Management', null, N'1', N'0', N'0', N'22')
+INSERT INTO [dbo].[wp_pages] ([PageID], [Page], [SubPage], [View], [Download], [Upload], [Index], [page_type]) VALUES (N'22', N'User Management', null, N'1', N'0', N'0', N'22', N'1')
 GO
 GO
-INSERT INTO [dbo].[wp_pages] ([PageID], [Page], [SubPage], [View], [Download], [Upload], [Index]) VALUES (N'23', N'Log Activity', null, N'1', N'0', N'0', N'23')
+INSERT INTO [dbo].[wp_pages] ([PageID], [Page], [SubPage], [View], [Download], [Upload], [Index], [page_type]) VALUES (N'23', N'Log Activity', null, N'1', N'0', N'0', N'23', N'1')
 GO
+GO
+INSERT INTO [dbo].[wp_pages] ([PageID], [Page], [SubPage], [View], [Download], [Upload], [Index], [page_type]) VALUES (N'24', N'Aquisition', null, N'1', N'1', N'1', N'24', N'1')
+GO
+GO
+INSERT INTO [dbo].[wp_pages] ([PageID], [Page], [SubPage], [View], [Download], [Upload], [Index], [page_type]) VALUES (N'25', N'General Settings', null, N'1', N'1', N'1', N'25', N'1')
+GO
+GO
+SET IDENTITY_INSERT [dbo].[wp_pages] OFF
 GO
 
 -- ----------------------------
@@ -11108,6 +10250,7 @@ GO
 
 
 
+
 CREATE PROCEDURE [dbo].[Annual_Util]
 	@Yr AS VARCHAR(4)
 AS
@@ -11146,6 +10289,7 @@ END
 
 
 
+
 GO
 
 -- ----------------------------
@@ -11153,6 +10297,7 @@ GO
 -- ----------------------------
 DROP PROCEDURE [dbo].[AverageCostOfMaintenance]
 GO
+
 
 
 
@@ -11202,6 +10347,7 @@ AS
 
 
 
+
 GO
 
 -- ----------------------------
@@ -11209,6 +10355,7 @@ GO
 -- ----------------------------
 DROP PROCEDURE [dbo].[EquipmentByOwnership]
 GO
+
 
 
 
@@ -11263,6 +10410,7 @@ AS
 
 
 
+
 GO
 
 -- ----------------------------
@@ -11270,6 +10418,7 @@ GO
 -- ----------------------------
 DROP PROCEDURE [dbo].[InvoiceSummary]
 GO
+
 
 
 
@@ -11320,6 +10469,7 @@ AS
 
 
 
+
 GO
 
 -- ----------------------------
@@ -11327,6 +10477,7 @@ GO
 -- ----------------------------
 DROP PROCEDURE [dbo].[ProcedureName]
 GO
+
 
 
 
@@ -11358,6 +10509,7 @@ END
 
 
 
+
 GO
 
 -- ----------------------------
@@ -11365,6 +10517,7 @@ GO
 -- ----------------------------
 DROP PROCEDURE [dbo].[Quarterly_Util]
 GO
+
 
 
 
@@ -11424,6 +10577,7 @@ END
 
 
 
+
 GO
 
 -- ----------------------------
@@ -11431,6 +10585,7 @@ GO
 -- ----------------------------
 DROP PROCEDURE [dbo].[sp_alterdiagram]
 GO
+
 
 
 
@@ -11505,6 +10660,7 @@ GO
 
 
 
+
 GO
 
 -- ----------------------------
@@ -11512,6 +10668,7 @@ GO
 -- ----------------------------
 DROP PROCEDURE [dbo].[sp_creatediagram]
 GO
+
 
 
 
@@ -11579,6 +10736,7 @@ GO
 
 
 
+
 GO
 
 -- ----------------------------
@@ -11586,6 +10744,7 @@ GO
 -- ----------------------------
 DROP PROCEDURE [dbo].[sp_dropdiagram]
 GO
+
 
 
 
@@ -11636,6 +10795,7 @@ GO
 
 
 
+
 GO
 
 -- ----------------------------
@@ -11643,6 +10803,7 @@ GO
 -- ----------------------------
 DROP PROCEDURE [dbo].[sp_helpdiagramdefinition]
 GO
+
 
 
 
@@ -11692,6 +10853,7 @@ GO
 
 
 
+
 GO
 
 -- ----------------------------
@@ -11699,6 +10861,7 @@ GO
 -- ----------------------------
 DROP PROCEDURE [dbo].[sp_helpdiagrams]
 GO
+
 
 
 
@@ -11739,6 +10902,7 @@ GO
 
 
 
+
 GO
 
 -- ----------------------------
@@ -11746,6 +10910,7 @@ GO
 -- ----------------------------
 DROP PROCEDURE [dbo].[sp_renamediagram]
 GO
+
 
 
 
@@ -11817,6 +10982,7 @@ GO
 
 
 
+
 GO
 
 -- ----------------------------
@@ -11824,6 +10990,7 @@ GO
 -- ----------------------------
 DROP PROCEDURE [dbo].[sp_upgraddiagrams]
 GO
+
 
 
 
@@ -11893,6 +11060,7 @@ GO
 
 
 
+
 GO
 
 -- ----------------------------
@@ -11900,6 +11068,7 @@ GO
 -- ----------------------------
 DROP PROCEDURE [dbo].[usp_Authorized_Equipment]
 GO
+
 
 
 
@@ -11954,6 +11123,7 @@ END
 
 
 
+
 GO
 
 -- ----------------------------
@@ -11961,6 +11131,7 @@ GO
 -- ----------------------------
 DROP PROCEDURE [dbo].[usp_Deregistered_Vehicles]
 GO
+
 
 
 
@@ -12035,6 +11206,7 @@ END
 
 
 
+
 GO
 
 -- ----------------------------
@@ -12042,6 +11214,7 @@ GO
 -- ----------------------------
 DROP PROCEDURE [dbo].[usp_Get_Annual_Util]
 GO
+
 
 
 
@@ -12092,6 +11265,7 @@ END
 
 
 
+
 GO
 
 -- ----------------------------
@@ -12099,6 +11273,7 @@ GO
 -- ----------------------------
 DROP PROCEDURE [dbo].[usp_Get_MelDetails]
 GO
+
 
 
 
@@ -12169,6 +11344,7 @@ END
 
 
 
+
 GO
 
 -- ----------------------------
@@ -12176,6 +11352,7 @@ GO
 -- ----------------------------
 DROP PROCEDURE [dbo].[usp_GetHome_Counter]
 GO
+
 
 
 
@@ -12253,6 +11430,7 @@ END
 
 
 
+
 GO
 
 -- ----------------------------
@@ -12260,6 +11438,7 @@ GO
 -- ----------------------------
 DROP PROCEDURE [dbo].[usp_GetHomeCounter]
 GO
+
 
 
 
@@ -12323,6 +11502,7 @@ END
 
 
 
+
 GO
 
 -- ----------------------------
@@ -12330,6 +11510,7 @@ GO
 -- ----------------------------
 DROP PROCEDURE [dbo].[usp_GetTestCounter]
 GO
+
 
 
 
@@ -12355,6 +11536,7 @@ END
 
 
 
+
 GO
 
 -- ----------------------------
@@ -12362,6 +11544,7 @@ GO
 -- ----------------------------
 DROP PROCEDURE [dbo].[usp_Set_UtilEndDate]
 GO
+
 
 
 
@@ -12460,6 +11643,7 @@ END
 
 
 
+
 GO
 
 -- ----------------------------
@@ -12467,6 +11651,7 @@ GO
 -- ----------------------------
 DROP PROCEDURE [dbo].[usp_Update_ID]
 GO
+
 
 
 
@@ -12516,6 +11701,7 @@ END
 
 
 
+
 GO
 
 -- ----------------------------
@@ -12523,6 +11709,7 @@ GO
 -- ----------------------------
 DROP PROCEDURE [dbo].[usp_Update_VIN_Metrics]
 GO
+
 
 
 
@@ -12602,6 +11789,7 @@ END
 
 
 
+
 GO
 
 -- ----------------------------
@@ -12609,6 +11797,7 @@ GO
 -- ----------------------------
 DROP PROCEDURE [dbo].[usp_user_model]
 GO
+
 
 
 
@@ -12631,6 +11820,7 @@ END
 
 
 
+
 GO
 
 -- ----------------------------
@@ -12638,6 +11828,7 @@ GO
 -- ----------------------------
 DROP PROCEDURE [dbo].[usp_WOFF_CloseUtil]
 GO
+
 
 
 
@@ -12681,6 +11872,7 @@ END
 
 
 
+
 GO
 
 -- ----------------------------
@@ -12688,6 +11880,7 @@ GO
 -- ----------------------------
 DROP PROCEDURE [dbo].[Util_Per_Qtr]
 GO
+
 
 
 
@@ -12754,6 +11947,7 @@ END
 
 
 
+
 GO
 
 -- ----------------------------
@@ -12761,6 +11955,7 @@ GO
 -- ----------------------------
 DROP PROCEDURE [dbo].[Util_Target]
 GO
+
 
 
 
@@ -12802,6 +11997,7 @@ END
 
 
 
+
 GO
 
 -- ----------------------------
@@ -12809,6 +12005,7 @@ GO
 -- ----------------------------
 DROP PROCEDURE [dbo].[Yearly_Util]
 GO
+
 
 
 
@@ -12890,6 +12087,7 @@ END
 
 
 
+
 GO
 
 -- ----------------------------
@@ -12897,6 +12095,7 @@ GO
 -- ----------------------------
 DROP FUNCTION [dbo].[fn_diagramobjects]
 GO
+
 
 
 
@@ -12953,6 +12152,7 @@ GO
 
 
 
+
 GO
 
 -- ----------------------------
@@ -12960,6 +12160,7 @@ GO
 -- ----------------------------
 DROP FUNCTION [dbo].[GetCusFeedByQuestion]
 GO
+
 
 
 
@@ -13003,6 +12204,7 @@ END
 
 
 
+
 GO
 
 -- ----------------------------
@@ -13010,6 +12212,7 @@ GO
 -- ----------------------------
 DROP FUNCTION [dbo].[GetCusSatisfaction]
 GO
+
 
 
 
@@ -13036,6 +12239,7 @@ BEGIN
 
 	RETURN @CusRes
 END
+
 
 
 
@@ -13221,6 +12425,7 @@ BEGIN
 	FROM	inserted as i JOIN
 			fleet as f	on f.NLID = i.NLID
 END
+
 
 
 
@@ -13470,6 +12675,7 @@ END
 
 
 
+
 GO
 
 -- ----------------------------
@@ -13701,6 +12907,7 @@ BEGIN
 	FROM	inserted as i JOIN
 			fleet_details as f	on f.NLID = i.VehID
 END
+
 
 
 

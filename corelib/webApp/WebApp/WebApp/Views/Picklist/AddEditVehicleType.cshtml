@@ -10,11 +10,11 @@
 }
 
 
-<div class="col-lg-12">
+<div class="col-lg-12 animated fadeIn">
     <div class="card-box">
 
         <div class="row clerfix">
-            <form action="#" class="horizontal-form" id="add-edit-vehicle-types">
+            <form action="#" id="add-edit-vehicle-types" data-parsley-validate="" novalidate="">
 
                 <div class="col-lg-5">
                     <div class="form-group">
@@ -23,7 +23,7 @@
                         @{ var Description = ((@tModels != null) ? @tModels.Description : string.Empty); }
 
                         <label class="control-label"> Type Name : <span class="required">*</span></label>
-                        <input type="text" class="form-control" placeholder="Enter Type Name" name="Description" value="@Description">
+                        <input type="text" class="form-control" placeholder="Enter Type Name" name="Description" value="@Description" required>
                         <input type="hidden" class="form-control" name="VehTypeID" value="@VehTypeID">
 
                         <input type="hidden" class="form-control" name="actions" value="add" id="formAction">
@@ -32,32 +32,32 @@
                     <div class="form-group">
                         @{ var ssKM = ((@tModels != null) ? @tModels.ssKM : 0); }
                         <label class="control-label">ssKM : <span class="required">*</span></label>
-                        <input type="text" class="form-control" placeholder="Enter ssKM" name="ssKM" value="@ssKM">
+                        <input type="text" class="form-control" placeholder="Enter ssKM" name="ssKM" value="@ssKM" required>
                     </div>
                     <div class="form-group">
                         @{ var ssWeek = ((@tModels != null) ? @tModels.ssWeek : 0); }
                         <label class="control-label">ssWeek : <span class="required">*</span></label>
-                        <input type="text" class="form-control" placeholder="Enter ssWeek" name="ssWeek" value="@ssWeek">
+                        <input type="text" class="form-control" placeholder="Enter ssWeek" name="ssWeek" value="@ssWeek" required>
                     </div>
                     <div class="form-group">
                         @{ var SiteCode = ((@tModels != null) ? @tModels.SiteCode : string.Empty); }
                         <label class="control-label">SiteCode : <span class="required">*</span></label>
-                        <input type="text" class="form-control" placeholder="Enter SiteCode" name="SiteCode" value="@SiteCode">
+                        <input type="text" class="form-control" placeholder="Enter SiteCode" name="SiteCode" value="@SiteCode" required>
                     </div>
                     <div class="form-group">
                         @{ var LicenseCat = ((@tModels != null) ? @tModels.LicenseCat : 0); }
                         <label class="control-label">LicenseCat : <span class="required">*</span></label>
-                        <input type="text" class="form-control" placeholder="Enter LicenseCat" name="LicenseCat" value="@LicenseCat">
+                        <input type="text" class="form-control" placeholder="Enter LicenseCat" name="LicenseCat" value="@LicenseCat" required>
                     </div>
                     <div class="form-group">
                         @{ var ssKMUNIT = ((@tModels != null) ? @tModels.ssKMUNIT : 0); }
                         <label class="control-label">ssKMUNIT: <span class="required">*</span></label>
-                        <input type="text" class="form-control" placeholder="Enter ssKMUNIT" name="ssKMUNIT" value="@ssKMUNIT">
+                        <input type="text" class="form-control" placeholder="Enter ssKMUNIT" name="ssKMUNIT" value="@ssKMUNIT" required>
                     </div>
                     <div class="form-group">
                         @{ var ssWeekUNIT = ((@tModels != null) ? @tModels.ssWeekUNIT : 0); }
                         <label class="control-label">ssWeekUNIT : <span class="required">*</span></label>
-                        <input type="text" class="form-control" placeholder="Enter ssWeekUNIT" name="ssWeekUNIT" value="@ssWeekUNIT">
+                        <input type="text" class="form-control" placeholder="Enter ssWeekUNIT" name="ssWeekUNIT" value="@ssWeekUNIT" required>
                     </div>
                 </div>
 
@@ -147,7 +147,7 @@
                 </div>
 
                 <div class="form-group text-right m-b-0">
-                    <a class="btn btn-primary waves-effect waves-light fleet-equipment-types" module="refresh">
+                    <a data-toggle="tooltip" data-placement="left" data-original-title="View vehicle type list"  class="btn btn-primary waves-effect waves-light fleet-equipment-types" module="refresh">
                         <i class="md md-arrow-back"></i>Back
                     </a>
                     <a class="btn btn-primary waves-effect waves-light" id="btnUpdateVehicleTypeMapping">

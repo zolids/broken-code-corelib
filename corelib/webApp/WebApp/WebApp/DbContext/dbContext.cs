@@ -49,5 +49,6 @@ namespace WebApp.Models
 
         public DbSet<fleet_vehicle_type_mapping> fleetVehicleMappings { get; set; }
 
+        public DbSet<fleet_colors> fleet_colors { get; set; }
     }
 }

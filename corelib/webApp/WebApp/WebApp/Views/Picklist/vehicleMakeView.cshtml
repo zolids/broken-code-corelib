@@ -1,0 +1,39 @@
+﻿@model IEnumerable<WebApp.Models.fleet_vehicle_make>
+
+@{
+    var model = Model;
+}
+
+<div class="col-lg-12">
+    <div class="card-box">
+        <form action="#" class="form-pick-list">
+            <table cellpadding="1" cellspacing="1" class="datatable-responsive table table-hover dataTable no-footer" id="vehicle-make-table">
+                <thead>
+                    <tr>
+                        <th>Vehicle Make</th>
+                        <th style="text-align:center !important">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        if (model.Count() > 0)
+                        {
+                            foreach (var m in model)
+                            {
+                                <tr>
+                                    <td id="@m.id">@m.vehicle_make</td>
+                                    <td align="center" style="padding-right: 25px;">
+                                        <a id="@m.id" data-toggle="tooltip" data-placement="top" data-original-title="Edit Record" href="#" class="editVehicleMake btn btn-icon waves-effect waves-light btn-primary p-lr-5"><i class="md md-border-color"></i></a>
+                                        <a id="@m.id" module="fleet_vehicle_make" data-toggle="tooltip" data-placement="top" data-original-title="Remove Record" href="#" class="remove-item btn btn-icon waves-effect waves-light btn-default p-lr-5"><i class="glyphicon glyphicon-trash"></i></a>
+                                    </td>
+                                </tr>
+                            }
+
+                        }
+
+                    }
+                </tbody>
+            </table>
+        </form>
+    </div>
+</div>
