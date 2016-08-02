@@ -48,6 +48,25 @@ namespace WebApp.helpers
             return value.All(Char.IsDigit);
         }
 
+        public string generateSequenceCode(int count = 0)
+        {
+            
+            string code       = string.Empty;
+            string fCount     = string.Empty;
+            string prefixCode = string.Empty;
+
+            int codeLength = 6;
+            var counts = ((count <= 0) ? "1" : (count + 1).ToString());
+
+            while (fCount.Length < codeLength)
+            {
+                prefixCode += "0";
+                fCount = prefixCode + counts;
+            }
+
+            return fCount;
+        }
+
         public string LogException(Exception e)
         {
             string errMessage = string.Empty;

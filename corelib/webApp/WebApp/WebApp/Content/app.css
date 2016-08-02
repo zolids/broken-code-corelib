@@ -1,4 +1,39 @@
-﻿/* Dashboard css hack */
+﻿/* beautify window scrollbar*/
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 3px;
+}
+
+::-webkit-scrollbar-button {
+  background-color: rgba(98, 98, 98, 0.78);
+}
+
+::-webkit-scrollbar-track {
+  /*background-color: #626262;*/
+  background-color: rgba(98, 98, 98, 0.10);
+}
+
+::-webkit-scrollbar-track-piece {
+  background-color: #bbb;
+}
+
+::-webkit-scrollbar-thumb {
+  height: 50px;
+  /*background-color: #626262;*/
+  background-color: rgba(98, 98, 98, 0.58);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: #626262;
+}
+
+::-webkit-resizer {
+  background-color: #626262;
+}
+
+/* Dashboard css hack */
 
 .circliful {
     position: relative; 
@@ -170,8 +205,8 @@
 }
 
 .level1 td:first-child {
-    padding-left: 40px !important;
-    padding-top: 17px !important;
+    padding-left: 25px !important;
+    padding-top: 5px !important;
 }
 
 .level2 td:first-child {

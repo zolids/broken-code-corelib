@@ -1,0 +1,176 @@
+﻿@model WebApp.Controllers.employeeDetails
+@{
+    var empManager = ((Model.getEmpManager != null) ? Model.getEmpManager.SingleOrDefault() : null);
+    var departments = ((Model.departments != null) ? Model.departments : null);
+    var categoryList = ((Model.categorylist != null) ? Model.categorylist : null);
+}
+
+
+<div class="col-lg-12 animated fadeIn">
+    <div class="card-box">
+        <div class="row clerfix">
+            <form action="#" id="add-edit-manager" data-parsley-validate="" novalidate="">
+                
+                <div class="form-group">
+                    @{ var empId = ((@empManager != null) ? @empManager.id : 0); }
+                    @{ var empCode = ((@empManager != null) ? @empManager.EmpCode : "EMR-MDHO-" + Model.employeeManagerSequenceCode.ToString()); }
+
+                    <input type="hidden" name="id" value="@empId" />
+
+                    <label class="control-label">Employee No. : </label>
+                    <input type="text" class="form-control" name="EmpCode" value="@empCode" readonly />
+
+                </div>
+
+                <div class="form-group">
+
+                    @{ var DisplayName = ((@empManager != null) ? @empManager.DisplayName : string.Empty); }
+
+                    <label class="control-label">Display Name : <span class="required">*</span></label>
+                    <input type="text" class="form-control" id="displayName" name="DisplayName" value="@DisplayName" readonly required>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="form-group col-md-6">
+
+                        @{ var LName = ((@empManager != null) ? @empManager.LName : string.Empty); }
+
+                        <label class="control-label">Last Name : <span class="required">*</span></label>
+                        <input type="text" class="form-control" id="manager_lname" name="LName" value="@LName" placeholder="Enter Last Name" required>
+
+                    </div>
+
+                    <div class="form-group col-md-6">
+
+                        @{ var Position = ((@empManager != null) ? @empManager.Position : string.Empty); }
+                        <input type="hidden" name="" value="@Position" id="defaultPosition" />
+
+                        @{ var Category = ((@empManager != null) ? @empManager.Category : string.Empty); }
+
+                        <label class="control-label">Category : <span class="required">*</span></label>
+                        <select class="form-control" name="Category" id="cmb-category-list" required>
+
+                            @{
+                                if (categoryList.Count() > 0)
+                                {
+                                    var selected = string.Empty;
+
+                                    <option value=""></option>
+                                    foreach (var mod in categoryList)
+                                    {
+
+                                        selected = ((Category.ToUpper().ToString() == mod.category.ToUpper().ToString() ? "selected" : string.Empty));
+
+                                        <option @selected id="@mod.category" value="@mod.category">@mod.category</option>
+
+                                    }
+                                }
+                            }
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="form-group col-md-6">
+
+                        @{ var FName = ((@empManager != null) ? @empManager.FName : string.Empty); }
+
+                        <label class="control-label">First Name : <span class="required">*</span></label>
+                        <input type="text" class="form-control" id="manager_fname" name="FName" value="@FName" placeholder="Enter First Name" required>
+
+                    </div>
+
+                    <div class="form-group col-md-6">
+
+                        @{ var Department = ((@empManager != null) ? @empManager.Department : string.Empty); }
+
+                        <label class="control-label">Department : <span class="required">*</span></label>
+
+                        <select class="form-control" name="Department" required>
+                            <option value="">Please Select</option>
+                            @{
+                                if (departments.Count() > 0)
+                                {
+                                    var selected = string.Empty;
+                                    foreach (var mod in departments)
+                                    {
+
+                                        selected = ((Department.ToUpper().ToString() == mod.Department.ToUpper().ToString() ? "selected" : string.Empty));
+
+                                        <option @selected value="@mod.Department">@mod.Department</option>
+
+                                    }
+                                }
+                            }
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="form-group col-md-6">
+
+                        @{ var MName = ((@empManager != null) ? @empManager.MName : string.Empty); }
+
+                        <label class="control-label">Middle Name : </label>
+                        <input type="text" class="form-control" name="MName" value="@MName" placeholder="Enter Middle Name">
+
+                    </div>
+
+                    <div class="form-group col-md-6">
+
+                        <label class="control-label">Position : </label>
+
+                        <select name="Position" class="form-control" id="cmb-empPositions"></select>
+
+                    </div>
+                </div>
+                <div class="row">
+
+
+                    <div class="form-group col-md-6">
+
+                        @{ var ContactNo = ((@empManager != null) ? @empManager.ContactNo : string.Empty); }
+
+                        <label class="control-label">Contact No. : </label>
+                        <input type="text" class="form-control" name="ContactNo" value="@ContactNo" placeholder="Enter Contact">
+
+                    </div>
+
+                    <div class="form-group col-md-6">
+
+                        @{ var Status = ((@empManager != null) ? @empManager.Status : string.Empty); }
+
+                        <p class="text-muted font-13 m-b-15 m-t-20">Status</p>
+
+                        <div class="radio radio-success radio-inline">
+                            <input type="radio" id="inlineRadio1" value="Active" name="Status" @(Status == "Active" ? "checked=true" : "")>
+                            <label for="inlineRadio1"> Active </label>
+                        </div>
+
+                        <div class="radio radio-inline">
+                            <input type="radio" id="inlineRadio2" value="Inactive" name="Status" @(Status != "Active" ? "checked=true" : "")>
+                            <label for="inlineRadio2"> Inactive </label>
+                        </div>
+
+                    </div>
+                </div>
+                <hr/>
+                <div class="form-group text-right m-b-0">
+                    <a data-toggle="tooltip" data-placement="left" data-original-title="View Employee list" class="btn btn-default waves-effect waves-light view-manager" module="refresh">
+                        <i class="md md-arrow-back"></i>Back
+                    </a>
+                    <a class="btn btn-primary waves-effect waves-light" id="btnUpdateEmployeeManager">
+                        Apply Changes
+                    </a>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+</div>

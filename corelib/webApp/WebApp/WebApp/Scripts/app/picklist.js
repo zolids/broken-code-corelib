@@ -1,4 +1,4 @@
-﻿var openModal = function (data, text, classname, isOpen) {
+﻿var openModal = function (data, text, classname, isOpen, boxWidth) {
 
     $('#custom-modal .custom-modal-text').empty();
     $('#custom-modal .custom-modal-text').html(data);
@@ -7,13 +7,16 @@
     TableManageButtons.init("responsive_table");
     $addFilterAddBUttom(classname);
 
+    var width = (boxWidth != null) ? boxWidth : '600';
+
     if (isOpen == false) {
         Custombox.open({
             target: '#custom-modal',
             effect: 'door',
             plugin: 'custommodal',
             overlayspeed: 100,
-            overlaycolor: '#36404a'
+            overlaycolor: '#36404a',
+            width: width
         });
     }
 
@@ -23,7 +26,7 @@
 functionList = {};
 
 functionList.fleet_provinces = function (isOpen) {
-
+    
     $loadPartialView("/Picklist/getAssignedLocation", function (data) {
 
         openModal(data, 'Fleet Provinces', 'editProvinces', isOpen);
@@ -38,7 +41,7 @@ functionList.fleet_vehicle_type = function (isOpen) {
 
     $loadPartialView("/Picklist/getVehicleTypeView", function (data) {
 
-        openModal(data, 'Vehicle Types', 'editVehicleType', isOpen);
+        openModal(data, 'Vehicle Types', 'editVehicleType', isOpen, '800');
         $('#custom-modal .custom-modal-text').unblock();
 
     }, {})
@@ -64,17 +67,31 @@ functionList.fleet_vehicle_make = function (isOpen) {
 },
 
 functionList.fleet_vehicle_models = function (isOpen) {
+
+    $blockContent('#custom-modal .custom-modal-text');
     $loadPartialView("/Picklist/getVehicleModelView", function (data) {
 
         openModal(data, 'Vehicle Models', '', isOpen);
+        $('#custom-modal .custom-modal-text').unblock();
 
     }, {})
 },
 
 functionList.fleet_vehicle_series = function (isOpen) {
+
+    $blockContent('#custom-modal .custom-modal-text');
     $loadPartialView("/Picklist/getVehicleSeriesView", function (data) {
 
         openModal(data, 'Vehicle Series', '', isOpen);
+        $('#custom-modal .custom-modal-text').unblock();
+
+    }, {})
+},
+
+functionList.ownership_types = function (isOpen) {
+    $loadPartialView("/Picklist/getOwnershipTypes", function (data) {
+
+        openModal(data, 'Vehicle Ownership', 'editOwnerShips', isOpen);
 
     }, {})
 },
@@ -102,6 +119,29 @@ functionList.parts_stype = function (isOpen) {
 
     }, {})
 },
+
+functionList.employees_managers = function (isOpen) {
+
+    $blockContent('#custom-modal .custom-modal-text');
+    $loadPartialView("/Picklist/getEmployeeManager", function (data) {
+
+        openModal(data, 'Employee Manager', '', isOpen, '800');
+        $('#custom-modal .custom-modal-text').unblock();
+
+    }, {})
+},
+
+functionList.employees_local = function (isOpen) {
+
+    $blockContent('#custom-modal .custom-modal-text');
+    $loadPartialView("/Picklist/getLocalEmployee", function (data) {
+
+        openModal(data, 'Employee Manager', '', isOpen, '800');
+        $('#custom-modal .custom-modal-text').unblock();
+
+    }, {})
+
+}
 
 $picklistFunctions = function () {
     
@@ -192,6 +232,8 @@ $picklistFunctions = function () {
             openModal(data, 'Add / Edit Vehicle Types', '', true);
 
             $('#custom-modal .custom-modal-text').unblock();
+            // collapse all vehicle model
+            $('.collapsable-table .toggle').trigger('click')
 
         }, { VehTypeID: $(me).attr('id') });
 
@@ -451,7 +493,7 @@ $picklistFunctions = function () {
 
             // populate dropdown
             $('#drp-series-make').trigger('change');
-
+            
         }, { id : $(me).attr('id') });
 
     })
@@ -459,7 +501,6 @@ $picklistFunctions = function () {
 
         e.preventDefault();
         e.stopImmediatePropagation();
-
 
         var form = $('#add-edit-vehicle-series');
 
@@ -498,6 +539,66 @@ $picklistFunctions = function () {
             })
 
         }
+    })
+    
+    .on('click', '.view-ownership', function () {
+        functionList.ownership_types(false);
+    })
+    .on('click', '.editOwnerShips', function (e) {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+
+        var id = $(this).attr('id');
+
+        var message = "Edit Vehicle Ownership?";
+        var text = "Please Enter Vehicle Ownership";
+        var placeHolder = "Enter Vehicle Ownership";
+        var defaultValue = "";
+
+        if (id == "add-new-item") {
+            message = "Add New Vehicle Ownership";
+            placeHolder = "Ownership Description";
+        }
+        else {
+            defaultValue = $(this).closest('tr').find('td').eq(0).text();
+            text = "Update Fleet Vehicle Ownership";
+        }
+
+        swal({
+            title: message, text: text, type: "input", confirmButtonColor: "#3bafda", confirmButtonText: "Save Changes",
+            showCancelButton: true, closeOnConfirm: false, inputPlaceholder: placeHolder
+        }, function (inputValue) {
+
+            if (inputValue === false) return false;
+
+            if (inputValue === "") {
+                swal.showInputError("Please Provide Valid Fleet Vehicle Ownership");
+                return false
+            }
+
+            var fd = new FormData();
+
+            fd.append('id', id);
+            fd.append('description', inputValue);
+
+            $loadJsonResult("/Picklist/updateOwnership", fd, function (json) {
+
+                if (json.isSuccess) {
+                    swal("Success!", "Vehicle Ownership Color has successfully been updated!", "success");
+                    functionList.ownership_types(true);
+                }
+                else {
+                    swal("Error Proccessing Request!", json.message, "error");
+                }
+
+            })
+
+        });
+
+        setTimeout(function () {
+            $('.sweet-alert.show-input').find('input').val(defaultValue);
+            $('.sweet-alert input').css('text-align', 'center')
+        }, 1);
     })
 
     .on('click', '.view-part-category', function () {
@@ -680,6 +781,157 @@ $picklistFunctions = function () {
         }, 1);
     })
 
+    .on('click', '.view-manager', function () {
+
+        isOpen = ($(this).attr('module') == 'refresh' ? true : false);
+
+        functionList.employees_managers(isOpen);
+    })
+    .on('click', '.editManagers', function (e) {
+
+        e.preventDefault();
+        e.stopImmediatePropagation();
+
+        var me = this;
+
+        $blockContent('#custom-modal .custom-modal-text');
+
+        $loadPartialView("/Picklist/addEditManager", function (data) {
+
+            openModal(data, 'Add / Edit Employee Manager', '', true);
+
+            $('#custom-modal .custom-modal-text').unblock();
+
+            // populate position category
+            $('#cmb-category-list').trigger('change');
+
+        }, { id : $(me).attr('id') });
+
+    })
+    .on('keyup', '#manager_lname', function (e) {
+
+        e.preventDefault();
+
+        this.value = this.value.toUpperCase();
+
+        var tmpName = $(this).val() + ', ' + $('#manager_fname').val();
+
+        $('#displayName').val(tmpName);
+
+    })
+    .on('keyup', '#manager_fname', function (e) {
+
+        e.preventDefault();
+
+        this.value = this.value.toUpperCase();
+
+        var tmpName = $('#manager_lname').val() + ', ' + $(this).val();
+
+        $('#displayName').val(tmpName);
+
+    })
+    .on('click', '#btnUpdateEmployeeManager', function (e) {
+
+        e.preventDefault();
+        e.stopImmediatePropagation();
+
+        var form = $('#add-edit-manager');
+
+        form.parsley().validate();
+
+        if (form.parsley().isValid()) {
+            swal({
+                title: "Updating Employee Manager?",
+                text: "Would you like to continue saving changes?",
+                type: "info",
+                showCancelButton: true,
+                confirmButtonColor: "#3bafda",
+                confirmButtonText: "Continue saving",
+                showLoaderOnConfirm: true,
+                closeOnConfirm: false
+            }, function (isConfirm) {
+
+                if (isConfirm) {
+
+                    $loadJsonResult("/Picklist/updateEmployeeManager", new FormData(form[0]), function (json) {
+
+                        if (json.isSuccess) {
+
+                            swal("Success!", "Employee record has successfully been updated!", "success");
+
+                            functionList.employees_managers(true);
+
+                        }
+                        else {
+                            swal("Error Proccessing Request!", json.message, "error");
+                        }
+
+                    })
+                }
+            });
+        }
+    })
+
+    .on('click', '.view-local', function () {
+        isOpen = ($(this).attr('module') == 'refresh' ? true : false);
+        functionList.employees_local(isOpen);
+    })
+    .on('click', '.editLocalManager', function (e) {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+
+        var me = this;
+
+        $blockContent('#custom-modal .custom-modal-text');
+
+        $loadPartialView("/Picklist/addEditLocalManager", function (data) {
+
+            openModal(data, 'Add / Edit Local Employee', '', true);
+
+            $('#custom-modal .custom-modal-text').unblock();
+
+        }, { id: $(me).attr('id') });
+    })
+    .on('click', '#btnUpdateLocalEmployeeManager', function (e) {
+
+        e.preventDefault();
+        e.stopImmediatePropagation();
+
+        var form = $('#add-edit-local-manager');
+
+        form.parsley().validate();
+
+        if (form.parsley().isValid()) {
+            swal({
+                title: "Updating Local Employee Manager?",
+                text: "Would you like to continue saving changes?",
+                type: "info",
+                showCancelButton: true,
+                confirmButtonColor: "#3bafda",
+                confirmButtonText: "Continue saving",
+                showLoaderOnConfirm: true,
+                closeOnConfirm: false
+            }, function (isConfirm) {
+
+                if (isConfirm) {
+
+                    $loadJsonResult("/Picklist/updateLocalEmployeeManager", new FormData(form[0]), function (json) {
+
+                        if (json.isSuccess) {
+                            swal("Success!", "Employee record has successfully been updated!", "success");
+                            functionList.employees_local(true);
+                        }
+                        else {
+                            swal("Error Proccessing Request!", json.message, "error");
+                        }
+
+                    })
+
+                }
+            });
+
+        }
+    })
 },
 
 $pickListRemoveItem = function () {
@@ -819,6 +1071,35 @@ $pickListDropDown = function () {
                                     .attr("value", value.Model).text(value.Model)
                                     .attr("id", value.ModelID));
                 });
+            }
+
+        })
+
+    })
+    .on('change', '#cmb-category-list', function () {
+
+        var $form = new FormData()
+
+        var category_name = $("#cmb-category-list option:selected").attr('id');
+
+        $form.append('module', 'positions');
+        $form.append('referenceId', category_name);
+
+        $loadJsonResult("/Picklist/populateDropDownWithValues", $form, function (json) {
+
+            var $el = $("#cmb-empPositions");
+            $el.empty();
+            $el.append($("<option></option>")
+                    .attr("value", '').text('Please Select'));
+
+            if (json.positions != null) {
+
+                $.each(json.positions, function (key, value) {
+                    $el.append($("<option " + ((value.position == $('#defaultPosition').val()) ? "selected" : "") + "></option>")
+                        .attr("value", value.position).text(value.position)
+                        .attr("id", value.id));
+                });
+
             }
 
         })

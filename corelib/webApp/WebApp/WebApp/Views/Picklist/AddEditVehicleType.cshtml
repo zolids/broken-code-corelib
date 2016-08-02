@@ -67,7 +67,7 @@
                         <p class="text-muted font-13 m-b-30">
                             List of vehicle model mappings
                         </p>
-                        <table class="table table-hover collapsable-table" cellpadding="0" cellspacing="0" id="vehicle-model-table">
+                        <table class="table table-hover collapsable-table" id="vehicle-model-table">
                             <thead>
                             </thead>
                             <tbody>
@@ -75,15 +75,16 @@
                                     if (@vModels.Count() > 0)
                                     {
                                         var tmpMake = string.Empty;
-
+                                        
                                         foreach (var m in vModels)
                                         {
 
                                             if (@m.Make != tmpMake)
                                             {
-
                                                 <tr data-depth="0" class="collapse_table level0">
-                                                    <td colspan="2"><span class="toggle collapse"></span><b style="padding-left:10px;">@m.Make.ToUpper()</b></td>
+                                                    <td colspan="2">
+                                                        <span class="toggle expand_table"></span><b style="padding-left:10px;">@m.Make.ToUpper()</b>
+                                                    </td>
                                                 </tr>
                                             }
 
@@ -100,7 +101,7 @@
 
                                                         checkedModel = "checked=true";
                                                         checkBoxValue = m.ModelID + "-" + mapped.VehTypeID;
-
+                                                        
                                                         break;
                                                     }
                                                     else

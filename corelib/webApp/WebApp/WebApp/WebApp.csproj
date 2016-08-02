@@ -406,6 +406,21 @@
   <ItemGroup>
     <Content Include="Views\Picklist\UnitMeasureView.cshtml" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Picklist\OwnershipTypeView.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Picklist\EmployeeManagerView.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Picklist\addEditManager.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Picklist\localEmpView.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Picklist\addEditLocalManager.cshtml" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

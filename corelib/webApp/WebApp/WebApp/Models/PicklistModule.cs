@@ -110,6 +110,19 @@ namespace WebApp.Models
 
         }
 
+        public IEnumerable<OwnershipTypes> getOwnership(int id = 0)
+        {
+            string where = string.Empty;
+
+            if (id > 0) where = "WHERE id = " + id;
+
+            string sql = "SELECT * FROM [dbo].[ownership_types] " + where;
+
+            var ownership = _db.Database.SqlQuery<OwnershipTypes>(sql);
+
+            return ownership;
+        }
+
         public IEnumerable<fleet_colors> getColors(string colorname = null)
         {
             string where = string.Empty;
@@ -182,6 +195,102 @@ namespace WebApp.Models
             var unit_m = _db.Database.SqlQuery<unit_measures>(sql);
 
             return unit_m;
+
+        }
+
+        public IEnumerable<employees_managers> getEmpManager(int id = 0, bool isActive = false)
+        {
+
+            string where = string.Empty;
+
+            if (id > 0) where = "WHERE id = " + id;
+            if (isActive) where = "WHERE Status = " + isActive;
+
+            string sql = "SELECT * FROM [dbo].[employees_managers] " + where + " ORDER BY Department";
+
+            var emp = _db.Database.SqlQuery<employees_managers>(sql);
+
+            return emp;
+
+        }
+
+        public IEnumerable<employees_local> getEmpLocal(int id = 0, bool isActive = false)
+        {
+
+            string where = string.Empty;
+
+            if (id > 0) where = "WHERE id = " + id;
+            if (isActive) where = "WHERE Status = " + isActive;
+
+            string sql = "SELECT * FROM [dbo].[employees_local] " + where + " ORDER BY Department";
+
+            var emp = _db.Database.SqlQuery<employees_local>(sql);
+
+            return emp;
+
+        }
+
+        public IEnumerable<department> getDepartments(int id = 0)
+        {
+
+            string where = string.Empty;
+
+            if (id > 0) where = "WHERE id = " + id;
+
+            string sql = "SELECT * FROM [dbo].[department] " + where + " ORDER BY Department";
+
+            var dept = _db.Database.SqlQuery<department>(sql);
+
+            return dept;
+
+        }
+
+        public IEnumerable<skill_level> getSkillLevel(int id = 0)
+        {
+
+            string where = string.Empty;
+
+            if (id > 0) where = "WHERE id = " + id;
+
+            string sql = "SELECT * FROM [dbo].[skill_level] " + where + " ORDER BY category";
+
+            var dept = _db.Database.SqlQuery<skill_level>(sql);
+
+            return dept;
+
+        }
+
+        public IEnumerable<categories> getCategories(int id = 0)
+        {
+
+            string where = string.Empty;
+
+            if (id > 0) where = "WHERE id = " + id;
+
+            string sql = "SELECT * FROM [dbo].[category] " + where + " ORDER BY category";
+
+            var dept = _db.Database.SqlQuery<categories>(sql);
+
+            return dept;
+
+        }
+
+        public IEnumerable<positions> getPosition(int id = 0, string getByCategory = null)
+        {
+
+            string where = string.Empty;
+
+            if (id > 0) where = "WHERE id = " + id;
+
+            if (!string.IsNullOrEmpty(getByCategory))
+
+                where = "WHERE category = '" + getByCategory + "'";
+
+            string sql = "SELECT * FROM [dbo].[positions] " + where + " ORDER BY category";
+
+            var positions = _db.Database.SqlQuery<positions>(sql);
+
+            return positions;
 
         }
 

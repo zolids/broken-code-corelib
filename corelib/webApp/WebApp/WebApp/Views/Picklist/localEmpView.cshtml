@@ -1,0 +1,100 @@
+﻿@model WebApp.Controllers.employeeDetails
+@{
+
+    var getEmpLocal = ((Model.getEmpLocal) != null ? Model.getEmpLocal : null);
+
+}
+<div class="col-lg-12">
+    <div class="card-box" style="max-height: 580px;overflow: auto;">
+        <button type="button" data-toggle="tooltip" data-placement="right" data-original-title="Add new record" id="add-new-item" class="editLocalManager btn btn-success waves-effect waves-light btn-sm"><i class="fa fa-plus"></i></button>
+        <span class="pull-right">
+            <input type="text" class="form-control search-from-table" placeholder="Search item">
+        </span>
+        <form action="#" class="form-pick-list">
+            <table class="table table-hover collapsable-table" id="employee-local-table">
+                <thead>
+                    <tr>
+                        <th>Employee Code</th>
+                        <th>Skill Level</th>
+                        <th style="text-align:center !important">Display Name</th>
+                        <th style="text-align:center !important">Department</th>
+                        <th style="text-align:center !important">Status</th>
+                        <th style="text-align:center !important">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @{
+
+
+                        if (getEmpLocal.Count() > 0)
+                        {
+                            var department = string.Empty;
+                            var position = string.Empty;
+
+                            foreach (var m in getEmpLocal)
+                            {
+
+
+                                if (@m.Department != department)
+                                {
+
+                                    <tr data-depth="0" class="collapse_table level0">
+                                        <td colspan="6"><span class="toggle collapse"></span><b style="padding-left:10px;">@m.Department.ToUpper()</b></td>
+                                    </tr>
+                                }
+
+                                if (@m.Position != position)
+                                {
+                                    <tr data-depth="1" class="collapse_table level1">
+                                        <td colspan="6"><span class="toggle collapse"></span><b style="padding-left:10px;">@m.Position.ToUpper()</b></td>
+                                    </tr>
+                                }
+
+                                <tr data-depth="2" class="collapse_table level2">
+
+                                    <td id="@m.id">@m.EmpCode</td>
+                                    <td id="@m.id">@m.SkillLevel</td>
+                                    <td style="text-align:center !important;">@m.DisplayName</td>
+                                    <td style="text-align:center !important;">@m.Department</td>
+
+                                    @if (@m.Status == "Active")
+                                    {
+
+                                        <td style="text-align:center !important;" title="@m.Status">
+                                            <span class="label label-sm label-success">
+                                                &nbsp; @m.Status &nbsp;
+                                            </span>
+                                        </td>
+
+                                    }
+                                    else
+                                    {
+                                        <td style="text-align:center !important;" title="@m.Status">
+                                            <span class="label label-sm label-default">
+                                                &nbsp; @m.Status &nbsp;
+                                            </span>
+                                        </td>
+                                    }
+
+
+                                    <td style="padding-right:25px;text-align:center !important;">
+                                        <a id="@m.id" data-toggle="tooltip" data-placement="top" data-original-title="Edit Record" href="#" class="editLocalManager btn btn-icon waves-effect waves-light btn-primary p-lr-5"><i class="md md-border-color"></i></a>
+                                        <a id="@m.id" module="employees_local" data-toggle="tooltip" data-placement="top" data-original-title="Remove Record" href="#" class="remove-item btn btn-icon waves-effect waves-light btn-default p-lr-5"><i class="glyphicon glyphicon-trash"></i></a>
+                                    </td>
+                                </tr>
+
+                                department = m.Department;
+                                position = m.Position;
+
+                            }
+
+                        }
+
+                    }
+                </tbody>
+            </table>
+
+        </form>
+    </div>
+</div>

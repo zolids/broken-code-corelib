@@ -105,6 +105,18 @@ namespace WebApp.Models
 
     }
 
+    [Table("ownership_types")]
+    public class OwnershipTypes
+    {
+        [Key]
+        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
+        public int id { get; set; }
+
+        public string code { get; set; }
+
+        public string description { get; set; }
+    }
+
     public class vehicle_type_make
     {
         public string Make { get; set; }
@@ -256,6 +268,110 @@ namespace WebApp.Models
         public int id { get; set; }
 
         public string Unit { get; set; }
+
+    }
+
+    [Table("employees_local")]
+    public class employees_local
+    {
+        [Key]
+        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
+        public long id { get; set; }
+        public string EmpCode { get; set; }
+        public string LName { get; set; }
+        public string FName { get; set; }
+        public string MName { get; set; }
+        public string DisplayName { get; set; }
+        public string Department { get; set; }
+        public string Position { get; set; }
+        public string SkillLevel { get; set; }
+        public string Status { get; set; }
+        public string ContactNo { get; set; }
+        public string SiteCode { get; set; }
+    }
+
+    [Table("employees_managers")]
+    public class employees_managers
+    {
+        [Key]
+        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
+        public long id { get; set; }
+        public string EmpCode { get; set; }
+        public string LName { get; set; }
+        public string FName { get; set; }
+        public string MName { get; set; }
+        public string DisplayName { get; set; }
+        public string Category { get; set; }
+        public string Department { get; set; }
+        public string Position { get; set; }
+        public string Status { get; set; }
+        public string ContactNo { get; set; }
+        public int? ShowAssignedTo { get; set; }
+        public string TypeID { get; set; }
+        public string UserName { get; set; }
+        public string Password { get; set; }
+        public string Email { get; set; }
+        public int Switch { get; set; }
+    }
+
+    [Table("department")]
+    public class department
+    {
+        [Key]
+        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
+        public int id { get; set; }
+
+        public string Department { get; set; }
+
+    }
+
+    [Table("category")]
+    public class categories
+    {
+        [Key]
+        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
+        public int id { get; set; }
+
+        public string category { get; set; }
+
+    }
+
+    [Table("positions")]
+    public class positions
+    {
+        [Key]
+        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
+        public int id { get; set; }
+
+        public string position { get; set; }
+
+        public string category { get; set; }
+
+    }
+
+    [Table("skill_level")]
+    public class skill_level
+    {
+        [Key]
+        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
+        public int id { get; set; }
+
+        public string level { get; set; }
+
+        public string category { get; set; }
+
+    }
+
+    [Table("repair_type")]
+    public class repair_type
+    {
+
+        [Key]
+        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
+        public int id { get; set; }
+        public string RepairType { get; set; }
+        public decimal LaborCost { get; set; }
+        public decimal ProfitPercentage { get; set; }
 
     }
 

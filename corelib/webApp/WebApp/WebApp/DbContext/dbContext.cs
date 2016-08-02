@@ -47,6 +47,8 @@ namespace WebApp.Models
 
         public DbSet<fleet_vehicle_series> fleetVehicleSeries { get; set; }
 
+        public DbSet<OwnershipTypes> OwnershipTypes { get; set; }
+
         public DbSet<fleet_vehicle_type_mapping> fleetVehicleMappings { get; set; }
 
         public DbSet<fleet_colors> fleet_colors { get; set; }
@@ -56,5 +58,10 @@ namespace WebApp.Models
         public DbSet<parts_stype> parts_stype { get; set; }
 
         public DbSet<unit_measures> UnitMeasures { get; set; }
+
+        public DbSet<employees_managers> employee_manager { get; set; }
+
+        public DbSet<employees_local> employee_local { get; set; }
+
     }
 }
